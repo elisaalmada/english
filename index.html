@@ -139,7 +139,7 @@
                     <div class="bg-soft-yellow-v2 p-6 rounded-lg mt-8 border-2 border-soft-orange-v2 shadow-md">
                         <h3 class="text-xl font-semibold text-soft-orange-v2 mb-4 font-display">Dica da Teacher Elisa: Como adicionar novos exercícios</h3>
                         <p class="text-subtle-gray-v2 leading-relaxed">
-                            Para incluir um novo exercício, crie um novo `div` com a classe `individual-exercise-content` e um `id` único (ex: `id="exercise-novo-topico"`). Adicione um link para ele na lista de exercícios (`&lt;ul id="exercise-list-view"&gt;`). Certifique-se de que cada exercício tenha **IDs de inputs e botões únicos** (ex: `id="novotopico-q1"`, `data-exercise-id="novo-topico"`) e de que os dados de respostas e explicações sejam adicionados ao objeto `allExerciseData` no JavaScript.
+                            Para incluir um novo `exercício`, crie um novo `div` com a classe `individual-exercise-content` e um `id` único (ex: `id="exercise-novo-topico"`). Adicione um link para ele na lista de exercícios (`&lt;ul id="exercise-list-view"&gt;`). Certifique-se de que cada exercício tenha **IDs de inputs e botões únicos** (ex: `id="novotopico-q1"`, `data-exercise-id="novo-topico"`) e de que os dados de respostas e explicações sejam adicionados ao objeto `allExerciseData` no JavaScript.
                         </p>
                         <p class="text-subtle-gray-v2 leading-relaxed mt-4">
                             O site é leve e não exige login ou banco de dados, facilitando a adição de conteúdo! <span class="animated-emoji">👍</span>
@@ -450,6 +450,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            console.log('[LOG] DOM Content Loaded! Initializing script...');
             const navLinks = document.querySelectorAll('.nav-link');
             const contentSections = document.querySelectorAll('.content-section');
             const exerciseListView = document.getElementById('exercise-list-view');
@@ -460,52 +461,76 @@
 
             // Helper function to update URL hash safely
             const updateUrlHash = (hash) => {
-                // Check if running in a blob: protocol environment
-                if (window.location.protocol === 'blob:') {
-                    window.location.hash = hash; // Directly set hash
-                } else {
-                    // For standard web environments, use replaceState for cleaner URLs
-                    history.replaceState(null, '', hash ? `#${hash}` : window.location.pathname + window.location.search);
+                try {
+                    if (window.location.protocol === 'blob:' || typeof history.replaceState === 'undefined') {
+                        // Fallback for blob: protocol or if replaceState is not supported
+                        window.location.hash = hash;
+                        console.log(`[LOG] Fallback: window.location.hash set to: #${hash}`);
+                    } else {
+                        // Use replaceState for cleaner URLs in standard environments
+                        history.replaceState(null, '', hash ? `#${hash}` : window.location.pathname + window.location.search);
+                        console.log(`[LOG] history.replaceState set to: #${hash}`);
+                    }
+                } catch (e) {
+                    // Catch any unexpected errors with replaceState and fallback
+                    console.error("[ERROR] Error calling history.replaceState, falling back to window.location.hash:", e);
+                    window.location.hash = hash;
                 }
             };
 
             // Function to show a specific content section (from sidebar)
             const showSection = (id) => {
+                console.log(`[LOG] Attempting to show section: ${id}`);
                 contentSections.forEach(section => {
                     section.classList.remove('active');
                 });
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                 });
-                document.getElementById(id).classList.add('active');
-                document.querySelector(`.nav-link[href="#${id}"]`).classList.add('active');
+                const targetSection = document.getElementById(id);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                    console.log(`[LOG] Section '${id}' activated.`);
+                } else {
+                    console.error(`[ERROR] Target section not found: ${id}`);
+                }
+                const targetNavLink = document.querySelector(`.nav-link[href="#${id}"]`);
+                if (targetNavLink) {
+                    targetNavLink.classList.add('active');
+                    console.log(`[LOG] Nav link for '${id}' activated.`);
+                } else {
+                    console.error(`[ERROR] Target nav link not found for section: ${id}`);
+                }
 
                 // If navigating to exercises, ensure the correct view is shown
                 if (id === 'exercises') {
-                    // If a specific exercise is in the hash, show it
+                    console.log('[LOG] Navigating to exercises section logic.');
                     const currentHash = window.location.hash.substring(1);
                     if (currentHash && document.getElementById(currentHash) && document.getElementById(currentHash).classList.contains('individual-exercise-content')) {
+                        console.log(`[LOG] Hash points to individual exercise, showing it: ${currentHash}`);
                         displayIndividualExercise(currentHash);
                     } else {
-                        // Otherwise, show the list of exercises
+                        console.log('[LOG] No individual exercise hash, showing exercise list.');
                         displayExerciseList();
                     }
                 } else {
-                    // For other sections, clear any exercise-specific hash
+                    console.log('[LOG] Navigating to non-exercise section, clearing hash.');
                     updateUrlHash('');
                 }
             };
 
             // Function to display the list of exercises
             const displayExerciseList = () => {
+                console.log('[LOG] Displaying exercise list.');
                 individualExerciseView.classList.add('hidden');
-                exerciseListView.classList.remove('hidden');
-                // Clear hash when returning to list view
+                exerciseListView.classList.remove('hidden'); // This should make it visible
+                console.log('[LOG] exerciseListView visibility status (should be visible):', !exerciseListView.classList.contains('hidden'));
                 updateUrlHash('');
             };
 
             // Function to display a specific individual exercise
             const displayIndividualExercise = (exerciseId) => {
+                console.log(`[LOG] Displaying individual exercise: ${exerciseId}`);
                 exerciseListView.classList.add('hidden');
                 individualExerciseView.classList.remove('hidden');
 
@@ -516,9 +541,11 @@
                 const targetExercise = document.getElementById(exerciseId);
                 if (targetExercise) {
                     targetExercise.classList.remove('hidden');
+                    console.log(`[LOG] Individual exercise '${exerciseId}' activated.`);
+                } else {
+                    console.error(`[ERROR] Target individual exercise not found: ${exerciseId}`);
                 }
                 
-                // Update URL hash for sharing
                 updateUrlHash(exerciseId);
             };
 
@@ -527,6 +554,7 @@
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const targetId = e.target.getAttribute('href').substring(1);
+                    console.log(`[LOG] Sidebar link clicked: ${targetId}`);
                     showSection(targetId);
                 });
             });
@@ -536,25 +564,29 @@
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const targetExerciseId = e.target.getAttribute('href').substring(1);
+                    console.log(`[LOG] Exercise select link clicked: ${targetExerciseId}`);
                     displayIndividualExercise(targetExerciseId);
                 });
             });
 
             // Event listener for "Back to Exercise List" button
             backToExerciseListBtn.addEventListener('click', () => {
+                console.log('[LOG] Back to exercise list button clicked.');
                 displayExerciseList();
             });
 
             // Initial section load based on URL hash or default
             const initialHash = window.location.hash.substring(1);
+            console.log('[LOG] Initial URL hash:', initialHash);
             if (initialHash && document.getElementById(initialHash) && document.getElementById(initialHash).classList.contains('content-section')) {
+                console.log('[LOG] Loading section from hash:', initialHash);
                 showSection(initialHash);
             } else if (initialHash && document.getElementById(initialHash) && document.getElementById(initialHash).classList.contains('individual-exercise-content')) {
-                // If the hash is an individual exercise, show the exercises section and then the specific exercise
-                showSection('exercises');
-                displayIndividualExercise(initialHash);
-            }
-            else {
+                console.log('[LOG] Loading individual exercise from hash:', initialHash);
+                showSection('exercises'); // Show exercises section first
+                displayIndividualExercise(initialHash); // Then display specific exercise
+            } else {
+                console.log('[LOG] No specific hash, defaulting to exercises section.');
                 showSection('exercises'); // Default to exercises section
             }
 
@@ -590,28 +622,41 @@
             // --- General Function to Setup Exercise Logic ---
             const setupExerciseLogic = (exerciseId) => {
                 const exerciseContainer = document.getElementById(`exercise-${exerciseId}`);
-                if (!exerciseContainer) return;
+                if (!exerciseContainer) {
+                    console.warn(`[WARNING] Exercise container not found for ID: exercise-${exerciseId}`);
+                    return;
+                }
 
                 const checkButton = exerciseContainer.querySelector(`.check-exercise-button[data-exercise-id="${exerciseId}"]`);
                 const copyButton = exerciseContainer.querySelector(`.copy-exercise-results-button[data-exercise-id="${exerciseId}"]`);
                 const feedbackDiv = exerciseContainer.querySelector('.exercise-feedback');
                 const copyMessageDiv = exerciseContainer.querySelector('.exercise-copy-message');
 
-                if (!checkButton || !copyButton || !feedbackDiv || !copyMessageDiv) return; // Ensure all elements exist
+                if (!checkButton || !copyButton || !feedbackDiv || !copyMessageDiv) {
+                    console.error(`[ERROR] Missing elements for exercise setup of ID: ${exerciseId}. Check buttons, feedback, or copy message divs.`);
+                    return;
+                }
 
                 const exerciseAnswers = allExerciseData[exerciseId].inputs;
 
                 checkButton.addEventListener('click', () => {
+                    console.log(`[LOG] Check button clicked for exercise: ${exerciseId}`);
                     let feedbackHtml = '<h4 class="font-bold text-lg mb-2">Seus Resultados:</h4>';
-                    let resultsToCopy = `Resultados do Exercício "${exerciseContainer.querySelector('h3').textContent}":\n\n`;
+                    let resultsToCopy = `Resultados do Exercício "${exerciseContainer.querySelector('h3').textContent.replace('💡','').trim()}":\n\n`; // Trim emoji/space
                     let allCorrect = true;
 
                     exerciseAnswers.forEach(qData => {
                         const inputElement = document.getElementById(qData.id);
+                        if (!inputElement) {
+                            console.error(`[ERROR] Input element not found for ID: ${qData.id} in exercise ${exerciseId}`);
+                            return; // Skip this question if input is missing
+                        }
                         const userAnswer = inputElement.value.trim().toLowerCase();
                         const correctAnswer = qData.answer;
                         const explanation = qData.explanation;
-                        const questionText = document.querySelector(`label[for="${qData.id}"]`).textContent.replace(/^\d+\.\s*(.*?)\s*$/, '$1').replace('______', '____');
+                        const labelElement = document.querySelector(`label[for="${qData.id}"]`);
+                        const questionText = labelElement ? labelElement.textContent.replace(/^\d+\.\s*(.*?)\s*$/, '$1').replace('______', '____') : 'Questão desconhecida';
+
 
                         let status = '';
                         if (userAnswer === correctAnswer) {
@@ -644,6 +689,7 @@
                 });
 
                 copyButton.addEventListener('click', () => {
+                    console.log(`[LOG] Copy results button clicked for exercise: ${exerciseId}`);
                     const results = copyButton.dataset.results;
                     if (results) {
                         try {
@@ -657,13 +703,16 @@
                             copyMessageDiv.classList.remove('hidden');
                             copyMessageDiv.classList.remove('text-warning-red');
                             copyMessageDiv.classList.add('text-accent-green-bright');
+                            console.log('[LOG] Results copied successfully.');
                         } catch (err) {
-                            console.error('Erro ao copiar: ', err);
+                            console.error('[ERROR] Error trying to copy results:', err);
                             copyMessageDiv.textContent = 'Erro ao copiar resultados. Por favor, tente novamente.';
                             copyMessageDiv.classList.remove('hidden');
                             copyMessageDiv.classList.remove('text-accent-green-bright');
                             copyMessageDiv.classList.add('text-warning-red');
                         }
+                    } else {
+                        console.warn('[WARNING] No results to copy found for exercise:', exerciseId);
                     }
                 });
             };
@@ -672,6 +721,8 @@
             for (const key in allExerciseData) {
                 setupExerciseLogic(key);
             }
+            console.log('[LOG] All exercise logic setup completed.');
+
 
             // --- Proficiency Test Logic (remains separate from general exercises) ---
             const quizQuestions = [
@@ -715,6 +766,7 @@
             if (proficiencyQuizForm) { // Ensure the form exists before adding listener
                 proficiencyQuizForm.addEventListener('submit', (e) => {
                     e.preventDefault();
+                    console.log('[LOG] Proficiency test submitted.');
                     let score = 0;
                     let resultsHtml = '<h4 class="font-bold text-lg mb-2">Resultados do Teste de Nível:</h4>';
                     let resultsToCopy = 'Resultados do Teste de Nível de Proficiência:\n\n';
@@ -769,6 +821,7 @@
                 });
 
                 copyTestResultsBtn.addEventListener('click', () => {
+                    console.log('[LOG] Copy test results button clicked.');
                     const results = copyTestResultsBtn.dataset.results;
                     if (results) {
                         try {
@@ -782,13 +835,16 @@
                             testCopyMessage.classList.remove('hidden');
                             testCopyMessage.classList.remove('text-warning-red');
                             testCopyMessage.classList.add('text-accent-green-bright');
+                            console.log('[LOG] Test results copied successfully.');
                         } catch (err) {
-                            console.error('Erro ao copiar: ', err);
+                            console.error('[ERROR] Error trying to copy test results:', err);
                             testCopyMessage.textContent = 'Erro ao copiar resultados. Por favor, tente novamente.';
                             testCopyMessage.classList.remove('hidden');
                             testCopyMessage.classList.remove('text-accent-green-bright');
                             testCopyMessage.classList.add('text-warning-red');
                         }
+                    } else {
+                        console.warn('[WARNING] No test results to copy found.');
                     }
                 });
             } // End of proficiencyQuizForm check
