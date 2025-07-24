@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English with Elisa Almada - Seu Guia de Inglês Descomplicado</title>
+    <!-- Incluindo Tailwind CSS com configuração personalizada para cores pastel neon -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pastel-purple': '#D8BFD8', // Um lilás suave
+                        'pastel-pink': '#FFD1DC',   // Rosa bebê
+                        'pastel-blue': '#ADD8E6',   // Azul claro
+                        'pastel-green': '#98FB98',  // Verde menta
+                        'soft-yellow': '#FFFFE0',   // Amarelo suave
+                        'light-bg': '#F8F8F8',      // Fundo muito claro
+                        'dark-text': '#333333',     // Texto escuro para contraste
+                        'subtle-gray': '#777777',   // Cinza para detalhes
+                        'accent-orange': '#FFA07A', // Laranja suave para destaque
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Nunito', 'sans-serif'], // Fonte mais amigável e moderna para títulos
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Importando fontes do Google Fonts: Inter para corpo, Nunito para títulos -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F8F8; /* Fundo muito claro para realçar pastéis */
+            color: #333333; /* Texto escuro padrão */
+        }
+        /* Estilos para ocultar seções por padrão */
+        .content-section {
+            display: none;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            background-color: white; /* Fundo branco para seções */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+            border: 2px solid; /* Borda sutil */
+        }
+        .content-section.active {
+            display: block;
+        }
+        /* Estilo para links ativos no menu lateral */
+        .nav-link.active {
+            background-color: #ADD8E6; /* pastel-blue */
+            color: #333333; /* dark-text */
+            font-weight: 700;
+            transform: translateX(5px); /* Deslocamento mais suave */
+            box-shadow: 3px 3px 0px rgba(152, 251, 152, 0.7); /* Sombra suave em pastel-green */
+        }
+        .nav-link:hover {
+            transform: translateY(-2px); /* Efeito de "pulo" suave no hover */
+            box-shadow: 2px 2px 0px rgba(255, 209, 220, 0.7); /* Sombra em pastel-pink no hover */
+        }
+        /* Estilo para conteúdo de exercício individual */
+        .individual-exercise-content {
+            display: none;
+        }
+        .text-outline {
+            /* Mantenho para caso de uso futuro, mas talvez não seja tão necessário com essa paleta */
+            text-shadow:
+                -0.5px -0.5px 0 #fff,
+                0.5px -0.5px 0 #fff,
+                -0.5px 0.5px 0 #fff,
+                0.5px 0.5px 0 #fff;
+        }
+        .border-pastel {
+            border: 2px solid; /* Borda sólida mais suave */
+            border-radius: 1rem;
+            box-shadow: 5px 5px 0px rgba(216, 191, 216, 0.5); /* Sombra suave em pastel-purple */
+        }
+        .animated-emoji {
+            display: inline-block;
+            animation: bounce 0.8s infinite alternate; /* Animação suave de "pulo" */
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-3px); } /* Menor deslocamento */
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <div class="flex flex-1 flex-col md:flex-row bg-light-bg text-dark-text rounded-3xl shadow-xl m-4 md:m-8 overflow-hidden border-4 border-pastel-blue">
+        <!-- Sidebar Menu -->
+        <aside class="w-full md:w-1/4 bg-pastel-blue text-dark-text p-6 md:p-8 flex flex-col rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none shadow-lg border-b-4 md:border-b-0 md:border-r-4 border-pastel-green">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-8 text-center md:text-left font-display uppercase text-dark-text">
+                English with <span class="text-pastel-purple">Elisa Almada</span>
+            </h1>
+            <nav>
+                <ul class="space-y-4">
+                    <li><a href="#exercises" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105 active-link">📚 Exercícios Interativos</a></li>
+                    <li><a href="#about-me" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">👋 Quem É Elisa Almada</a></li>
+                    <li><a href="#how-classes-work" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">✨ Como Funcionam as Aulas</a></li>
+                    <li><a href="#proficiency-test" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">📝 Teste de Nível</a></li>
+                    <li><a href="#media-recommendations" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">🎬 Recomendações de Mídia</a></li>
+                    <li><a href="#book-a-class" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">🗓️ Agende Sua Aula</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-6 md:p-10 bg-light-bg text-dark-text rounded-b-3xl md:rounded-r-3xl md:rounded-bl-none overflow-y-auto">
+
+            <!-- Section 1: Interactive Exercises -->
+            <section id="exercises" class="content-section active border-pastel-purple">
+                <h2 class="text-4xl font-extrabold text-pastel-purple mb-6 font-display uppercase">
+                    Exercícios Interativos <span class="animated-emoji">💡</span>
+                </h2>
+                <p class="text-subtle-gray mb-6 leading-relaxed">
+                    Aqui você encontra exercícios interativos para praticar seu inglês de forma leve e eficaz. Receba feedback automático e copie seus resultados, incluindo as correções e explicações, para revisar quando quiser.
+                </p>
+
+                <!-- List of Exercises View -->
+                <div id="exercise-list-view">
+                    <h3 class="text-2xl font-semibold text-pastel-blue mb-4 font-display">Escolha um exercício para começar:</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#exercise-say-tell" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow text-dark-text font-medium transition-all duration-200 hover:scale-[1.02] border border-pastel-green shadow-sm">👉 Exercício: Say, Tell, Speak, Talk</a></li>
+                        <li><a href="#exercise-do-does" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow text-dark-text font-medium transition-all duration-200 hover:scale-[1.02] border border-pastel-green shadow-sm">👉 Exercício: Do vs. Does</a></li>
+                        <!-- Adicione mais links de exercícios aqui com seus respectivos IDs -->
+                    </ul>
+                    <div class="bg-soft-yellow p-6 rounded-lg mt-8 border-2 border-accent-orange shadow-md">
+                        <h3 class="text-xl font-semibold text-accent-orange mb-4 font-display">Dica da Teacher Elisa: Como adicionar novos exercícios</h3>
+                        <p class="text-subtle-gray leading-relaxed">
+                            Para incluir um novo exercício, crie um novo `div` com a classe `individual-exercise-content` e um `id` único (ex: `id="exercise-novo-topico"`). Adicione um link para ele na lista de exercícios (`&lt;ul id="exercise-list-view"&gt;`). Certifique-se de que cada exercício tenha **IDs de inputs e botões únicos** (ex: `id="novotopico-q1"`, `data-exercise-id="novo-topico"`) e de que os dados de respostas e explicações sejam adicionados ao objeto `allExerciseData` no JavaScript.
+                        </p>
+                        <p class="text-subtle-gray leading-relaxed mt-4">
+                            O site é leve e não exige login ou banco de dados, facilitando a adição de conteúdo! <span class="animated-emoji">👍</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Individual Exercise View Wrapper -->
+                <div id="individual-exercise-view" class="hidden">
+                    <button id="back-to-exercise-list-btn" class="mb-6 bg-pastel-green text-dark-text font-bold px-4 py-2 rounded-lg hover:bg-pastel-blue transition-colors duration-200 shadow-md transform hover:scale-105">
+                        &larr; Voltar para a lista de exercícios
+                    </button>
+
+                    <!-- Example Exercise 1 - Say/Tell/Speak/Talk -->
+                    <div id="exercise-say-tell" class="individual-exercise-content bg-white p-6 rounded-lg shadow-md mb-8 border-2 border-pastel-blue">
+                        <h3 class="text-2xl font-semibold text-pastel-purple mb-4 font-display uppercase">Exercício: Say, Tell, Speak, Talk <span class="animated-emoji">🗣️</span></h3>
+                        <p class="text-subtle-gray mb-4">Preencha as lacunas com a forma correta de **say, tell, speak, ou talk**.</p>
+
+                        <div class="mb-4">
+                            <label for="saytell-q1" class="block text-dark-text font-medium mb-2">1. Can you please ______ me your name again?</label>
+                            <input type="text" id="saytell-q1" class="w-full p-3 bg-gray-50 text-dark-text border border-pastel-pink rounded-lg focus:outline-none focus:ring-2 focus:ring-pastel-green transition-all">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="saytell-q2" class="block text-dark-text font-medium mb-2">2. She always ______ the truth.</label>
+                            <input type="text" id="saytell-q2" class="w-full p-3 bg-gray-50 text-dark-text border border-pastel-pink rounded-lg focus:outline-none focus:ring-2 focus:ring-pastel-green transition-all">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="saytell-q3" class="block text-dark-text font-medium mb-2">3. I need to ______ with my manager about this project.</label>
+                            <input type="text" id="saytell-q3" class="w-full p-3 bg-gray-50 text-dark-text border border-pastel-pink rounded-lg focus:outline-none focus:ring-2 focus:ring-pastel-green transition-all">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="saytell-q4" class="block text-dark-text font-medium mb-2">4. He ______ "hello" as he walked past.</label>
+                            <input type="text" id="saytell-q4" class="w-full p-3 bg-gray-50 text-dark-text border border-pastel-pink rounded-lg focus:outline-none focus:ring-2 focus:ring-pastel-green transition-all">
+                        </div>
+
+                        <button data-exercise-id="say-tell" class="check-exercise-button bg-pastel-purple text-dark-text font-bold px-6 py-3 rounded-lg hover:bg-pastel-pink transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Verificar Respostas</button>
+                        <button data-exercise-id="say-tell" class="copy-exercise-results-button bg-pastel-blue text-dark-text font-bold px-6 py-3 rounded-lg hover:bg-pastel-purple transition-all duration-200 shadow-md transform hover:scale-105">Copiar Resultados</button>
+
+                        <div class="exercise-feedback mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-dark-text hidden"></div>
+                        <div class="exercise-copy-message mt-4 text-sm text-pastel-green hidden"></div>
+                    </div>
+
+                    <!-- New Exercise Example 2 - Do vs. Does -->
+                    <div id="exercise-do-does" class="individual-exercise-content bg-white p-6 rounded-lg shadow-md mb-8 border-2 border-pastel-blue">
+                        <h3 class="text-2xl font-semibold text-pastel-purple mb-4 font-display uppercase">Exercício: Do vs. Does <span class="animated-emoji">🤔</span></h3>
+                        <p class="text-subtle-gray mb-4">Escolha a forma correta de **do ou does**.</p>
+
+                        <div class="mb-4">
+                            <label for="dodoes-q1" class="block text-dark-text font-medium mb-2">1. What ______ you usually do on weekends?</label>
+                            <input type="text" id="dodoes-q1" class="w-full p-3 bg-gray-50 text-dark-text border border-pastel-pink rounded-lg focus:outline-none focus:ring-2 focus:ring-pastel-green transition-all">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="dodoes-q2" class="block text-dark-text font-medium mb-2">2. My sister ______ not like coffee.</label>
+                            <input type="text" id="dodoes-q2" class="w-full p-3 bg-gray-50 text-dark-text border border-pastel-pink rounded-lg focus:outline-none focus:ring-2 focus:ring-pastel-green transition-all">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="dodoes-q3" class="block text-dark-text font-medium mb-2">3. ______ he speak French?</label>
+                            <input type="text" id="dodoes-q3" class="w-full p-3 bg-gray-50 text-dark-text border border-pastel-pink rounded-lg focus:outline-none focus:ring-2 focus:ring-pastel-green transition-all">
+                        </div>
+
+                        <button data-exercise-id="do-does" class="check-exercise-button bg-pastel-purple text-dark-text font-bold px-6 py-3 rounded-lg hover:bg-pastel-pink transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Verificar Respostas</button>
+                        <button data-exercise-id="do-does" class="copy-exercise-results-button bg-pastel-blue text-dark-text font-bold px-6 py-3 rounded-lg hover:bg-pastel-purple transition-all duration-200 shadow-md transform hover:scale-105">Copiar Resultados</button>
+
+                        <div class="exercise-feedback mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-dark-text hidden"></div>
+                        <div class="exercise-copy-message mt-4 text-sm text-pastel-green hidden"></div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Section 2: About Me -->
+            <section id="about-me" class="content-section border-pastel-purple">
+                <h2 class="text-4xl font-extrabold text-pastel-purple mb-6 font-display uppercase">
+                    Quem É Elisa Almada <span class="animated-emoji">🌟</span>
+                </h2>
+                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-pastel-blue">
+                    <!-- Recommended: Add your photo here -->
+                    <!-- <img src="https://placehold.co/200x200/ADD8E6/333333?text=Sua+Foto+Aqui" alt="Sua Foto" class="rounded-full w-48 h-48 object-cover mx-auto mb-6 shadow-md border-4 border-pastel-pink"> -->
+                    <p class="text-subtle-gray mb-4 leading-relaxed">
+                        Olá! Sou a **Elisa Almada**, sua professora de inglês online, e estou aqui para tornar sua jornada de aprendizado leve e significativa. Meu objetivo é ir além do ensino tradicional, conectando o inglês com a sua realidade e seus objetivos.
+                    </p>
+                    <p class="text-subtle-gray mb-4 leading-relaxed">
+                        Minha formação em [Mencione sua área de formação aqui, ex: Linguística, Educação, Letras] me deu a base, mas é a paixão por ensinar e a compreensão das suas necessidades, como profissional brasileiro, que guiam minhas aulas. Seja para a área de saúde, recursos humanos ou negócios, vamos focar no que realmente importa para você.
+                    </p>
+                    <p class="text-subtle-gray mb-4 leading-relaxed">
+                        Além do inglês, adoro conversar sobre viagens, turismo e fitness – temas que muitos dos meus alunos também curtem! Minha metodologia é focada em te empoderar para usar o inglês de forma autêntica, com pensamento crítico e liberdade.
+                    </p>
+                    <p class="text-subtle-gray leading-relaxed">
+                        <strong class="font-semibold text-pastel-blue">Contato da Teacher Elisa:</strong> [Seu e-mail] | [Seu WhatsApp (opcional)]
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 3: How Classes Work -->
+            <section id="how-classes-work" class="content-section border-pastel-purple">
+                <h2 class="text-4xl font-extrabold text-pastel-purple mb-6 font-display uppercase">
+                    Como Funcionam as Aulas <span class="animated-emoji">💬</span>
+                </h2>
+                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-pastel-blue">
+                    <p class="text-subtle-gray mb-4 leading-relaxed">
+                        Minhas aulas são dinâmicas e desenhadas especialmente para você. Veja como geralmente conduzimos nossas sessões:
+                    </p>
+                    <ul class="list-disc list-inside space-y-3 text-subtle-gray mb-4">
+                        <li>
+                            <strong class="font-semibold text-pastel-blue">Aulas Personalizadas:</strong> Cada aula é criada pensando nos seus objetivos específicos, seu nível atual e suas áreas de interesse, como medicina, RH ou negócios.
+                        </li>
+                        <li>
+                            <strong class="font-semibold text-pastel-blue">Estrutura Interativa:</strong> Iniciamos com um slide explicativo sobre o tópico. Você terá tempo para ler e tirar suas dúvidas sobre vocabulário e conceitos.
+                        </li>
+                        <li>
+                            <strong class="font-semibold text-pastel-blue">Conversa e Compreensão:</strong> Após a explicação, conversamos brevemente para confirmar sua compreensão, estimulando a escuta e a fala sem a necessidade de reler o material.
+                        </li>
+                        <li>
+                            <strong class="font-semibold text-pastel-blue">Prática Contextualizada:</strong> Em seguida, um novo slide apresenta questões ou atividades. Sempre adiciono perguntas extras que promovem o pensamento crítico e a aplicação do conteúdo em situações reais.
+                        </li>
+                        <li>
+                            <strong class="font-semibold text-pastel-blue">Recursos Digitais:</strong> Utilizamos ferramentas como Google Classroom para organizar o material, Google Docs e Slides para as aulas, Google Meet para as sessões ao vivo e YouTube para materiais complementares.
+                        </li>
+                        <li>
+                            <strong class="font-semibold text-pastel-blue">Conexão com a Realidade:</strong> Nosso foco é conectar o inglês ao seu dia a dia profissional e pessoal, tornando o aprendizado mais relevante e fácil de aplicar.
+                        </li>
+                    </ul>
+                    <p class="text-subtle-gray leading-relaxed">
+                        Estou aqui para te acompanhar nessa jornada, tornando cada passo no aprendizado uma experiência enriquecedora!
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 4: Proficiency Test -->
+            <section id="proficiency-test" class="content-section border-pastel-purple">
+                <h2 class="text-4xl font-extrabold text-pastel-purple mb-6 font-display uppercase">
+                    Teste de Nível de Proficiência <span class="animated-emoji">📝</span>
+                </h2>
+                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-pastel-blue">
+                    <p class="text-subtle-gray mb-4 leading-relaxed">
+                        Faça este teste rápido para ter uma ideia do seu nível de proficiência em inglês. Ao final, você poderá ver seus resultados e copiá-los para compartilhar ou guardar.
+                    </p>
+                    <form id="proficiency-quiz">
+                        <!-- Question 1 -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-pastel-green">
+                            <p class="font-semibold text-dark-text mb-3">1. He ______ to the gym every day.</p>
+                            <div class="space-y-2 text-subtle-gray">
+                                <label class="block cursor-pointer hover:text-pastel-purple transition-colors"><input type="radio" name="q1" value="goes" class="mr-2 accent-pastel-purple"> goes</label>
+                                <label class="block cursor-pointer hover:text-pastel-purple transition-colors"><input type="radio" name="q1" value="go" class="mr-2 accent-pastel-purple"> go</label>
+                                <label class="block cursor-pointer hover:text-pastel-purple transition-colors"><input type="radio" name="q1" value="going" class="mr-2 accent-pastel-purple"> going</label>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-pastel-green">
+                            <p class="font-semibold text-dark-text mb-3">2. "Could you please ______ me the time?"</p>
+                            <div class="space-y-2 text-subtle-gray">
+                                <label class="block cursor-pointer hover:text-pastel-purple transition-colors"><input type="radio" name="q2" value="say" class="mr-2 accent-pastel-purple"> say</label>
+                                <label class="block cursor-pointer hover:text-pastel-purple transition-colors"><input type="radio" name="q2" value="tell" class="mr-2 accent-pastel-purple"> tell</label>
+                                <label class="block cursor-pointer hover:text-pastel-purple transition-colors"><input type="radio" name="q2" value="speak" class="mr-2 accent-pastel-purple"> speak</label>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-pastel-green">
+                            <p class="font-semibold text-dark-text mb-3">3. They ______ their homework yet.</p>
+                            <div class="space-y-2 text-subtle-gray">
+                                <label class="block cursor-pointer hover:text-pastel-purple transition-colors"><input type="radio" name="q3" value="haven't finished" class="mr-2 accent-pastel-purple"> haven't finished</label>
+                                <label class="block cursor-pointer hover:text-pastel-purple transition-colors"><input type="radio" name="q3" value="didn't finish" class="mr-2 accent-pastel-purple"> didn't finish</label>
+                                <label class="block cursor-pointer hover:text-pastel-purple transition-colors"><input type="radio" name="q3" value="not finished" class="mr-2 accent-pastel-purple"> not finished</label>
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-pastel-green">
+                            <p class="font-semibold text-dark-text mb-3">4. If I ______ a bird, I ______ fly.</p>
+                            <div class="space-y-2 text-subtle-gray">
+                                <label class="block cursor-pointer hover:text-pastel-purple transition-colors"><input type="radio" name="q4" value="was / would" class="mr-2 accent-pastel-purple"> was / would</label>
+                                <label class="block cursor-pointer hover:text-pastel-purple transition-colors"><input type="radio" name="q4" value="were / would" class="mr-2 accent-pastel-purple"> were / would</label>
+                                <label class="block cursor-pointer hover:text-pastel-purple transition-colors"><input type="radio" name="q4" value="am / will" class="mr-2 accent-pastel-purple"> am / will</label>
+                            </div>
+                        </div>
+
+                        <!-- Question 5 -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-pastel-green">
+                            <p class="font-semibold text-dark-text mb-3">5. She's a doctor, ______?</p>
+                            <div class="space-y-2 text-subtle-gray">
+                                <label class="block cursor-pointer hover:text-pastel-purple transition-colors"><input type="radio" name="q5" value="isn't she" class="mr-2 accent-pastel-purple"> isn't she</label>
+                                <label class="block cursor-pointer hover:text-pastel-purple transition-colors"><input type="radio" name="q5" value="doesn't she" class="mr-2 accent-pastel-purple"> doesn't she</label>
+                                <label class="block cursor-pointer hover:text-pastel-purple transition-colors"><input type="radio" name="q5" value="is she" class="mr-2 accent-pastel-purple"> is she</label>
+                            </div>
+                        </div>
+
+
+                        <button type="submit" class="bg-pastel-purple text-dark-text font-bold px-6 py-3 rounded-lg hover:bg-pastel-pink transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Verificar Teste</button>
+                        <button type="button" id="copy-test-results" class="bg-pastel-blue text-dark-text font-bold px-6 py-3 rounded-lg hover:bg-pastel-purple transition-all duration-200 shadow-md transform hover:scale-105 hidden">Copiar Resultados</button>
+                    </form>
+
+                    <div id="test-results" class="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-dark-text hidden">
+                        <!-- Test results will be displayed here -->
+                    </div>
+                    <div id="test-copy-message" class="mt-4 text-sm text-pastel-green hidden">
+                        Resultados copiados para a área de transferência!
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Media Recommendations -->
+            <section id="media-recommendations" class="content-section border-pastel-purple">
+                <h2 class="text-4xl font-extrabold text-pastel-purple mb-6 font-display uppercase">
+                    Recomendações de Mídia da Teacher Elisa <span class="animated-emoji">🎬</span>
+                </h2>
+                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-pastel-blue">
+                    <p class="text-subtle-gray mb-4 leading-relaxed">
+                        Aprender inglês vai além das aulas! Separei alguns conteúdos incríveis para você se divertir e, ao mesmo tempo, aprofundar seu contato com o idioma.
+                    </p>
+                    <h3 class="text-xl font-semibold text-pastel-blue mb-3 font-display">Canais do YouTube:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-subtle-gray mb-6">
+                        <li>**BBC Learning English:** Excelente para gramática, vocabulário e pronúncia, de um jeito bem didático.</li>
+                        <li>**English with Lucy:** Dicas práticas, um sotaque britânico claro e explicações super úteis.</li>
+                        <li>**Rachel's English:** Focado na pronúncia e na melhora do sotaque americano, com muitos detalhes.</li>
+                        <li>**VOA Learning English:** Notícias em inglês simplificado, perfeito para treinar a compreensão auditiva de forma objetiva.</li>
+                        <!-- Adicione mais canais aqui -->
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-pastel-blue mb-3 font-display">Contas de Instagram:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-subtle-gray mb-6">
+                        <li>**@inglesnapratica:** Dicas rápidas, frases do dia a dia e vocabulário para usar na hora.</li>
+                        <li>**@teacher_gabriel_english:** Conteúdo divertido e interativo para aprender sem perceber.</li>
+                        <li>**@learnenglish:** Postagens diárias com novas palavras e expressões para expandir seu vocabulário.</li>
+                        <!-- Adicione mais contas aqui -->
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-pastel-blue mb-3 font-display">Filmes e Séries:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-subtle-gray mb-6">
+                        <li>**Friends:** Ótimo para vocabulário coloquial e situações cotidianas que se repetem.</li>
+                        <li>**The Office (US):** Humor de escritório e diálogos naturais, perfeitos para entender o inglês do dia a dia.</li>
+                        <li>**The Crown:** Para quem gosta de história e quer aprimorar o sotaque britânico mais formal.</li>
+                        <li>**Documentários (Netflix/Discovery Channel):** Explore temas variados e expanda seu vocabulário específico.</li>
+                        <!-- Adicione mais filmes/séries aqui -->
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-pastel-blue mb-3 font-display">Podcasts:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-subtle-gray">
+                        <li>**English as a Second Language Podcast:** Para níveis intermediário e avançado, com transcrições para acompanhar.</li>
+                        <li>**Luke's English Podcast:** Tópicos variados, com humor inteligente e profundidade, perfeito para o sotaque britânico.</li>
+                        <!-- Adicione mais podcasts aqui -->
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 6: Book a Class -->
+            <section id="book-a-class" class="content-section border-pastel-purple">
+                <h2 class="text-4xl font-extrabold text-pastel-purple mb-6 font-display uppercase">
+                    Agende Sua Aula Experimental com a Elisa Almada! <span class="animated-emoji">🗓️</span>
+                </h2>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center border-2 border-pastel-blue">
+                    <p class="text-subtle-gray mb-6 leading-relaxed">
+                        Pronto para dar o próximo passo na sua jornada de aprendizado de inglês? Agende sua aula experimental gratuita com a Teacher Elisa agora mesmo! Vamos conversar sobre seus objetivos e como posso te ajudar a alcançá-los de forma leve e eficaz.
+                    </p>
+                    <a href="https://calendar.google.com/calendar/u/0/appointments/s/YOUR_CALENDAR_LINK" target="_blank" class="inline-block bg-pastel-purple text-dark-text text-xl font-bold px-8 py-4 rounded-full hover:bg-pastel-pink transition-all duration-300 shadow-lg transform hover:scale-105 border-4 border-pastel-green">
+                        Agendar Agora! <span class="animated-emoji">🚀</span>
+                    </a>
+                    <p class="text-sm text-subtle-gray mt-4">
+                        (Lembre-se de substituir "YOUR_CALENDAR_LINK" pelo seu link real do Google Agenda de agendamento)
+                    </p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="text-center text-subtle-gray py-4 mt-auto">
+        <p>&copy; 2024 English with Elisa Almada. Aprendizado leve e divertido! <span class="animated-emoji">✨</span></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+            const exerciseListView = document.getElementById('exercise-list-view');
+            const individualExerciseView = document.getElementById('individual-exercise-view');
+            const backToExerciseListBtn = document.getElementById('back-to-exercise-list-btn');
+            const exerciseSelectLinks = document.querySelectorAll('.exercise-select-link');
+            const individualExerciseContents = document.querySelectorAll('.individual-exercise-content');
+
+            // Helper function to update URL hash safely
+            const updateUrlHash = (hash) => {
+                // Check if running in a blob: protocol environment
+                if (window.location.protocol === 'blob:') {
+                    window.location.hash = hash; // Directly set hash
+                } else {
+                    // For standard web environments, use replaceState for cleaner URLs
+                    history.replaceState(null, '', hash ? `#${hash}` : window.location.pathname + window.location.search);
+                }
+            };
+
+            // Function to show a specific content section (from sidebar)
+            const showSection = (id) => {
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+                document.getElementById(id).classList.add('active');
+                document.querySelector(`.nav-link[href="#${id}"]`).classList.add('active');
+
+                // If navigating to exercises, ensure the correct view is shown
+                if (id === 'exercises') {
+                    // If a specific exercise is in the hash, show it
+                    const currentHash = window.location.hash.substring(1);
+                    if (currentHash && document.getElementById(currentHash) && document.getElementById(currentHash).classList.contains('individual-exercise-content')) {
+                        displayIndividualExercise(currentHash);
+                    } else {
+                        // Otherwise, show the list of exercises
+                        displayExerciseList();
+                    }
+                } else {
+                    // For other sections, clear any exercise-specific hash
+                    updateUrlHash('');
+                }
+            };
+
+            // Function to display the list of exercises
+            const displayExerciseList = () => {
+                individualExerciseView.classList.add('hidden');
+                exerciseListView.classList.remove('hidden');
+                // Clear hash when returning to list view
+                updateUrlHash('');
+            };
+
+            // Function to display a specific individual exercise
+            const displayIndividualExercise = (exerciseId) => {
+                exerciseListView.classList.add('hidden');
+                individualExerciseView.classList.remove('hidden');
+
+                individualExerciseContents.forEach(exercise => {
+                    exercise.classList.add('hidden');
+                });
+
+                const targetExercise = document.getElementById(exerciseId);
+                if (targetExercise) {
+                    targetExercise.classList.remove('hidden');
+                }
+                
+                // Update URL hash for sharing
+                updateUrlHash(exerciseId);
+            };
+
+            // Event listeners for navigation links in sidebar
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = e.target.getAttribute('href').substring(1);
+                    showSection(targetId);
+                });
+            });
+
+            // Event listeners for exercise selection links (within exercises section)
+            exerciseSelectLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetExerciseId = e.target.getAttribute('href').substring(1);
+                    displayIndividualExercise(targetExerciseId);
+                });
+            });
+
+            // Event listener for "Back to Exercise List" button
+            backToExerciseListBtn.addEventListener('click', () => {
+                displayExerciseList();
+            });
+
+            // Initial section load based on URL hash or default
+            const initialHash = window.location.hash.substring(1);
+            if (initialHash && document.getElementById(initialHash) && document.getElementById(initialHash).classList.contains('content-section')) {
+                showSection(initialHash);
+            } else if (initialHash && document.getElementById(initialHash) && document.getElementById(initialHash).classList.contains('individual-exercise-content')) {
+                // If the hash is an individual exercise, show the exercises section and then the specific exercise
+                showSection('exercises');
+                displayIndividualExercise(initialHash);
+            }
+            else {
+                showSection('exercises'); // Default to exercises section
+            }
+
+
+            // --- Centralized Exercise Data ---
+            const allExerciseData = {
+                'say-tell': {
+                    inputs: [
+                        { id: 'saytell-q1', answer: 'tell', explanation: 'Use "tell" when you specify the person being spoken to (tell me, tell him, tell a story, tell the truth).' },
+                        { id: 'saytell-q2', answer: 'tells', explanation: 'Use "tell" when you specify the person being spoken to, or for common expressions like "tell the truth". Remember the "s" for third person singular (she).' },
+                        { id: 'saytell-q3', answer: 'speak', explanation: 'Use "speak" when talking about formal communication or general ability to communicate. "Speak with" or "speak to" is common.' },
+                        { id: 'saytell-q4', answer: 'said', explanation: 'Use "say" for direct speech or when the focus is on the words spoken, not who is being spoken to. The past tense of "say" is "said".' }
+                    ]
+                },
+                'do-does': {
+                    inputs: [
+                        { id: 'dodoes-q1', answer: 'do', explanation: 'Use "do" for most subjects in questions and negative statements in the Simple Present (I, you, we, they).' },
+                        { id: 'dodoes-q2', answer: 'does', explanation: 'Use "does" for third person singular subjects (he, she, it) in questions and negative statements in the Simple Present.' },
+                        { id: 'dodoes-q3', answer: 'does', explanation: 'Similar to the previous rule, "does" is used for the third person singular subject "he" in questions.' }
+                    ]
+                }
+                // Add data for new exercises here, using unique IDs for inputs
+            };
+
+            // --- General Function to Setup Exercise Logic ---
+            const setupExerciseLogic = (exerciseId) => {
+                const exerciseContainer = document.getElementById(`exercise-${exerciseId}`);
+                if (!exerciseContainer) return;
+
+                const checkButton = exerciseContainer.querySelector(`.check-exercise-button[data-exercise-id="${exerciseId}"]`);
+                const copyButton = exerciseContainer.querySelector(`.copy-exercise-results-button[data-exercise-id="${exerciseId}"]`);
+                const feedbackDiv = exerciseContainer.querySelector('.exercise-feedback');
+                const copyMessageDiv = exerciseContainer.querySelector('.exercise-copy-message');
+
+                if (!checkButton || !copyButton || !feedbackDiv || !copyMessageDiv) return; // Ensure all elements exist
+
+                const exerciseAnswers = allExerciseData[exerciseId].inputs;
+
+                checkButton.addEventListener('click', () => {
+                    let feedbackHtml = '<h4 class="font-bold text-lg mb-2">Seus Resultados:</h4>';
+                    let resultsToCopy = `Resultados do Exercício "${exerciseContainer.querySelector('h3').textContent}":\n\n`;
+                    let allCorrect = true;
+
+                    exerciseAnswers.forEach(qData => {
+                        const inputElement = document.getElementById(qData.id);
+                        const userAnswer = inputElement.value.trim().toLowerCase();
+                        const correctAnswer = qData.answer;
+                        const explanation = qData.explanation;
+                        const questionText = document.querySelector(`label[for="${qData.id}"]`).textContent.replace(/^\d+\.\s*(.*?)\s*$/, '$1').replace('______', '____');
+
+                        let status = '';
+                        if (userAnswer === correctAnswer) {
+                            status = '<span class="text-pastel-green">Correto!</span>';
+                            resultsToCopy += `Questão: ${questionText}\nSua Resposta: "${userAnswer}" (Correto)\n\n`;
+                        } else {
+                            status = `<span class="text-accent-orange">Incorreto.</span> Resposta correta: <strong>${correctAnswer}</strong>.`;
+                            resultsToCopy += `Questão: ${questionText}\nSua Resposta: "${userAnswer}" (Incorreto). Resposta Correta: "${correctAnswer}"\nExplicação: ${explanation}\n\n`;
+                            allCorrect = false;
+                        }
+
+                        feedbackHtml += `
+                            <p class="mb-2">
+                                <strong>${questionText}</strong> <br>
+                                Sua resposta: "${userAnswer}" - ${status}
+                            </p>
+                            <p class="text-sm text-subtle-gray ml-4 mb-3">${explanation}</p>
+                        `;
+                    });
+
+                    if (allCorrect) {
+                        feedbackHtml = `<p class="text-xl font-bold text-pastel-green mb-4">Parabéns! Você acertou todas as questões!</p>` + feedbackHtml;
+                    }
+
+                    feedbackDiv.innerHTML = feedbackHtml;
+                    feedbackDiv.classList.remove('hidden');
+                    copyButton.dataset.results = resultsToCopy; // Store results for copying
+                    copyButton.classList.remove('hidden');
+                    copyMessageDiv.classList.add('hidden'); // Hide previous message
+                });
+
+                copyButton.addEventListener('click', () => {
+                    const results = copyButton.dataset.results;
+                    if (results) {
+                        try {
+                            const tempTextArea = document.createElement('textarea');
+                            tempTextArea.value = results;
+                            document.body.appendChild(tempTextArea);
+                            tempTextArea.select();
+                            document.execCommand('copy');
+                            document.body.removeChild(tempTextArea);
+                            copyMessageDiv.textContent = 'Resultados copiados para a área de transferência!';
+                            copyMessageDiv.classList.remove('hidden');
+                            copyMessageDiv.classList.remove('text-accent-orange');
+                            copyMessageDiv.classList.add('text-pastel-green');
+                        } catch (err) {
+                            console.error('Erro ao copiar: ', err);
+                            copyMessageDiv.textContent = 'Erro ao copiar resultados. Por favor, tente novamente.';
+                            copyMessageDiv.classList.remove('hidden');
+                            copyMessageDiv.classList.remove('text-pastel-green');
+                            copyMessageDiv.classList.add('text-accent-orange');
+                        }
+                    }
+                });
+            };
+
+            // Setup logic for all interactive exercises
+            for (const key in allExerciseData) {
+                setupExerciseLogic(key);
+            }
+
+            // --- Proficiency Test Logic (remains separate from general exercises) ---
+            const quizQuestions = [
+                {
+                    question: "1. He ______ to the gym every day.",
+                    options: ["goes", "go", "going"],
+                    correctAnswer: "goes",
+                    explanation: "Para a terceira pessoa do singular (he, she, it) no Present Simple, adicionamos '-es' a verbos terminados em -o, -s, -sh, -ch, -x, -z."
+                },
+                {
+                    question: "2. \"Could you please ______ me the time?\"",
+                    options: ["say", "tell", "speak"],
+                    correctAnswer: "tell",
+                    explanation: "Usamos 'tell' quando especificamos a pessoa para quem estamos falando (tell me, tell him, tell a story). 'Say' é usado para o que é dito, sem especificar o ouvinte."
+                },
+                {
+                    question: "3. They ______ their homework yet.",
+                    options: ["haven't finished", "didn't finish", "not finished"],
+                    correctAnswer: "haven't finished",
+                    explanation: "'Yet' (ainda) é frequentemente usado com o Present Perfect para indicar que algo não aconteceu até o momento presente. 'Didn't finish' seria para uma ação concluída no passado."
+                },
+                {
+                    question: "4. If I ______ a bird, I ______ fly.",
+                    options: ["was / would", "were / would", "am / will"],
+                    correctAnswer: "were / would",
+                    explanation: "Esta é uma frase condicional de tipo 2 (Second Conditional), usada para situações hipotéticas ou irreais no presente ou futuro. Para todos os sujeitos no 'if clause' com o verbo 'to be', usamos 'were'."
+                },
+                {
+                    question: "5. She's a doctor, ______?",
+                    options: ["isn't she", "doesn't she", "is she"],
+                    correctAnswer: "isn't she",
+                    explanation: "Esta é uma Question Tag. A regra geral é usar o auxiliar inverso do verbo principal. Como 'she's' é uma contração de 'she is', o auxiliar é 'is', e a tag se torna 'isn't she'."
+                }
+            ];
+
+            const proficiencyQuizForm = document.getElementById('proficiency-quiz');
+            const testResultsDiv = document.getElementById('test-results');
+            const copyTestResultsBtn = document.getElementById('copy-test-results');
+            const testCopyMessage = document.getElementById('test-copy-message');
+
+            if (proficiencyQuizForm) { // Ensure the form exists before adding listener
+                proficiencyQuizForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    let score = 0;
+                    let resultsHtml = '<h4 class="font-bold text-lg mb-2">Resultados do Teste de Nível:</h4>';
+                    let resultsToCopy = 'Resultados do Teste de Nível de Proficiência:\n\n';
+
+                    quizQuestions.forEach((q, index) => {
+                        const questionName = `q${index + 1}`;
+                        const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
+                        const userAnswer = selectedOption ? selectedOption.value : 'Não respondida';
+                        const isCorrect = userAnswer === q.correctAnswer;
+
+                        if (isCorrect) {
+                            score++;
+                            resultsHtml += `<p class="mb-2"><strong>${q.question}</strong> Sua resposta: "${userAnswer}" - <span class="text-pastel-green">Correto!</span></p>`;
+                            resultsToCopy += `Questão ${index + 1}: ${q.question}\nSua Resposta: "${userAnswer}" (Correto)\n\n`;
+                        } else {
+                            resultsHtml += `
+                                <p class="mb-2">
+                                    <strong>${q.question}</strong> <br>
+                                    Sua resposta: "${userAnswer}" - <span class="text-accent-orange">Incorreto.</span> Resposta correta: <strong>${q.correctAnswer}</strong>.
+                                </p>
+                                <p class="text-sm text-subtle-gray ml-4 mb-3">${q.explanation}</p>
+                            `;
+                            resultsToCopy += `Questão ${index + 1}: ${q.question}\nSua Resposta: "${userAnswer}" (Incorreto). Resposta Correta: "${q.correctAnswer}"\nExplicação: ${q.explanation}\n\n`;
+                        }
+                    });
+
+                    const totalQuestions = quizQuestions.length;
+                    const percentage = (score / totalQuestions) * 100;
+                    let levelSuggestion = '';
+
+                    if (percentage >= 90) {
+                        levelSuggestion = 'Avançado (C1/C2)';
+                    } else if (percentage >= 70) {
+                        levelSuggestion = 'Intermediário Avançado (B2)';
+                    } else if (percentage >= 50) {
+                        levelSuggestion = 'Intermediário (B1)';
+                    } else if (percentage >= 30) {
+                        levelSuggestion = 'Pré-Intermediário (A2)';
+                    } else {
+                        levelSuggestion = 'Básico (A1)';
+                    }
+
+                    const finalResultText = `Você acertou ${score} de ${totalQuestions} questões (${percentage.toFixed(0)}%).\nNível Sugerido: ${levelSuggestion}.\n\n`;
+                    resultsHtml = `<p class="text-xl font-bold text-pastel-blue mb-4">${finalResultText}</p>` + resultsHtml;
+                    resultsToCopy = finalResultText + resultsToCopy;
+
+                    testResultsDiv.innerHTML = resultsHtml;
+                    testResultsDiv.classList.remove('hidden');
+                    copyTestResultsBtn.dataset.results = resultsToCopy;
+                    copyTestResultsBtn.classList.remove('hidden');
+                    testCopyMessage.classList.add('hidden'); // Hide previous message
+                });
+
+                copyTestResultsBtn.addEventListener('click', () => {
+                    const results = copyTestResultsBtn.dataset.results;
+                    if (results) {
+                        try {
+                            const tempTextArea = document.createElement('textarea');
+                            tempTextArea.value = results;
+                            document.body.appendChild(tempTextArea);
+                            tempTextArea.select();
+                            document.execCommand('copy');
+                            document.body.removeChild(tempTextArea);
+                            testCopyMessage.classList.remove('hidden');
+                        } catch (err) {
+                            console.error('Erro ao copiar: ', err);
+                            testCopyMessage.textContent = 'Erro ao copiar resultados. Por favor, tente novamente.';
+                            testCopyMessage.classList.remove('hidden');
+                            copyMessageDiv.classList.remove('text-pastel-green');
+                            copyMessageDiv.classList.add('text-accent-orange');
+                        }
+                    }
+                });
+            } // End of proficiencyQuizForm check
+
+        });
+    </script>
+</body>
+</html>
