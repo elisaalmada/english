@@ -1,89 +1,94 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English with Elisa Almada - Um Guia de Inglês Colorido e Dinâmico</title>
-    <!-- Incluindo Tailwind CSS com configuração personalizada para cores vibrantes e pastéis -->
+    <title>English with Elisa Almada - Personalized English Guide</title>
+    <!-- Including Tailwind CSS with custom configuration for vibrant and pastel colors -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        // Cores Principais e de Títulos
-                        'primary-dark-blue': '#4A90E2',      // Azul forte para títulos principais
-                        'secondary-dark-purple': '#8A2BE2', // Roxo rico para sub-títulos e acentos
-                        'accent-green-bright': '#00CD66',    // Verde vibrante para destaque e botões
-                        'accent-pink-vibrant': '#FF69B4',    // Rosa vibrante para acentos e hover
+                        // Main and Title Colors
+                        'primary-dark-blue': '#4A90E2',      // Strong blue for main titles
+                        'secondary-dark-purple': '#8A2BE2', // Rich purple for subtitles and accents
+                        'accent-green-bright': '#00CD66',    // Vibrant green for highlights and buttons
+                        'accent-pink-vibrant': '#FF69B4',    // Vibrant pink for accents and hover
 
-                        // Cores Neutras e de Fundo
-                        'light-bg-v2': '#F7F7F7',            // Fundo muito claro
-                        'text-main': '#2C3E50',              // Texto escuro principal (mais contrastante)
-                        'subtle-gray-v2': '#95A5A6',         // Cinza mais distinto para detalhes
+                        // Neutral and Background Colors
+                        'light-bg-v2': '#F7F7F7',            // Very light background
+                        'text-main': '#2C3E50',              // Main dark text (more contrast)
+                        'subtle-gray-v2': '#95A5A6',         // More distinct gray for details
 
-                        // Outros Pastéis/Acentos Suaves
-                        'soft-yellow-v2': '#FFFACD',         // Amarelo pastel suave
-                        'soft-orange-v2': '#FFB087',         // Laranja pastel suave
-                        'warning-red': '#E74C3C',            // Vermelho para avisos/erros
+                        // Other Pastel/Soft Accents for media blocks
+                        'soft-yellow-v2': '#FFFACD',         // Soft pastel yellow
+                        'soft-orange-v2': '#FFDAB9',         // Soft pastel orange
+                        'pastel-blue': '#ADD8E6',            // Soft baby blue
+                        'pastel-green': '#98FB98',           // Soft mint green
+                        'pastel-purple': '#E6E6FA',          // Soft lavender
+                        'pastel-pink': '#FFD1DC',            // Soft light pink
+
+                        'warning-red': '#E74C3C',            // Red for warnings/errors
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        display: ['Nunito', 'sans-serif'], // Fonte amigável e moderna para títulos
+                        display: ['Nunito', 'sans-serif'], // Friendly and modern font for titles
                     }
                 }
             }
         }
     </script>
-    <!-- Importando fontes do Google Fonts: Inter para corpo, Nunito para títulos -->
+    <!-- Importing Google Fonts: Inter for body, Nunito for titles -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F7F7F7; /* Fundo muito claro */
-            color: #2C3E50; /* Texto escuro padrão */
+            background-color: #F7F7F7; /* Very light background */
+            color: #2C3E50; /* Default dark text */
         }
-        /* Estilos para ocultar seções por padrão */
+        /* Styles to hide sections by default */
         .content-section {
             display: none;
             padding: 2.5rem;
             border-radius: 1.5rem;
-            background-color: white; /* Fundo branco para seções */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-            border: 2px solid; /* Borda sutil */
+            background-color: white; /* White background for sections */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            border: 2px solid; /* Subtle border */
         }
         .content-section.active {
             display: block;
         }
-        /* Estilo para links ativos no menu lateral */
+        /* Style for active links in sidebar menu */
         .nav-link.active {
             background-color: #8A2BE2; /* secondary-dark-purple */
-            color: white; /* Texto branco para contraste */
+            color: white; /* White text for contrast */
             font-weight: 700;
             transform: translateX(5px);
-            box-shadow: 3px 3px 0px rgba(0, 205, 102, 0.7); /* Sombra em accent-green-bright */
+            box-shadow: 3px 3px 0px rgba(0, 205, 102, 0.7); /* Shadow in accent-green-bright */
         }
         .nav-link:hover {
-            transform: translateY(-2px); /* Efeito de "pulo" suave no hover */
-            box-shadow: 2px 2px 0px rgba(255, 105, 180, 0.7); /* Sombra em accent-pink-vibrant no hover */
+            transform: translateY(-2px); /* Soft "jump" effect on hover */
+            box-shadow: 2px 2px 0px rgba(255, 105, 180, 0.7); /* Shadow in accent-pink-vibrant on hover */
         }
-        /* Estilo para conteúdo de exercício individual e lista - iniciam hidden */
+        /* Style for individual exercise content and list - initially hidden */
         #exercise-list-view,
         #individual-exercise-view,
         .individual-exercise-content {
             display: none;
         }
-        /* Quando a classe 'hidden' é removida, force a exibição como block */
+        /* When the 'hidden' class is removed, force display as block */
         #exercise-list-view:not(.hidden),
         #individual-exercise-view:not(.hidden),
         .individual-exercise-content:not(.hidden) {
             display: block !important;
         }
 
-        /* Títulos principais da página */
+        /* Main page titles */
         h1, h2 {
             color: #4A90E2; /* primary-dark-blue */
-            text-shadow: 1px 1px 1px rgba(0,0,0,0.1); /* Sombra sutil para destaque */
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.1); /* Subtle shadow for emphasis */
         }
         h3 {
             color: #8A2BE2; /* secondary-dark-purple */
@@ -92,16 +97,40 @@
         .border-accent {
             border: 2px solid;
             border-radius: 1rem;
-            box-shadow: 5px 5px 0px rgba(138, 43, 226, 0.5); /* Sombra suave em secondary-dark-purple */
+            box-shadow: 5px 5px 0px rgba(138, 43, 226, 0.5); /* Soft shadow in secondary-dark-purple */
         }
         .animated-emoji {
             display: inline-block;
-            animation: bounce 0.8s infinite alternate; /* Animação suave de "pulo" */
+            animation: bounce 0.8s infinite alternate; /* Soft "bounce" animation */
         }
 
         @keyframes bounce {
             from { transform: translateY(0); }
-            to { transform: translateY(-3px); } /* Menor deslocamento */
+            to { transform: translateY(-3px); } /* Smaller displacement */
+        }
+        /* Style for recommendation "tables" */
+        .media-card {
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.05); /* Very subtle border */
+        }
+
+        /* Language specific classes for switcher buttons */
+        .lang-switcher button {
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            transition: all 0.2s;
+            border: 2px solid white;
+            color: white;
+            background-color: rgba(255,255,255,0.2); /* Semi-transparent white */
+        }
+        .lang-switcher button.active-lang {
+            background-color: white;
+            color: #4A90E2; /* primary-dark-blue */
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -112,14 +141,17 @@
             <h1 class="text-4xl md:text-5xl font-extrabold mb-8 text-center md:text-left font-display uppercase text-white">
                 English with <span class="text-accent-pink-vibrant">Elisa Almada</span>
             </h1>
+            <div class="lang-switcher flex justify-center mb-6 space-x-2">
+                <button data-lang-btn="pt">PT</button>
+                <button data-lang-btn="en" class="active-lang">EN</button>
+            </div>
             <nav>
                 <ul class="space-y-4">
-                    <li><a href="#exercises" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105 active-link">📚 Exercícios Interativos</a></li>
-                    <li><a href="#about-me" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">👋 Quem É Elisa Almada</a></li>
-                    <li><a href="#how-classes-work" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">✨ Como Funcionam as Aulas</a></li>
-                    <li><a href="#proficiency-test" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">📝 Teste de Nível</a></li>
-                    <li><a href="#media-recommendations" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">🎬 Recomendações de Mídia</a></li>
-                    <li><a href="#book-a-class" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">🗓️ Agende Sua Aula</a></li>
+                    <li><a href="#exercises" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105 active-link">📚 Interactive Exercises</a></li>
+                    <li><a href="#who-am-i" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">👋 Who Am I</a></li>
+                    <li><a href="#how-classes-work" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">✨ How Classes Work</a></li>
+                    <li><a href="#proficiency-test" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">📝 Proficiency Test</a></li>
+                    <li><a href="#media-recommendations" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">🎬 Media Recommendations</a></li>
                 </ul>
             </nav>
         </aside>
@@ -127,45 +159,44 @@
         <!-- Main Content Area -->
         <main class="flex-1 p-6 md:p-10 bg-light-bg-v2 text-text-main rounded-b-3xl md:rounded-r-3xl md:rounded-bl-none overflow-y-auto">
 
-            <!-- Section 1: Interactive Exercises -->
+            <!-- Section 1: Interactive Exercises (English Only) -->
             <section id="exercises" class="content-section active border-secondary-dark-purple">
                 <h2 class="text-4xl font-extrabold mb-6 font-display uppercase">
-                    Exercícios Interativos <span class="animated-emoji">💡</span>
+                    Interactive Exercises <span class="animated-emoji">💡</span>
                 </h2>
-                <p class="text-subtle-gray-v2 mb-6 leading-relaxed">
-                    Aqui você encontra exercícios interativos para praticar seu inglês de forma leve e eficaz. Receba feedback automático e copie seus resultados, incluindo as correções e explicações, para revisar quando quiser.
-                </p>
+                <div data-lang="en">
+                    <p class="text-subtle-gray-v2 mb-6 leading-relaxed">
+                        Here you'll find interactive exercises to practice your English in a light and effective way. Get automatic feedback and copy your results, including corrections and explanations, to review whenever you want.
+                    </p>
+                </div>
+                <div data-lang="pt" class="hidden">
+                    <p class="text-subtle-gray-v2 mb-6 leading-relaxed">
+                        Aqui você encontra exercícios interativos para praticar seu inglês de forma leve e eficaz. Receba feedback automático e copie seus resultados, incluindo as correções e explicações, para revisar quando quiser.
+                    </p>
+                </div>
+
 
                 <!-- List of Exercises View -->
-                <div id="exercise-list-view" class="hidden">
-                    <h3 class="text-2xl font-semibold mb-4 font-display">Escolha um exercício para começar:</h3>
+                <div id="exercise-list-view" class="">
+                    <h3 class="text-2xl font-semibold mb-4 font-display">Choose an exercise to start:</h3>
                     <ul class="space-y-3">
-                        <li><a href="#exercise-say-tell" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow-v2 text-text-main font-medium transition-all duration-200 hover:scale-[1.02] border border-accent-green-bright shadow-sm">👉 Exercício: Say, Tell, Speak, Talk</a></li>
-                        <li><a href="#exercise-do-does" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow-v2 text-text-main font-medium transition-all duration-200 hover:scale-[1.02] border border-accent-green-bright shadow-sm">👉 Exercício: Do vs. Does</a></li>
-                        <li><a href="#exercise-make-do" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow-v2 text-text-main font-medium transition-all duration-200 hover:scale-[1.02] border border-accent-green-bright shadow-sm">👉 Exercício: Make vs. Do</a></li>
-                        <!-- Adicione mais links de exercícios aqui com seus respectivos IDs -->
+                        <li><a href="#exercise-say-tell" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow-v2 text-text-main font-medium transition-all duration-200 hover:scale-[1.02] border border-accent-green-bright shadow-sm">👉 Exercise: Say, Tell, Speak, Talk</a></li>
+                        <li><a href="#exercise-do-does" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow-v2 text-text-main font-medium transition-all duration-200 hover:scale-[1.02] border border-accent-green-bright shadow-sm">👉 Exercise: Do vs. Does</a></li>
+                        <li><a href="#exercise-make-do" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow-v2 text-text-main font-medium transition-all duration-200 hover:scale-[1.02] border border-accent-green-bright shadow-sm">👉 Exercise: Make vs. Do</a></li>
+                        <!-- Add more exercise links here with their respective IDs -->
                     </ul>
-                    <div class="bg-soft-yellow-v2 p-6 rounded-lg mt-8 border-2 border-soft-orange-v2 shadow-md">
-                        <h3 class="text-xl font-semibold text-soft-orange-v2 mb-4 font-display">Dica da Teacher Elisa: Como adicionar novos exercícios</h3>
-                        <p class="text-subtle-gray-v2 leading-relaxed">
-                            Para incluir um novo `exercício`, crie um novo `div` com a classe `individual-exercise-content` e um `id` único (ex: `id="exercise-novo-topico"`). Adicione um link para ele na lista de exercícios (`&lt;ul id="exercise-list-view"&gt;`). Certifique-se de que cada exercício tenha **IDs de inputs e botões únicos** (ex: `id="novotopico-q1"`, `data-exercise-id="novo-topico"`) e de que os dados de respostas e explicações sejam adicionados ao objeto `allExerciseData` no JavaScript.
-                        </p>
-                        <p class="text-subtle-gray-v2 leading-relaxed mt-4">
-                            O site é leve e não exige login ou banco de dados, facilitando a adição de conteúdo! <span class="animated-emoji">👍</span>
-                        </p>
-                    </div>
                 </div>
 
                 <!-- Individual Exercise View Wrapper -->
                 <div id="individual-exercise-view" class="hidden">
                     <button id="back-to-exercise-list-btn" class="mb-6 bg-accent-green-bright text-white font-bold px-4 py-2 rounded-lg hover:bg-secondary-dark-purple transition-colors duration-200 shadow-md transform hover:scale-105">
-                        &larr; Voltar para a lista de exercícios
+                        &larr; Back to exercise list
                     </button>
 
                     <!-- Example Exercise 1 - Say/Tell/Speak/Talk -->
                     <div id="exercise-say-tell" class="individual-exercise-content bg-white p-6 rounded-lg shadow-md mb-8 border-2 border-secondary-dark-purple">
-                        <h3 class="text-2xl font-semibold text-secondary-dark-purple mb-4 font-display uppercase">Exercício: Say, Tell, Speak, Talk <span class="animated-emoji">🗣️</span></h3>
-                        <p class="text-subtle-gray-v2 mb-4">Preencha as lacunas com a forma correta de **say, tell, speak, ou talk**.</p>
+                        <h3 class="2xl font-semibold text-secondary-dark-purple mb-4 font-display uppercase">Exercise: Say, Tell, Speak, Talk <span class="animated-emoji">🗣️</span></h3>
+                        <p class="text-subtle-gray-v2 mb-4">Fill in the blanks with the correct form of <strong>say, tell, speak, or talk</strong>.</p>
 
                         <div class="mb-4">
                             <label for="saytell-q1" class="block text-text-main font-medium mb-2">1. Can you please ______ me your name again?</label>
@@ -187,8 +218,8 @@
                             <input type="text" id="saytell-q4" class="w-full p-3 bg-gray-50 text-text-main border border-accent-pink-vibrant rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-green-bright transition-all">
                         </div>
 
-                        <button data-exercise-id="say-tell" class="check-exercise-button bg-secondary-dark-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-accent-pink-vibrant transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Verificar Respostas</button>
-                        <button data-exercise-id="say-tell" class="copy-exercise-results-button bg-primary-dark-blue text-white font-bold px-6 py-3 rounded-lg hover:bg-secondary-dark-purple transition-all duration-200 shadow-md transform hover:scale-105">Copiar Resultados</button>
+                        <button data-exercise-id="say-tell" class="check-exercise-button bg-secondary-dark-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-accent-pink-vibrant transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Check Answers</button>
+                        <button data-exercise-id="say-tell" class="copy-exercise-results-button bg-primary-dark-blue text-white font-bold px-6 py-3 rounded-lg hover:bg-secondary-dark-purple transition-all duration-200 shadow-md transform hover:scale-105">Copy Results</button>
 
                         <div class="exercise-feedback mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-text-main hidden"></div>
                         <div class="exercise-copy-message mt-4 text-sm text-accent-green-bright hidden"></div>
@@ -196,8 +227,8 @@
 
                     <!-- New Exercise Example 2 - Do vs. Does -->
                     <div id="exercise-do-does" class="individual-exercise-content bg-white p-6 rounded-lg shadow-md mb-8 border-2 border-secondary-dark-purple">
-                        <h3 class="text-2xl font-semibold text-secondary-dark-purple mb-4 font-display uppercase">Exercício: Do vs. Does <span class="animated-emoji">🤔</span></h3>
-                        <p class="text-subtle-gray-v2 mb-4">Escolha a forma correta de **do ou does**.</p>
+                        <h3 class="2xl font-semibold text-secondary-dark-purple mb-4 font-display uppercase">Exercise: Do vs. Does <span class="animated-emoji">🤔</span></h3>
+                        <p class="text-subtle-gray-v2 mb-4">Choose the correct form of <strong>do or does</strong>.</p>
 
                         <div class="mb-4">
                             <label for="dodoes-q1" class="block text-text-main font-medium mb-2">1. What ______ you usually do on weekends?</label>
@@ -214,8 +245,8 @@
                             <input type="text" id="dodoes-q3" class="w-full p-3 bg-gray-50 text-text-main border border-accent-pink-vibrant rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-green-bright transition-all">
                         </div>
 
-                        <button data-exercise-id="do-does" class="check-exercise-button bg-secondary-dark-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-accent-pink-vibrant transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Verificar Respostas</button>
-                        <button data-exercise-id="do-does" class="copy-exercise-results-button bg-primary-dark-blue text-white font-bold px-6 py-3 rounded-lg hover:bg-secondary-dark-purple transition-all duration-200 shadow-md transform hover:scale-105">Copiar Resultados</button>
+                        <button data-exercise-id="do-does" class="check-exercise-button bg-secondary-dark-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-accent-pink-vibrant transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Check Answers</button>
+                        <button data-exercise-id="do-does" class="copy-exercise-results-button bg-primary-dark-blue text-white font-bold px-6 py-3 rounded-lg hover:bg-secondary-dark-purple transition-all duration-200 shadow-md transform hover:scale-105">Copy Results</button>
 
                         <div class="exercise-feedback mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-text-main hidden"></div>
                         <div class="exercise-copy-message mt-4 text-sm text-accent-green-bright hidden"></div>
@@ -223,8 +254,8 @@
 
                     <!-- New Exercise Example 3 - Make vs. Do -->
                     <div id="exercise-make-do" class="individual-exercise-content bg-white p-6 rounded-lg shadow-md mb-8 border-2 border-secondary-dark-purple">
-                        <h3 class="text-2xl font-semibold text-secondary-dark-purple mb-4 font-display uppercase">Exercício: Make vs. Do <span class="animated-emoji">🛠️</span></h3>
-                        <p class="text-subtle-gray-v2 mb-4">Escolha a forma correta de **make ou do** para cada frase.</p>
+                        <h3 class="2xl font-semibold text-secondary-dark-purple mb-4 font-display uppercase">Exercise: Make vs. Do <span class="animated-emoji">🛠️</span></h3>
+                        <p class="text-subtle-gray-v2 mb-4">Choose the correct form of <strong>make or do</strong> for each sentence.</p>
 
                         <div class="mb-4">
                             <label for="makedo-q1" class="block text-text-main font-medium mb-2">1. I need to ______ a decision soon.</label>
@@ -246,8 +277,8 @@
                             <input type="text" id="makedo-q4" class="w-full p-3 bg-gray-50 text-text-main border border-accent-pink-vibrant rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-green-bright transition-all">
                         </div>
 
-                        <button data-exercise-id="make-do" class="check-exercise-button bg-secondary-dark-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-accent-pink-vibrant transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Verificar Respostas</button>
-                        <button data-exercise-id="make-do" class="copy-exercise-results-button bg-primary-dark-blue text-white font-bold px-6 py-3 rounded-lg hover:bg-secondary-dark-purple transition-all duration-200 shadow-md transform hover:scale-105">Copiar Resultados</button>
+                        <button data-exercise-id="make-do" class="check-exercise-button bg-secondary-dark-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-accent-pink-vibrant transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Check Answers</button>
+                        <button data-exercise-id="make-do" class="copy-exercise-results-button bg-primary-dark-blue text-white font-bold px-6 py-3 rounded-lg hover:bg-secondary-dark-purple transition-all duration-200 shadow-md transform hover:scale-105">Copy Results</button>
 
                         <div class="exercise-feedback mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-text-main hidden"></div>
                         <div class="exercise-copy-message mt-4 text-sm text-accent-green-bright hidden"></div>
@@ -256,25 +287,41 @@
                 </div>
             </section>
 
-            <!-- Section 2: About Me -->
-            <section id="about-me" class="content-section border-secondary-dark-purple">
+            <!-- Section 2: Who Am I -->
+            <section id="who-am-i" class="content-section border-secondary-dark-purple">
                 <h2 class="text-4xl font-extrabold mb-6 font-display uppercase">
-                    Quem É Elisa Almada <span class="animated-emoji">🌟</span>
+                    <span class="lang-text" data-lang="pt">Quem Sou Eu</span><span class="lang-text" data-lang="en">Who Am I</span> <span class="animated-emoji">🌟</span>
                 </h2>
-                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-secondary-dark-purple">
-                    <!-- Recommended: Add your photo here -->
-                    <!-- <img src="https://placehold.co/200x200/ADD8E6/333333?text=Sua+Foto+Aqui" alt="Sua Foto" class="rounded-full w-48 h-48 object-cover mx-auto mb-6 shadow-md border-4 border-accent-pink-vibrant"> -->
+                <div data-lang="pt" class="bg-white p-6 rounded-lg shadow-md border-2 border-secondary-dark-purple hidden">
                     <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
-                        Olá! Sou a **Elisa Almada**, sua professora de inglês online, e estou aqui para tornar sua jornada de aprendizado leve e significativa. Meu objetivo é ir além do ensino tradicional, conectando o inglês com a sua realidade e seus objetivos.
+                        Olá! Sou a <strong>Elisa Almada</strong>, sua professora particular online de Inglês. Minha jornada acadêmica inclui uma licenciatura em Letras (Inglês) pela UFMG e uma pós-graduação em Linguagem e Tecnologia, também pela UFMG. Essa formação me permite unir teoria e prática para criar materiais dinâmicos e eficazes.
                     </p>
                     <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
-                        Minha formação em [Mencione sua área de formação aqui, ex: Linguística, Educação, Letras] me deu a base, mas é a paixão por ensinar e a compreensão das suas necessidades, como profissional brasileiro, que guiam minhas aulas. Seja para a área de saúde, recursos humanos ou negócios, vamos focar no que realmente importa para você.
-                    </p>
-                    <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
-                        Além do inglês, adoro conversar sobre viagens, turismo e fitness – temas que muitos dos meus alunos também curtem! Minha metodologia é focada em te empoderar para usar o inglês de forma autêntica, com pensamento crítico e liberdade.
+                        Gosto de criar um ambiente de aprendizado leve, onde você se sinta à vontade para explorar o idioma. Minha paixão é ajudar alunos como você a se sentirem mais confiantes e fluentes. Sei que aprender um novo idioma pode ser um desafio, especialmente quando precisamos usá-lo em situações específicas. Por isso, minhas aulas são totalmente personalizadas para conectar o inglês com a sua realidade e seus objetivos.
                     </p>
                     <p class="text-subtle-gray-v2 leading-relaxed">
-                        <strong class="font-semibold text-primary-dark-blue">Contato da Teacher Elisa:</strong> [Seu e-mail] | [Seu WhatsApp (opcional)]
+                        Seja para suas necessidades profissionais em áreas como medicina, fisioterapia, RH, negócios, ou para viagens, turismo e fitness, vamos focar no que realmente importa para você. Meu contato:
+                        <strong class="font-semibold text-primary-dark-blue">elisasalmada@gmail.com</strong>
+                        (WhatsApp: <strong class="font-semibold text-primary-dark-blue"><a href="https://wa.me/5537991254295" target="_blank" class="text-primary-dark-blue hover:underline">+55 37 99125-4295</a></strong>)
+                    </p>
+                    <p class="text-subtle-gray-v2 mt-4 leading-relaxed">
+                        Você também pode me encontrar no <a href="https://www.instagram.com/elisaalmada/" target="_blank" class="text-accent-pink-vibrant hover:underline">Instagram</a> e <a href="https://www.linkedin.com/in/elisaalmada/" target="_blank" class="text-accent-pink-vibrant hover:underline">LinkedIn</a>.
+                    </p>
+                </div>
+                <div data-lang="en" class="bg-white p-6 rounded-lg shadow-md border-2 border-secondary-dark-purple">
+                    <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
+                        Hello! I'm <strong>Elisa Almada</strong>, your online private English teacher. My academic journey includes a Bachelor's degree in English Language and Literature from UFMG and a postgraduate degree in Language and Technology, also from UFMG. This background allows me to combine theory and practice to create dynamic and effective materials.
+                    </p>
+                    <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
+                        I like to create a light learning environment where you feel comfortable exploring the language. My passion is helping students like you feel more confident and fluent. I know that learning a new language can be a challenge, especially when we need to use it in specific situations. That's why my classes are fully personalized to connect English with your reality and your goals.
+                    </p>
+                    <p class="text-subtle-gray-v2 leading-relaxed">
+                        Whether for your professional needs in areas like medicine, physiotherapy, HR, business, or for travel, tourism, and fitness, we'll focus on what truly matters to you. My contact:
+                        <strong class="font-semibold text-primary-dark-blue">elisasalmada@gmail.com</strong>
+                        (WhatsApp: <strong class="font-semibold text-primary-dark-blue"><a href="https://wa.me/5537991254295" target="_blank" class="text-primary-dark-blue hover:underline">+55 37 99125-4295</a></strong>)
+                    </p>
+                    <p class="text-subtle-gray-v2 mt-4 leading-relaxed">
+                        You can also find me on <a href="https://www.instagram.com/elisaalmada/" target="_blank" class="text-accent-pink-vibrant hover:underline">Instagram</a> and <a href="https://www.linkedin.com/in/elisaalmada/" target="_blank" class="text-accent-pink-vibrant hover:underline">LinkedIn</a>.
                     </p>
                 </div>
             </section>
@@ -282,108 +329,315 @@
             <!-- Section 3: How Classes Work -->
             <section id="how-classes-work" class="content-section border-secondary-dark-purple">
                 <h2 class="text-4xl font-extrabold mb-6 font-display uppercase">
-                    Como Funcionam as Aulas <span class="animated-emoji">💬</span>
+                    <span class="lang-text" data-lang="pt">Como Funcionam as Aulas</span><span class="lang-text" data-lang="en">How Classes Work</span> <span class="animated-emoji">💬</span>
                 </h2>
-                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-secondary-dark-purple">
+                <div data-lang="pt" class="bg-white p-6 rounded-lg shadow-md border-2 border-secondary-dark-purple hidden">
                     <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
                         Minhas aulas são dinâmicas e desenhadas especialmente para você. Veja como geralmente conduzimos nossas sessões:
                     </p>
                     <ul class="list-disc list-inside space-y-3 text-subtle-gray-v2 mb-4">
                         <li>
-                            <strong class="font-semibold text-primary-dark-blue">Aulas Personalizadas:</strong> Cada aula é criada pensando nos seus objetivos específicos, seu nível atual e suas áreas de interesse, como medicina, RH ou negócios.
+                            <strong class="font-semibold text-primary-dark-blue">O que você irá aprender:</strong> Nossas aulas são feitas sob medida! Focamos na sua fluência, gramática, vocabulário e compreensão, sempre conectando o inglês com a sua realidade do dia a dia e/ou trabalho. A metodologia de ensino busca conectar língua, cultura, conhecimento e sociedade, promovendo um aprendizado que te capacita a usar o inglês de forma autônoma e significativa.
                         </li>
                         <li>
-                            <strong class="font-semibold text-primary-dark-blue">Estrutura Interativa:</strong> Iniciamos com um slide explicativo sobre o tópico. Você terá tempo para ler e tirar suas dúvidas sobre vocabulário e conceitos.
+                            <strong class="font-semibold text-primary-dark-blue">Duração e Frequência:</strong> Cada aula tem 60 minutos. Combinamos os melhores dias e horários no início de cada mês, e recomendo um mínimo de 1 aula por semana para um progresso consistente.
                         </li>
                         <li>
-                            <strong class="font-semibold text-primary-dark-blue">Conversa e Compreensão:</strong> Após a explicação, conversamos brevemente para confirmar sua compreensão, estimulando a escuta e a fala sem a necessidade de reler o material.
+                            <strong class="font-semibold text-primary-dark-blue">Agendamento e Cancelamento:</strong>
+                            <ul class="list-disc list-inside ml-5 mt-2 space-y-2 text-subtle-gray-v2">
+                                <li><strong>Pelo Aluno:</strong> Avise com pelo menos 24 horas de antecedência para reagendamento. Solicitações de reagendamento com menos de 24 horas de aviso não são viáveis e não serão aceitas. Aulas remarcadas que não puderem ser encaixadas no mesmo mês, mesmo com aviso prévio, serão consideradas como realizadas e não serão reembolsadas ou transferidas para o mês seguinte. Ausências sem aviso são contadas como aula dada e cobradas normalmente, sem direito a reposição.</li>
+                                <li><strong>Pela Professora:</strong> Se eu não puder dar a aula, avisarei o mais rápido possível. Vamos reagendar sem nenhum custo para você ou eu te reembolsarei pela aula não dada.</li>
+                            </ul>
                         </li>
                         <li>
-                            <strong class="font-semibold text-primary-dark-blue">Prática Contextualizada:</strong> Em seguida, um novo slide apresenta questões ou atividades. Sempre adiciono perguntas extras que promovem o pensamento crítico e a aplicação do conteúdo em situações reais.
+                            <strong class="font-semibold text-primary-dark-blue">Materiais de Aula:</strong> Os materiais (slides, textos, links de vídeos, etc.) são fornecidos por mim e estão inclusos no valor das aulas, sem custos extras. Utilizamos Google Classroom, Docs, Slides, Meet e YouTube para deixar as aulas dinâmicas e interessantes.
                         </li>
                         <li>
-                            <strong class="font-semibold text-primary-dark-blue">Recursos Digitais:</strong> Utilizamos ferramentas como Google Classroom para organizar o material, Google Docs e Slides para as aulas, Google Meet para as sessões ao vivo e YouTube para materiais complementares.
+                            <strong class="font-semibold text-primary-dark-blue">Confidencialidade:</strong> Tudo o que conversamos e as informações que você compartilha durante as aulas são mantidas em sigilo absoluto.
                         </li>
                         <li>
-                            <strong class="font-semibold text-primary-dark-blue">Conexão com a Realidade:</strong> Nosso foco é conectar o inglês ao seu dia a dia profissional e pessoal, tornando o aprendizado mais relevante e fácil de aplicar.
+                            <strong class="font-semibold text-primary-dark-blue">Início e Término:</strong> Nosso acordo começa com a primeira aula e não tem prazo para terminar. Se for preciso interromper, basta avisar antes do início do próximo mês. Se as aulas forem interrompidas pelo ALUNO, ele não receberá reembolso pelas aulas que estavam agendadas dentro do mês vigente.
+                        </li>
+                        <li>
+                            <strong class="font-semibold text-primary-dark-blue">Comunicação Oficial:</strong> Usaremos o WhatsApp como forma oficial de comunicação. (<strong class="font-semibold text-primary-dark-blue"><a href="https://wa.me/5537991254295" target="_blank" class="text-primary-dark-blue hover:underline">+55 37 99125-4295</a></strong>)
                         </li>
                     </ul>
-                    <p class="text-subtle-gray-v2 leading-relaxed">
-                        Estou aqui para te acompanhar nessa jornada, tornando cada passo no aprendizado uma experiência enriquecedora!
+                    <p class="text-subtle-gray-v2 leading-relaxed mt-4">
+                        Estou aqui para te acompanhar nessa jornada, tornando cada passo no aprendizado uma experiência enriquecedora e libertadora!
+                    </p>
+                </div>
+                <div data-lang="en" class="bg-white p-6 rounded-lg shadow-md border-2 border-secondary-dark-purple">
+                    <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
+                        My classes are dynamic and designed especially for you. Here's how we usually conduct our sessions:
+                    </p>
+                    <ul class="list-disc list-inside space-y-3 text-subtle-gray-v2 mb-4">
+                        <li>
+                            <strong class="font-semibold text-primary-dark-blue">What you will learn:</strong> Our classes are tailor-made! We focus on your fluency, grammar, vocabulary, and comprehension, always connecting English with your daily life and/or work reality. The teaching methodology aims to connect language, culture, knowledge, and society, promoting learning that empowers you to use English autonomously and meaningfully.
+                        </li>
+                        <li>
+                            <strong class="font-semibold text-primary-dark-blue">Duration and Frequency:</strong> Each class lasts 60 minutes. We'll agree on the best days and times for classes at the beginning of each month, and I recommend a minimum of 1 class per week for consistent progress.
+                        </li>
+                        <li>
+                            <strong class="font-semibold text-primary-dark-blue">Scheduling and Cancellation:</strong>
+                            <ul class="list-disc list-inside ml-5 mt-2 space-y-2 text-subtle-gray-v2">
+                                <li><strong>By the Student:</strong> Please notify at least 24 hours in advance for rescheduling. Rescheduling requests with less than 24 hours' notice are not feasible and will not be accepted. Rescheduled classes that cannot be accommodated within the same month, even with prior notice, will be considered as held and will not be refunded or transferred to the following month. Absences without notice will be counted as a held class and charged normally, with no right to make up the class.</li>
+                                <li><strong>By the Teacher:</strong> If I cannot teach the class, I will notify you as soon as possible. We will reschedule at no cost to you, or I will refund you for the unheld class.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="font-semibold text-primary-dark-blue">Class Materials:</strong> The materials (slides, texts, video links, etc.) are provided by me and are included in the class price, with no extra costs. We use Google Classroom, Docs, Slides, Meet, and YouTube to make classes dynamic and interesting.
+                        </li>
+                        <li>
+                            <strong class="font-semibold text-primary-dark-blue">Confidentiality:</strong> Everything we discuss and the information you share during classes will be kept strictly confidential.
+                        </li>
+                        <li>
+                            <strong class="font-semibold text-primary-dark-blue">Start and End:</strong> This agreement begins with our first class and has no set end date. If either you or the Teacher need to stop classes for any reason, simply provide notice before the start of the next month. If classes are interrupted by the STUDENT, they will not receive a refund for classes scheduled within the current month.
+                        </li>
+                        <li>
+                            <strong class="font-semibold text-primary-dark-blue">Official Communication:</strong> We will use WhatsApp as the official form of communication. (<strong class="font-semibold text-primary-dark-blue"><a href="https://wa.me/5537991254295" target="_blank" class="text-primary-dark-blue hover:underline">+55 37 99125-4295</a></strong>)
+                        </li>
+                    </ul>
+                    <p class="text-subtle-gray-v2 leading-relaxed mt-4">
+                        I'm here to accompany you on this journey, making every step in your learning an enriching and liberating experience!
                     </p>
                 </div>
             </section>
 
-            <!-- Section 4: Proficiency Test -->
+            <!-- Section 4: Proficiency Test (English Only) -->
             <section id="proficiency-test" class="content-section border-secondary-dark-purple">
                 <h2 class="text-4xl font-extrabold mb-6 font-display uppercase">
-                    Teste de Nível de Proficiência <span class="animated-emoji">📝</span>
+                    Proficiency Level Test <span class="animated-emoji">📝</span>
                 </h2>
-                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-secondary-dark-purple">
+                <div data-lang="en">
                     <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
-                        Faça este teste rápido para ter uma ideia do seu nível de proficiência em inglês. Ao final, você poderá ver seus resultados e copiá-los para compartilhar ou guardar.
+                        Take this test to get an idea of your English proficiency level. It covers grammar and vocabulary. At the end, you'll be able to see your results and copy them to share with me!
                     </p>
+                </div>
+                <div data-lang="pt" class="hidden">
+                    <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
+                        Faça este teste para ter uma ideia do seu nível de proficiência em inglês. Ele aborda gramática e vocabulário. Ao final, você poderá ver seus resultados e copiá-los para compartilhar comigo!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-secondary-dark-purple">
                     <form id="proficiency-quiz">
-                        <!-- Question 1 -->
+                        <!-- Question 1: Present Simple/Continuous -->
                         <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">1. He ______ to the gym every day.</p>
+                            <p class="font-semibold text-text-main mb-3">1. He usually ______ (go) to work by car, but today he ______ (walk).</p>
                             <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q1" value="goes" class="mr-2 accent-secondary-dark-purple"> goes</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q1" value="go" class="mr-2 accent-secondary-dark-purple"> go</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q1" value="going" class="mr-2 accent-secondary-dark-purple"> going</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q1" value="goes / is walking" class="mr-2 accent-secondary-dark-purple"> goes / is walking</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q1" value="is going / walks" class="mr-2 accent-secondary-dark-purple"> is going / walks</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q1" value="went / walked" class="mr-2 accent-secondary-dark-purple"> went / walked</label>
                             </div>
                         </div>
 
-                        <!-- Question 2 -->
+                        <!-- Question 2: Past Simple/Continuous -->
                         <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">2. "Could you please ______ me the time?"</p>
+                            <p class="font-semibold text-text-main mb-3">2. While I ______ (read) a book, my phone ______ (ring).</p>
                             <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q2" value="say" class="mr-2 accent-secondary-dark-purple"> say</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q2" value="tell" class="mr-2 accent-secondary-dark-purple"> tell</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q2" value="speak" class="mr-2 accent-secondary-dark-purple"> speak</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q2" value="read / rang" class="mr-2 accent-secondary-dark-purple"> read / rang</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q2" value="was reading / rang" class="mr-2 accent-secondary-dark-purple"> was reading / rang</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q2" value="am reading / rings" class="mr-2 accent-secondary-dark-purple"> am reading / rings</label>
                             </div>
                         </div>
 
-                        <!-- Question 3 -->
+                        <!-- Question 3: Present Perfect -->
                         <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">3. They ______ their homework yet.</p>
+                            <p class="font-semibold text-text-main mb-3">3. I ______ (not see) her since last year.</p>
                             <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q3" value="haven't finished" class="mr-2 accent-secondary-dark-purple"> haven't finished</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q3" value="didn't finish" class="mr-2 accent-secondary-dark-purple"> didn't finish</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q3" value="not finished" class="mr-2 accent-secondary-dark-purple"> not finished</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q3" value="didn't see" class="mr-2 accent-secondary-dark-purple"> didn't see</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q3" value="haven't seen" class="mr-2 accent-secondary-dark-purple"> haven't seen</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q3" value="am not seeing" class="mr-2 accent-secondary-dark-purple"> am not seeing</label>
                             </div>
                         </div>
 
-                        <!-- Question 4 -->
+                        <!-- Question 4: Future (Will/Going to) -->
                         <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">4. If I ______ a bird, I ______ fly.</p>
+                            <p class="font-semibold text-text-main mb-3">4. I think it ______ (rain) tomorrow. (Prediction)</p>
                             <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q4" value="was / would" class="mr-2 accent-secondary-dark-purple"> was / would</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q4" value="were / would" class="mr-2 accent-secondary-dark-purple"> were / would</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q4" value="am / will" class="mr-2 accent-secondary-dark-purple"> am / will</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q4" value="is going to rain" class="mr-2 accent-secondary-dark-purple"> is going to rain</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q4" value="will rain" class="mr-2 accent-secondary-dark-purple"> will rain</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q4" value="rains" class="mr-2 accent-secondary-dark-purple"> rains</label>
                             </div>
                         </div>
 
-                        <!-- Question 5 -->
+                        <!-- Question 5: Modal Verbs -->
                         <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">5. She's a doctor, ______?</p>
+                            <p class="font-semibold text-text-main mb-3">5. You ______ study harder if you want to pass the exam. (Strong advice/necessity)</p>
                             <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q5" value="isn't she" class="mr-2 accent-secondary-dark-purple"> isn't she</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q5" value="doesn't she" class="mr-2 accent-secondary-dark-purple"> doesn't she</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q5" value="is she" class="mr-2 accent-secondary-dark-purple"> is she</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q5" value="can" class="mr-2 accent-secondary-dark-purple"> can</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q5" value="should" class="mr-2 accent-secondary-dark-purple"> should</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q5" value="must" class="mr-2 accent-secondary-dark-purple"> must</label>
                             </div>
                         </div>
 
+                        <!-- Question 6: Conditionals (Type 1) -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
+                            <p class="font-semibold text-text-main mb-3">6. If it ______ (rain) tomorrow, we ______ (stay) home.</p>
+                            <div class="space-y-2 text-subtle-gray-v2">
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q6" value="rains / will stay" class="mr-2 accent-secondary-dark-purple"> rains / will stay</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q6" value="will rain / stay" class="mr-2 accent-secondary-dark-purple"> will rain / stay</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q6" value="rained / would stay" class="mr-2 accent-secondary-dark-purple"> rained / would stay</label>
+                            </div>
+                        </div>
 
-                        <button type="submit" class="bg-secondary-dark-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-accent-pink-vibrant transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Verificar Teste</button>
-                        <button type="button" id="copy-test-results" class="bg-primary-dark-blue text-white font-bold px-6 py-3 rounded-lg hover:bg-secondary-dark-purple transition-all duration-200 shadow-md transform hover:scale-105 hidden">Copiar Resultados</button>
+                        <!-- Question 7: Conditionals (Type 2) -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
+                            <p class="font-semibold text-text-main mb-3">7. If I ______ (have) a million dollars, I ______ (buy) a big house.</p>
+                            <div class="space-y-2 text-subtle-gray-v2">
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q7" value="had / would buy" class="mr-2 accent-secondary-dark-purple"> had / would buy</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q7" value="have / will buy" class="mr-2 accent-secondary-dark-purple"> have / will buy</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q7" value="would have / buy" class="mr-2 accent-secondary-dark-purple"> would have / buy</label>
+                            </div>
+                        </div>
+
+                        <!-- Question 8: Passive Voice -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
+                            <p class="font-semibold text-text-main mb-3">8. The book ______ (write) by a famous author last year.</p>
+                            <div class="space-y-2 text-subtle-gray-v2">
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q8" value="wrote" class="mr-2 accent-secondary-dark-purple"> wrote</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q8" value="was written" class="mr-2 accent-secondary-dark-purple"> was written</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q8" value="is written" class="mr-2 accent-secondary-dark-purple"> is written</label>
+                            </div>
+                        </div>
+
+                        <!-- Question 9: Articles (a/an/the) -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
+                            <p class="font-semibold text-text-main mb-3">9. She has ______ cat and ______ dog. ______ cat is black.</p>
+                            <div class="space-y-2 text-subtle-gray-v2">
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q9" value="a / a / The" class="mr-2 accent-secondary-dark-purple"> a / a / The</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q9" value="an / a / A" class="mr-2 accent-secondary-dark-purple"> an / a / A</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q9" value="the / a / The" class="mr-2 accent-secondary-dark-purple"> the / a / The</label>
+                            </div>
+                        </div>
+
+                        <!-- Question 10: Prepositions of Time -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
+                            <p class="font-semibold text-text-main mb-3">10. The meeting is ______ 3 PM ______ Friday.</p>
+                            <div class="space-y-2 text-subtle-gray-v2">
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q10" value="at / on" class="mr-2 accent-secondary-dark-purple"> at / on</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q10" value="on / at" class="mr-2 accent-secondary-dark-purple"> on / at</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q10" value="in / in" class="mr-2 accent-secondary-dark-purple"> in / in</label>
+                            </div>
+                        </div>
+
+                        <!-- Question 11: Prepositions of Place -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
+                            <p class="font-semibold text-text-main mb-3">11. The book is ______ the table, ______ the lamp.</p>
+                            <div class="space-y-2 text-subtle-gray-v2">
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q11" value="on / next to" class="mr-2 accent-secondary-dark-purple"> on / next to</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q11" value="at / in" class="mr-2 accent-secondary-dark-purple"> at / in</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q11" value="in / on" class="mr-2 accent-secondary-dark-purple"> in / on</label>
+                            </div>
+                        </div>
+
+                        <!-- Question 12: Phrasal Verb (take off) -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
+                            <p class="font-semibold text-text-main mb-3">12. The plane will ______ in ten minutes. (Meaning: take off from the ground)</p>
+                            <div class="space-y-2 text-subtle-gray-v2">
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q12" value="take off" class="mr-2 accent-secondary-dark-purple"> take off</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q12" value="take up" class="mr-2 accent-secondary-dark-purple"> take up</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q12" value="take on" class="mr-2 accent-secondary-dark-purple"> take on</label>
+                            </div>
+                        </div>
+
+                        <!-- Question 13: Phrasal Verb (look up) -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
+                            <p class="font-semibold text-text-main mb-3">13. If you don't know the word, you can ______ it ______ in a dictionary. (Meaning: find its meaning)</p>
+                            <div class="space-y-2 text-subtle-gray-v2">
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q13" value="look / over" class="mr-2 accent-secondary-dark-purple"> look / over</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q13" value="look / up" class="mr-2 accent-secondary-dark-purple"> look / up</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q13" value="look / into" class="mr-2 accent-secondary-dark-purple"> look / into</label>
+                            </div>
+                        </div>
+
+                        <!-- Question 14: Comparison (adjectives/adverbs) -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
+                            <p class="font-semibold text-text-main mb-3">14. She is ______ (tall) than her brother. He runs ______ (quickly) than me. (Comparison)</p>
+                            <div class="space-y-2 text-subtle-gray-v2">
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q14" value="taller / more quickly" class="mr-2 accent-secondary-dark-purple"> taller / more quickly</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q14" value="tallest / quicker" class="mr-2 accent-secondary-dark-purple"> tallest / quicker</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q14" value="more tall / more quick" class="mr-2 accent-secondary-dark-purple"> more tall / more quick</label>
+                            </div>
+                        </div>
+
+                        <!-- Question 15: Quantifiers (much/many/a lot of) -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
+                            <p class="font-semibold text-text-main mb-3">15. There isn't ______ water. There are ______ books.</p>
+                            <div class="space-y-2 text-subtle-gray-v2">
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q15" value="many / much" class="mr-2 accent-secondary-dark-purple"> many / much</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q15" value="much / many" class="mr-2 accent-secondary-dark-purple"> much / many</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q15" value="a lot of / a lot of" class="mr-2 accent-secondary-dark-purple"> a lot of / a lot of</label>
+                            </div>
+                        </div>
+
+                        <!-- Question 16: Past Perfect -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
+                            <p class="font-semibold text-text-main mb-3">16. By the time I arrived, he ______ (already leave).</p>
+                            <div class="space-y-2 text-subtle-gray-v2">
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q16" value="already left" class="mr-2 accent-secondary-dark-purple"> already left</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q16" value="had already left" class="mr-2 accent-secondary-dark-purple"> had already left</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q16" value="was already leaving" class="mr-2 accent-secondary-dark-purple"> was already leaving</label>
+                            </div>
+                        </div>
+
+                        <!-- Question 17: Reported Speech -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
+                            <p class="font-semibold text-text-main mb-3">17. She said, "I am happy." (Reported Speech)</p>
+                            <div class="space-y-2 text-subtle-gray-v2">
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q17" value="She said she is happy." class="mr-2 accent-secondary-dark-purple"> She said she is happy.</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q17" value="She said she was happy." class="mr-2 accent-secondary-dark-purple"> She said she was happy.</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q17" value="She says she is happy." class="mr-2 accent-secondary-dark-purple"> She says she is happy.</label>
+                            </div>
+                        </div>
+
+                        <!-- Question 18: Zero Conditional -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
+                            <p class="font-semibold text-text-main mb-3">18. If you heat water to 100 degrees Celsius, it ______ (boil).</p>
+                            <div class="space-y-2 text-subtle-gray-v2">
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q18" value="boils" class="mr-2 accent-secondary-dark-purple"> boils</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q18" value="will boil" class="mr-2 accent-secondary-dark-purple"> will boil</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q18" value="would boil" class="mr-2 accent-secondary-dark-purple"> would boil</label>
+                            </div>
+                        </div>
+
+                        <!-- Question 19: Relative Pronouns -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
+                            <p class="font-semibold text-text-main mb-3">19. This is the student ______ helped me with my homework.</p>
+                            <div class="space-y-2 text-subtle-gray-v2">
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q19" value="which" class="mr-2 accent-secondary-dark-purple"> which</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q19" value="who" class="mr-2 accent-secondary-dark-purple"> who</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q19" value="whose" class="mr-2 accent-secondary-dark-purple"> whose</label>
+                            </div>
+                        </div>
+
+                        <!-- Question 20: Verb Tense Consistency -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
+                            <p class="font-semibold text-text-main mb-3">20. By next year, I ______ (learn) English for five years.</p>
+                            <div class="space-y-2 text-subtle-gray-v2">
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q20" value="will learn" class="mr-2 accent-secondary-dark-purple"> will learn</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q20" value="will have learned" class="mr-2 accent-secondary-dark-purple"> will have learned</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q20" value="am learning" class="mr-2 accent-secondary-dark-purple"> am learning</label>
+                            </div>
+                        </div>
+
+                        <!-- Writing Part -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
+                            <p class="font-semibold text-text-main mb-3">Writing Part: Write a short paragraph (3-5 sentences) about your favorite hobby or a recent travel experience.</p>
+                            <textarea id="writing-q1" class="w-full p-3 bg-white text-text-main border border-accent-pink-vibrant rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-green-bright transition-all" rows="5" placeholder="Start writing here..."></textarea>
+                            <p class="text-sm text-subtle-gray-v2 mt-2">
+                                <em>Feedback for this section is manual. Please copy your results and send them to Teacher Elisa!</em>
+                            </p>
+                        </div>
+
+                        <button type="submit" class="bg-secondary-dark-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-accent-pink-vibrant transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Check Test</button>
+                        <button type="button" id="copy-test-results" class="bg-primary-dark-blue text-white font-bold px-6 py-3 rounded-lg hover:bg-secondary-dark-purple transition-all duration-200 shadow-md transform hover:scale-105 hidden">Copy Results</button>
                     </form>
 
                     <div id="test-results" class="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-text-main hidden">
                         <!-- Test results will be displayed here -->
                     </div>
                     <div id="test-copy-message" class="mt-4 text-sm text-accent-green-bright hidden">
-                        Resultados copiados para a área de transferência!
+                        Results copied to clipboard!
                     </div>
                 </div>
             </section>
@@ -391,62 +645,300 @@
             <!-- Section 5: Media Recommendations -->
             <section id="media-recommendations" class="content-section border-secondary-dark-purple">
                 <h2 class="text-4xl font-extrabold mb-6 font-display uppercase">
-                    Recomendações de Mídia da Teacher Elisa <span class="animated-emoji">🎬</span>
+                    <span class="lang-text" data-lang="pt">Recomendações de Mídia da Teacher Elisa</span><span class="lang-text" data-lang="en">Teacher Elisa's Media Recommendations</span> <span class="animated-emoji">🎬</span>
                 </h2>
-                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-secondary-dark-purple">
+                <div data-lang="pt" class="bg-white p-6 rounded-lg shadow-md border-2 border-secondary-dark-purple hidden">
                     <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
                         Aprender inglês vai além das aulas! Separei alguns conteúdos incríveis para você se divertir e, ao mesmo tempo, aprofundar seu contato com o idioma.
                     </p>
-                    <h3 class="text-xl font-semibold text-secondary-dark-purple mb-3 font-display">Canais do YouTube:</h3>
-                    <ul class="list-disc list-inside space-y-2 text-subtle-gray-v2 mb-6">
-                        <li>**BBC Learning English:** Excelente para gramática, vocabulário e pronúncia, de um jeito bem didático.</li>
-                        <li>**English with Lucy:** Dicas práticas, um sotaque britânico claro e explicações super úteis.</li>
-                        <li>**Rachel's English:** Focado na pronúncia e na melhora do sotaque americano, com muitos detalhes.</li>
-                        <li>**VOA Learning English:** Notícias em inglês simplificado, perfeito para treinar a compreensão auditiva de forma objetiva.</li>
-                        <!-- Adicione mais canais aqui -->
-                    </ul>
 
-                    <h3 class="text-xl font-semibold text-secondary-dark-purple mb-3 font-display">Contas de Instagram:</h3>
-                    <ul class="list-disc list-inside space-y-2 text-subtle-gray-v2 mb-6">
-                        <li>**@inglesnapratica:** Dicas rápidas, frases do dia a dia e vocabulário para usar na hora.</li>
-                        <li>**@teacher_gabriel_english:** Conteúdo divertido e interativo para aprender sem perceber.</li>
-                        <li>**@learnenglish:** Postagens diárias com novas palavras e expressões para expandir seu vocabulário.</li>
-                        <!-- Adicione mais contas aqui -->
-                    </ul>
+                    <!-- YouTube Channels - Assuntos Gerais (PT) -->
+                    <div class="media-card bg-soft-yellow-v2">
+                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">Canais do YouTube - Assuntos Gerais:</h3>
+                        <ul class="list-disc list-inside space-y-2 text-text-main">
+                            <li><a href="https://www.youtube.com/user/OverSimplified" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>OverSimplified</strong></a>: Histórias complexas explicadas de forma hilária e super acessível.</li>
+                            <li><a href="https://www.youtube.com/user/TheNewYorkTimes" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>The New York Times</strong></a>: Notícias atuais e análises aprofundadas para manter seu inglês em dia com eventos globais.</li>
+                            <li><a href="https://www.youtube.com/user/Kurzgesagt" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Kurzgesagt – In a Nutshell</strong></a>: Vídeos animados sobre ciência, espaço e tecnologia com linguagem clara.</li>
+                            <li><a href="https://www.youtube.com/user/TEDEducation" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>TED-Ed</strong></a>: Lições animadas sobre uma vasta gama de tópicos, que instigam o pensamento crítico.</li>
+                            <li><a href="https://www.youtube.com/user/MinuteEarth" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Minute Earth</strong></a>: Respostas curtas e animadas para grandes perguntas sobre a Terra e a natureza.</li>
+                            <li><a href="https://www.youtube.com/user/bbclearningenglish" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>BBC Learning English</strong></a>: Conteúdo didático focado em gramática, pronúncia e vocabulário, feito especificamente para aprendizes de inglês.</li>
+                            <li><a href="https://www.youtube.com/user/thisisinsider" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Insider Science</strong></a>: Vídeos sobre inovação e descobertas científicas, ideal para quem busca vocabulário específico.</li>
+                            <li><a href="https://www.youtube.com/channel/UCaV_B9M62lR_3n4oE_l5_YQ" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>What If Science Show</strong></a>: Explora cenários hipotéticos e curiosos de forma intrigante.</li>
+                            <li><a href="https://www.youtube.com/user/FreeDocumentaries" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Free High-Quality Documentaries</strong></a>: Uma vasta coleção de documentários para expandir o conhecimento e a compreensão em inglês.</li>
+                            <li><a href="https://www.youtube.com/channel/UCyYpI9r1I5uM-o8tV8M000g" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Border Security</strong></a>: Séries sobre a vida na fronteira, oferecendo insights sobre situações reais e vocabulário prático.</li>
+                            <li><a href="https://www.youtube.com/user/vox" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Vox</strong></a>: Explicações claras e aprofundadas sobre notícias, política e cultura.</li>
+                            <li><a href="https://www.youtube.com/user/WIRED" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>WIRED</strong></a>: Foco em tecnologia, ciência e inovação, com entrevistas e análises de tendências.</li>
+                            <li><a href="https://www.youtube.com/channel/UC0sR1p8yVnE3d4o_e1n1ZWA" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Odd Animal Specimens</strong></a>: Conteúdo curioso sobre o reino animal, ótimo para vocabulário de biologia e natureza.</li>
+                            <li><a href="https://www.youtube.com/user/TastingHistory" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Tasting History with Max Miller</strong></a>: Combina história e culinária de forma envolvente, com receitas históricas e contexto cultural.</li>
+                        </ul>
+                    </div>
 
-                    <h3 class="text-xl font-semibold text-secondary-dark-purple mb-3 font-display">Filmes e Séries:</h3>
-                    <ul class="list-disc list-inside space-y-2 text-subtle-gray-v2 mb-6">
-                        <li>**Friends:** Ótimo para vocabulário coloquial e situações cotidianas que se repetem.</li>
-                        <li>**The Office (US):** Humor de escritório e diálogos naturais, perfeitos para entender o inglês do dia a dia.</li>
-                        <li>**The Crown:** Para quem gosta de história e quer aprimorar o sotaque britânico mais formal.</li>
-                        <li>**Documentários (Netflix/Discovery Channel):** Explore temas variados e expanda seu vocabulário específico.</li>
-                        <!-- Adicione mais filmes/séries aqui -->
-                    </ul>
+                    <!-- YouTube Channels - Turismo (PT) -->
+                    <div class="media-card bg-soft-orange-v2">
+                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">Canais do YouTube - Turismo:</h3>
+                        <ul class="list-disc list-inside space-y-2 text-text-main">
+                            <li><strong>Para Inspiração e Dicas Gerais:</strong>
+                                <ul class="list-circle list-inside ml-5">
+                                    <li><a href="https://www.youtube.com/user/KaraAndNate" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Kara and Nate</strong></a>: Aventuras de viagem de um casal, mostrando destinos e experiências.</li>
+                                    <li><a href="https://www.youtube.com/user/drewbinsky" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Drew Binsky</strong></a>: Vídeos de viagens por países variados, com foco na cultura local e interação.</li>
+                                    <li><a href="https://www.youtube.com/user/WoltersWorld" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Wolters World</strong></a>: Dicas de viagem realistas, "o que fazer" e "o que não fazer", com humor.</li>
+                                    <li><a href="https://www.youtube.com/user/lostleblanc" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Lost LeBlanc</strong></a>: Vlogs de viagem com foco em destinos paradisíacos e lifestyle.</li>
+                                    <li><a href="https://www.youtube.com/user/TheEndlessAdventure" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>The Endless Adventure</strong></a>: Exploram culinária local e atividades em suas viagens.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Para Dicas de Viagem com Orçamento:</strong>
+                                <ul class="list-circle list-inside ml-5 mt-2">
+                                    <li><a href="https://www.youtube.com/user/JordenTually" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Jorden Tually</strong></a>: Focado em viagens econômicas e aventuras.</li>
+                                    <li><a href="https://www.youtube.com/user/Terradrift" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Terradrift</strong></a>: Dicas de viagens sustentáveis e ao ar livre.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Para Vlogs de Viagem de Luxo:</strong>
+                                <ul class="list-circle list-inside ml-5 mt-2">
+                                    <li><a href="https://www.youtube.com/user/LuxuryEscapes" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Luxury Escapes</strong></a>: Destinos e experiências de luxo ao redor do mundo.</li>
+                                    <li><a href="https://www.youtube.com/channel/UCNx0t3L16xXG-E6wM5Q1l0A" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>ST Travel</strong></a>: Vlogs de viagens luxuosas com um foco estético.</li>
+                                    <li><a href="https://www.youtube.com/channel/UCVfF2P2D9H6H2t2W5p1B4Xg" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Luxury Travel Club</strong></a>: Explora hotéis e experiências de alto padrão.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Para Interesses Específicos:</strong>
+                                <ul class="list-circle list-inside ml-5 mt-2">
+                                    <li><a href="https://www.youtube.com/user/ricksteves" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Rick Steves' Europe</strong></a>: Guias detalhados de viagem pela Europa, com foco em cultura e história.</li>
+                                    <li><a href="https://www.youtube.com/user/FearlessAndFar" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Fearless and Far</strong></a>: Aventura e desafios de viagem em lugares remotos.</li>
+                                    <li><a href="https://www.youtube.com/user/MarkWiens" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Mark Wiens</strong></a>: Focado em culinária de rua e experiências gastronômicas de viagem.</li>
+                                    <li><a href="https://www.youtube.com/user/indigotraveller" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Indigo Traveller</strong></a>: Explora lugares complexos e desafiadores, com foco em histórias humanas.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
 
-                    <h3 class="text-xl font-semibold text-secondary-dark-purple mb-3 font-display">Podcasts:</h3>
-                    <ul class="list-disc list-inside space-y-2 text-subtle-gray-v2">
-                        <li>**English as a Second Language Podcast:** Para níveis intermediário e avançado, com transcrições para acompanhar.</li>
-                        <li>**Luke's English Podcast:** Tópicos variados, com humor inteligente e profundidade, perfeito para o sotaque britânico.</li>
-                        <!-- Adicione mais podcasts aqui -->
-                    </ul>
+                    <!-- YouTube Channels - Saúde (Healthcare) (PT) -->
+                    <div class="media-card bg-pastel-blue">
+                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">Canais do YouTube - Saúde (Healthcare):</h3>
+                        <ul class="list-disc list-inside space-y-2 text-text-main">
+                            <li><a href="https://www.youtube.com/user/johnshopkinsmedicine" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Johns Hopkins Medicine</strong></a>: Informações médicas e de saúde de uma das instituições mais renomadas.</li>
+                            <li><a href="https://www.youtube.com/user/Medzcool" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Medzcool</strong></a>: Conteúdo educativo em saúde, com explicações claras sobre temas médicos.</li>
+                            <li><a href="https://www.youtube.com/user/MayoClinic" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Mayo Clinic</strong></a>: Fonte confiável de informações sobre doenças, tratamentos e estilo de vida saudável.</li>
+                            <li><a href="https://www.youtube.com/user/WHO" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>World Health Organization (WHO)</strong></a>: Atualizações e informações sobre saúde global e políticas de saúde.</li>
+                            <li><a href="https://www.youtube.com/user/medscape" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Medscape</strong></a>: Conteúdo para profissionais de saúde, incluindo notícias, artigos e educação médica contínua.</li>
+                            <li><a href="https://www.youtube.com/user/OsmosisfromElsevier" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Osmosis from Elsevier</strong></a>: Vídeos animados e didáticos sobre conceitos médicos e de saúde.</li>
+                            <li><a href="https://www.youtube.com/channel/UCf-lY8304PjE_m8Tq3J2K0g" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>MedFlix</strong></a>: Conteúdo de entretenimento e educação sobre o mundo da medicina.</li>
+                            <li><a href="https://www.youtube.com/user/ClevelandClinic" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Cleveland Clinic</strong></a>: Informações de saúde e bem-estar de uma instituição líder.</li>
+                            <li><a href="https://www.youtube.com/user/NucleusMedicalMedia" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Nucleus Medical Media</strong></a>: Animações médicas detalhadas para explicar condições e procedimentos.</li>
+                            <li><a href="https://www.youtube.com/user/StanfordHealthCare" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Stanford Health Care</strong></a>: Palestras e informações sobre avanços médicos e cuidados de saúde.</li>
+                            <li><a href="https://www.youtube.com/user/nejmgroup" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>NEJM Group</strong></a>: Vídeos do New England Journal of Medicine, com casos clínicos e discussões de pesquisa.</li>
+                            <li><a href="https://www.youtube.com/user/NHS" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>NHS (National Health Service - UK)</strong></a>: Informações sobre saúde pública e serviços de saúde do Reino Unido.</li>
+                            <li><a href="https://www.youtube.com/user/uvahealth" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>UVA Health</strong></a>: Conteúdo de saúde e pesquisa da University of Virginia Health.</li>
+                        </ul>
+                    </div>
+
+                    <!-- YouTube Channels - Negócios (Business) (PT) -->
+                    <div class="media-card bg-pastel-green">
+                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">Canais do YouTube - Negócios (Business):</h3>
+                        <ul class="list-disc list-inside space-y-2 text-text-main">
+                            <li><a href="https://www.youtube.com/user/TEDtalks" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>TED Talks</strong></a>: Uma vasta gama de palestras sobre negócios, liderança, inovação e economia global.</li>
+                            <li><a href="https://www.youtube.com/user/HarvardBusinessReview" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Harvard Business Review</strong></a>: Insights e análises aprofundadas sobre gestão, estratégia e diversos tópicos de negócios.</li>
+                            <li><a href="https://www.youtube.com/user/FinancialTimes" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Financial Times</strong></a>: Notícias, análises e comentários sobre finanças e negócios globais.</li>
+                            <li><a href="https://www.youtube.com/user/EconomistVideo" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>The Economist</strong></a>: Reportagens aprofundadas e análises sobre notícias internacionais, política e negócios.</li>
+                            <li><a href="https://www.youtube.com/user/SimonSinek" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Simon Sinek</strong></a>: Palestras e entrevistas sobre liderança, gestão e cultura organizacional, com foco em propósito e inspiração.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Instagram Accounts - Assuntos Gerais (PT) -->
+                    <div class="media-card bg-pastel-purple">
+                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">Contas de Instagram - Assuntos Gerais:</h3>
+                        <ul class="list-disc list-inside space-y-2 text-text-main">
+                            <li><a href="https://www.instagram.com/badsciencejokes/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@badsciencejokes</strong></a>: Humor leve e inteligente relacionado à ciência.</li>
+                            <li><a href="https://www.instagram.com/9gag/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@9gag</strong></a>: Memes e conteúdo de humor viral, ótimo para entender o inglês informal.</li>
+                            <li><a href="https://www.instagram.com/dad_joking/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@dad_joking</strong></a>: Piadas e trocadilhos no estilo "pai", para um inglês mais cotidiano e divertido.</li>
+                            <li><a href="https://www.instagram.com/reallybadhumor/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@reallybadhumor</strong></a>: Mais humor, para descontrair e praticar o entendimento de diferentes tipos de piadas.</li>
+                            <li><a href="https://www.instagram.com/darkhistorymemes/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@darkhistorymemes</strong></a>: Combinação de história com humor, para aprender fatos de forma inusitada.</li>
+                            <li><a href="https://www.instagram.com/history_with_amy/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@history_with_amy</strong></a>: Conteúdo educativo sobre história, apresentado de forma envolvente.</li>
+                            <li><a href="https://www.instagram.com/bbcnews/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@bbcnews</strong></a>: Notícias globais confiáveis para manter-se atualizado e praticar o inglês formal.</li>
+                            <li><a href="https://www.instagram.com/bbcearth/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@bbcearth</strong></a>: Imagens e vídeos impressionantes da natureza, com legendas ricas em vocabulário.</li>
+                            <li><a href="https://www.instagram.com/businessinsider/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@businessinsider</strong></a>: Notícias e insights do mundo dos negócios e finanças.</li>
+                            <li><a href="https://www.instagram.com/unitednations/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@unitednations</strong></a>: Informações sobre causas globais e trabalho da ONU.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Instagram Accounts - Ciência e Tecnologia (PT) -->
+                    <div class="media-card bg-pastel-pink">
+                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">Contas de Instagram - Ciência e Tecnologia:</h3>
+                        <ul class="list-disc list-inside space-y-2 text-text-main">
+                            <li><a href="https://www.instagram.com/evolving.ai/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@evolving.ai</strong></a>: Conteúdo sobre inteligência artificial e o futuro da tecnologia.</li>
+                            <li><a href="https://www.instagram.com/tedxgateway/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@tedxgateway</strong></a>: Ideias inspiradoras e inovadoras em formato de posts curtos.</li>
+                            <li><a href="https://www.instagram.com/sciencemagazine/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@sciencemagazine</strong></a>: As últimas descobertas científicas e pesquisas.</li>
+                            <li><a href="https://www.instagram.com/science_sphere/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@science_sphere</strong></a>: Explora curiosidades e fatos científicos de forma visual.</li>
+                            <li><a href="https://www.instagram.com/newscientist/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@newscientist</strong></a>: Notícias e artigos sobre ciência e tecnologia.</li>
+                            <li><a href="https://www.instagram.com/unesco/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@unesco</strong></a>: Conteúdo sobre educação, ciência e cultura em nível global.</li>
+                            <li><a href="https://www.instagram.com/nasa/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nasa</strong></a>: Imagens e atualizações do espaço e exploração espacial.</li>
+                            <li><a href="https://www.instagram.com/unicef/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@unicef</strong></a>: Foco em direitos das crianças e desenvolvimento global.</li>
+                            <li><a href="https://www.instagram.com/theaipage/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@theaipage</strong></a>: Mais conteúdo sobre inteligência artificial e suas aplicações.</li>
+                            <li><a href="https://www.instagram.com/aigptinsights/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@aigptinsights</strong></a>: Insights e novidades sobre IA e modelos de linguagem.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Instagram Accounts - Saúde (Healthcare) (PT) -->
+                    <div class="media-card bg-soft-yellow-v2">
+                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">Contas de Instagram - Saúde (Healthcare):</h3>
+                        <ul class="list-disc list-inside space-y-2 text-text-main">
+                            <li><a href="https://www.instagram.com/nejm/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nejm</strong></a>: O Instagram do New England Journal of Medicine, com destaques de pesquisa.</li>
+                            <li><a href="https://www.instagram.com/nature.the.journal/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nature.the.journal</strong></a>: Conteúdo da renomada revista científica Nature.</li>
+                            <li><a href="https://www.instagram.com/funnydoctorss/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@funnydoctorss</strong></a>: Humor leve e memes relacionados à vida na área da saúde.</li>
+                            <li><a href="https://www.instagram.com/american_heart/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@american_heart</strong></a>: Informações sobre saúde cardiovascular da American Heart Association.</li>
+                            <li><a href="https://www.instagram.com/daily.medical.meme/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@daily.medical.meme</strong></a>: Mais memes e humor para descontrair na área da saúde.</li>
+                            <li><a href="https://www.instagram.com/cdcgov/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcgov</strong></a>: Informações e atualizações sobre saúde pública do CDC (Centers for Disease Control and Prevention).</li>
+                            <li><a href="https://www.instagram.com/medspiration/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@medspiration</strong></a>: Conteúdo inspirador e educativo para profissionais de saúde e estudantes.</li>
+                            <li><a href="https://www.instagram.com/cdcglobal/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcglobal</strong></a>: Foco em saúde global e iniciativas do CDC.</li>
+                            <li><a href="https://www.instagram.com/internalmemecine/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@internalmemecine</strong></a>: Memes e humor interno da área médica.</li>
+                            <li><a href="https://www.instagram.com/who/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@who</strong></a>: Informações e campanhas da Organização Mundial da Saúde.</li>
+                        </ul>
+                    </div>
                 </div>
-            </section>
 
-            <!-- Section 6: Book a Class -->
-            <section id="book-a-class" class="content-section border-secondary-dark-purple">
-                <h2 class="text-4xl font-extrabold mb-6 font-display uppercase">
-                    Agende Sua Aula Experimental com a Elisa Almada! <span class="animated-emoji">🗓️</span>
-                </h2>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center border-2 border-secondary-dark-purple">
-                    <p class="text-subtle-gray-v2 mb-6 leading-relaxed">
-                        Pronto para dar o próximo passo na sua jornada de aprendizado de inglês? Agende sua aula experimental gratuita com a Teacher Elisa agora mesmo! Vamos conversar sobre seus objetivos e como posso te ajudar a alcançá-los de forma leve e eficaz.
+                <div data-lang="en" class="bg-white p-6 rounded-lg shadow-md border-2 border-secondary-dark-purple">
+                    <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
+                        Learning English goes beyond classes! I've curated some amazing content for you to enjoy and, at the same time, deepen your contact with the language.
                     </p>
-                    <a href="https://calendar.google.com/calendar/u/0/appointments/s/YOUR_CALENDAR_LINK" target="_blank" class="inline-block bg-accent-green-bright text-white text-xl font-bold px-8 py-4 rounded-full hover:bg-accent-pink-vibrant transition-all duration-300 shadow-lg transform hover:scale-105 border-4 border-primary-dark-blue">
-                        Agendar Agora! <span class="animated-emoji">🚀</span>
-                    </a>
-                    <p class="text-sm text-subtle-gray-v2 mt-4">
-                        (Lembre-se de substituir "YOUR_CALENDAR_LINK" pelo seu link real do Google Agenda de agendamento)
-                    </p>
+
+                    <!-- YouTube Channels - General Subjects (EN) -->
+                    <div class="media-card bg-soft-yellow-v2">
+                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">YouTube Channels - General Subjects:</h3>
+                        <ul class="list-disc list-inside space-y-2 text-text-main">
+                            <li><a href="https://www.youtube.com/user/OverSimplified" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>OverSimplified</strong></a>: Complex stories explained in a hilarious and super accessible way.</li>
+                            <li><a href="https://www.youtube.com/user/TheNewYorkTimes" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>The New York Times</strong></a>: Current news and in-depth analyses to keep your English updated with global events.</li>
+                            <li><a href="https://www.youtube.com/user/Kurzgesagt" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Kurzgesagt – In a Nutshell</strong></a>: Animated videos about science, space, and technology with clear language.</li>
+                            <li><a href="https://www.youtube.com/user/TEDEducation" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>TED-Ed</strong></a>: Animated lessons on a vast range of topics that instigate critical thinking.</li>
+                            <li><a href="https://www.youtube.com/user/MinuteEarth" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Minute Earth</strong></a>: Short, animated answers to big questions about Earth and nature.</li>
+                            <li><a href="https://www.youtube.com/user/bbclearningenglish" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>BBC Learning English</strong></a>: Educational content focused on grammar, pronunciation, and vocabulary, made specifically for English learners.</li>
+                            <li><a href="https://www.youtube.com/user/thisisinsider" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Insider Science</strong></a>: Videos about innovation and scientific discoveries, ideal for those seeking specific vocabulary in the field.</li>
+                            <li><a href="https://www.youtube.com/channel/UCaV_B9M62lR_3n4oE_l5_YQ" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>What If Science Show</strong></a>: Explores hypothetical and curious scenarios in an intriguing way.</li>
+                            <li><a href="https://www.youtube.com/user/FreeDocumentaries" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Free High-Quality Documentaries</strong></a>: A vast collection of documentaries to expand knowledge and comprehension in English.</li>
+                            <li><a href="https://www.youtube.com/channel/UCyYpI9r1I5uM-o8tV8M000g" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Border Security</strong></a>: Series about life on the border, offering insights into real situations and practical vocabulary.</li>
+                            <li><a href="https://www.youtube.com/user/vox" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Vox</strong></a>: Clear and in-depth explanations of news, politics, and culture.</li>
+                            <li><a href="https://www.youtube.com/user/WIRED" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>WIRED</strong></a>: Focus on technology, science, and innovation, with interviews and trend analyses.</li>
+                            <li><a href="https://www.youtube.com/channel/UC0sR1p8yVnE3d4o_e1n1ZWA" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Odd Animal Specimens</strong></a>: Curious content about the animal kingdom, great for biology and nature vocabulary.</li>
+                            <li><a href="https://www.youtube.com/user/TastingHistory" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Tasting History with Max Miller</strong></a>: Combines history and cooking in an engaging way, with historical recipes and cultural context.</li>
+                        </ul>
+                    </div>
+
+                    <!-- YouTube Channels - Tourism (EN) -->
+                    <div class="media-card bg-soft-orange-v2">
+                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">YouTube Channels - Tourism:</h3>
+                        <ul class="list-disc list-inside space-y-2 text-text-main">
+                            <li><strong>For General Travel Inspiration and Tips:</strong>
+                                <ul class="list-circle list-inside ml-5">
+                                    <li><a href="https://www.youtube.com/user/KaraAndNate" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Kara and Nate</strong></a>: A couple's travel adventures, showcasing destinations and experiences worldwide.</li>
+                                    <li><a href="https://www.youtube.com/user/drewbinsky" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Drew Binsky</strong></a>: Travel videos through various countries, focusing on local culture and interaction.</li>
+                                    <li><a href="https://www.youtube.com/user/WoltersWorld" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Wolters World</strong></a>: Realistic travel tips, "dos and don'ts," with a touch of humor.</li>
+                                    <li><a href="https://www.youtube.com/user/lostleblanc" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Lost LeBlanc</strong></a>: Travel vlogs focusing on paradise destinations and lifestyle.</li>
+                                    <li><a href="https://www.youtube.com/user/TheEndlessAdventure" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>The Endless Adventure</strong></a>: Explore local cuisine and activities on their travels.</li>
+                                </ul>
+                            </li>
+                            <li><strong>For Budget Travel Tips:</strong>
+                                <ul class="list-circle list-inside ml-5 mt-2">
+                                    <li><a href="https://www.youtube.com/user/JordenTually" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Jorden Tually</strong></a>: Focused on budget-friendly travel and adventures.</li>
+                                    <li><a href="https://www.youtube.com/user/Terradrift" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Terradrift</strong></a>: Sustainable and outdoor travel tips.</li>
+                                </ul>
+                            </li>
+                            <li><strong>For Luxury Travel Vlogs:</strong>
+                                <ul class="list-circle list-inside ml-5 mt-2">
+                                    <li><a href="https://www.youtube.com/user/LuxuryEscapes" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Luxury Escapes</strong></a>: Luxury destinations and experiences around the world.</li>
+                                    <li><a href="https://www.youtube.com/channel/UCNx0t3L16xXG-E6wM5Q1l0A" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>ST Travel</strong></a>: Luxury travel vlogs with an aesthetic focus.</li>
+                                    <li><a href="https://www.youtube.com/channel/UCVfF2P2D9H6H2t2W5p1B4Xg" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Luxury Travel Club</strong></a>: Explores high-end hotels and experiences.</li>
+                                </ul>
+                            </li>
+                            <li><strong>For Specific Interests:</strong>
+                                <ul class="list-circle list-inside ml-5 mt-2">
+                                    <li><a href="https://www.youtube.com/user/ricksteves" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Rick Steves' Europe</strong></a>: Detailed European travel guides, focusing on culture and history.</li>
+                                    <li><a href="https://www.youtube.com/user/FearlessAndFar" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Fearless and Far</strong></a>: Adventure and travel challenges in remote places.</li>
+                                    <li><a href="https://www.youtube.com/user/MarkWiens" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Mark Wiens</strong></a>: Focused on street food and gastronomic travel experiences.</li>
+                                    <li><a href="https://www.youtube.com/user/indigotraveller" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Indigo Traveller</strong></a>: Explores complex and challenging places, with a focus on human stories.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- YouTube Channels - Healthcare (EN) -->
+                    <div class="media-card bg-pastel-blue">
+                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">YouTube Channels - Healthcare:</h3>
+                        <ul class="list-disc list-inside space-y-2 text-text-main">
+                            <li><a href="https://www.youtube.com/user/johnshopkinsmedicine" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Johns Hopkins Medicine</strong></a>: Medical and health information from one of the most renowned institutions.</li>
+                            <li><a href="https://www.youtube.com/user/Medzcool" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Medzcool</strong></a>: Educational health content, with clear explanations of medical topics.</li>
+                            <li><a href="https://www.youtube.com/user/MayoClinic" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Mayo Clinic</strong></a>: Reliable source of information on diseases, treatments, and healthy lifestyle.</li>
+                            <li><a href="https://www.youtube.com/user/WHO" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>World Health Organization (WHO)</strong></a>: Updates and information on global health and health policies.</li>
+                            <li><a href="https://www.youtube.com/user/medscape" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Medscape</strong></a>: Content for healthcare professionals, including news, articles, and continuing medical education.</li>
+                            <li><a href="https://www.youtube.com/user/OsmosisfromElsevier" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Osmosis from Elsevier</strong></a>: Animated and didactic videos on medical and health concepts.</li>
+                            <li><a href="https://www.youtube.com/channel/UCf-lY8304PjE_m8Tq3J2K0g" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>MedFlix</strong></a>: Entertainment and educational content about the world of medicine.</li>
+                            <li><a href="https://www.youtube.com/user/ClevelandClinic" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Cleveland Clinic</strong></a>: Health and wellness information from a leading institution.</li>
+                            <li><a href="https://www.youtube.com/user/NucleusMedicalMedia" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Nucleus Medical Media</strong></a>: Detailed medical animations to explain conditions and procedures.</li>
+                            <li><a href="https://www.youtube.com/user/StanfordHealthCare" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Stanford Health Care</strong></a>: Lectures and information on medical advances and healthcare.</li>
+                            <li><a href="https://www.youtube.com/user/nejmgroup" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>NEJM Group</strong></a>: Videos from the New England Journal of Medicine, with clinical cases and research discussions.</li>
+                            <li><a href="https://www.youtube.com/user/NHS" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>NHS (National Health Service - UK)</strong></a>: Information on public health and healthcare services in the UK.</li>
+                            <li><a href="https://www.youtube.com/user/uvahealth" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>UVA Health</strong></a>: Content of health and research of the University of Virginia Health.</li>
+                        </ul>
+                    </div>
+
+                    <!-- YouTube Channels - Business (EN) -->
+                    <div class="media-card bg-pastel-green">
+                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">YouTube Channels - Business:</h3>
+                        <ul class="list-disc list-inside space-y-2 text-text-main">
+                            <li><a href="https://www.youtube.com/user/TEDtalks" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>TED Talks</strong></a>: A wide range of talks on business, leadership, and the global economy.</li>
+                            <li><a href="https://www.youtube.com/user/HarvardBusinessReview" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Harvard Business Review</strong></a>: In-depth insights and analysis on management, strategy, and various business topics.</li>
+                            <li><a href="https://www.youtube.com/user/FinancialTimes" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Financial Times</strong></a>: News, analysis, and commentary on global finance and business.</li>
+                            <li><a href="https://www.youtube.com/user/EconomistVideo" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>The Economist</strong></a>: In-depth reporting and analysis on international news, politics, and business.</li>
+                            <li><a href="https://www.youtube.com/user/SimonSinek" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Simon Sinek</strong></a>: Talks and interviews on leadership, management, and organizational culture, focusing on purpose and inspiration.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Instagram Accounts - General Subjects (EN) -->
+                    <div class="media-card bg-pastel-purple">
+                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">Instagram Accounts - General Subjects:</h3>
+                        <ul class="list-disc list-inside space-y-2 text-text-main">
+                            <li><a href="https://www.instagram.com/badsciencejokes/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@badsciencejokes</strong></a>: Light and intelligent humor related to science.</li>
+                            <li><a href="https://www.instagram.com/9gag/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@9gag</strong></a>: Memes and viral humor content, great for understanding informal English.</li>
+                            <li><a href="https://www.instagram.com/dad_joking/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@dad_joking</strong></a>: Dad jokes and puns for more everyday and fun English.</li>
+                            <li><a href="https://www.instagram.com/reallybadhumor/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@reallybadhumor</strong></a>: More humor to relax and practice understanding different types of jokes.</li>
+                            <li><a href="https://www.instagram.com/darkhistorymemes/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@darkhistorymemes</strong></a>: Combination of history with humor, to learn facts in an unusual way.</li>
+                            <li><a href="https://www.instagram.com/history_with_amy/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@history_with_amy</strong></a>: Educational content about history, presented engagingly.</li>
+                            <li><a href="https://www.instagram.com/bbcnews/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@bbcnews</strong></a>: Reliable global news to stay updated and practice formal English.</li>
+                            <li><a href="https://www.instagram.com/bbcearth/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@bbcearth</strong></a>: Stunning images and videos of nature, with rich vocabulary captions.</li>
+                            <li><a href="https://www.instagram.com/businessinsider/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@businessinsider</strong></a>: News and insights from the world of business and finance.</li>
+                            <li><a href="https://www.instagram.com/unitednations/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@unitednations</strong></a>: Information on global causes and the work of the UN.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Instagram Accounts - Science and Technology (EN) -->
+                    <div class="media-card bg-pastel-pink">
+                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">Instagram Accounts - Science and Technology:</h3>
+                        <ul class="list-disc list-inside space-y-2 text-text-main">
+                            <li><a href="https://www.instagram.com/evolving.ai/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@evolving.ai</strong></a>: Content on artificial intelligence and the future of technology.</li>
+                            <li><a href="https://www.instagram.com/tedxgateway/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@tedxgateway</strong></a>: Inspiring and innovative ideas in short post format.</li>
+                            <li><a href="https://www.instagram.com/sciencemagazine/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@sciencemagazine</strong></a>: The latest scientific discoveries and research.</li>
+                            <li><a href="https://www.instagram.com/science_sphere/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@science_sphere</strong></a>: Explores scientific curiosities and facts visually.</li>
+                            <li><a href="https://www.instagram.com/newscientist/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@newscientist</strong></a>: News and articles on science and technology.</li>
+                            <li><a href="https://www.instagram.com/unesco/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@unesco</strong></a>: Content on education, science, and culture globally.</li>
+                            <li><a href="https://www.instagram.com/nasa/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nasa</strong></a>: Images and updates from space and space exploration.</li>
+                            <li><a href="https://www.instagram.com/unicef/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@unicef</strong></a>: Focus on children's rights and global development.</li>
+                            <li><a href="https://www.instagram.com/theaipage/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@theaipage</strong></a>: More content on artificial intelligence and its applications.</li>
+                            <li><a href="https://www.instagram.com/aigptinsights/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@aigptinsights</strong></a>: Insights and news on AI and language models.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Instagram Accounts - Healthcare (EN) -->
+                    <div class="media-card bg-soft-yellow-v2">
+                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">Instagram Accounts - Healthcare:</h3>
+                        <ul class="list-disc list-inside space-y-2 text-text-main">
+                            <li><a href="https://www.instagram.com/nejm/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nejm</strong></a>: The Instagram of the New England Journal of Medicine, with research highlights.</li>
+                            <li><a href="https://www.instagram.com/nature.the.journal/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nature.the.journal</strong></a>: Content from the renowned scientific journal Nature.</li>
+                            <li><a href="https://www.instagram.com/funnydoctorss/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@funnydoctorss</strong></a>: Light humor and memes related to life in healthcare.</li>
+                            <li><a href="https://www.instagram.com/american_heart/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@american_heart</strong></a>: Information on cardiovascular health from the American Heart Association.</li>
+                            <li><a href="https://www.instagram.com/daily.medical.meme/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@daily.medical.meme</strong></a>: More memes and humor to unwind in the healthcare field.</li>
+                            <li><a href="https://www.instagram.com/cdcgov/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcgov</strong></a>: Public health information and updates from the CDC (Centers for Disease Control and Prevention).</li>
+                            <li><a href="https://www.instagram.com/medspiration/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@medspiration</strong></a>: Inspiring and educational content for healthcare professionals and students.</li>
+                            <li><a href="https://www.instagram.com/cdcglobal/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcglobal</strong></a>: Focus on global health and CDC initiatives.</li>
+                            <li><a href="https://www.instagram.com/internalmemecine/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@internalmemecine</strong></a>: Internal memes and humor from the medical field.</li>
+                            <li><a href="https://www.instagram.com/who/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@who</strong></a>: Information and campaigns from the World Health Organization.</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
@@ -454,10 +946,12 @@
     </div>
 
     <footer class="text-center text-subtle-gray-v2 py-4 mt-auto">
-        <p>&copy; 2024 English with Elisa Almada. Aprendizado leve e divertido! <span class="animated-emoji">✨</span></p>
+        <p>&copy; 2024 English with Elisa Almada. Light and Fun Learning! <span class="animated-emoji">✨</span></p>
     </footer>
 
     <script>
+        let currentLang = 'en'; // Default language set to English
+
         document.addEventListener('DOMContentLoaded', () => {
             console.log('[LOG] DOM Content Loaded! Initializing script...');
             const navLinks = document.querySelectorAll('.nav-link');
@@ -466,7 +960,8 @@
             const individualExerciseView = document.getElementById('individual-exercise-view');
             const backToExerciseListBtn = document.getElementById('back-to-exercise-list-btn');
             const exerciseSelectLinks = document.querySelectorAll('.exercise-select-link');
-            const individualExerciseContents = document.querySelectorAll('.individual-exercise-content');
+            const individualExerciseContents = document.querySelectorAll('.individual-exercise-content'); // English only now
+            const langButtons = document.querySelectorAll('.lang-switcher button');
 
             // Helper function to update URL hash safely
             const updateUrlHash = (hash) => {
@@ -484,6 +979,42 @@
                     // Catch any unexpected errors with replaceState and fallback
                     console.error("[ERROR] Error calling history.replaceState, falling back to window.location.hash:", e);
                     window.location.hash = hash;
+                }
+            };
+
+            // Function to switch language
+            const switchLanguage = (lang) => {
+                currentLang = lang;
+                document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en-US'; // Update html lang attribute
+                console.log(`[LOG] Switching language to: ${lang}`);
+
+                // Hide all elements that can be language-switched
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.add('hidden');
+                });
+
+                // Show only elements for the current language
+                document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.remove('hidden');
+                });
+
+                // Update active language button style
+                langButtons.forEach(button => {
+                    if (button.dataset.langBtn === lang) {
+                        button.classList.add('active-lang');
+                    } else {
+                        button.classList.remove('active-lang');
+                    }
+                });
+
+                // Re-display current section to ensure proper content is shown
+                const activeSection = document.querySelector('.content-section.active');
+                if (activeSection) {
+                    // Force the active section to re-evaluate its content based on new language
+                    showSection(activeSection.id);
+                } else {
+                    // Default to exercises if no active section (shouldn't happen with default load)
+                    showSection('exercises');
                 }
             };
 
@@ -511,7 +1042,7 @@
                     console.error(`[ERROR] Target nav link not found for section: ${id}`);
                 }
 
-                // If navigating to exercises, ensure the correct view is shown
+                // Special handling for exercises section
                 if (id === 'exercises') {
                     console.log('[LOG] Navigating to exercises section logic.');
                     const currentHash = window.location.hash.substring(1);
@@ -528,7 +1059,7 @@
                 }
             };
 
-            // Function to display the list of exercises
+            // Function to display the list of exercises (always English content now)
             const displayExerciseList = () => {
                 console.log('[LOG] Displaying exercise list.');
                 individualExerciseView.classList.add('hidden'); // Ensure individual view is hidden
@@ -537,7 +1068,7 @@
                 updateUrlHash('');
             };
 
-            // Function to display a specific individual exercise
+            // Function to display a specific individual exercise (always English content now)
             const displayIndividualExercise = (exerciseId) => {
                 console.log(`[LOG] Displaying individual exercise: ${exerciseId}`);
                 exerciseListView.classList.add('hidden'); // Ensure list view is hidden
@@ -572,21 +1103,35 @@
             exerciseSelectLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
-                    const targetExerciseId = e.target.getAttribute('href').substring(1);
+                    const targetExerciseId = e.target.getAttribute('href').substring(1); // e.g., #exercise-say-tell
                     console.log(`[LOG] Exercise select link clicked: ${targetExerciseId}`);
                     displayIndividualExercise(targetExerciseId);
                 });
             });
 
             // Event listener for "Back to Exercise List" button
-            backToExerciseListBtn.addEventListener('click', () => {
-                console.log('[LOG] Back to exercise list button clicked.');
-                displayExerciseList();
+            if (backToExerciseListBtn) { // Check if button exists
+                backToExerciseListBtn.addEventListener('click', () => {
+                    console.log('[LOG] Back to exercise list button clicked.');
+                    displayExerciseList();
+                });
+            }
+
+            // Event listeners for language switcher buttons
+            langButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    switchLanguage(button.dataset.langBtn);
+                });
             });
 
             // Initial section load based on URL hash or default
             const initialHash = window.location.hash.substring(1);
             console.log('[LOG] Initial URL hash:', initialHash);
+
+            // Set initial language to English
+            switchLanguage('en');
+
+            // Load initial section after language is set
             if (initialHash && document.getElementById(initialHash) && document.getElementById(initialHash).classList.contains('content-section')) {
                 console.log('[LOG] Loading section from hash:', initialHash);
                 showSection(initialHash);
@@ -600,7 +1145,7 @@
             }
 
 
-            // --- Centralized Exercise Data ---
+            // --- Centralized Exercise Data (English Only) ---
             const allExerciseData = {
                 'say-tell': {
                     inputs: [
@@ -617,22 +1162,21 @@
                         { id: 'dodoes-q3', answer: 'does', explanation: 'Similar to the previous rule, "does" is used for the third person singular subject "he" in questions.' }
                     ]
                 },
-                'make-do': { // Novo exercício adicionado
+                'make-do': {
                     inputs: [
-                        { id: 'makedo-q1', answer: 'make', explanation: 'Usamos "make a decision" para tomar uma decisão.' },
-                        { id: 'makedo-q2', answer: 'does', explanation: 'Usamos "do one\'s best" para dar o seu melhor. Lembre-se do "s" para terceira pessoa do singular (she).' },
-                        { id: 'makedo-q3', answer: 'do', explanation: 'Usamos "do a favor" para fazer um favor.' },
-                        { id: 'makedo-q4', answer: 'doing', explanation: 'Usamos "do research" para fazer uma pesquisa. Como é um processo contínuo ("are doing"), a forma é "doing".' }
+                        { id: 'makedo-q1', answer: 'make', explanation: 'We use "make a decision" to decide.' },
+                        { id: 'makedo-q2', answer: 'does', explanation: 'We use "do one\'s best" to give your best. Remember the "s" for third person singular (she).' },
+                        { id: 'makedo-q3', answer: 'do', explanation: 'We use "do a favor" to do a favor.' },
+                        { id: 'makedo-q4', answer: 'doing', explanation: 'We use "do research" to conduct research. As it\'s an ongoing process ("are doing"), the form is "doing".' }
                     ]
                 }
-                // Adicione dados para novos exercícios aqui, usando IDs únicos para inputs
             };
 
-            // --- General Function to Setup Exercise Logic ---
+            // --- General Function to Setup Exercise Logic (English Only now) ---
             const setupExerciseLogic = (exerciseId) => {
-                const exerciseContainer = document.getElementById(`exercise-${exerciseId}`);
+                const exerciseContainer = document.getElementById(exerciseId);
                 if (!exerciseContainer) {
-                    console.warn(`[WARNING] Exercise container not found for ID: exercise-${exerciseId}`);
+                    console.warn(`[WARNING] Exercise container not found for ID: ${exerciseId}`);
                     return;
                 }
 
@@ -650,51 +1194,51 @@
 
                 checkButton.addEventListener('click', () => {
                     console.log(`[LOG] Check button clicked for exercise: ${exerciseId}`);
-                    let feedbackHtml = '<h4 class="font-bold text-lg mb-2">Seus Resultados:</h4>';
-                    let resultsToCopy = `Resultados do Exercício "${exerciseContainer.querySelector('h3').textContent.replace('💡','').trim()}":\n\n`; // Trim emoji/space
+                    let feedbackHtml = '<h4 class="font-bold text-lg mb-2">Your Results:</h4>';
+                    let resultsToCopy = `Exercise Results "${exerciseContainer.querySelector('h3').textContent.replace('🗣️','').replace('🤔','').replace('🛠️','').trim()}":\n\n`;
                     let allCorrect = true;
 
                     exerciseAnswers.forEach(qData => {
                         const inputElement = document.getElementById(qData.id);
                         if (!inputElement) {
                             console.error(`[ERROR] Input element not found for ID: ${qData.id} in exercise ${exerciseId}`);
-                            return; // Skip this question if input is missing
+                            return;
                         }
                         const userAnswer = inputElement.value.trim().toLowerCase();
                         const correctAnswer = qData.answer;
                         const explanation = qData.explanation;
                         const labelElement = document.querySelector(`label[for="${qData.id}"]`);
-                        const questionText = labelElement ? labelElement.textContent.replace(/^\d+\.\s*(.*?)\s*$/, '$1').replace('______', '____') : 'Questão desconhecida';
+                        const questionText = labelElement ? labelElement.textContent.replace(/^\d+\.\s*(.*?)\s*$/, '$1').replace('______', '____') : 'Unknown Question';
 
 
                         let status = '';
                         if (userAnswer === correctAnswer) {
-                            status = '<span class="text-accent-green-bright">Correto!</span>';
-                            resultsToCopy += `Questão: ${questionText}\nSua Resposta: "${userAnswer}" (Correto)\n\n`;
+                            status = '<span class="text-accent-green-bright">Correct!</span>';
+                            resultsToCopy += `Question: ${questionText}\nYour Answer: "${userAnswer}" (Correct)\n\n`;
                         } else {
-                            status = `<span class="text-warning-red">Incorreto.</span> Resposta correta: <strong>${correctAnswer}</strong>.`;
-                            resultsToCopy += `Questão: ${questionText}\nSua Resposta: "${userAnswer}" (Incorreto). Resposta Correta: "${correctAnswer}"\nExplicação: ${explanation}\n\n`;
+                            status = `<span class="text-warning-red">Incorrect.</span> Correct answer: <strong>${correctAnswer}</strong>.`;
+                            resultsToCopy += `Question: ${questionText}\nYour Answer: "${userAnswer}" (Incorrect). Correct Answer: "${correctAnswer}"\nExplanation: ${explanation}\n\n`;
                             allCorrect = false;
                         }
 
                         feedbackHtml += `
                             <p class="mb-2">
                                 <strong>${questionText}</strong> <br>
-                                Sua resposta: "${userAnswer}" - ${status}
+                                Your answer: "${userAnswer}" - ${status}
                             </p>
-                            <p class="text-sm text-subtle-gray-v2 ml-4 mb-3">${explanation}</p>
+                            <p class="text-sm text-subtle-gray-v2 ml-4 mb-3">Explanation: ${explanation}</p>
                         `;
                     });
 
                     if (allCorrect) {
-                        feedbackHtml = `<p class="text-xl font-bold text-accent-green-bright mb-4">Parabéns! Você acertou todas as questões!</p>` + feedbackHtml;
+                        feedbackHtml = `<p class="text-xl font-bold text-accent-green-bright mb-4">Congratulations! You got all questions correct!</p>` + feedbackHtml;
                     }
 
                     feedbackDiv.innerHTML = feedbackHtml;
                     feedbackDiv.classList.remove('hidden');
-                    copyButton.dataset.results = resultsToCopy; // Store results for copying
+                    copyButton.dataset.results = resultsToCopy;
                     copyButton.classList.remove('hidden');
-                    copyMessageDiv.classList.add('hidden'); // Hide previous message
+                    copyMessageDiv.classList.add('hidden');
                 });
 
                 copyButton.addEventListener('click', () => {
@@ -708,14 +1252,14 @@
                             tempTextArea.select();
                             document.execCommand('copy');
                             document.body.removeChild(tempTextArea);
-                            copyMessageDiv.textContent = 'Resultados copiados para a área de transferência!';
+                            copyMessageDiv.textContent = 'Results copied to clipboard!';
                             copyMessageDiv.classList.remove('hidden');
                             copyMessageDiv.classList.remove('text-warning-red');
                             copyMessageDiv.classList.add('text-accent-green-bright');
                             console.log('[LOG] Results copied successfully.');
                         } catch (err) {
                             console.error('[ERROR] Error trying to copy results:', err);
-                            copyMessageDiv.textContent = 'Erro ao copiar resultados. Por favor, tente novamente.';
+                            copyMessageDiv.textContent = 'Error copying results. Please try again.';
                             copyMessageDiv.classList.remove('hidden');
                             copyMessageDiv.classList.remove('text-accent-green-bright');
                             copyMessageDiv.classList.add('text-warning-red');
@@ -733,37 +1277,52 @@
             console.log('[LOG] All exercise logic setup completed.');
 
 
-            // --- Proficiency Test Logic (remains separate from general exercises) ---
+            // --- Proficiency Test Logic (English Only) ---
             const quizQuestions = [
                 {
-                    question: "1. He ______ to the gym every day.",
-                    options: ["goes", "go", "going"],
-                    correctAnswer: "goes",
-                    explanation: "Para a terceira pessoa do singular (he, she, it) no Present Simple, adicionamos '-es' a verbos terminados em -o, -s, -sh, -ch, -x, -z."
+                    question: "1. He usually ______ (go) to work by car, but today he ______ (walk).",
+                    type: "radio",
+                    options: ["goes / is walking", "is going / walks", "went / walked"],
+                    correctAnswer: "goes / is walking",
+                    explanation: "We use the Present Simple for habits ('usually goes') and the Present Continuous for actions happening now ('today he is walking')."
                 },
                 {
-                    question: "2. \"Could you please ______ me the time?\"",
-                    options: ["say", "tell", "speak"],
-                    correctAnswer: "tell",
-                    explanation: "Usamos 'tell' quando especificamos a pessoa para quem estamos falando (tell me, tell him, tell a story). 'Say' é usado para o que é dito, sem especificar o ouvinte."
+                    question: "2. While I ______ (read) a book, my phone ______ (ring).",
+                    type: "radio",
+                    options: ["read / rang", "was reading / rang", "am reading / rings"],
+                    correctAnswer: "was reading / rang",
+                    explanation: "The Past Continuous ('was reading') is used for an action in progress in the past, interrupted by a short action in the Past Simple ('rang')."
                 },
                 {
-                    question: "3. They ______ their homework yet.",
-                    options: ["haven't finished", "didn't finish", "not finished"],
-                    correctAnswer: "haven't finished",
-                    explanation: "'Yet' (ainda) é frequentemente usado com o Present Perfect para indicar que algo não aconteceu até o momento presente. 'Didn't finish' seria para uma ação concluída no passado."
+                    question: "3. I ______ (not see) her since last year.",
+                    type: "radio",
+                    options: ["didn't see", "haven't seen", "am not seeing"],
+                    correctAnswer: "haven't seen",
+                    explanation: "We use the Present Perfect ('haven't seen') with 'since' to indicate an action that started in the past and continues or has relevance in the present."
                 },
+                { question: "4. I think it ______ (rain) tomorrow. (Prediction)", type: "radio", options: ["is going to rain", "will rain", "rains"], correctAnswer: "will rain", explanation: "For predictions based on personal opinion, without visible evidence, we use 'will'." },
+                { question: "5. You ______ study harder if you want to pass the exam. (Strong advice/necessity)", type: "radio", options: ["can", "should", "must"], correctAnswer: "must", explanation: "'Must' expresses a strong obligation or necessity." },
+                { question: "6. If it ______ (rain) tomorrow, we ______ (stay) home. (First Conditional)", type: "radio", options: ["rains / will stay", "will rain / stay", "rained / would stay"], correctAnswer: "rains / will stay", explanation: "In the First Conditional, we use the Present Simple in the 'if' clause and 'will' + infinitive in the main clause to express a real or possible future condition." },
+                { question: "7. If I ______ (have) a million dollars, I ______ (buy) a big house. (Second Conditional)", type: "radio", options: ["had / would buy", "have / will buy", "would have / buy"], correctAnswer: "had / would buy", explanation: "In the Second Conditional, we use the Past Simple in the 'if' clause and 'would' + infinitive in the main clause to express a hypothetical or unreal situation in the present/future." },
+                { question: "8. The book ______ (write) by a famous author last year. (Passive Voice)", type: "radio", options: ["wrote", "was written", "is written"], correctAnswer: "was written", explanation: "This is the passive voice in the Past Simple. The book 'was written' by someone. We use 'was/were' + Past Participle." },
+                { question: "9. She has ______ cat and ______ dog. ______ cat is black. (Articles)", type: "radio", options: ["a / a / The", "an / a / A", "the / a / The"], correctAnswer: "a / a / The", explanation: "We use 'a/an' to introduce something for the first time. 'The' is used when the object has already been mentioned or is specific." },
+                { question: "10. The meeting is ______ 3 PM ______ Friday. (Prepositions of Time)", type: "radio", options: ["at / on", "on / at", "in / in"], correctAnswer: "at / on", explanation: "We use 'at' for specific times and 'on' for days of the week." },
+                { question: "11. The book is ______ the table, ______ the lamp. (Prepositions of Place)", type: "radio", options: ["on / next to", "at / in", "in / on"], correctAnswer: "on / next to", explanation: "We use 'on' to indicate something is on a surface and 'next to' to indicate something is beside another." },
+                { question: "12. The plane will ______ in ten minutes. (Meaning: take off from the ground)", type: "radio", options: ["take off", "take up", "take on"], correctAnswer: "take off", explanation: "The phrasal verb 'take off' means to depart (for aircraft) or to remove (clothes)." },
+                { question: "13. If you don't know the word, you can ______ it ______ in a dictionary. (Meaning: find its meaning)", type: "radio", options: ["look / over", "look / up", "look / into"], correctAnswer: "look / up", explanation: "The phrasal verb 'look up' means to search for information (in a dictionary, book, internet)." },
+                { question: "14. She is ______ (tall) than her brother. He runs ______ (quickly) than me. (Comparison)", type: "radio", options: ["taller / more quickly", "tallest / quicker", "more tall / more quick"], correctAnswer: "taller / more quickly", explanation: "For short adjectives, we add '-er' in comparison. For adverbs ending in '-ly', we use 'more'." },
+                { question: "15. There isn't ______ water. There are ______ books. (Quantifiers)", type: "radio", options: ["many / much", "much / many", "a lot of / a lot of"], correctAnswer: "much / many", explanation: "We use 'much' with uncountable nouns ('water') and 'many' with countable plural nouns ('books'). 'A lot of' can be used with both." },
+                { question: "16. By the time I arrived, he ______ (already leave). (Past Perfect)", type: "radio", options: ["already left", "had already left", "was already leaving"], correctAnswer: "had already left", explanation: "The Past Perfect ('had already left') is used to indicate an action that was completed before another event in the past ('By the time I arrived')." },
+                { question: "17. She said, \"I am happy.\" (Reported Speech)", type: "radio", options: ["She said she is happy.", "She said she was happy.", "She says she is happy."], correctAnswer: "She said she was happy.", explanation: "When reporting speech in the past ('She said'), the tense of the original sentence usually 'shifts back' one tense. 'Am happy' becomes 'was happy'." },
+                { question: "18. If you heat water to 100 degrees Celsius, it ______ (boil).", type: "radio", options: ["boils", "will boil", "would boil"], correctAnswer: "boils", explanation: "The Zero Conditional is used for general facts or scientific truths. Both clauses use the Present Simple." },
+                { question: "19. This is the student ______ helped me with my homework.", type: "radio", options: ["which", "who", "whose"], correctAnswer: "who", explanation: "We use 'who' to refer to people." },
+                { question: "20. By next year, I ______ (learn) English for five years.", type: "radio", options: ["will learn", "will have learned", "am learning"], correctAnswer: "will have learned", explanation: "The Future Perfect ('will have learned') is used for actions that will be completed at or before a specific point in the future." },
                 {
-                    question: "4. If I ______ a bird, I ______ fly.",
-                    options: ["was / would", "were / would", "am / will"],
-                    correctAnswer: "were / would",
-                    explanation: "Esta é uma frase condicional de tipo 2 (Second Conditional), usada para situações hipotéticas ou irreais no presente ou futuro. Para todos os sujeitos no 'if clause' com o verbo 'to be', usamos 'were'."
-                },
-                {
-                    question: "5. She's a doctor, ______?",
-                    options: ["isn't she", "doesn't she", "is she"],
-                    correctAnswer: "isn't she",
-                    explanation: "Esta é uma Question Tag. A regra geral é usar o auxiliar inverso do verbo principal. Como 'she's' é uma contração de 'she is', o auxiliar é 'is', e a tag se torna 'isn't she'."
+                    question: "Writing Part: Write a short paragraph (3-5 sentences) about your favorite hobby or a recent travel experience.",
+                    type: "textarea",
+                    correctAnswer: null,
+                    explanation: "Feedback for this section is manual. Please copy your results and send them to Teacher Elisa!",
+                    id: "writing-q1"
                 }
             ];
 
@@ -772,53 +1331,65 @@
             const copyTestResultsBtn = document.getElementById('copy-test-results');
             const testCopyMessage = document.getElementById('test-copy-message');
 
-            if (proficiencyQuizForm) { // Ensure the form exists before adding listener
+            if (proficiencyQuizForm) {
                 proficiencyQuizForm.addEventListener('submit', (e) => {
                     e.preventDefault();
                     console.log('[LOG] Proficiency test submitted.');
                     let score = 0;
-                    let resultsHtml = '<h4 class="font-bold text-lg mb-2">Resultados do Teste de Nível:</h4>';
-                    let resultsToCopy = 'Resultados do Teste de Nível de Proficiência:\n\n';
+                    let resultsHtml = '<h4 class="font-bold text-lg mb-2">Proficiency Test Results:</h4>';
+                    let resultsToCopy = 'Proficiency Level Test Results:\n\n';
 
                     quizQuestions.forEach((q, index) => {
-                        const questionName = `q${index + 1}`;
-                        const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
-                        const userAnswer = selectedOption ? selectedOption.value : 'Não respondida';
-                        const isCorrect = userAnswer === q.correctAnswer;
+                        if (q.type === "radio") {
+                            const questionName = `q${index + 1}`;
+                            const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
+                            const userAnswer = selectedOption ? selectedOption.value : 'Not answered';
+                            const isCorrect = userAnswer.toLowerCase() === q.correctAnswer.toLowerCase();
 
-                        if (isCorrect) {
-                            score++;
-                            resultsHtml += `<p class="mb-2"><strong>${q.question}</strong> Sua resposta: "${userAnswer}" - <span class="text-accent-green-bright">Correto!</span></p>`;
-                            resultsToCopy += `Questão ${index + 1}: ${q.question}\nSua Resposta: "${userAnswer}" (Correto)\n\n`;
-                        } else {
+                            if (isCorrect) {
+                                score++;
+                                resultsHtml += `<p class="mb-2"><strong>${q.question}</strong> Your answer: "${userAnswer}" - <span class="text-accent-green-bright">Correct!</span></p>`;
+                                resultsToCopy += `Question ${index + 1}: ${q.question}\nYour Answer: "${userAnswer}" (Correct)\n\n`;
+                            } else {
+                                resultsHtml += `
+                                    <p class="mb-2">
+                                        <strong>${q.question}</strong> <br>
+                                        Your answer: "${userAnswer}" - <span class="text-warning-red">Incorrect.</span> Correct answer: <strong>${q.correctAnswer}</strong>.
+                                    </p>
+                                    <p class="text-sm text-subtle-gray-v2 ml-4 mb-3">Explanation: ${q.explanation}</p>
+                                `;
+                                resultsToCopy += `Question ${index + 1}: ${q.question}\nYour Answer: "${userAnswer}" (Incorrect). Correct Answer: "${q.correctAnswer}"\nExplanation: ${q.explanation}\n\n`;
+                            }
+                        } else if (q.type === "textarea") {
+                            const writingInput = document.getElementById(q.id);
+                            const userWriting = writingInput ? writingInput.value.trim() : 'Not answered';
                             resultsHtml += `
-                                <p class="mb-2">
-                                    <strong>${q.question}</strong> <br>
-                                    Sua resposta: "${userAnswer}" - <span class="text-warning-red">Incorreto.</span> Resposta correta: <strong>${q.correctAnswer}</strong>.
-                                </p>
+                                <p class="mb-2"><strong>${q.question}</strong></p>
+                                <p class="text-subtle-gray-v2 italic ml-4 mb-3">Your Writing:</p>
+                                <div class="bg-white p-3 rounded-lg border border-subtle-gray-v2 text-text-main whitespace-pre-wrap">${userWriting}</div>
                                 <p class="text-sm text-subtle-gray-v2 ml-4 mb-3">${q.explanation}</p>
                             `;
-                            resultsToCopy += `Questão ${index + 1}: ${q.question}\nSua Resposta: "${userAnswer}" (Incorreto). Resposta Correta: "${q.correctAnswer}"\nExplicação: ${q.explanation}\n\n`;
+                            resultsToCopy += `\n--- Writing Part ---\n${q.question}\nYour Writing:\n"${userWriting}"\n${q.explanation}\n\n`;
                         }
                     });
 
-                    const totalQuestions = quizQuestions.length;
-                    const percentage = (score / totalQuestions) * 100;
+                    const totalGradableQuestions = quizQuestions.filter(q => q.type === "radio").length;
+                    const percentage = (score / totalGradableQuestions) * 100;
                     let levelSuggestion = '';
 
                     if (percentage >= 90) {
-                        levelSuggestion = 'Avançado (C1/C2)';
+                        levelSuggestion = 'Advanced (C1/C2)';
                     } else if (percentage >= 70) {
-                        levelSuggestion = 'Intermediário Avançado (B2)';
+                        levelSuggestion = 'Upper Intermediate (B2)';
                     } else if (percentage >= 50) {
-                        levelSuggestion = 'Intermediário (B1)';
+                        levelSuggestion = 'Intermediate (B1)';
                     } else if (percentage >= 30) {
-                        levelSuggestion = 'Pré-Intermediário (A2)';
+                        levelSuggestion = 'Pre-Intermediate (A2)';
                     } else {
-                        levelSuggestion = 'Básico (A1)';
+                        levelSuggestion = 'Basic (A1)';
                     }
 
-                    const finalResultText = `Você acertou ${score} de ${totalQuestions} questões (${percentage.toFixed(0)}%).\nNível Sugerido: ${levelSuggestion}.\n\n`;
+                    const finalResultText = `You answered ${score} out of ${totalGradableQuestions} questions (${percentage.toFixed(0)}%).\nSuggested Level: ${levelSuggestion}.\n\n`;
                     resultsHtml = `<p class="text-xl font-bold text-primary-dark-blue mb-4">${finalResultText}</p>` + resultsHtml;
                     resultsToCopy = finalResultText + resultsToCopy;
 
@@ -826,7 +1397,7 @@
                     testResultsDiv.classList.remove('hidden');
                     copyTestResultsBtn.dataset.results = resultsToCopy;
                     copyTestResultsBtn.classList.remove('hidden');
-                    testCopyMessage.classList.add('hidden'); // Hide previous message
+                    testCopyMessage.classList.add('hidden');
                 });
 
                 copyTestResultsBtn.addEventListener('click', () => {
@@ -840,24 +1411,22 @@
                             tempTextArea.select();
                             document.execCommand('copy');
                             document.body.removeChild(tempTextArea);
-                            testCopyMessage.textContent = 'Resultados copiados para a área de transferência!';
+                            testCopyMessage.textContent = 'Results copied to clipboard!';
                             testCopyMessage.classList.remove('hidden');
                             testCopyMessage.classList.remove('text-warning-red');
                             testCopyMessage.classList.add('text-accent-green-bright');
-                            console.log('[LOG] Test results copied successfully.');
+                            console.log('[LOG] Results copied successfully.');
                         } catch (err) {
-                            console.error('[ERROR] Error trying to copy test results:', err);
-                            testCopyMessage.textContent = 'Erro ao copiar resultados. Por favor, tente novamente.';
-                            testCopyMessage.classList.remove('hidden');
-                            testCopyMessage.classList.remove('text-accent-green-bright');
-                            testCopyMessage.classList.add('text-warning-red');
+                            console.error('[ERROR] Error trying to copy results:', err);
+                            testCopyMessage.textContent = 'Error copying results. Please try again.';
+                            copyTestResultsBtn.classList.remove('hidden');
+                            copyTestResultsBtn.classList.add('text-warning-red');
                         }
                     } else {
                         console.warn('[WARNING] No test results to copy found.');
                     }
                 });
             } // End of proficiencyQuizForm check
-
         });
     </script>
 </body>
