@@ -880,8 +880,6 @@
     </footer>
 
     <script>
-        let currentLang = 'en'; // Default language set to English
-
         document.addEventListener('DOMContentLoaded', () => {
             console.log('[LOG] DOM Content Loaded! Initializing script...');
             const navLinks = document.querySelectorAll('.nav-link');
@@ -890,45 +888,40 @@
             const individualExerciseView = document.getElementById('individual-exercise-view');
             const backToExerciseListBtn = document.getElementById('back-to-exercise-list-btn');
             const exerciseSelectLinks = document.querySelectorAll('.exercise-select-link');
-            const individualExerciseContents = document.querySelectorAll('.individual-exercise-content'); // English only now
+            const individualExerciseContents = document.querySelectorAll('.individual-exercise-content');
             const langButtons = document.querySelectorAll('.lang-switcher button');
 
             // Helper function to update URL hash safely
             const updateUrlHash = (hash) => {
                 try {
                     if (window.location.protocol === 'blob:' || typeof history.replaceState === 'undefined') {
-                        // Fallback for blob: protocol or if replaceState is not supported
                         window.location.hash = hash;
                         console.log(`[LOG] Fallback: window.location.hash set to: #${hash}`);
                     } else {
-                        // Use replaceState for cleaner URLs in standard environments
                         history.replaceState(null, '', hash ? `#${hash}` : window.location.pathname + window.location.search);
                         console.log(`[LOG] history.replaceState set to: #${hash}`);
                     }
                 } catch (e) {
-                    // Catch any unexpected errors with replaceState and fallback
                     console.error("[ERROR] Error calling history.replaceState, falling back to window.location.hash:", e);
                     window.location.hash = hash;
                 }
             };
 
             // Function to switch language
+            let currentLang = 'en'; // Default language set to English
             const switchLanguage = (lang) => {
                 currentLang = lang;
-                document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en-US'; // Update html lang attribute
+                document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en-US';
                 console.log(`[LOG] Switching language to: ${lang}`);
 
-                // Hide all elements that can be language-switched
                 document.querySelectorAll('[data-lang]').forEach(el => {
                     el.classList.add('hidden');
                 });
 
-                // Show only elements for the current language
                 document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
                     el.classList.remove('hidden');
                 });
 
-                // Update active language button style
                 langButtons.forEach(button => {
                     if (button.dataset.langBtn === lang) {
                         button.classList.add('active-lang');
@@ -937,13 +930,10 @@
                     }
                 });
 
-                // Re-display current section to ensure proper content is shown
                 const activeSection = document.querySelector('.content-section.active');
                 if (activeSection) {
-                    // Force the active section to re-evaluate its content based on new language
                     showSection(activeSection.id);
                 } else {
-                    // Default to exercises if no active section (shouldn't happen with default load)
                     showSection('exercises');
                 }
             };
@@ -972,7 +962,6 @@
                     console.error(`[ERROR] Target nav link not found for section: ${id}`);
                 }
 
-                // Special handling for exercises section
                 if (id === 'exercises') {
                     console.log('[LOG] Navigating to exercises section logic.');
                     const currentHash = window.location.hash.substring(1);
@@ -989,28 +978,28 @@
                 }
             };
 
-            // Function to display the list of exercises (always English content now)
+            // Function to display the list of exercises
             const displayExerciseList = () => {
                 console.log('[LOG] Displaying exercise list.');
-                individualExerciseView.classList.add('hidden'); // Ensure individual view is hidden
-                exerciseListView.classList.remove('hidden'); // Ensure list view is visible
+                individualExerciseView.classList.add('hidden');
+                exerciseListView.classList.remove('hidden');
                 console.log('[LOG] exerciseListView visibility status (should be visible):', !exerciseListView.classList.contains('hidden'));
                 updateUrlHash('');
             };
 
-            // Function to display a specific individual exercise (always English content now)
+            // Function to display a specific individual exercise
             const displayIndividualExercise = (exerciseId) => {
                 console.log(`[LOG] Displaying individual exercise: ${exerciseId}`);
-                exerciseListView.classList.add('hidden'); // Ensure list view is hidden
-                individualExerciseView.classList.remove('hidden'); // Ensure individual view wrapper is visible
+                exerciseListView.classList.add('hidden');
+                individualExerciseView.classList.remove('hidden');
 
                 individualExerciseContents.forEach(exercise => {
-                    exercise.classList.add('hidden'); // Hide all individual exercises first
+                    exercise.classList.add('hidden');
                 });
 
                 const targetExercise = document.getElementById(exerciseId);
                 if (targetExercise) {
-                    targetExercise.classList.remove('hidden'); // Show the specific exercise
+                    targetExercise.classList.remove('hidden');
                     console.log(`[LOG] Individual exercise '${exerciseId}' activated.`);
                 } else {
                     console.error(`[ERROR] Target individual exercise not found: ${exerciseId}`);
@@ -1033,14 +1022,14 @@
             exerciseSelectLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
-                    const targetExerciseId = e.target.getAttribute('href').substring(1); // e.g., #exercise-say-tell
+                    const targetExerciseId = e.target.getAttribute('href').substring(1);
                     console.log(`[LOG] Exercise select link clicked: ${targetExerciseId}`);
                     displayIndividualExercise(targetExerciseId);
                 });
             });
 
             // Event listener for "Back to Exercise List" button
-            if (backToExerciseListBtn) { // Check if button exists
+            if (backToExerciseListBtn) {
                 backToExerciseListBtn.addEventListener('click', () => {
                     console.log('[LOG] Back to exercise list button clicked.');
                     displayExerciseList();
@@ -1067,11 +1056,11 @@
                 showSection(initialHash);
             } else if (initialHash && document.getElementById(initialHash) && document.getElementById(initialHash).classList.contains('individual-exercise-content')) {
                 console.log('[LOG] Loading individual exercise from hash:', initialHash);
-                showSection('exercises'); // Show exercises section first
-                displayIndividualExercise(initialHash); // Then display specific exercise
+                showSection('exercises');
+                displayIndividualExercise(initialHash);
             } else {
                 console.log('[LOG] No specific hash, defaulting to exercises section.');
-                showSection('exercises'); // Default to exercises section
+                showSection('exercises');
             }
 
 
@@ -1100,7 +1089,6 @@
                         { id: 'makedo-q4', answer: 'doing', explanation: 'We use "do research" to conduct research. As it\'s an ongoing process ("are doing"), the form is "doing".' }
                     ]
                 },
-                // NEW EXERCISES ADDED HERE
                 'quantifiers-1': {
                     type: 'radio',
                     inputs: [
@@ -1119,10 +1107,9 @@
                         { name: 'quantifiers2_q4', answer: 'many', explanation: 'We use "many" with countable nouns like "museums" in questions.' }
                     ]
                 }
-                // End of new exercises
             };
 
-            // --- General Function to Setup Exercise Logic (English Only now) ---
+            // --- General Function to Setup Exercise Logic ---
             const setupExerciseLogic = (exerciseId) => {
                 const exerciseContainer = document.getElementById(exerciseId);
                 if (!exerciseContainer) {
@@ -1135,8 +1122,14 @@
                 const feedbackDiv = exerciseContainer.querySelector('.exercise-feedback');
                 const copyMessageDiv = exerciseContainer.querySelector('.exercise-copy-message');
 
+                console.log(`[LOG] Setting up exercise: ${exerciseId}`);
+                console.log(`[LOG]   checkButton found: ${!!checkButton}`);
+                console.log(`[LOG]   copyButton found: ${!!copyButton}`);
+                console.log(`[LOG]   feedbackDiv found: ${!!feedbackDiv}`);
+                console.log(`[LOG]   copyMessageDiv found: ${!!copyMessageDiv}`);
+
                 if (!checkButton || !copyButton || !feedbackDiv || !copyMessageDiv) {
-                    console.error(`[ERROR] Missing elements for exercise setup of ID: ${exerciseId}. Check buttons, feedback, or copy message divs.`);
+                    console.error(`[ERROR] Missing one or more required elements for exercise setup of ID: ${exerciseId}. Skipping setup for this exercise.`);
                     return;
                 }
 
@@ -1145,7 +1138,7 @@
                 checkButton.addEventListener('click', () => {
                     console.log(`[LOG] Check button clicked for exercise: ${exerciseId}`);
                     let feedbackHtml = '<h4 class="font-bold text-lg mb-2">Your Results:</h4>';
-                    let resultsToCopy = `Exercise Results "${exerciseContainer.querySelector('h3').textContent.replace('🗣️','').replace('🤔','').replace('🛠️','').replace('🇮🇹','').trim()}":\n\n`; // Added 🇮🇹 to remove from copy text
+                    let resultsToCopy = `Exercise Results "${exerciseContainer.querySelector('h3').textContent.replace('🗣️','').replace('🤔','').replace('🛠️','').replace('🇮🇹','').trim()}":\n\n`;
                     let allCorrect = true;
 
                     exerciseData.inputs.forEach((qData, index) => {
@@ -1164,12 +1157,12 @@
                         } else { // For text input fields
                             const inputElement = document.getElementById(qData.id);
                             if (!inputElement) {
-                                console.error(`[ERROR] Input element not found for ID: ${qData.id}`);
+                                console.error(`[ERROR] Input element not found for ID: ${qData.id} in exercise ${exerciseId}`);
                                 return;
                             }
                             userAnswer = inputElement.value.trim().toLowerCase();
                             isCorrect = userAnswer === qData.answer;
-                            const labelElement = document.querySelector(`label[for="${qData.id}"]`);
+                            const labelElement = exerciseContainer.querySelector(`label[for="${qData.id}"]`); // Use exerciseContainer for scope
                             questionText = labelElement ? labelElement.textContent.replace(/^\d+\.\s*(.*?)\s*$/, '$1').replace('______', '____') : `Question ${questionNumber}`;
                         }
 
@@ -1233,10 +1226,11 @@
             };
 
             // Setup logic for all interactive exercises
+            console.log('[LOG] Starting setup for all interactive exercises...');
             for (const key in allExerciseData) {
                 setupExerciseLogic(key);
             }
-            console.log('[LOG] All exercise logic setup completed.');
+            console.log('[LOG] All interactive exercise logic setup completed.');
 
 
             // --- Proficiency Test Logic (English Only) ---
@@ -1389,7 +1383,7 @@
                         console.warn('[WARNING] No results to copy found.');
                     }
                 });
-            } // End of proficiencyQuizForm check
+            }
         });
     </script>
 </body>
