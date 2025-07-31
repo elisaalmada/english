@@ -864,9 +864,9 @@
                             <li><a href="https://www.instagram.com/daily_medical_meme/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@daily_medical_meme</strong></a>: Mais memes e humor para descontrair na área da saúde.</li>
                             <li><a href="https://www.instagram.com/cdcgov/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcgov</strong></a>: Public health information and updates from the CDC (Centers for Disease Control and Prevention).</li>
                             <li><a href="https://www.instagram.com/medspiration/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@medspiration</strong></a>: Conteúdo inspirador e educativo para profissionais de saúde e estudantes.</li>
-                            <li><a href="https://www.instagram.com/cdcglobal/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcglobal</strong></a>: Foco em saúde global e CDC iniciativas.</li>
+                            <li><a href="https://www.instagram.com/cdcglobal/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcglobal</strong></a>: Foco em saúde global e CDC initiatives.</li>
                             <li><a href="https://www.instagram.com/internalmemecine/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@internalmemecine</strong></a>: Memes e humor interno da área médica.</li>
-                            <li><a href="https://www.instagram.com/who/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@who</strong></a>: Informações e campanhas da Organização Mundial da Saúde.</li>
+                            <li><a href="https://www.instagram.com/who/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@who</strong></a>: Informações and campaigns from the World Health Organization.</li>
                         </ul>
                     </div>
                 </div>
@@ -974,7 +974,7 @@
                     }
                 } else {
                     console.log('[LOG] Navigating to non-exercise section, clearing hash.');
-                    updateUrlHash('');
+                    updateUrlUrlHash('');
                 }
             };
 
@@ -1170,7 +1170,7 @@
                             userAnswer = inputElement.value.trim().toLowerCase();
                             isCorrect = userAnswer === qData.answer;
                             const labelElement = exerciseContainer.querySelector(`label[for="${qData.id}"]`); // Use exerciseContainer for scope
-                            questionText = labelElement ? labelElement.textContent.replace(/^\d+\.\s*(.*?)\s*$/, '$1').replace('______', '____') : `Question ${questionNumber}`;
+                            questionText = labelElement ? labelElement.textContent.replace(/^\d+\.\s*(.*?)\s*$/, '$1').replace('______', '____').trim() : `Question ${questionNumber}`;
                         }
 
                         let status = '';
