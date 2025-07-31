@@ -183,14 +183,17 @@
                         <li><a href="#exercise-say-tell" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow-v2 text-text-main font-medium transition-all duration-200 hover:scale-[1.02] border border-accent-green-bright shadow-sm">👉 Exercise: Say, Tell, Speak, Talk</a></li>
                         <li><a href="#exercise-do-does" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow-v2 text-text-main font-medium transition-all duration-200 hover:scale-[1.02] border border-accent-green-bright shadow-sm">👉 Exercise: Do vs. Does</a></li>
                         <li><a href="#exercise-make-do" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow-v2 text-text-main font-medium transition-all duration-200 hover:scale-[1.02] border border-accent-green-bright shadow-sm">👉 Exercise: Make vs. Do</a></li>
-                        <!-- Add more exercise links here with their respective IDs -->
+                        <!-- NEW EXERCISE LINKS ADDED HERE -->
+                        <li><a href="#exercise-quantifiers-1" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow-v2 text-text-main font-medium transition-all duration-200 hover:scale-[1.02] border border-accent-green-bright shadow-sm">👉 Exercise: Little, A Little, Few, A Few</a></li>
+                        <li><a href="#exercise-quantifiers-2" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow-v2 text-text-main font-medium transition-all duration-200 hover:scale-[1.02] border border-accent-green-bright shadow-sm">👉 Exercise: Much vs. Many</a></li>
+                        <!-- End of new links -->
                     </ul>
                 </div>
 
                 <!-- Individual Exercise View Wrapper -->
                 <div id="individual-exercise-view" class="hidden">
                     <button id="back-to-exercise-list-btn" class="mb-6 bg-accent-green-bright text-white font-bold px-4 py-2 rounded-lg hover:bg-secondary-dark-purple transition-colors duration-200 shadow-md transform hover:scale-105">
-                        &larr; Back to exercise list
+                        ← Back to exercise list
                     </button>
 
                     <!-- Example Exercise 1 - Say/Tell/Speak/Talk -->
@@ -283,6 +286,117 @@
                         <div class="exercise-feedback mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-text-main hidden"></div>
                         <div class="exercise-copy-message mt-4 text-sm text-accent-green-bright hidden"></div>
                     </div>
+                    
+                    <!-- NEW EXERCISE 1 CONTENT ADDED HERE -->
+                    <div id="exercise-quantifiers-1" class="individual-exercise-content bg-white p-6 rounded-lg shadow-md mb-8 border-2 border-secondary-dark-purple hidden">
+                        <h3 class="2xl font-semibold text-secondary-dark-purple mb-4 font-display uppercase">Exercise: Little, A Little, Few, A Few <span class="animated-emoji">🇮🇹</span></h3>
+                        <p class="text-subtle-gray-v2 mb-4">Read each sentence about your trip to Italy and choose the best option (little, a little, few, or a few). Think about the meaning and whether the noun is countable or uncountable. Good luck! 🍕</p>
+                        
+                        <!-- Explanatory Slide 1.1 -->
+                        <div class="bg-pastel-blue p-4 rounded-lg border-l-4 border-secondary-dark-purple mb-6">
+                            <h4 class="text-lg font-bold text-primary-dark-blue mb-2">Understanding 'Little' & 'A Little'</h4>
+                            <p class="text-text-main">We use these with <strong>uncountable nouns</strong> (e.g., water, time, money). `Little` means 'almost none' (negative feeling), while `A little` means 'some' (positive feeling).</p>
+                        </div>
+                        
+                        <!-- Explanatory Slide 1.2 -->
+                        <div class="bg-pastel-blue p-4 rounded-lg border-l-4 border-secondary-dark-purple mb-6">
+                            <h4 class="text-lg font-bold text-primary-dark-blue mb-2">Understanding 'Few' & 'A Few'</h4>
+                            <p class="text-text-main">We use these with <strong>countable nouns</strong> (e.g., cities, days, euros). `Few` means 'almost none' (negative feeling), while `A few` means 'some' (positive feeling).</p>
+                        </div>
+
+                        <form id="quiz-quantifiers-1" class="space-y-4">
+                            <div class="mb-4" data-question-number="1">
+                                <p class="font-medium text-text-main mb-2">1. I only have ____ money left for souvenirs, so I hope it's enough for a small magnet!</p>
+                                <div class="flex flex-col space-y-1">
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers1_q1" value="little" class="mr-2 accent-secondary-dark-purple"> little</label>
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers1_q1" value="a little" class="mr-2 accent-secondary-dark-purple"> a little</label>
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers1_q1" value="few" class="mr-2 accent-secondary-dark-purple"> few</label>
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers1_q1" value="a few" class="mr-2 accent-secondary-dark-purple"> a few</label>
+                                </div>
+                            </div>
+                            <div class="mb-4" data-question-number="2">
+                                <p class="font-medium text-text-main mb-2">2. We have ____ days left in Rome, so we need to prioritize what to see.</p>
+                                <div class="flex flex-col space-y-1">
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers1_q2" value="little" class="mr-2 accent-secondary-dark-purple"> little</label>
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers1_q2" value="a little" class="mr-2 accent-secondary-dark-purple"> a little</label>
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers1_q2" value="few" class="mr-2 accent-secondary-dark-purple"> few</label>
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers1_q2" value="a few" class="mr-2 accent-secondary-dark-purple"> a few</label>
+                                </div>
+                            </div>
+                            <div class="mb-4" data-question-number="3">
+                                <p class="font-medium text-text-main mb-2">3. I'm so excited! I've learned ____ Italian phrases, so I can order coffee.</p>
+                                <div class="flex flex-col space-y-1">
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers1_q3" value="little" class="mr-2 accent-secondary-dark-purple"> little</label>
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers1_q3" value="a little" class="mr-2 accent-secondary-dark-purple"> a little</label>
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers1_q3" value="few" class="mr-2 accent-secondary-dark-purple"> few</label>
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers1_q3" value="a few" class="mr-2 accent-secondary-dark-purple"> a few</label>
+                                </div>
+                            </div>
+                            <div class="mb-4" data-question-number="4">
+                                <p class="font-medium text-text-main mb-2">4. Unfortunately, there was ____ information available about the bus schedule, so we decided to walk instead.</p>
+                                <div class="flex flex-col space-y-1">
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers1_q4" value="little" class="mr-2 accent-secondary-dark-purple"> little</label>
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers1_q4" value="a little" class="mr-2 accent-secondary-dark-purple"> a little</label>
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers1_q4" value="few" class="mr-2 accent-secondary-dark-purple"> few</label>
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers1_q4" value="a few" class="mr-2 accent-secondary-dark-purple"> a few</label>
+                                </div>
+                            </div>
+                        </form>
+
+                        <button data-exercise-id="quantifiers-1" class="check-exercise-button bg-secondary-dark-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-accent-pink-vibrant transition-all duration-200 mr-2 shadow-md transform hover:scale-105 mt-6">Check Answers</button>
+                        <button data-exercise-id="quantifiers-1" class="copy-exercise-results-button bg-primary-dark-blue text-white font-bold px-6 py-3 rounded-lg hover:bg-secondary-dark-purple transition-all duration-200 shadow-md transform hover:scale-105 mt-6 hidden">Copy Results</button>
+                        <div class="exercise-feedback mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-text-main hidden"></div>
+                        <div class="exercise-copy-message mt-4 text-sm text-accent-green-bright hidden"></div>
+                    </div>
+                    
+                    <!-- NEW EXERCISE 2 CONTENT ADDED HERE -->
+                    <div id="exercise-quantifiers-2" class="individual-exercise-content bg-white p-6 rounded-lg shadow-md mb-8 border-2 border-secondary-dark-purple hidden">
+                        <h3 class="2xl font-semibold text-secondary-dark-purple mb-4 font-display uppercase">Exercise: Much vs. Many <span class="animated-emoji">🇮🇹</span></h3>
+                        <p class="text-subtle-gray-v2 mb-4">Fill in the blanks with much or many. Remember to look at whether the noun is countable or uncountable.</p>
+                        
+                        <!-- Explanatory Slide 2.1 -->
+                        <div class="bg-pastel-blue p-4 rounded-lg border-l-4 border-secondary-dark-purple mb-6">
+                            <h4 class="text-lg font-bold text-primary-dark-blue mb-2">Understanding 'Much' & 'Many'</h4>
+                            <p class="text-text-main">`Much` is for <strong>uncountable nouns</strong> (e.g., gelato, luggage). `Many` is for <strong>countable nouns</strong> (e.g., museums, people).</p>
+                        </div>
+                        
+                        <form id="quiz-quantifiers-2" class="space-y-4">
+                            <div class="mb-4" data-question-number="1">
+                                <p class="font-medium text-text-main mb-2">1. How ____ gelato did you eat in Italy? I heard it's delicious!</p>
+                                <div class="flex flex-col space-y-1">
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers2_q1" value="much" class="mr-2 accent-secondary-dark-purple"> much</label>
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers2_q1" value="many" class="mr-2 accent-secondary-dark-purple"> many</label>
+                                </div>
+                            </div>
+                            <div class="mb-4" data-question-number="2">
+                                <p class="font-medium text-text-main mb-2">2. There weren't ____ people at the small trattoria, so we got a table quickly.</p>
+                                <div class="flex flex-col space-y-1">
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers2_q2" value="much" class="mr-2 accent-secondary-dark-purple"> much</label>
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers2_q2" value="many" class="mr-2 accent-secondary-dark-purple"> many</label>
+                                </div>
+                            </div>
+                            <div class="mb-4" data-question-number="3">
+                                <p class="font-medium text-text-main mb-2">3. I brought ____ luggage with me, just a small backpack, so it was easy to move around.</p>
+                                <div class="flex flex-col space-y-1">
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers2_q3" value="much" class="mr-2 accent-secondary-dark-purple"> much</label>
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers2_q3" value="many" class="mr-2 accent-secondary-dark-purple"> many</label>
+                                </div>
+                            </div>
+                            <div class="mb-4" data-question-number="4">
+                                <p class="font-medium text-text-main mb-2">4. Did you visit ____ museums in Florence? There are so many amazing art collections!</p>
+                                <div class="flex flex-col space-y-1">
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers2_q4" value="much" class="mr-2 accent-secondary-dark-purple"> much</label>
+                                    <label class="flex items-center text-subtle-gray-v2"><input type="radio" name="quantifiers2_q4" value="many" class="mr-2 accent-secondary-dark-purple"> many</label>
+                                </div>
+                            </div>
+                        </form>
+
+                        <button data-exercise-id="quantifiers-2" class="check-exercise-button bg-secondary-dark-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-accent-pink-vibrant transition-all duration-200 mr-2 shadow-md transform hover:scale-105 mt-6">Check Answers</button>
+                        <button data-exercise-id="quantifiers-2" class="copy-exercise-results-button bg-primary-dark-blue text-white font-bold px-6 py-3 rounded-lg hover:bg-secondary-dark-purple transition-all duration-200 shadow-md transform hover:scale-105 mt-6 hidden">Copy Results</button>
+                        <div class="exercise-feedback mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-text-main hidden"></div>
+                        <div class="exercise-copy-message mt-4 text-sm text-accent-green-bright hidden"></div>
+                    </div>
+                    <!-- End of new exercise content -->
 
                 </div>
             </section>
@@ -750,119 +864,9 @@
                             <li><a href="https://www.instagram.com/daily_medical_meme/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@daily_medical_meme</strong></a>: Mais memes e humor para descontrair na área da saúde.</li>
                             <li><a href="https://www.instagram.com/cdcgov/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcgov</strong></a>: Public health information and updates from the CDC (Centers for Disease Control and Prevention).</li>
                             <li><a href="https://www.instagram.com/medspiration/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@medspiration</strong></a>: Conteúdo inspirador e educativo para profissionais de saúde e estudantes.</li>
-                            <li><a href="https://www.instagram.com/cdcglobal/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcglobal</strong></a>: Foco em saúde global e iniciativas do CDC.</li>
+                            <li><a href="https://www.instagram.com/cdcglobal/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcglobal</strong></a>: Foco em saúde global e CDC iniciativas.</li>
                             <li><a href="https://www.instagram.com/internalmemecine/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@internalmemecine</strong></a>: Memes e humor interno da área médica.</li>
                             <li><a href="https://www.instagram.com/who/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@who</strong></a>: Informações e campanhas da Organização Mundial da Saúde.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div data-lang="en" class="bg-white p-6 rounded-lg shadow-md border-2 border-secondary-dark-purple">
-                    <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
-                        Learning English goes beyond classes! I've curated some amazing content for you to enjoy and, at the same time, deepen your contact with the language.
-                    </p>
-
-                    <!-- YouTube Channels - General Subjects (EN) -->
-                    <div class="media-card bg-soft-yellow-v2">
-                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">YouTube Channels - General Subjects:</h3>
-                        <ul class="list-disc list-inside space-y-2 text-text-main">
-                            <li><a href="https://www.youtube.com/OverSimplified" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>OverSimplified</strong></a>: Complex stories explained in a hilarious and super accessible way.</li>
-                            <li><a href="https://www.youtube.com/user/TheNewYorkTimes" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>The New York Times</strong></a>: Current news and in-depth analyses to keep your English updated with global events.</li>
-                            <li><a href="https://www.youtube.com/user/Kurzgesagt" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Kurzgesagt – In a Nutshell</strong></a>: Animated videos about science, space, and technology with clear language.</li>
-                            <li><a href="https://www.youtube.com/user/TEDEducation" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>TED-Ed</strong></a>: Animated lessons on a vast range of topics that instigate critical thinking.</li>
-                            <li><a href="https://www.youtube.com/user/MinuteEarth" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Minute Earth</strong></a>: Short, animated answers to big questions about Earth and nature.</li>
-                            <li><a href="https://www.youtube.com/user/bbclearningenglish" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>BBC Learning English</strong></a>: Educational content focused on grammar, pronunciation, and vocabulary, made specifically for English learners.</li>
-                            <li><a href="https://www.youtube.com/thisisinsider" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Insider Science</strong></a>: Videos about innovation and scientific discoveries, ideal for those seeking specific vocabulary in the field.</li>
-                            <li><a href="https://www.youtube.com/@WhatIfScienceShow" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>What If Science Show</strong></a>: Explores hypothetical and curious scenarios in an intriguing way.</li>
-                            <li><a href="https://www.youtube.com/@FreeHighQualityDocumentaries" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Free High-Quality Documentaries</strong></a>: A vast collection of documentaries to expand knowledge and comprehension in English.</li>
-                            <li><a href="https://www.youtube.com/@BorderSecurityOfficial" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Border Security</strong></a>: Series about life on the border, offering insights into real situations and practical vocabulary.</li>
-                            <li><a href="https://www.youtube.com/@Vox" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Vox</strong></a>: Clear and in-depth explanations of news, politics, and culture.</li>
-                            <li><a href="https://www.youtube.com/user/WIRED" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>WIRED</strong></a>: Focus on technology, science, and innovation, with interviews and trend analyses.</li>
-                            <li><a href="https://www.youtube.com/@OddAnimalSpecimens" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Odd Animal Specimens</strong></a>: Curious content about the animal kingdom, great for biology and nature vocabulary.</li>
-                            <li><a href="https://www.youtube.com/@TastingHistory" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Tasting History with Max Miller</strong></a>: Combines history and cooking in an engaging way, with historical recipes and cultural context.</li>
-                        </ul>
-                    </div>
-
-                    <!-- YouTube Channels - Healthcare (EN) -->
-                    <div class="media-card bg-pastel-blue">
-                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">YouTube Channels - Healthcare:</h3>
-                        <ul class="list-disc list-inside space-y-2 text-text-main">
-                            <li><a href="https://www.youtube.com/user/johnshopkinsmedicine" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Johns Hopkins Medicine</strong></a>: Medical and health information from one of the most renowned institutions.</li>
-                            <li><a href="https://www.youtube.com/@medzcool" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Medzcool</strong></a>: Educational health content, with clear explanations of medical topics.</li>
-                            <li><a href="https://www.youtube.com/user/MayoClinic" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Mayo Clinic</strong></a>: Reliable source of information on diseases, treatments, and healthy lifestyle.</li>
-                            <li><a href="https://www.youtube.com/user/WHO" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>World Health Organization (WHO)</strong></a>: Updates and information on global health and health policies.</li>
-                            <li><a href="https://www.youtube.com/user/medscape" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Medscape</strong></a>: Content for healthcare professionals, including news, articles, and continuing medical education.</li>
-                            <li><a href="https://www.youtube.com/@osmosis" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Osmosis from Elsevier</strong></a>: Animated and didactic videos on medical and health concepts.</li>
-                            <li><a href="https://www.youtube.com/@MedFlixAndChill" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>MedFlix</strong></a>: Entertainment and educational content about the world of medicine.</li>
-                            <li><a href="https://www.youtube.com/user/ClevelandClinic" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Cleveland Clinic</strong></a>: Health and wellness information from a leading institution.</li>
-                            <li><a href="https://www.youtube.com/@nucleusmedicalmedia" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Nucleus Medical Media</strong></a>: Animações médicas detalhadas para explicar condições e procedimentos.</li>
-                            <li><a href="https://www.youtube.com/@StanfordHospital" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Stanford Health Care</strong></a>: Lectures and information on medical advances and healthcare.</li>
-                            <li><a href="https://www.youtube.com/@NEJMgroup" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>NEJM Group</strong></a>: Videos from the New England Journal of Medicine, with clinical cases and research discussions.</li>
-                            <li><a href="https://www.youtube.com/@NHS" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>NHS (National Health Service - UK)</strong></a>: Information on public health and healthcare services in the UK.</li>
-                            <li><a href="https://www.youtube.com/user/uvahealth" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>UVA Health</strong></a>: Content of health and research of the University of Virginia Health.</li>
-                        </ul>
-                    </div>
-
-                    <!-- YouTube Channels - Business (EN) -->
-                    <div class="media-card bg-pastel-green">
-                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">YouTube Channels - Business:</h3>
-                        <ul class="list-disc list-inside space-y-2 text-text-main">
-                            <li><a href="https://www.youtube.com/@TEDx" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>TED Talks</strong></a>: A wide range of talks on business, leadership, and the global economy.</li>
-                            <li><a href="https://www.youtube.com/@harvardbusinessreview" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Harvard Business Review</strong></a>: In-depth insights and analysis on management, strategy, and various business topics.</li>
-                            <li><a href="https://www.youtube.com/@FinancialTimes" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Financial Times</strong></a>: News, analysis, and commentary on global finance and business.</li>
-                            <li><a href="https://www.youtube.com/@TheEconomist" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>The Economist</strong></a>: In-depth reporting and analysis on international news, politics, and business.</li>
-                            <li><a href="https://www.youtube.com/user/SimonSinek" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Simon Sinek</strong></a>: Talks and interviews on leadership, management, and organizational culture, focusing on purpose and inspiration.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Instagram Accounts - General Subjects (EN) -->
-                    <div class="media-card bg-pastel-purple">
-                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">Instagram Accounts - General Subjects:</h3>
-                        <ul class="list-disc list-inside space-y-2 text-text-main">
-                            <li><a href="https://www.instagram.com/bad_science_jokes/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@bad_science_jokes</strong></a>: Light and intelligent humor related to science.</li>
-                            <li><a href="https://www.instagram.com/9gag/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@9gag</strong></a>: Memes and viral humor content, great for understanding informal English.</li>
-                            <li><a href="https://www.instagram.com/dad_joking/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@dad_joking</strong></a>: Dad jokes and puns for more everyday and fun English.</li>
-                            <li><a href="https://www.instagram.com/reallybadhumor/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@reallybadhumor</strong></a>: More humor to relax and practice understanding different types of jokes.</li>
-                            <li><a href="https://www.instagram.com/darkhistorymemes/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@darkhistorymemes</strong></a>: Combination of history with humor, to learn facts in an unusual way.</li>
-                            <li><a href="https://www.instagram.com/history_with_amy/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@history_with_amy</strong></a>: Educational content about history, presented engagingly.</li>
-                            <li><a href="https://www.instagram.com/bbcnews/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@bbcnews</strong></a>: Reliable global news to stay updated and practice formal English.</li>
-                            <li><a href="https://www.instagram.com/bbcearth/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@bbcearth</strong></a>: Stunning images and videos of nature, with rich vocabulary captions.</li>
-                            <li><a href="https://www.instagram.com/businessinsider/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@businessinsider</strong></a>: News and insights from the world of business and finance.</li>
-                            <li><a href="https://www.instagram.com/unitednations/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@unitednations</strong></a>: Information on global causes and the work of the UN.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Instagram Accounts - Science and Technology (EN) -->
-                    <div class="media-card bg-pastel-pink">
-                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">Instagram Accounts - Science and Technology:</h3>
-                        <ul class="list-disc list-inside space-y-2 text-text-main">
-                            <li><a href="https://www.instagram.com/evolving.ai/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@evolving.ai</strong></a>: Content on artificial intelligence and the future of technology.</li>
-                            <li><a href="https://www.instagram.com/tedxgateway/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@tedxgateway</strong></a>: Inspiring and innovative ideas in short post format.</li>
-                            <li><a href="https://www.instagram.com/sciencemagazine/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@sciencemagazine</strong></a>: The latest scientific discoveries and research.</li>
-                            <li><a href="https://www.instagram.com/science__sphere/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@science__sphere</strong></a>: Explores scientific curiosities and facts visually.</li>
-                            <li><a href="https://www.instagram.com/newscientist/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@newscientist</strong></a>: Notícias e artigos sobre ciência e tecnologia.</li>
-                            <li><a href="https://www.instagram.com/unesco/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@unesco</strong></a>: Conteúdo sobre educação, ciência e cultura em nível global.</li>
-                            <li><a href="https://www.instagram.com/nasa/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nasa</strong></a>: Imagens e atualizações do espaço e exploração espacial.</li>
-                            <li><a href="https://www.instagram.com/unicef/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@unicef</strong></a>: Foco em direitos das crianças e desenvolvimento global.</li>
-                            <li><a href="https://www.instagram.com/theaipage/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@theaipage</strong></a>: Mais conteúdo sobre inteligência artificial e suas aplicações.</li>
-                            <li><a href="https://www.instagram.com/aigptinsights/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@aigptinsights</strong></a>: Insights e novidades sobre IA e modelos de linguagem.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Instagram Accounts - Healthcare (EN) -->
-                    <div class="media-card bg-soft-yellow-v2">
-                        <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">Instagram Accounts - Healthcare:</h3>
-                        <ul class="list-disc list-inside space-y-2 text-text-main">
-                            <li><a href="https://www.instagram.com/nejm/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nejm</strong></a>: The Instagram of the New England Journal of Medicine, with research highlights.</li>
-                            <li><a href="https://www.instagram.com/nature_the_journal/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nature_the_journal</strong></a>: Content from the renowned scientific journal Nature.</li>
-                            <li><a href="https://www.instagram.com/funnydoctorss/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@funnydoctorss</strong></a>: Light humor and memes related to life in healthcare.</li>
-                            <li><a href="https://www.instagram.com/american_heart/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@american_heart</strong></a>: Information on cardiovascular health from the American Heart Association.</li>
-                            <li><a href="https://www.instagram.com/daily_medical_meme/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@daily_medical_meme</strong></a>: More memes and humor to unwind in the healthcare field.</li>
-                            <li><a href="https://www.instagram.com/cdcgov/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcgov</strong></a>: Public health information and updates from the CDC (Centers for Disease Control and Prevention).</li>
-                            <li><a href="https://www.instagram.com/medspiration/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@medspiration</strong></a>: Inspiring and educational content for healthcare professionals and students.</li>
-                            <li><a href="https://www.instagram.com/cdcglobal/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcglobal</strong></a>: Focus on global health and CDC initiatives.</li>
-                            <li><a href="https://www.instagram.com/internalmemecine/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@internalmemecine</strong></a>: Internal memes and humor from the medical field.</li>
-                            <li><a href="https://www.instagram.com/who/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@who</strong></a>: Information and campaigns from the World Health Organization.</li>
                         </ul>
                     </div>
                 </div>
@@ -872,7 +876,7 @@
     </div>
 
     <footer class="text-center text-subtle-gray-v2 py-4 mt-auto">
-        <p>&copy; 2024 English with Elisa Almada. Light and Fun Learning! <span class="animated-emoji">✨</span></p>
+        <p>© 2024 English with Elisa Almada. Light and Fun Learning! <span class="animated-emoji">✨</span></p>
     </footer>
 
     <script>
@@ -1095,7 +1099,27 @@
                         { id: 'makedo-q3', answer: 'do', explanation: 'We use "do a favor" to do a favor.' },
                         { id: 'makedo-q4', answer: 'doing', explanation: 'We use "do research" to conduct research. As it\'s an ongoing process ("are doing"), the form is "doing".' }
                     ]
+                },
+                // NEW EXERCISES ADDED HERE
+                'quantifiers-1': {
+                    type: 'radio',
+                    inputs: [
+                        { name: 'quantifiers1_q1', answer: 'little', explanation: 'We use "little" with uncountable nouns (like money) to mean "almost none," which fits the negative context of hoping it is enough.' },
+                        { name: 'quantifiers1_q2', answer: 'a few', explanation: 'We use "a few" with countable nouns (like days) to mean "some," implying there is still enough time for some activities.' },
+                        { name: 'quantifiers1_q3', answer: 'a few', explanation: 'We use "a few" with countable nouns (like phrases) to mean "some," which fits the positive context of being excited and able to use them.' },
+                        { name: 'quantifiers1_q4', answer: 'little', explanation: 'We use "little" with uncountable nouns (like information) to mean "almost none," which fits the negative context of deciding to walk instead of taking the bus.' }
+                    ]
+                },
+                'quantifiers-2': {
+                    type: 'radio',
+                    inputs: [
+                        { name: 'quantifiers2_q1', answer: 'much', explanation: 'We use "much" with uncountable nouns like "gelato" in questions.' },
+                        { name: 'quantifiers2_q2', answer: 'many', explanation: 'We use "many" with countable nouns like "people," especially in negative sentences like "There weren\'t many..."' },
+                        { name: 'quantifiers2_q3', answer: 'little', explanation: 'We use "little" with uncountable nouns like "luggage" to mean a small quantity.' },
+                        { name: 'quantifiers2_q4', answer: 'many', explanation: 'We use "many" with countable nouns like "museums" in questions.' }
+                    ]
                 }
+                // End of new exercises
             };
 
             // --- General Function to Setup Exercise Logic (English Only now) ---
@@ -1116,34 +1140,46 @@
                     return;
                 }
 
-                const exerciseAnswers = allExerciseData[exerciseId].inputs;
+                const exerciseData = allExerciseData[exerciseId];
 
                 checkButton.addEventListener('click', () => {
                     console.log(`[LOG] Check button clicked for exercise: ${exerciseId}`);
                     let feedbackHtml = '<h4 class="font-bold text-lg mb-2">Your Results:</h4>';
-                    let resultsToCopy = `Exercise Results "${exerciseContainer.querySelector('h3').textContent.replace('🗣️','').replace('🤔','').replace('🛠️','').trim()}":\n\n`;
+                    let resultsToCopy = `Exercise Results "${exerciseContainer.querySelector('h3').textContent.replace('🗣️','').replace('🤔','').replace('🛠️','').replace('🇮🇹','').trim()}":\n\n`; // Added 🇮🇹 to remove from copy text
                     let allCorrect = true;
 
-                    exerciseAnswers.forEach(qData => {
-                        const inputElement = document.getElementById(qData.id);
-                        if (!inputElement) {
-                            console.error(`[ERROR] Input element not found for ID: ${qData.id} in exercise ${exerciseId}`);
-                            return;
-                        }
-                        const userAnswer = inputElement.value.trim().toLowerCase();
-                        const correctAnswer = qData.answer;
-                        const explanation = qData.explanation;
-                        const labelElement = document.querySelector(`label[for="${qData.id}"]`);
-                        const questionText = labelElement ? labelElement.textContent.replace(/^\d+\.\s*(.*?)\s*$/, '$1').replace('______', '____') : 'Unknown Question';
+                    exerciseData.inputs.forEach((qData, index) => {
+                        const questionNumber = index + 1;
+                        let userAnswer = '';
+                        let questionText = '';
+                        let isCorrect = false;
 
+                        if (exerciseData.type === 'radio') {
+                            const selectedOption = exerciseContainer.querySelector(`input[name="${qData.name}"]:checked`);
+                            userAnswer = selectedOption ? selectedOption.value : 'Not answered';
+                            isCorrect = userAnswer.toLowerCase() === qData.answer.toLowerCase();
+                            // Corrected way to get question text for radio buttons
+                            const questionTextElement = exerciseContainer.querySelector(`[data-question-number="${questionNumber}"] p`);
+                            questionText = questionTextElement ? questionTextElement.textContent.trim() : `Question ${questionNumber}`;
+                        } else { // For text input fields
+                            const inputElement = document.getElementById(qData.id);
+                            if (!inputElement) {
+                                console.error(`[ERROR] Input element not found for ID: ${qData.id}`);
+                                return;
+                            }
+                            userAnswer = inputElement.value.trim().toLowerCase();
+                            isCorrect = userAnswer === qData.answer;
+                            const labelElement = document.querySelector(`label[for="${qData.id}"]`);
+                            questionText = labelElement ? labelElement.textContent.replace(/^\d+\.\s*(.*?)\s*$/, '$1').replace('______', '____') : `Question ${questionNumber}`;
+                        }
 
                         let status = '';
-                        if (userAnswer === correctAnswer) {
+                        if (isCorrect) {
                             status = '<span class="text-accent-green-bright">Correct!</span>';
-                            resultsToCopy += `Question: ${questionText}\nYour Answer: "${userAnswer}" (Correct)\n\n`;
+                            resultsToCopy += `Question ${questionNumber}: ${questionText}\nYour Answer: "${userAnswer}" (Correct)\n\n`;
                         } else {
-                            status = `<span class="text-warning-red">Incorrect.</span> Correct answer: <strong>${correctAnswer}</strong>.`;
-                            resultsToCopy += `Question: ${questionText}\nYour Answer: "${userAnswer}" (Incorrect). Correct Answer: "${correctAnswer}"\nExplanation: ${explanation}\n\n`;
+                            status = `<span class="text-warning-red">Incorrect.</span> Correct answer: <strong>${qData.answer}</strong>.`;
+                            resultsToCopy += `Question ${questionNumber}: ${questionText}\nYour Answer: "${userAnswer}" (Incorrect). Correct Answer: "${qData.answer}"\nExplanation: ${qData.explanation}\n\n`;
                             allCorrect = false;
                         }
 
@@ -1152,7 +1188,7 @@
                                 <strong>${questionText}</strong> <br>
                                 Your answer: "${userAnswer}" - ${status}
                             </p>
-                            <p class="text-sm text-subtle-gray-v2 ml-4 mb-3">Explanation: ${explanation}</p>
+                            <p class="text-sm text-subtle-gray-v2 ml-4 mb-3">Explanation: ${qData.explanation}</p>
                         `;
                     });
 
@@ -1337,17 +1373,17 @@
                             tempTextArea.select();
                             document.execCommand('copy');
                             document.body.removeChild(tempTextArea);
-                            copyMessageDiv.textContent = 'Results copied to clipboard!';
-                            copyMessageDiv.classList.remove('hidden');
-                            copyMessageDiv.classList.remove('text-warning-red');
-                            copyMessageDiv.classList.add('text-accent-green-bright');
+                            testCopyMessage.textContent = 'Results copied to clipboard!';
+                            testCopyMessage.classList.remove('hidden');
+                            testCopyMessage.classList.remove('text-warning-red');
+                            testCopyMessage.classList.add('text-accent-green-bright');
                             console.log('[LOG] Results copied successfully.');
                         } catch (err) {
                             console.error('[ERROR] Error trying to copy results:', err);
-                            copyMessageDiv.textContent = 'Error copying results. Please try again.';
-                            copyMessageDiv.classList.remove('hidden');
-                            copyMessageDiv.classList.remove('text-accent-green-bright');
-                            copyMessageDiv.classList.add('text-warning-red');
+                            testCopyMessage.textContent = 'Error copying results. Please try again.';
+                            testCopyMessage.classList.remove('hidden');
+                            testCopyMessage.classList.remove('text-accent-green-bright');
+                            testCopyMessage.classList.add('text-warning-red');
                         }
                     } else {
                         console.warn('[WARNING] No results to copy found.');
