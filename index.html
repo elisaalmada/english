@@ -974,7 +974,7 @@
                     }
                 } else {
                     console.log('[LOG] Navigating to non-exercise section, clearing hash.');
-                    updateUrlUrlHash('');
+                    updateUrlHash(''); // Corrected typo here
                 }
             };
 
@@ -1117,9 +1117,9 @@
                     return;
                 }
 
-                // Select buttons directly within the exercise container
-                const checkButton = exerciseContainer.querySelector('.check-exercise-button');
-                const copyButton = exerciseContainer.querySelector('.copy-exercise-results-button');
+                // Select buttons directly within the exercise container using data-attribute for robustness
+                const checkButton = exerciseContainer.querySelector(`button[data-exercise-id="${exerciseId}"].check-exercise-button`);
+                const copyButton = exerciseContainer.querySelector(`button[data-exercise-id="${exerciseId}"].copy-exercise-results-button`);
                 const feedbackDiv = exerciseContainer.querySelector('.exercise-feedback');
                 const copyMessageDiv = exerciseContainer.querySelector('.exercise-copy-message');
 
@@ -1279,7 +1279,8 @@
                 { question: "17. She said, \"I am happy.\" (Reported Speech)", type: "radio", options: ["She said she is happy.", "She said she was happy.", "She says she is happy."], correctAnswer: "She said she was happy.", explanation: "When reporting speech in the past ('She said'), the tense of the original sentence usually 'shifts back' one tense. 'Am happy' becomes 'was happy'." },
                 { question: "18. If you heat water to 100 degrees Celsius, it ______ (boil).", type: "radio", options: ["boils", "will boil", "would boil"], correctAnswer: "boils", explanation: "The Zero Conditional is used for general facts or scientific truths. Both clauses use the Present Simple." },
                 { question: "19. This is the student ______ helped me with my homework.", type: "radio", options: ["which", "who", "whose"], correctAnswer: "who", explanation: "We use 'who' to refer to people." },
-                { question: "20. By next year, I ______ (learn) English for five years.", type: "radio", options: ["will learn", "will have learned", "am learning"], correctAnswer: "will have learned", explanation: "The Future Perfect ('will have learned') is used for actions that will be completed at or before a specific point in the future." },
+                { question: "20. By next year, I ______ (learn) English for five years.",
+                    type: "radio", options: ["will learn", "will have learned", "am learning"], correctAnswer: "will have learned", explanation: "The Future Perfect ('will have learned') is used for actions that will be completed at or before a specific point in the future." },
                 {
                     question: "Writing Part: Write a short paragraph (3-5 sentences) about your favorite hobby or a recent travel experience.",
                     type: "textarea",
