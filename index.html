@@ -1117,8 +1117,9 @@
                     return;
                 }
 
-                const checkButton = exerciseContainer.querySelector(`.check-exercise-button[data-exercise-id="${exerciseId}"]`);
-                const copyButton = exerciseContainer.querySelector(`.copy-exercise-results-button[data-exercise-id="${exerciseId}"]`);
+                // Select buttons directly within the exercise container
+                const checkButton = exerciseContainer.querySelector('.check-exercise-button');
+                const copyButton = exerciseContainer.querySelector('.copy-exercise-results-button');
                 const feedbackDiv = exerciseContainer.querySelector('.exercise-feedback');
                 const copyMessageDiv = exerciseContainer.querySelector('.exercise-copy-message');
 
@@ -1151,9 +1152,15 @@
                             const selectedOption = exerciseContainer.querySelector(`input[name="${qData.name}"]:checked`);
                             userAnswer = selectedOption ? selectedOption.value : 'Not answered';
                             isCorrect = userAnswer.toLowerCase() === qData.answer.toLowerCase();
-                            // Corrected way to get question text for radio buttons
-                            const questionTextElement = exerciseContainer.querySelector(`[data-question-number="${questionNumber}"] p`);
-                            questionText = questionTextElement ? questionTextElement.textContent.trim() : `Question ${questionNumber}`;
+                            // Get the question text from the 'p' tag within the div with data-question-number
+                            const questionDiv = exerciseContainer.querySelector(`div[data-question-number="${questionNumber}"]`);
+                            if (questionDiv) {
+                                const pTag = questionDiv.querySelector('p');
+                                questionText = pTag ? pTag.textContent.trim() : `Question ${questionNumber}`;
+                            } else {
+                                questionText = `Question ${questionNumber}`; // Fallback
+                                console.warn(`[WARNING] Question div with data-question-number="${questionNumber}" not found for exercise ${exerciseId}.`);
+                            }
                         } else { // For text input fields
                             const inputElement = document.getElementById(qData.id);
                             if (!inputElement) {
@@ -1192,8 +1199,8 @@
                     feedbackDiv.innerHTML = feedbackHtml;
                     feedbackDiv.classList.remove('hidden');
                     copyButton.dataset.results = resultsToCopy;
-                    copyButton.classList.remove('hidden');
-                    copyMessageDiv.classList.add('hidden');
+                    copyButton.classList.remove('hidden'); // Make copy button visible
+                    copyMessageDiv.classList.add('hidden'); // Hide previous copy message
                 });
 
                 copyButton.addEventListener('click', () => {
