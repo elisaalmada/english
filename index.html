@@ -142,8 +142,7 @@
                 English with <span class="text-accent-pink-vibrant">Elisa Almada</span>
             </h1>
             <div class="lang-switcher flex justify-center mb-6 space-x-2">
-                <button data-lang-btn="pt">PT</button>
-                <button data-lang-btn="en" class="active-lang">EN</button>
+                <!-- Language buttons are removed as per request to have an English-only site -->
             </div>
             <nav>
                 <ul class="space-y-4">
@@ -164,17 +163,9 @@
                 <h2 class="text-4xl font-extrabold mb-6 font-display uppercase">
                     Interactive Exercises <span class="animated-emoji">💡</span>
                 </h2>
-                <div data-lang="en">
-                    <p class="text-subtle-gray-v2 mb-6 leading-relaxed">
-                        Here you'll find interactive exercises to practice your English in a light and effective way. Get automatic feedback and copy your results, including corrections and explanations, to review whenever you want.
-                    </p>
-                </div>
-                <div data-lang="pt" class="hidden">
-                    <p class="text-subtle-gray-v2 mb-6 leading-relaxed">
-                        Aqui você encontra exercícios interativos para praticar seu inglês de forma leve e eficaz. Receba feedback automático e copie seus resultados, incluindo as correções e explicações, para revisar quando quiser.
-                    </p>
-                </div>
-
+                <p class="text-subtle-gray-v2 mb-6 leading-relaxed">
+                    Here you'll find interactive exercises to practice your English in a light and effective way. Get automatic feedback and copy your results, including corrections and explanations, to review whenever you want.
+                </p>
 
                 <!-- List of Exercises View -->
                 <div id="exercise-list-view" class="">
@@ -183,8 +174,6 @@
                         <li><a href="#exercise-say-tell" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow-v2 text-text-main font-medium transition-all duration-200 hover:scale-[1.02] border border-accent-green-bright shadow-sm">👉 Exercise: Say, Tell, Speak, Talk</a></li>
                         <li><a href="#exercise-do-does" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow-v2 text-text-main font-medium transition-all duration-200 hover:scale-[1.02] border border-accent-green-bright shadow-sm">👉 Exercise: Do vs. Does</a></li>
                         <li><a href="#exercise-make-do" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow-v2 text-text-main font-medium transition-all duration-200 hover:scale-[1.02] border border-accent-green-bright shadow-sm">👉 Exercise: Make vs. Do</a></li>
-                        <!-- Removed "Either, Neither, Any, or None" link -->
-                        <!-- Add more exercise links here with their respective IDs -->
                     </ul>
                 </div>
 
@@ -220,7 +209,7 @@
                         </div>
 
                         <button data-exercise-id="say-tell" class="check-exercise-button bg-secondary-dark-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-accent-pink-vibrant transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Check Answers</button>
-                        <button data-exercise-id="say-tell" class="copy-exercise-results-button bg-primary-dark-blue text-white font-bold px-6 py-3 rounded-lg hover:bg-secondary-dark-purple transition-all duration-200 shadow-md transform hover:scale-105">Copy Results</button>
+                        <button data-exercise-id="say-tell" class="copy-exercise-results-button bg-primary-dark-blue text-white font-bold px-6 py-3 rounded-lg hover:bg-secondary-dark-purple transition-all duration-200 shadow-md transform hover:scale-105 hidden">Copy Results</button>
 
                         <div class="exercise-feedback mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-text-main hidden"></div>
                         <div class="exercise-copy-message mt-4 text-sm text-accent-green-bright hidden"></div>
@@ -711,16 +700,19 @@
                     <div class="media-card bg-soft-yellow-v2">
                         <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">Contas de Instagram - Saúde (Healthcare):</h3>
                         <ul class="list-disc list-inside space-y-2 text-text-main">
-                            <li><a href="https://www.instagram.com/nejm/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nejm</strong></a>: O Instagram do New England Journal of Medicine, com destaques de pesquisa.</li>
-                            <li><a href="https://www.instagram.com/nature_the_journal/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nature_the_journal</strong></a>: Conteúdo da renomada revista científica Nature.</li>
-                            <li><a href="https://www.instagram.com/funnydoctorss/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@funnydoctorss</strong></a>: Humor leve e memes relacionados à vida na área da saúde.</li>
-                            <li><a href="https://www.instagram.com/american_heart/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@american_heart</strong></a>: Informações sobre saúde cardiovascular da American Heart Association.</li>
-                            <li><a href="https://www.instagram.com/daily_medical_meme/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@daily_medical_meme</strong></a>: Mais memes e humor para descontrair na área da saúde.</li>
-                            <li><a href="https://www.instagram.com/cdcgov/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcgov</strong></a>: Public health information and updates from the CDC (Centers for Disease Control and Prevention).</li>
-                            <li><a href="https://www.instagram.com/medspiration/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@medspiration</strong></a>: Inspiring and educational content for healthcare professionals and students.</li>
-                            <li><a href="https://www.instagram.com/cdcglobal/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcglobal</strong></a>: Foco em saúde global e iniciativas do CDC.</li>
-                            <li><a href="https://www.instagram.com/internalmemecine/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@internalmemecine</strong></a>: Memes e humor interno da área médica.</li>
-                            <li><a href="https://www.instagram.com/who/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@who</strong></a>: Informações e campanhas da Organização Mundial da Saúde.</li>
+                            <li><a href="https://www.youtube.com/user/johnshopkinsmedicine" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Johns Hopkins Medicine</strong></a>: Informações médicas e de saúde de uma das instituições mais renomadas.</li>
+                            <li><a href="https://www.youtube.com/@medzcool" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Medzcool</strong></a>: Conteúdo educativo em saúde, com explicações claras sobre temas médicos.</li>
+                            <li><a href="https://www.youtube.com/user/MayoClinic" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Mayo Clinic</strong></a>: Fonte confiável de informações sobre doenças, tratamentos e estilo de vida saudável.</li>
+                            <li><a href="https://www.youtube.com/user/WHO" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>World Health Organization (WHO)</strong></a>: Atualizações e informações sobre saúde global e políticas de saúde.</li>
+                            <li><a href="https://www.youtube.com/user/medscape" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Medscape</strong></a>: Conteúdo para profissionais de saúde, incluindo notícias, artigos e educação médica contínua.</li>
+                            <li><a href="https://www.youtube.com/@osmosis" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Osmosis from Elsevier</strong></a>: Vídeos animados e didáticos sobre conceitos médicos e de saúde.</li>
+                            <li><a href="https://www.youtube.com/@MedFlixAndChill" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>MedFlix</strong></a>: Conteúdo de entretenimento e educação sobre o mundo da medicina.</li>
+                            <li><a href="https://www.youtube.com/user/ClevelandClinic" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Cleveland Clinic</strong></a>: Informações de saúde e bem-estar de uma instituição líder.</li>
+                            <li><a href="https://www.youtube.com/@nucleusmedicalmedia" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Nucleus Medical Media</strong></a>: Animações médicas detalhadas para explicar condições e procedimentos.</li>
+                            <li><a href="https://www.youtube.com/@StanfordHospital" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Stanford Health Care</strong></a>: Palestras e informações sobre avanços médicos e cuidados de saúde.</li>
+                            <li><a href="https://www.youtube.com/@NEJMgroup" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>NEJM Group</strong></a>: Vídeos do New England Journal of Medicine, com casos clínicos e discussões de pesquisa.</li>
+                            <li><a href="https://www.youtube.com/@NHS" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>NHS (National Health Service - UK)</strong></a>: Informações sobre saúde pública e serviços de saúde do Reino Unido.</li>
+                            <li><a href="https://www.youtube.com/user/uvahealth" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>UVA Health</strong></a>: Conteúdo de saúde e pesquisa da University of Virginia Health.</li>
                         </ul>
                     </div>
                 </div>
@@ -945,9 +937,9 @@
                     title: 'Do vs. Does',
                     emoji: '🤔',
                     inputs: [
-                        { id: 'dodoes-q1', answer: 'do', explanation: 'Use "do" for most subjects in questions and negative statements in the Simple Present (I, you, we, they).' },
-                        { id: 'dodoes-q2', answer: 'does', explanation: 'Use "does" for third person singular subjects (he, she, it) in questions and negative statements in the Simple Present.' },
-                        { id: 'dodoes-q3', answer: 'does', explanation: 'Similar to the previous rule, "does" is used for the third person singular subject "he" in questions.' }
+                        { id: 'dodoes-q1', type: 'text', answer: 'do', explanation: 'Use "do" for most subjects in questions and negative statements in the Simple Present (I, you, we, they).' },
+                        { id: 'dodoes-q2', type: 'text', answer: 'does', explanation: 'Use "does" for third person singular subjects (he, she, it) in questions and negative statements in the Simple Present.' },
+                        { id: 'dodoes-q3', type: 'text', answer: 'does', explanation: 'Similar to the previous rule, "does" is used for the third person singular subject "he" in questions.' }
                     ]
                 },
                 'make-do': {
@@ -1145,7 +1137,7 @@
                 { question: "12. The plane will ______ in ten minutes. (Meaning: take off from the ground)", type: "radio", options: ["take off", "take up", "take on"], correctAnswer: "take off", explanation: "The phrasal verb 'take off' means to depart (for aircraft) or to remove (clothes)." },
                 { question: "13. If you don't know the word, you can ______ it ______ in a dictionary. (Meaning: find its meaning)", type: "radio", options: ["look / over", "look / up", "look / into"], correctAnswer: "look / up", explanation: "The phrasal verb 'look up' means to search for information (in a dictionary, book, internet)." },
                 { question: "14. She is ______ (tall) than her brother. He runs ______ (quickly) than me. (Comparison)", type: "radio", options: ["taller / more quickly", "tallest / quicker", "more tall / more quick"], correctAnswer: "taller / more quickly", explanation: "For short adjectives, we add '-er' in comparison. For adverbs ending in '-ly', we use 'more'." },
-                { question: "15. There isn't ______ water. There are ______ books. (Quantifiers)", type: "radio", options: ["many / much", "much / many", "a lot of / a lot of"], correctAnswer: "much / many", explanation: "We use 'much' with uncountable nouns ('water') and 'many' with countable plural nouns ('books'). 'A lot of' can be used with both." },
+                { question: "15. There isn't ______ water. There are ______ books.", type: "radio", options: ["many / much", "much / many", "a lot of / a lot of"], correctAnswer: "much / many", explanation: "We use 'much' with uncountable nouns ('water') and 'many' with countable plural nouns ('books'). 'A lot of' can be used with both." },
                 { question: "16. By the time I arrived, he ______ (already leave). (Past Perfect)", type: "radio", options: ["already left", "had already left", "was already leaving"], correctAnswer: "had already left", explanation: "The Past Perfect ('had already left') is used to indicate an action that was completed before another event in the past ('By the time I arrived')." },
                 { question: "17. She said, \"I am happy.\" (Reported Speech)", type: "radio", options: ["She said she is happy.", "She said she was happy.", "She says she is happy."], correctAnswer: "She said she was happy.", explanation: "When reporting speech in the past ('She said'), the tense of the original sentence usually 'shifts back' one tense. 'Am happy' becomes 'was happy'." },
                 { question: "18. If you heat water to 100 degrees Celsius, it ______ (boil).", type: "radio", options: ["boils", "will boil", "would boil"], correctAnswer: "boils", explanation: "The Zero Conditional is used for general facts or scientific truths. Both clauses use the Present Simple." },
