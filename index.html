@@ -236,8 +236,8 @@
                         <div class="mb-4">
                             <p class="block text-text-main font-medium mb-2">3. ______ he speak French?</p>
                             <div class="space-x-4 text-subtle-gray-v2">
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="dodoes-q3" value="do" class="mr-2 accent-secondary-dark-purple"> do</label>
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="dodoes-q3" value="does" class="mr-2 accent-secondary-dark-purple"> does</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="dodoes-q3" value="do" class="mr-2 accent-secondary-dark-purple"> do</label>
+                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="dodoes-q3" value="does" class="mr-2 accent-secondary-dark-purple"> does</label>
                             </div>
                         </div>
 
@@ -828,6 +828,8 @@
                 checkButton.addEventListener('click', () => {
                     const exerciseId = checkButton.dataset.exerciseId;
                     const exerciseContainer = document.getElementById(exerciseId);
+                    if (!exerciseContainer) return; // Add this null check
+
                     const copyButton = exerciseContainer.querySelector('.copy-exercise-results-button');
                     const feedbackDiv = exerciseContainer.querySelector('.exercise-feedback');
                     const copyMessageDiv = exerciseContainer.querySelector('.exercise-copy-message');
@@ -920,7 +922,7 @@
                         const userAnswer = selectedOption ? selectedOption.value : 'Not answered';
                         const isCorrect = userAnswer.toLowerCase() === q.correctAnswer.toLowerCase();
 
-                        const questionElement = document.querySelector(`input[name="${questionName}"]`).closest('.mb-6.bg-gray-50').querySelector('p.font-semibold');
+                        const questionElement = document.querySelector(`input[name="${questionName}"]`)?.closest('.mb-6.bg-gray-50')?.querySelector('p.font-semibold');
                         const questionText = questionElement ? questionElement.textContent.trim() : `Question ${index + 1}`;
 
                         if (isCorrect) {
