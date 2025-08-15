@@ -654,7 +654,6 @@
                         <li><a href="https://www.instagram.com/daily_medical_meme/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@daily_medical_meme</strong></a>: More memes and humor to unwind in the healthcare field.</li>
                         <li><a href="https://www.instagram.com/cdcgov/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcgov</strong></a>: Public health information and updates from the CDC (Centers for Disease Control and Prevention).</li>
                         <li><a href="https://www.instagram.com/cdcglobal/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcglobal</strong></a>: Focus on global health and CDC initiatives.</li>
-                        <li><a href="https://www.instagram.com/internalmemecine/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@internalmemecine</strong></a>: Internal memes and humor from the medical field.</li>
                         <li><a href="https://www.youtube.com/user/WHO" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@who</strong></a>: Information and campaigns from the World Health Organization.</li>
                     </ul>
                 </div>
@@ -828,13 +827,13 @@
                 checkButton.addEventListener('click', () => {
                     const exerciseId = checkButton.dataset.exerciseId;
                     const exerciseContainer = document.getElementById(exerciseId);
-                    if (!exerciseContainer) return; // Add this null check
+                    if (!exerciseContainer) return;
 
                     const copyButton = exerciseContainer.querySelector('.copy-exercise-results-button');
                     const feedbackDiv = exerciseContainer.querySelector('.exercise-feedback');
                     const copyMessageDiv = exerciseContainer.querySelector('.exercise-copy-message');
 
-                    let feedbackHtml = '<h4 class="font-bold text-lg mb-2">Your Results:</h4>';
+                    let feedbackHtml = '';
                     let resultsToCopy = `Exercise Results "${allExerciseData[exerciseId].title}":\n\n`;
                     let correctAnswersCount = 0;
                     let gradableQuestionsCount = 0;
@@ -850,12 +849,20 @@
                         if (isCorrect) {
                             correctAnswersCount++;
                             gradableQuestionsCount++;
-                            resultsHtml += `<p class="mb-2"><strong>Question ${index + 1}:</strong> Your answer: "${userAnswer}" - <span class="text-accent-green-bright">Correct!</span></p>`;
-                            resultsToCopy += `Question ${index + 1}: Your Answer: "${userAnswer}" (Correct)\n\n`;
+                            // Corrected to use a general selector that works for this exercise structure
+                            const questionText = selectedOption.closest('.mb-4').querySelector('p').textContent.trim();
+                            feedbackHtml += `<p class="mb-2"><strong>${questionText}</strong> Your answer: "${userAnswer}" - <span class="text-accent-green-bright">Correct!</span></p>`;
+                            resultsToCopy += `Question ${index + 1}: ${questionText}\nYour Answer: "${userAnswer}" (Correct)\n\n`;
                         } else {
                             gradableQuestionsCount++;
-                            resultsHtml += `<p class="mb-2"><strong>Question ${index + 1}:</strong> Your answer: "${userAnswer}" - <span class="text-warning-red">Incorrect.</span> Correct answer: <strong>${qData.answer}</strong>.</p>`;
-                            resultsToCopy += `Question ${index + 1}: Your Answer: "${userAnswer}" (Incorrect). Correct Answer: "${qData.answer}"\nExplanation: ${qData.explanation}\n\n`;
+                            const questionText = selectedOption ? selectedOption.closest('.mb-4').querySelector('p').textContent.trim() : `Question ${index + 1}:`;
+                            feedbackHtml += `
+                                <p class="mb-2">
+                                    <strong>${questionText}</strong> <br>
+                                    Your answer: "${userAnswer}" - <span class="text-warning-red">Incorrect.</span> Correct answer: <strong>${qData.answer}</strong>.
+                                </p>
+                            `;
+                            resultsToCopy += `Question ${index + 1}: ${questionText}\nYour Answer: "${userAnswer}" (Incorrect). Correct Answer: "${qData.answer}"\nExplanation: ${qData.explanation}\n\n`;
                         }
                     });
 
@@ -867,7 +874,7 @@
                         finalMessage = 'No automatically gradable questions in this exercise.';
                     }
 
-                    feedbackDiv.innerHTML = `<p class="text-xl font-bold text-primary-dark-blue mb-4">${finalMessage}</p>` + feedbackHtml;
+                    feedbackDiv.innerHTML = `<p class="text-xl font-bold text-primary-dark-blue mb-4">Your Results: ${finalMessage}</p>${feedbackHtml}`;
                     feedbackDiv.classList.remove('hidden');
                     copyButton.dataset.results = resultsToCopy;
                     copyButton.classList.remove('hidden');
@@ -1007,7 +1014,6 @@
             } // End of proficiencyQuizForm check
 
             // This is the original logic for nav links and section display
-            // ... (rest of the script)
             const initialHash = window.location.hash.substring(1);
             if (initialHash && document.getElementById(initialHash) && document.getElementById(initialHash).classList.contains('content-section')) {
                 showSection(initialHash);
