@@ -653,7 +653,6 @@
                         <li><a href="https://www.instagram.com/american_heart/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@american_heart</strong></a>: Information on cardiovascular health from the American Heart Association.</li>
                         <li><a href="https://www.instagram.com/daily_medical_meme/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@daily_medical_meme</strong></a>: More memes and humor to unwind in the healthcare field.</li>
                         <li><a href="https://www.instagram.com/cdcgov/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcgov</strong></a>: Public health information and updates from the CDC (Centers for Disease Control and Prevention).</li>
-                        <li><a href="https://www.instagram.com/medspiration/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@medspiration</strong></a>: Inspiring and educational content for healthcare professionals and students.</li>
                         <li><a href="https://www.instagram.com/cdcglobal/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcglobal</strong></a>: Focus on global health and CDC initiatives.</li>
                         <li><a href="https://www.instagram.com/internalmemecine/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@internalmemecine</strong></a>: Internal memes and humor from the medical field.</li>
                         <li><a href="https://www.youtube.com/user/WHO" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@who</strong></a>: Information and campaigns from the World Health Organization.</li>
@@ -961,9 +960,13 @@
                 });
             };
 
-            for (const key in allExerciseData) {
-                setupExerciseLogic(key);
-            }
+            // Setup logic for all exercises and the main proficiency quiz
+            document.querySelectorAll('.check-exercise-button').forEach(button => {
+                const exerciseId = button.dataset.exerciseId;
+                if (exerciseId) {
+                    setupExerciseLogic(exerciseId);
+                }
+            });
             console.log('[LOG] All exercise logic setup completed.');
 
 
@@ -990,7 +993,7 @@
                 { question: "20. By next year, I ______ (learn) English for five years.", correctAnswer: "will have learned" },
                 {
                     question: "Writing Part: Write a short paragraph (3-5 sentences) about your favorite hobby or a recent travel experience.",
-                    correctAnswer: null
+                    correctAnswer: null // This question is not graded automatically
                 }
             ];
 
@@ -1006,12 +1009,13 @@
                     let score = 0;
                     let resultsHtml = '<h4 class="font-bold text-lg mb-2">Proficiency Test Results:</h4>';
                     let resultsToCopy = 'Proficiency Level Test Results:\n\n';
+                    const gradableQuestions = quizQuestions.filter(q => q.correctAnswer !== null);
 
-                    quizQuestions.forEach((q, index) => {
+                    gradableQuestions.forEach((q, index) => {
                         const questionName = `q${index + 1}`;
                         const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
                         const userAnswer = selectedOption ? selectedOption.value : 'Not answered';
-                        const isCorrect = q.type === "textarea" || userAnswer.toLowerCase() === q.correctAnswer.toLowerCase();
+                        const isCorrect = userAnswer.toLowerCase() === q.correctAnswer.toLowerCase();
 
                         const questionElement = document.querySelector(`input[name="${questionName}"]`).closest('.mb-6.bg-gray-50').querySelector('p.font-semibold');
                         const questionText = questionElement ? questionElement.textContent.trim() : `Question ${index + 1}`;
@@ -1026,13 +1030,25 @@
                                     <strong>${questionText}</strong> <br>
                                     Your answer: "${userAnswer}" - <span class="text-warning-red">Incorrect.</span> Correct answer: <strong>${q.correctAnswer}</strong>.
                                 </p>
-                                <p class="text-sm text-subtle-gray-v2 ml-4 mb-3">Explanation: ${q.explanation}</p>
                             `;
-                            resultsToCopy += `Question ${index + 1}: ${questionText}\nYour Answer: "${userAnswer}" (Incorrect). Correct Answer: "${q.correctAnswer}"\nExplanation: ${q.explanation}\n\n`;
+                            resultsToCopy += `Question ${index + 1}: ${questionText}\nYour Answer: "${userAnswer}" (Incorrect). Correct Answer: "${q.correctAnswer}"\n\n`;
                         }
                     });
+                    
+                    const writingQuestion = quizQuestions.find(q => q.correctAnswer === null);
+                    if (writingQuestion) {
+                        const writingTextarea = document.getElementById('writing-q1');
+                        const writingAnswer = writingTextarea ? writingTextarea.value.trim() : 'No answer provided.';
+                        resultsHtml += `<h4 class="font-bold text-lg mt-6 mb-2">Writing Section:</h4>`;
+                        resultsHtml += `<p class="mb-2"><strong>${writingQuestion.question}</strong></p>`;
+                        resultsHtml += `<p class="italic text-subtle-gray-v2">${writingAnswer}</p>`;
+                        
+                        resultsToCopy += `\nWriting Section:\n\n`;
+                        resultsToCopy += `${writingQuestion.question}\nYour Text:\n"${writingAnswer}"\n\n`;
+                        resultsToCopy += `(Note: The writing section requires manual feedback from Teacher Elisa.)\n`;
+                    }
 
-                    const totalGradableQuestions = quizQuestions.filter(q => q.type === "radio").length;
+                    const totalGradableQuestions = gradableQuestions.length;
                     const percentage = (score / totalGradableQuestions) * 100;
                     let levelSuggestion = '';
 
@@ -1090,5 +1106,3 @@
     </script>
 </body>
 </html>
-
-
