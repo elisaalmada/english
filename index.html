@@ -789,130 +789,71 @@
                     displayExerciseList();
                 });
             }
-
-            // Initial section load logic
-            const initialHash = window.location.hash.substring(1);
-            console.log('[LOG] Initial URL hash:', initialHash);
             
-            // Default to English language, as per request
-            document.documentElement.lang = 'en-US';
-
-            // Load initial section based on URL hash or default
-            if (initialHash && document.getElementById(initialHash) && document.getElementById(initialHash).classList.contains('content-section')) {
-                console.log('[LOG] Loading section from hash:', initialHash);
-                showSection(initialHash);
-            } else if (initialHash && document.getElementById(initialHash) && document.getElementById(initialHash).classList.contains('individual-exercise-content')) {
-                console.log('[LOG] Loading individual exercise from hash:', initialHash);
-                showSection('exercises');
-                displayIndividualExercise(initialHash);
-            } else {
-                console.log('[LOG] No specific hash, defaulting to exercises section.');
-                showSection('exercises');
-            }
-
-
             // --- Centralized Exercise Data ---
             const allExerciseData = {
                 'say-tell': {
                     title: 'Say, Tell, Speak, Talk',
                     emoji: '🗣️',
                     inputs: [
-                        { id: 'saytell-q1', type: 'radio', options: ['say', 'tell', 'speak'], answer: 'tell', explanation: 'Use "tell" when you specify the person being spoken to (tell me, tell him, tell a story, tell the truth).' },
-                        { id: 'saytell-q2', type: 'radio', options: ['tells', 'says', 'speaks'], answer: 'tells', explanation: 'Use "tell" when you specify the person being spoken to, or for common expressions like "tell the truth". Remember the "s" for third person singular (she).' },
-                        { id: 'saytell-q3', type: 'radio', options: ['tell', 'speak', 'talk'], answer: 'speak', explanation: 'Use "speak" when talking about formal communication or general ability to communicate. "Speak with" or "speak to" is common.' },
-                        { id: 'saytell-q4', type: 'radio', options: ['said', 'told', 'spoke'], answer: 'said', explanation: 'Use "say" for direct speech or when the focus is on the words spoken, not who is being spoken to. The past tense of "say" is "said".' }
+                        { id: 'saytell-q1', type: 'radio', answer: 'tell', explanation: 'Use "tell" when you specify the person being spoken to (tell me, tell him, tell a story, tell the truth).' },
+                        { id: 'saytell-q2', type: 'radio', answer: 'tells', explanation: 'Use "tell" when you specify the person being spoken to, or for common expressions like "tell the truth". Remember the "s" for third person singular (she).' },
+                        { id: 'saytell-q3', type: 'radio', answer: 'speak', explanation: 'Use "speak" when talking about formal communication or general ability to communicate. "Speak with" or "speak to" is common.' },
+                        { id: 'saytell-q4', type: 'radio', answer: 'said', explanation: 'Use "say" for direct speech or when the focus is on the words spoken, not who is being spoken to. The past tense of "say" is "said".' }
                     ]
                 },
                 'do-does': {
                     title: 'Do vs. Does',
                     emoji: '🤔',
                     inputs: [
-                        { id: 'dodoes-q1', type: 'radio', options: ['do', 'does'], answer: 'do', explanation: 'Use "do" for most subjects in questions and negative statements in the Simple Present (I, you, we, they).' },
-                        { id: 'dodoes-q2', type: 'radio', options: ['do', 'does'], answer: 'does', explanation: 'Use "does" for third person singular subjects (he, she, it) in questions and negative statements in the Simple Present.' },
-                        { id: 'dodoes-q3', type: 'radio', options: ['do', 'does'], answer: 'does', explanation: 'Similar to the previous rule, "does" is used for the third person singular subject "he" in questions.' }
+                        { id: 'dodoes-q1', type: 'radio', answer: 'do', explanation: 'Use "do" for most subjects in questions and negative statements in the Simple Present (I, you, we, they).' },
+                        { id: 'dodoes-q2', type: 'radio', answer: 'does', explanation: 'Use "does" for third person singular subjects (he, she, it) in questions and negative statements in the Simple Present.' },
+                        { id: 'dodoes-q3', type: 'radio', answer: 'does', explanation: 'Similar to the previous rule, "does" is used for the third person singular subject "he" in questions.' }
                     ]
                 },
                 'make-do': {
                     title: 'Make vs. Do',
                     emoji: '🛠️',
                     inputs: [
-                        { id: 'makedo-q1', type: 'radio', options: ['make', 'do'], answer: 'make', explanation: 'We use "make a decision" to decide.' },
-                        { id: 'makedo-q2', type: 'radio', options: ['makes', 'does'], answer: 'does', explanation: 'We use "do one\'s best" to give your best. Remember the "s" for third person singular (she).' },
-                        { id: 'makedo-q3', type: 'radio', options: ['make', 'do'], answer: 'do', explanation: 'We use "do a favor" to do a favor.' },
-                        { id: 'makedo-q4', type: 'radio', options: ['making', 'doing'], answer: 'doing', explanation: 'We use "do research" to conduct research. As it\'s an ongoing process ("are doing"), the form is "doing".' }
+                        { id: 'makedo-q1', type: 'radio', answer: 'make', explanation: 'We use "make a decision" to decide.' },
+                        { id: 'makedo-q2', type: 'radio', answer: 'does', explanation: 'We use "do one\'s best" to give your best. Remember the "s" for third person singular (she).' },
+                        { id: 'makedo-q3', type: 'radio', answer: 'do', explanation: 'We use "do a favor" to do a favor.' },
+                        { id: 'makedo-q4', type: 'radio', answer: 'doing', explanation: 'We use "do research" to conduct research. As it\'s an ongoing process ("are doing"), the form is "doing".' }
                     ]
                 }
             };
-
-            // --- General Function to Setup Exercise Logic ---
-            const setupExerciseLogic = (exerciseId) => {
-                const exerciseContainer = document.getElementById(exerciseId);
-                if (!exerciseContainer) {
-                    console.warn(`[WARNING] Exercise container not found for ID: ${exerciseId}`);
-                    return;
-                }
-
-                const checkButton = exerciseContainer.querySelector(`.check-exercise-button[data-exercise-id="${exerciseId}"]`);
-                const copyButton = exerciseContainer.querySelector(`.copy-exercise-results-button[data-exercise-id="${exerciseId}"]`);
-                const feedbackDiv = exerciseContainer.querySelector('.exercise-feedback');
-                const copyMessageDiv = exerciseContainer.querySelector('.exercise-copy-message');
-
-                if (!checkButton || !copyButton || !feedbackDiv || !copyMessageDiv) {
-                    console.error(`[ERROR] Missing elements for exercise setup of ID: ${exerciseId}. Check buttons, feedback, or copy message divs.`);
-                    return;
-                }
-
-                const exerciseQuestionsData = allExerciseData[exerciseId].inputs;
-
+            
+            // Get all check buttons and set up their event listeners
+            document.querySelectorAll('.check-exercise-button').forEach(checkButton => {
                 checkButton.addEventListener('click', () => {
-                    console.log(`[LOG] Check button clicked for exercise: ${exerciseId}`);
+                    const exerciseId = checkButton.dataset.exerciseId;
+                    const exerciseContainer = document.getElementById(exerciseId);
+                    const copyButton = exerciseContainer.querySelector('.copy-exercise-results-button');
+                    const feedbackDiv = exerciseContainer.querySelector('.exercise-feedback');
+                    const copyMessageDiv = exerciseContainer.querySelector('.exercise-copy-message');
+
                     let feedbackHtml = '<h4 class="font-bold text-lg mb-2">Your Results:</h4>';
-                    let resultsToCopy = `Exercise Results "${exerciseContainer.querySelector('h3').textContent.replace('🗣️','').replace('🤔','').replace('🛠️','').trim()}":\n\n`;
-                    let allCorrect = true;
-                    let gradableQuestionsCount = 0;
+                    let resultsToCopy = `Exercise Results "${allExerciseData[exerciseId].title}":\n\n`;
                     let correctAnswersCount = 0;
+                    let gradableQuestionsCount = 0;
 
-                    exerciseQuestionsData.forEach((qData, index) => {
-                        let userAnswer = '';
-                        let statusHtml = '';
-                        let questionText = '';
+                    const questionsData = allExerciseData[exerciseId].inputs;
 
-                        // For radio buttons, get the question text from the parent <p> element
-                        const radioGroup = exerciseContainer.querySelector(`input[name="${qData.id}"]`);
-                        if (radioGroup) {
-                            const parentDiv = radioGroup.closest('.mb-4');
-                            const pElement = parentDiv.querySelector('p.block.text-text-main.font-medium.mb-2');
-                            questionText = pElement ? pElement.textContent.trim() : `Question ${index + 1}`;
-                        }
+                    questionsData.forEach((qData, index) => {
+                        const questionName = qData.id;
+                        const selectedOption = exerciseContainer.querySelector(`input[name="${questionName}"]:checked`);
+                        const userAnswer = selectedOption ? selectedOption.value : 'Not answered';
                         
-                        if (qData.type === "text" || qData.type === "radio") {
-                            const selectedOption = exerciseContainer.querySelector(`input[name="${qData.id}"]:checked`);
-                            userAnswer = selectedOption ? selectedOption.value : 'Not answered';
-                            
-                            if (qData.answer !== null) {
-                                gradableQuestionsCount++;
-                                const isCorrect = selectedOption && userAnswer.toLowerCase() === qData.answer.toLowerCase(); // Check if selectedOption is not null
-                                if (isCorrect) {
-                                    correctAnswersCount++;
-                                    statusHtml = '<span class="text-accent-green-bright">Correct!</span>';
-                                    resultsToCopy += `Question ${index + 1}: ${questionText}\nYour Answer: "${userAnswer}" (Correct)\n\n`;
-                                } else {
-                                    allCorrect = false;
-                                    statusHtml = `<span class="text-warning-red">Incorrect.</span> Correct answer: <strong>${qData.answer}</strong>.`;
-                                    resultsToCopy += `Question ${index + 1}: ${questionText}\nYour Answer: "${userAnswer}" (Incorrect). Correct Answer: "${qData.answer}"\nExplanation: ${qData.explanation}\n\n`;
-                                }
-                            } else {
-                                statusHtml = '<span class="text-subtle-gray-v2">Preference (Manual Feedback)</span>';
-                                resultsToCopy += `Question ${index + 1}: ${questionText}\nYour Choice: "${userAnswer}"\nExplanation: ${qData.explanation}\n\n`;
-                            }
-
-                            feedbackHtml += `
-                                <p class="mb-2">
-                                    <strong>${questionText}</strong> <br>
-                                    Your answer: "${userAnswer}" - ${statusHtml}
-                                </p>
-                                <p class="text-sm text-subtle-gray-v2 ml-4 mb-3">Explanation: ${qData.explanation}</p>
-                            `;
+                        const isCorrect = userAnswer.toLowerCase() === qData.answer.toLowerCase();
+                        if (isCorrect) {
+                            correctAnswersCount++;
+                            gradableQuestionsCount++;
+                            resultsHtml += `<p class="mb-2"><strong>Question ${index + 1}:</strong> Your answer: "${userAnswer}" - <span class="text-accent-green-bright">Correct!</span></p>`;
+                            resultsToCopy += `Question ${index + 1}: Your Answer: "${userAnswer}" (Correct)\n\n`;
+                        } else {
+                            gradableQuestionsCount++;
+                            resultsHtml += `<p class="mb-2"><strong>Question ${index + 1}:</strong> Your answer: "${userAnswer}" - <span class="text-warning-red">Incorrect.</span> Correct answer: <strong>${qData.answer}</strong>.</p>`;
+                            resultsToCopy += `Question ${index + 1}: Your Answer: "${userAnswer}" (Incorrect). Correct Answer: "${qData.answer}"\nExplanation: ${qData.explanation}\n\n`;
                         }
                     });
 
@@ -924,51 +865,19 @@
                         finalMessage = 'No automatically gradable questions in this exercise.';
                     }
 
-                    feedbackDiv.innerHTML = finalMessage + feedbackHtml;
+                    feedbackDiv.innerHTML = `<p class="text-xl font-bold text-primary-dark-blue mb-4">${finalMessage}</p>` + feedbackHtml;
                     feedbackDiv.classList.remove('hidden');
                     copyButton.dataset.results = resultsToCopy;
                     copyButton.classList.remove('hidden');
                     copyMessageDiv.classList.add('hidden');
                 });
-
-                copyButton.addEventListener('click', () => {
-                    console.log(`[LOG] Copy results button clicked for exercise: ${exerciseId}`);
-                    const results = copyButton.dataset.results;
-                    if (results) {
-                        try {
-                            const tempTextArea = document.createElement('textarea');
-                            tempTextArea.value = results;
-                            document.body.appendChild(tempTextArea);
-                            tempTextArea.select();
-                            document.execCommand('copy');
-                            document.body.removeChild(tempTextArea);
-                            copyMessageDiv.textContent = 'Results copied to clipboard!';
-                            copyMessageDiv.classList.remove('hidden');
-                            copyMessageDiv.classList.remove('text-warning-red');
-                            copyMessageDiv.classList.add('text-accent-green-bright');
-                            console.log('[LOG] Results copied successfully.');
-                        } catch (err) {
-                            console.error('[ERROR] Error trying to copy results:', err);
-                            copyMessageDiv.textContent = 'Error copying results. Please try again.';
-                            copyMessageDiv.classList.remove('hidden');
-                            copyMessageDiv.classList.remove('text-accent-green-bright');
-                            copyMessageDiv.classList.add('text-warning-red');
-                        }
-                    } else {
-                        console.warn('[WARNING] No results to copy found.');
-                    }
-                });
-            };
-
-            // Setup logic for all exercises and the main proficiency quiz
-            document.querySelectorAll('.check-exercise-button').forEach(button => {
-                const exerciseId = button.dataset.exerciseId;
-                if (exerciseId) {
-                    setupExerciseLogic(exerciseId);
-                }
             });
-            console.log('[LOG] All exercise logic setup completed.');
 
+            // Get the Proficiency Test form and set up its event listener
+            const proficiencyQuizForm = document.getElementById('proficiency-quiz');
+            const testResultsDiv = document.getElementById('test-results');
+            const copyTestResultsBtn = document.getElementById('copy-test-results');
+            const testCopyMessage = document.getElementById('test-copy-message');
 
             const quizQuestions = [
                 { question: "1. He usually ______ (go) to work by car, but today he ______ (walk).", correctAnswer: "goes / is walking" },
@@ -997,15 +906,9 @@
                 }
             ];
 
-            const proficiencyQuizForm = document.getElementById('proficiency-quiz');
-            const testResultsDiv = document.getElementById('test-results');
-            const copyTestResultsBtn = document.getElementById('copy-test-results');
-            const testCopyMessage = document.getElementById('test-copy-message');
-
             if (proficiencyQuizForm) {
                 proficiencyQuizForm.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    console.log('[LOG] Proficiency test submitted.');
                     let score = 0;
                     let resultsHtml = '<h4 class="font-bold text-lg mb-2">Proficiency Test Results:</h4>';
                     let resultsToCopy = 'Proficiency Level Test Results:\n\n';
@@ -1076,7 +979,6 @@
                 });
 
                 copyTestResultsBtn.addEventListener('click', () => {
-                    console.log('[LOG] Copy test results button clicked.');
                     const results = copyTestResultsBtn.dataset.results;
                     if (results) {
                         try {
@@ -1090,18 +992,48 @@
                             testCopyMessage.classList.remove('hidden');
                             testCopyMessage.classList.remove('text-warning-red');
                             testCopyMessage.classList.add('text-accent-green-bright');
-                            console.log('[LOG] Results copied successfully.');
                         } catch (err) {
-                            console.error('[ERROR] Error trying to copy results:', err);
                             testCopyMessage.textContent = 'Error copying results. Please try again.';
-                            copyTestResultsBtn.classList.remove('hidden');
-                            copyTestResultsBtn.classList.add('text-warning-red');
+                            testCopyMessage.classList.remove('hidden');
+                            testCopyMessage.classList.remove('text-accent-green-bright');
+                            testCopyMessage.classList.add('text-warning-red');
                         }
                     } else {
-                        console.warn('[WARNING] No test results to copy found.');
+                        console.warn('No test results to copy found.');
                     }
                 });
             } // End of proficiencyQuizForm check
+
+            // This is the original logic for nav links and section display
+            // ... (rest of the script)
+            const initialHash = window.location.hash.substring(1);
+            if (initialHash && document.getElementById(initialHash) && document.getElementById(initialHash).classList.contains('content-section')) {
+                showSection(initialHash);
+            } else if (initialHash && document.getElementById(initialHash) && document.getElementById(initialHash).classList.contains('individual-exercise-content')) {
+                showSection('exercises');
+                displayIndividualExercise(initialHash);
+            } else {
+                showSection('exercises');
+            }
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = e.target.getAttribute('href').substring(1);
+                    showSection(targetId);
+                });
+            });
+            exerciseSelectLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetExerciseId = e.target.getAttribute('href').substring(1);
+                    displayIndividualExercise(targetExerciseId);
+                });
+            });
+            if (backToExerciseListBtn) {
+                backToExerciseListBtn.addEventListener('click', () => {
+                    displayExerciseList();
+                });
+            }
         });
     </script>
 </body>
