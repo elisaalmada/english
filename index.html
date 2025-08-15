@@ -116,22 +116,6 @@
             margin-bottom: 1.5rem;
             border: 1px solid rgba(0, 0, 0, 0.05); /* Very subtle border */
         }
-
-        /* Language specific classes for switcher buttons */
-        .lang-switcher button {
-            padding: 0.5rem 0.75rem;
-            border-radius: 0.5rem;
-            font-weight: bold;
-            transition: all 0.2s;
-            border: 2px solid white;
-            color: white;
-            background-color: rgba(255,255,255,0.2); /* Semi-transparent white */
-        }
-        .lang-switcher button.active-lang {
-            background-color: white;
-            color: #4A90E2; /* primary-dark-blue */
-            transform: scale(1.05);
-        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -141,9 +125,6 @@
             <h1 class="text-4xl md:text-5xl font-extrabold mb-8 text-center md:text-left font-display uppercase text-white">
                 English with <span class="text-accent-pink-vibrant">Elisa Almada</span>
             </h1>
-            <div class="lang-switcher flex justify-center mb-6 space-x-2">
-                <!-- Language buttons removed as per request -->
-            </div>
             <nav>
                 <ul class="space-y-4">
                     <li><a href="#exercises" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105 active-link">📚 Interactive Exercises</a></li>
@@ -158,7 +139,7 @@
         <!-- Main Content Area -->
         <main class="flex-1 p-6 md:p-10 bg-light-bg-v2 text-text-main rounded-b-3xl md:rounded-r-3xl md:rounded-bl-none overflow-y-auto">
 
-            <!-- Section 1: Interactive Exercises (English Only) -->
+            <!-- Section 1: Interactive Exercises -->
             <section id="exercises" class="content-section active border-secondary-dark-purple">
                 <h2 class="text-4xl font-extrabold mb-6 font-display uppercase">
                     Interactive Exercises <span class="animated-emoji">💡</span>
@@ -186,26 +167,42 @@
                     <!-- Example Exercise 1 - Say/Tell/Speak/Talk -->
                     <div id="exercise-say-tell" class="individual-exercise-content bg-white p-6 rounded-lg shadow-md mb-8 border-2 border-secondary-dark-purple">
                         <h3 class="text-2xl font-semibold text-secondary-dark-purple mb-4 font-display uppercase">Exercise: Say, Tell, Speak, Talk <span class="animated-emoji">🗣️</span></h3>
-                        <p class="text-subtle-gray-v2 mb-4">Fill in the blanks with the correct form of <strong>say, tell, speak, or talk</strong>.</p>
+                        <p class="text-subtle-gray-v2 mb-4">Choose the correct word for each sentence.</p>
 
                         <div class="mb-4">
-                            <label for="saytell-q1" class="block text-text-main font-medium mb-2">1. Can you please ______ me your name again?</label>
-                            <input type="text" id="saytell-q1" class="w-full p-3 bg-gray-50 text-text-main border border-accent-pink-vibrant rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-green-bright transition-all">
+                            <p class="block text-text-main font-medium mb-2">1. Can you please ______ me your name again?</p>
+                            <div class="space-x-4 text-subtle-gray-v2">
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q1" value="say" class="mr-2 accent-secondary-dark-purple"> say</label>
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q1" value="tell" class="mr-2 accent-secondary-dark-purple"> tell</label>
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q1" value="speak" class="mr-2 accent-secondary-dark-purple"> speak</label>
+                            </div>
                         </div>
 
                         <div class="mb-4">
-                            <label for="saytell-q2" class="block text-text-main font-medium mb-2">2. She always ______ the truth.</label>
-                            <input type="text" id="saytell-q2" class="w-full p-3 bg-gray-50 text-text-main border border-accent-pink-vibrant rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-green-bright transition-all">
+                            <p class="block text-text-main font-medium mb-2">2. She always ______ the truth.</p>
+                            <div class="space-x-4 text-subtle-gray-v2">
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q2" value="tells" class="mr-2 accent-secondary-dark-purple"> tells</label>
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q2" value="says" class="mr-2 accent-secondary-dark-purple"> says</label>
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q2" value="speaks" class="mr-2 accent-secondary-dark-purple"> speaks</label>
+                            </div>
                         </div>
 
                         <div class="mb-4">
-                            <label for="saytell-q3" class="block text-text-main font-medium mb-2">3. I need to ______ with my manager about this project.</label>
-                            <input type="text" id="saytell-q3" class="w-full p-3 bg-gray-50 text-text-main border border-accent-pink-vibrant rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-green-bright transition-all">
+                            <p class="block text-text-main font-medium mb-2">3. I need to ______ with my manager about this project.</p>
+                            <div class="space-x-4 text-subtle-gray-v2">
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q3" value="tell" class="mr-2 accent-secondary-dark-purple"> tell</label>
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q3" value="speak" class="mr-2 accent-secondary-dark-purple"> speak</label>
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q3" value="talk" class="mr-2 accent-secondary-dark-purple"> talk</label>
+                            </div>
                         </div>
 
                         <div class="mb-4">
-                            <label for="saytell-q4" class="block text-text-main font-medium mb-2">4. He ______ "hello" as he walked past.</label>
-                            <input type="text" id="saytell-q4" class="w-full p-3 bg-gray-50 text-text-main border border-accent-pink-vibrant rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-green-bright transition-all">
+                            <p class="block text-text-main font-medium mb-2">4. He ______ "hello" as he walked past.</p>
+                            <div class="space-x-4 text-subtle-gray-v2">
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q4" value="said" class="mr-2 accent-secondary-dark-purple"> said</label>
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q4" value="told" class="mr-2 accent-secondary-dark-purple"> told</label>
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q4" value="spoke" class="mr-2 accent-secondary-dark-purple"> spoke</label>
+                            </div>
                         </div>
 
                         <button data-exercise-id="say-tell" class="check-exercise-button bg-secondary-dark-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-accent-pink-vibrant transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Check Answers</button>
@@ -221,18 +218,27 @@
                         <p class="text-subtle-gray-v2 mb-4">Choose the correct form of <strong>do or does</strong>.</p>
 
                         <div class="mb-4">
-                            <label for="dodoes-q1" class="block text-text-main font-medium mb-2">1. What ______ you usually do on weekends?</label>
-                            <input type="text" id="dodoes-q1" class="w-full p-3 bg-gray-50 text-text-main border border-accent-pink-vibrant rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-green-bright transition-all">
+                            <p class="block text-text-main font-medium mb-2">1. What ______ you usually do on weekends?</p>
+                            <div class="space-x-4 text-subtle-gray-v2">
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="dodoes-q1" value="do" class="mr-2 accent-secondary-dark-purple"> do</label>
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="dodoes-q1" value="does" class="mr-2 accent-secondary-dark-purple"> does</label>
+                            </div>
                         </div>
 
                         <div class="mb-4">
-                            <label for="dodoes-q2" class="block text-text-main font-medium mb-2">2. My sister ______ not like coffee.</label>
-                            <input type="text" id="dodoes-q2" class="w-full p-3 bg-gray-50 text-text-main border border-accent-pink-vibrant rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-green-bright transition-all">
+                            <p class="block text-text-main font-medium mb-2">2. My sister ______ not like coffee.</p>
+                            <div class="space-x-4 text-subtle-gray-v2">
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="dodoes-q2" value="do" class="mr-2 accent-secondary-dark-purple"> do</label>
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="dodoes-q2" value="does" class="mr-2 accent-secondary-dark-purple"> does</label>
+                            </div>
                         </div>
 
                         <div class="mb-4">
-                            <label for="dodoes-q3" class="block text-text-main font-medium mb-2">3. ______ he speak French?</label>
-                            <input type="text" id="dodoes-q3" class="w-full p-3 bg-gray-50 text-text-main border border-accent-pink-vibrant rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-green-bright transition-all">
+                            <p class="block text-text-main font-medium mb-2">3. ______ he speak French?</p>
+                            <div class="space-x-4 text-subtle-gray-v2">
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="dodoes-q3" value="do" class="mr-2 accent-secondary-dark-purple"> do</label>
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="dodoes-q3" value="does" class="mr-2 accent-secondary-dark-purple"> does</label>
+                            </div>
                         </div>
 
                         <button data-exercise-id="do-does" class="check-exercise-button bg-secondary-dark-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-accent-pink-vibrant transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Check Answers</button>
@@ -248,23 +254,35 @@
                         <p class="text-subtle-gray-v2 mb-4">Choose the correct form of <strong>make or do</strong> for each sentence.</p>
 
                         <div class="mb-4">
-                            <label for="makedo-q1" class="block text-text-main font-medium mb-2">1. I need to ______ a decision soon.</label>
-                            <input type="text" id="makedo-q1" class="w-full p-3 bg-gray-50 text-text-main border border-accent-pink-vibrant rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-green-bright transition-all">
+                            <p class="block text-text-main font-medium mb-2">1. I need to ______ a decision soon.</p>
+                            <div class="space-x-4 text-subtle-gray-v2">
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="makedo-q1" value="make" class="mr-2 accent-secondary-dark-purple"> make</label>
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="makedo-q1" value="do" class="mr-2 accent-secondary-dark-purple"> do</label>
+                            </div>
                         </div>
 
                         <div class="mb-4">
-                            <label for="makedo-q2" class="block text-text-main font-medium mb-2">2. She always ______ her best in everything.</label>
-                            <input type="text" id="makedo-q2" class="w-full p-3 bg-gray-50 text-text-main border border-accent-pink-vibrant rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-green-bright transition-all">
+                            <p class="block text-text-main font-medium mb-2">2. She always ______ her best in everything.</p>
+                            <div class="space-x-4 text-subtle-gray-v2">
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="makedo-q2" value="makes" class="mr-2 accent-secondary-dark-purple"> makes</label>
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="makedo-q2" value="does" class="mr-2 accent-secondary-dark-purple"> does</label>
+                            </div>
                         </div>
 
                         <div class="mb-4">
-                            <label for="makedo-q3" class="block text-text-main font-medium mb-2">3. Can you ______ me a favor?</label>
-                            <input type="text" id="makedo-q3" class="w-full p-3 bg-gray-50 text-text-main border border-accent-pink-vibrant rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-green-bright transition-all">
+                            <p class="block text-text-main font-medium mb-2">3. Can you ______ me a favor?</p>
+                            <div class="space-x-4 text-subtle-gray-v2">
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="makedo-q3" value="make" class="mr-2 accent-secondary-dark-purple"> make</label>
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="makedo-q3" value="do" class="mr-2 accent-secondary-dark-purple"> do</label>
+                            </div>
                         </div>
 
                         <div class="mb-4">
-                            <label for="makedo-q4" class="block text-text-main font-medium mb-2">4. They are ______ research on climate change.</label>
-                            <input type="text" id="makedo-q4" class="w-full p-3 bg-gray-50 text-text-main border border-accent-pink-vibrant rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-green-bright transition-all">
+                            <p class="block text-text-main font-medium mb-2">4. They are ______ research on climate change.</p>
+                            <div class="space-x-4 text-subtle-gray-v2">
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="makedo-q4" value="making" class="mr-2 accent-secondary-dark-purple"> making</label>
+                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="makedo-q4" value="doing" class="mr-2 accent-secondary-dark-purple"> doing</label>
+                            </div>
                         </div>
 
                         <button data-exercise-id="make-do" class="check-exercise-button bg-secondary-dark-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-accent-pink-vibrant transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Check Answers</button>
@@ -575,7 +593,7 @@
                         <li><a href="https://www.youtube.com/@osmosis" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Osmosis from Elsevier</strong></a>: Animated and didactic videos on medical and health concepts.</li>
                         <li><a href="https://www.youtube.com/@MedFlixAndChill" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>MedFlix</strong></a>: Entertainment and educational content about the world of medicine.</li>
                         <li><a href="https://www.youtube.com/user/ClevelandClinic" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Cleveland Clinic</strong></a>: Health and wellness information from a leading institution.</li>
-                        <li><a href="https://www.youtube.com/@nucleusmedicalmedia" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Nucleus Medical Media</strong></a>: Animações médicas detalhadas para explicar condições e procedimentos.</li>
+                        <li><a href="https://www.youtube.com/@nucleusmedicalmedia" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Nucleus Medical Media</strong></a>: Detailed medical animations to explain conditions and procedures.</li>
                         <li><a href="https://www.youtube.com/@StanfordHospital" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Stanford Health Care</strong></a>: Lectures and information on medical advances and healthcare.</li>
                         <li><a href="https://www.youtube.com/@NEJMgroup" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>NEJM Group</strong></a>: Videos from the New England Journal of Medicine, with clinical cases and research discussions.</li>
                         <li><a href="https://www.youtube.com/@NHS" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>NHS (National Health Service - UK)</strong></a>: Information on public health and healthcare services in the UK.</li>
@@ -618,7 +636,7 @@
                         <li><a href="https://www.instagram.com/sciencemagazine/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@sciencemagazine</strong></a>: The latest scientific discoveries and research.</li>
                         <li><a href="https://www.instagram.com/science__sphere/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@science__sphere</strong></a>: Explores scientific curiosities and facts visually.</li>
                         <li><a href="https://www.instagram.com/newscientist/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@newscientist</strong></a>: News and articles on science and technology.</li>
-                        <li><a href="https://www.instagram.com/unesco/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@unesco</strong></a>: Conteúdo sobre educação, ciência e cultura em nível global.</li>
+                        <li><a href="https://www.instagram.com/unesco/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@unesco</strong></a>: Content on education, science, and culture globally.</li>
                         <li><a href="https://www.instagram.com/nasa/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nasa</strong></a>: Imagens e atualizações do espaço e exploração espacial.</li>
                         <li><a href="https://www.instagram.com/unicef/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@unicef</strong></a>: Foco em direitos das crianças e desenvolvimento global.</li>
                         <li><a href="https://www.instagram.com/theaipage/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@theaipage</strong></a>: Mais conteúdo sobre inteligência artificial e suas aplicações.</li>
@@ -642,7 +660,6 @@
                     </ul>
                 </div>
             </section>
-
         </main>
     </div>
 
@@ -801,29 +818,29 @@
                     title: 'Say, Tell, Speak, Talk',
                     emoji: '🗣️',
                     inputs: [
-                        { id: 'saytell-q1', answer: 'tell', explanation: 'Use "tell" when you specify the person being spoken to (tell me, tell him, tell a story, tell the truth).' },
-                        { id: 'saytell-q2', answer: 'tells', explanation: 'Use "tell" when you specify the person being spoken to, or for common expressions like "tell the truth". Remember the "s" for third person singular (she).' },
-                        { id: 'saytell-q3', answer: 'speak', explanation: 'Use "speak" when talking about formal communication or general ability to communicate. "Speak with" or "speak to" is common.' },
-                        { id: 'saytell-q4', answer: 'said', explanation: 'Use "say" for direct speech or when the focus is on the words spoken, not who is being spoken to. The past tense of "say" is "said".' }
+                        { id: 'saytell-q1', type: 'radio', options: ['say', 'tell', 'speak'], answer: 'tell', explanation: 'Use "tell" when you specify the person being spoken to (tell me, tell him, tell a story, tell the truth).' },
+                        { id: 'saytell-q2', type: 'radio', options: ['tells', 'says', 'speaks'], answer: 'tells', explanation: 'Use "tell" when you specify the person being spoken to, or for common expressions like "tell the truth". Remember the "s" for third person singular (she).' },
+                        { id: 'saytell-q3', type: 'radio', options: ['tell', 'speak', 'talk'], answer: 'speak', explanation: 'Use "speak" when talking about formal communication or general ability to communicate. "Speak with" or "speak to" is common.' },
+                        { id: 'saytell-q4', type: 'radio', options: ['said', 'told', 'spoke'], answer: 'said', explanation: 'Use "say" for direct speech or when the focus is on the words spoken, not who is being spoken to. The past tense of "say" is "said".' }
                     ]
                 },
                 'do-does': {
                     title: 'Do vs. Does',
                     emoji: '🤔',
                     inputs: [
-                        { id: 'dodoes-q1', answer: 'do', explanation: 'Use "do" for most subjects in questions and negative statements in the Simple Present (I, you, we, they).' },
-                        { id: 'dodoes-q2', answer: 'does', explanation: 'Use "does" for third person singular subjects (he, she, it) in questions and negative statements in the Simple Present.' },
-                        { id: 'dodoes-q3', answer: 'does', explanation: 'Similar to the previous rule, "does" is used for the third person singular subject "he" in questions.' }
+                        { id: 'dodoes-q1', type: 'radio', options: ['do', 'does'], answer: 'do', explanation: 'Use "do" for most subjects in questions and negative statements in the Simple Present (I, you, we, they).' },
+                        { id: 'dodoes-q2', type: 'radio', options: ['do', 'does'], answer: 'does', explanation: 'Use "does" for third person singular subjects (he, she, it) in questions and negative statements in the Simple Present.' },
+                        { id: 'dodoes-q3', type: 'radio', options: ['do', 'does'], answer: 'does', explanation: 'Similar to the previous rule, "does" is used for the third person singular subject "he" in questions.' }
                     ]
                 },
                 'make-do': {
                     title: 'Make vs. Do',
                     emoji: '🛠️',
                     inputs: [
-                        { id: 'makedo-q1', answer: 'make', explanation: 'We use "make a decision" to decide.' },
-                        { id: 'makedo-q2', answer: 'does', explanation: 'We use "do one\'s best" to give your best. Remember the "s" for third person singular (she).' },
-                        { id: 'makedo-q3', answer: 'do', explanation: 'We use "do a favor" to do a favor.' },
-                        { id: 'makedo-q4', answer: 'doing', explanation: 'We use "do research" to conduct research. As it\'s an ongoing process ("are doing"), the form is "doing".' }
+                        { id: 'makedo-q1', type: 'radio', options: ['make', 'do'], answer: 'make', explanation: 'We use "make a decision" to decide.' },
+                        { id: 'makedo-q2', type: 'radio', options: ['makes', 'does'], answer: 'does', explanation: 'We use "do one\'s best" to give your best. Remember the "s" for third person singular (she).' },
+                        { id: 'makedo-q3', type: 'radio', options: ['make', 'do'], answer: 'do', explanation: 'We use "do a favor" to do a favor.' },
+                        { id: 'makedo-q4', type: 'radio', options: ['making', 'doing'], answer: 'doing', explanation: 'We use "do research" to conduct research. As it\'s an ongoing process ("are doing"), the form is "doing".' }
                     ]
                 }
             };
@@ -851,7 +868,7 @@
                 checkButton.addEventListener('click', () => {
                     console.log(`[LOG] Check button clicked for exercise: ${exerciseId}`);
                     let feedbackHtml = '<h4 class="font-bold text-lg mb-2">Your Results:</h4>';
-                    let resultsToCopy = `Exercise Results "${exerciseContainer.querySelector('h3').textContent.replace('🗣️','').replace('🤔','').replace('🛠️','').replace('❓','').trim()}":\n\n`;
+                    let resultsToCopy = `Exercise Results "${exerciseContainer.querySelector('h3').textContent.replace('🗣️','').replace('🤔','').replace('🛠️','').trim()}":\n\n`;
                     let allCorrect = true;
                     let gradableQuestionsCount = 0;
                     let correctAnswersCount = 0;
@@ -859,43 +876,20 @@
                     exerciseQuestionsData.forEach((qData, index) => {
                         let userAnswer = '';
                         let statusHtml = '';
-                        // Determine question text based on element ID and type
-                        const labelElement = exerciseContainer.querySelector(`label[for="${qData.id}"]`);
-                        if (labelElement) {
-                            questionText = labelElement.textContent.replace(/^\d+\.\s*(.*?)\s*$/, '$1').replace('______', '____').trim();
-                        } else {
-                            // Fallback for cases where label might not directly correspond (e.g., true/false groups)
-                            const parentDiv = exerciseContainer.querySelector(`input[name="${qData.id}"]`) ? exerciseContainer.querySelector(`input[name="${qData.id}"]`).closest('.mb-6.bg-gray-50') : null;
-                            const pElement = parentDiv ? parentDiv.querySelector('p.font-semibold') : null;
+                        let questionText = '';
+
+                        // For radio buttons, get the question text from the parent <p> element
+                        const radioGroup = exerciseContainer.querySelector(`input[name="${qData.id}"]`);
+                        if (radioGroup) {
+                            const parentDiv = radioGroup.closest('.mb-4');
+                            const pElement = parentDiv.querySelector('p.block.text-text-main.font-medium.mb-2');
                             questionText = pElement ? pElement.textContent.trim() : `Question ${index + 1}`;
                         }
                         
-                        if (qData.type === "text") {
-                            const inputElement = document.getElementById(qData.id);
-                            userAnswer = inputElement ? inputElement.value.trim() : 'Not answered';
-                            const isCorrect = userAnswer.toLowerCase() === qData.answer.toLowerCase();
-                            gradableQuestionsCount++;
-                            if (isCorrect) {
-                                correctAnswersCount++;
-                                statusHtml = '<span class="text-accent-green-bright">Correct!</span>';
-                                resultsToCopy += `Question ${index + 1}: ${questionText}\nYour Answer: "${userAnswer}" (Correct)\n\n`;
-                            } else {
-                                allCorrect = false;
-                                statusHtml = `<span class="text-warning-red">Incorrect.</span> Correct answer: <strong>${qData.answer}</strong>.`;
-                                resultsToCopy += `Question ${index + 1}: ${questionText}\nYour Answer: "${userAnswer}" (Incorrect). Correct Answer: "${qData.answer}"\nExplanation: ${qData.explanation}\n\n`;
-                            }
-                            feedbackHtml += `
-                                <p class="mb-2">
-                                    <strong>${questionText}</strong> <br>
-                                    Your answer: "${userAnswer}" - ${statusHtml}
-                                </p>
-                                <p class="text-sm text-subtle-gray-v2 ml-4 mb-3">Explanation: ${qData.explanation}</p>
-                            `;
-                        } else if (qData.type === "radio") {
-                            const radioGroup = exerciseContainer.querySelector(`input[name="${qData.id}"]:checked`);
-                            userAnswer = radioGroup ? radioGroup.value : 'Not answered';
+                        if (qData.type === "text" || qData.type === "radio") {
+                            const selectedOption = exerciseContainer.querySelector(`input[name="${qData.id}"]:checked`);
+                            userAnswer = selectedOption ? selectedOption.value : 'Not answered';
                             
-                            // Only grade if correctAnswer is defined (i.e., not a preference question)
                             if (qData.answer !== null) {
                                 gradableQuestionsCount++;
                                 const isCorrect = userAnswer.toLowerCase() === qData.answer.toLowerCase();
@@ -908,7 +902,7 @@
                                     statusHtml = `<span class="text-warning-red">Incorrect.</span> Correct answer: <strong>${qData.answer}</strong>.`;
                                     resultsToCopy += `Question ${index + 1}: ${questionText}\nYour Answer: "${userAnswer}" (Incorrect). Correct Answer: "${qData.answer}"\nExplanation: ${qData.explanation}\n\n`;
                                 }
-                            } else { // For preference questions, no automatic grading
+                            } else {
                                 statusHtml = '<span class="text-subtle-gray-v2">Preference (Manual Feedback)</span>';
                                 resultsToCopy += `Question ${index + 1}: ${questionText}\nYour Choice: "${userAnswer}"\nExplanation: ${qData.explanation}\n\n`;
                             }
@@ -934,7 +928,7 @@
                     feedbackDiv.innerHTML = feedbackHtml;
                     feedbackDiv.classList.remove('hidden');
                     copyButton.dataset.results = resultsToCopy;
-                    copyButton.classList.remove('hidden'); // Ensure copy button is always shown
+                    copyButton.classList.remove('hidden');
                     copyMessageDiv.classList.add('hidden');
                 });
 
@@ -967,59 +961,36 @@
                 });
             };
 
-            // Setup logic for all interactive exercises
             for (const key in allExerciseData) {
                 setupExerciseLogic(key);
             }
             console.log('[LOG] All exercise logic setup completed.');
 
 
-            // --- Proficiency Test Logic (English Only) ---
             const quizQuestions = [
-                {
-                    question: "1. He usually ______ (go) to work by car, but today he ______ (walk).",
-                    type: "radio",
-                    options: ["goes / is walking", "is going / walks", "went / walked"],
-                    correctAnswer: "goes / is walking",
-                    explanation: "We use the Present Simple for habits ('usually goes') and the Present Continuous for actions happening now ('today he is walking')."
-                },
-                {
-                    question: "2. While I ______ (read) a book, my phone ______ (ring).",
-                    type: "radio",
-                    options: ["read / rang", "was reading / rang", "am reading / rings"],
-                    correctAnswer: "was reading / rang",
-                    explanation: "The Past Continuous ('was reading') is used for an action in progress in the past, interrupted by a short action in the Past Simple ('rang')."
-                },
-                {
-                    question: "3. I ______ (not see) her since last year.",
-                    type: "radio",
-                    options: ["didn't see", "haven't seen", "am not seeing"],
-                    correctAnswer: "haven't seen",
-                    explanation: "We use the Present Perfect ('haven't seen') with 'since' to indicate an new action that started in the past and continues or has relevance in the present."
-                },
-                { question: "4. I think it ______ (rain) tomorrow. (Prediction)", type: "radio", options: ["is going to rain", "will rain", "rains"], correctAnswer: "will rain", explanation: "For predictions based on personal opinion, without visible evidence, we use 'will'." },
-                { question: "5. You ______ study harder if you want to pass the exam. (Strong advice/necessity)", type: "radio", options: ["can", "should", "must"], correctAnswer: "must", explanation: "'Must' expresses a strong obligation or necessity." },
-                { question: "6. If it ______ (rain) tomorrow, we ______ (stay) home. (First Conditional)", type: "radio", options: ["rains / will stay", "will rain / stay", "rained / would stay"], correctAnswer: "rains / will stay", explanation: "In the First Conditional, we use the Present Simple in the 'if' clause and 'will' + infinitive in the main clause to express a real or possible future condition." },
-                { question: "7. If I ______ (have) a million dollars, I ______ (buy) a big house. (Second Conditional)", type: "radio", options: ["had / would buy", "have / will buy", "would have / buy"], correctAnswer: "had / would buy", explanation: "In the Second Conditional, we use the Past Simple in the 'if' clause and 'would' + infinitive in the main clause to express a hypothetical or unreal situation in the present/future." },
-                { question: "8. The book ______ (write) by a famous author last year. (Passive Voice)", type: "radio", options: ["wrote", "was written", "is written"], correctAnswer: "was written", explanation: "This is the passive voice in the Past Simple. The book 'was written' by someone. We use 'was/were' + Past Participle." },
-                { question: "9. She has ______ cat and ______ dog. ______ cat is black. (Articles)", type: "radio", options: ["a / a / The", "an / a / A", "the / a / The"], correctAnswer: "a / a / The", explanation: "We use 'a/an' to introduce something for the first time. 'The' is used when the object has already been mentioned or is specific." },
-                { question: "10. The meeting is ______ 3 PM ______ Friday. (Prepositions of Time)", type: "radio", options: ["at / on", "on / at", "in / in"], correctAnswer: "at / on", explanation: "We use 'at' for specific times and 'on' for days of the week." },
-                { question: "11. The book is ______ the table, ______ the lamp. (Prepositions of Place)", type: "radio", options: ["on / next to", "at / in", "in / on"], correctAnswer: "on / next to", explanation: "We use 'on' to indicate something is on a surface and 'next to' to indicate something is beside another." },
-                { question: "12. The plane will ______ in ten minutes. (Meaning: take off from the ground)", type: "radio", options: ["take off", "take up", "take on"], correctAnswer: "take off", explanation: "The phrasal verb 'take off' means to depart (for aircraft) or to remove (clothes)." },
-                { question: "13. If you don't know the word, you can ______ it ______ in a dictionary. (Meaning: find its meaning)", type: "radio", options: ["look / over", "look / up", "look / into"], correctAnswer: "look / up", explanation: "The phrasal verb 'look up' means to search for information (in a dictionary, book, internet)." },
-                { question: "14. She is ______ (tall) than her brother. He runs ______ (quickly) than me. (Comparison)", type: "radio", options: ["taller / more quickly", "tallest / quicker", "more tall / more quick"], correctAnswer: "taller / more quickly", explanation: "For short adjectives, we add '-er' in comparison. For adverbs ending in '-ly', we use 'more'." },
-                { question: "15. There isn't ______ water. There are ______ books.", type: "radio", options: ["many / much", "much / many", "a lot of / a lot of"], correctAnswer: "much / many", explanation: "We use 'much' with uncountable nouns ('water') and 'many' with countable plural nouns ('books'). 'A lot of' can be used with both." },
-                { question: "16. By the time I arrived, he ______ (already leave). (Past Perfect)", type: "radio", options: ["already left", "had already left", "was already leaving"], correctAnswer: "had already left", explanation: "The Past Perfect ('had already left') is used to indicate an action that was completed before another event in the past ('By the time I arrived')." },
-                { question: "17. She said, \"I am happy.\" (Reported Speech)", type: "radio", options: ["She said she is happy.", "She said she was happy.", "She says she is happy."], correctAnswer: "She said she was happy.", explanation: "When reporting speech in the past ('She said'), the tense of the original sentence usually 'shifts back' one tense. 'Am happy' becomes 'was happy'." },
-                { question: "18. If you heat water to 100 degrees Celsius, it ______ (boil).", type: "radio", options: ["boils", "will boil", "would boil"], correctAnswer: "boils", explanation: "The Zero Conditional is used for general facts or scientific truths. Both clauses use the Present Simple." },
-                { question: "19. This is the student ______ helped me with my homework.", type: "radio", options: ["which", "who", "whose"], correctAnswer: "who", explanation: "We use 'who' to refer to people." },
-                { question: "20. By next year, I ______ (learn) English for five years.", type: "radio", options: ["will learn", "will have learned", "am learning"], correctAnswer: "will have learned", explanation: "The Future Perfect ('will have learned') is used for actions that will be completed at or before a specific point in the future." },
+                { question: "1. He usually ______ (go) to work by car, but today he ______ (walk).", correctAnswer: "goes / is walking" },
+                { question: "2. While I ______ (read) a book, my phone ______ (ring).", correctAnswer: "was reading / rang" },
+                { question: "3. I ______ (not see) her since last year.", correctAnswer: "haven't seen" },
+                { question: "4. I think it ______ (rain) tomorrow. (Prediction)", correctAnswer: "will rain" },
+                { question: "5. You ______ study harder if you want to pass the exam. (Strong advice/necessity)", correctAnswer: "must" },
+                { question: "6. If it ______ (rain) tomorrow, we ______ (stay) home. (First Conditional)", correctAnswer: "rains / will stay" },
+                { question: "7. If I ______ (have) a million dollars, I ______ (buy) a big house. (Second Conditional)", correctAnswer: "had / would buy" },
+                { question: "8. The book ______ (write) by a famous author last year. (Passive Voice)", correctAnswer: "was written" },
+                { question: "9. She has ______ cat and ______ dog. ______ cat is black. (Articles)", correctAnswer: "a / a / The" },
+                { question: "10. The meeting is ______ 3 PM ______ Friday. (Prepositions of Time)", correctAnswer: "at / on" },
+                { question: "11. The book is ______ the table, ______ the lamp. (Prepositions of Place)", correctAnswer: "on / next to" },
+                { question: "12. The plane will ______ in ten minutes. (Meaning: take off from the ground)", correctAnswer: "take off" },
+                { question: "13. If you don't know the word, you can ______ it ______ in a dictionary. (Meaning: find its meaning)", correctAnswer: "look / up" },
+                { question: "14. She is ______ (tall) than her brother. He runs ______ (quickly) than me. (Comparison)", correctAnswer: "taller / more quickly" },
+                { question: "15. There isn't ______ water. There are ______ books.", correctAnswer: "much / many" },
+                { question: "16. By the time I arrived, he ______ (already leave). (Past Perfect)", correctAnswer: "had already left" },
+                { question: "17. She said, \"I am happy.\" (Reported Speech)", correctAnswer: "She said she was happy." },
+                { question: "18. If you heat water to 100 degrees Celsius, it ______ (boil).", correctAnswer: "boils" },
+                { question: "19. This is the student ______ helped me with my homework.", correctAnswer: "who" },
+                { question: "20. By next year, I ______ (learn) English for five years.", correctAnswer: "will have learned" },
                 {
                     question: "Writing Part: Write a short paragraph (3-5 sentences) about your favorite hobby or a recent travel experience.",
-                    type: "textarea",
-                    correctAnswer: null,
-                    explanation: "Feedback for this section is manual. Please copy your results and send them to Teacher Elisa!",
-                    id: "writing-q1"
+                    correctAnswer: null
                 }
             ];
 
@@ -1037,36 +1008,27 @@
                     let resultsToCopy = 'Proficiency Level Test Results:\n\n';
 
                     quizQuestions.forEach((q, index) => {
-                        if (q.type === "radio") {
-                            const questionName = `q${index + 1}`;
-                            const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
-                            const userAnswer = selectedOption ? selectedOption.value : 'Not answered';
-                            const isCorrect = userAnswer.toLowerCase() === q.correctAnswer.toLowerCase();
+                        const questionName = `q${index + 1}`;
+                        const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
+                        const userAnswer = selectedOption ? selectedOption.value : 'Not answered';
+                        const isCorrect = q.type === "textarea" || userAnswer.toLowerCase() === q.correctAnswer.toLowerCase();
 
-                            if (isCorrect) {
-                                score++;
-                                resultsHtml += `<p class="mb-2"><strong>${q.question}</strong> Your answer: "${userAnswer}" - <span class="text-accent-green-bright">Correct!</span></p>`;
-                                resultsToCopy += `Question ${index + 1}: ${q.question}\nYour Answer: "${userAnswer}" (Correct)\n\n`;
-                            } else {
-                                resultsHtml += `
-                                    <p class="mb-2">
-                                        <strong>${q.question}</strong> <br>
-                                        Your answer: "${userAnswer}" - <span class="text-warning-red">Incorrect.</span> Correct answer: <strong>${q.correctAnswer}</strong>.
-                                    </p>
-                                    <p class="text-sm text-subtle-gray-v2 ml-4 mb-3">Explanation: ${q.explanation}</p>
-                                `;
-                                resultsToCopy += `Question ${index + 1}: ${q.question}\nYour Answer: "${userAnswer}" (Incorrect). Correct Answer: "${q.correctAnswer}"\nExplanation: ${q.explanation}\n\n`;
-                            }
-                        } else if (q.type === "textarea") {
-                            const writingInput = document.getElementById(q.id);
-                            const userWriting = writingInput ? writingInput.value.trim() : 'Not answered';
+                        const questionElement = document.querySelector(`input[name="${questionName}"]`).closest('.mb-6.bg-gray-50').querySelector('p.font-semibold');
+                        const questionText = questionElement ? questionElement.textContent.trim() : `Question ${index + 1}`;
+
+                        if (isCorrect) {
+                            score++;
+                            resultsHtml += `<p class="mb-2"><strong>${questionText}</strong> Your answer: "${userAnswer}" - <span class="text-accent-green-bright">Correct!</span></p>`;
+                            resultsToCopy += `Question ${index + 1}: ${questionText}\nYour Answer: "${userAnswer}" (Correct)\n\n`;
+                        } else {
                             resultsHtml += `
-                                <p class="mb-2"><strong>${q.question}</strong></p>
-                                <p class="text-subtle-gray-v2 italic ml-4 mb-3">Your Writing:</p>
-                                <div class="bg-white p-3 rounded-lg border border-subtle-gray-v2 text-text-main whitespace-pre-wrap">${userWriting}</div>
-                                <p class="text-sm text-subtle-gray-v2 ml-4 mb-3">${q.explanation}</p>
+                                <p class="mb-2">
+                                    <strong>${questionText}</strong> <br>
+                                    Your answer: "${userAnswer}" - <span class="text-warning-red">Incorrect.</span> Correct answer: <strong>${q.correctAnswer}</strong>.
+                                </p>
+                                <p class="text-sm text-subtle-gray-v2 ml-4 mb-3">Explanation: ${q.explanation}</p>
                             `;
-                            resultsToCopy += `\n--- Writing Part ---\n${q.question}\nYour Writing:\n"${userWriting}"\n${q.explanation}\n\n`;
+                            resultsToCopy += `Question ${index + 1}: ${questionText}\nYour Answer: "${userAnswer}" (Incorrect). Correct Answer: "${q.correctAnswer}"\nExplanation: ${q.explanation}\n\n`;
                         }
                     });
 
