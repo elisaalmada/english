@@ -637,10 +637,10 @@
                         <li><a href="https://www.instagram.com/science__sphere/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@science__sphere</strong></a>: Explores scientific curiosities and facts visually.</li>
                         <li><a href="https://www.instagram.com/newscientist/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@newscientist</strong></a>: News and articles on science and technology.</li>
                         <li><a href="https://www.instagram.com/unesco/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@unesco</strong></a>: Content on education, science, and culture globally.</li>
-                        <li><a href="https://www.instagram.com/nasa/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nasa</strong></a>: Imagens e atualizações do espaço e exploração espacial.</li>
-                        <li><a href="https://www.instagram.com/unicef/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@unicef</strong></a>: Foco em direitos das crianças e desenvolvimento global.</li>
-                        <li><a href="https://www.instagram.com/theaipage/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@theaipage</strong></a>: Mais conteúdo sobre inteligência artificial e suas aplicações.</li>
-                        <li><a href="https://www.instagram.com/aigptinsights/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@aigptinsights</strong></a>: Insights e novidades sobre IA e modelos de linguagem.</li>
+                        <li><a href="https://www.instagram.com/nasa/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nasa</strong></a>: Images and updates from space and space exploration.</li>
+                        <li><a href="https://www.instagram.com/unicef/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@unicef</strong></a>: Focus on children's rights and global development.</li>
+                        <li><a href="https://www.instagram.com/theaipage/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@theaipage</strong></a>: More content on artificial intelligence and its applications.</li>
+                        <li><a href="https://www.instagram.com/aigptinsights/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@aigptinsights</strong></a>: Insights and news on AI and language models.</li>
                     </ul>
                 </div>
 
@@ -648,7 +648,7 @@
                     <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">Instagram Accounts - Healthcare:</h3>
                     <ul class="list-disc list-inside space-y-2 text-text-main">
                         <li><a href="https://www.instagram.com/nejm/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nejm</strong></a>: The Instagram of the New England Journal of Medicine, with research highlights.</li>
-                        <li><a href="https://www.youtube.com/@nature_the_journal/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nature_the_journal</strong></a>: Content from the renowned scientific journal Nature.</li>
+                        <li><a href="https://www.instagram.com/nature_the_journal/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nature_the_journal</strong></a>: Content from the renowned scientific journal Nature.</li>
                         <li><a href="https://www.instagram.com/funnydoctorss/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@funnydoctorss</strong></a>: Light humor and memes related to life in healthcare.</li>
                         <li><a href="https://www.instagram.com/american_heart/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@american_heart</strong></a>: Information on cardiovascular health from the American Heart Association.</li>
                         <li><a href="https://www.instagram.com/daily_medical_meme/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@daily_medical_meme</strong></a>: More memes and humor to unwind in the healthcare field.</li>
@@ -892,7 +892,7 @@
                             
                             if (qData.answer !== null) {
                                 gradableQuestionsCount++;
-                                const isCorrect = userAnswer.toLowerCase() === qData.answer.toLowerCase();
+                                const isCorrect = selectedOption && userAnswer.toLowerCase() === qData.answer.toLowerCase(); // Check if selectedOption is not null
                                 if (isCorrect) {
                                     correctAnswersCount++;
                                     statusHtml = '<span class="text-accent-green-bright">Correct!</span>';
@@ -925,7 +925,7 @@
                         finalMessage = 'No automatically gradable questions in this exercise.';
                     }
 
-                    feedbackDiv.innerHTML = feedbackHtml;
+                    feedbackDiv.innerHTML = finalMessage + feedbackHtml;
                     feedbackDiv.classList.remove('hidden');
                     copyButton.dataset.results = resultsToCopy;
                     copyButton.classList.remove('hidden');
