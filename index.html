@@ -72,18 +72,6 @@
             transform: translateY(-2px); /* Soft "jump" effect on hover */
             box-shadow: 2px 2px 0px rgba(255, 105, 180, 0.7); /* Shadow in accent-pink-vibrant on hover */
         }
-        /* Style for individual exercise content and list - initially hidden */
-        #exercise-list-view,
-        #individual-exercise-view,
-        .individual-exercise-content {
-            display: none;
-        }
-        /* When the 'hidden' class is removed, force display as block */
-        #exercise-list-view:not(.hidden),
-        #individual-exercise-view:not(.hidden),
-        .individual-exercise-content:not(.hidden) {
-            display: block !important;
-        }
 
         /* Main page titles */
         h1, h2 {
@@ -127,7 +115,6 @@
             </h1>
             <nav>
                 <ul class="space-y-4">
-                    <li><a href="#exercises" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105 active-link">📚 Interactive Exercises</a></li>
                     <li><a href="#who-am-i" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">👋 Who Am I</a></li>
                     <li><a href="#how-classes-work" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">✨ How Classes Work</a></li>
                     <li><a href="#proficiency-test" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">📝 Proficiency Test</a></li>
@@ -139,162 +126,8 @@
         <!-- Main Content Area -->
         <main class="flex-1 p-6 md:p-10 bg-light-bg-v2 text-text-main rounded-b-3xl md:rounded-r-3xl md:rounded-bl-none overflow-y-auto">
 
-            <!-- Section 1: Interactive Exercises -->
-            <section id="exercises" class="content-section active border-secondary-dark-purple">
-                <h2 class="text-4xl font-extrabold mb-6 font-display uppercase">
-                    Interactive Exercises <span class="animated-emoji">💡</span>
-                </h2>
-                <p class="text-subtle-gray-v2 mb-6 leading-relaxed">
-                    Here you'll find interactive exercises to practice your English in a light and effective way. Get automatic feedback and copy your results, including corrections and explanations, to review whenever you want.
-                </p>
-
-                <!-- List of Exercises View -->
-                <div id="exercise-list-view" class="">
-                    <h3 class="text-2xl font-semibold mb-4 font-display">Choose an exercise to start:</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#exercise-say-tell" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow-v2 text-text-main font-medium transition-all duration-200 hover:scale-[1.02] border border-accent-green-bright shadow-sm">👉 Exercise: Say, Tell, Speak, Talk</a></li>
-                        <li><a href="#exercise-do-does" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow-v2 text-text-main font-medium transition-all duration-200 hover:scale-[1.02] border border-accent-green-bright shadow-sm">👉 Exercise: Do vs. Does</a></li>
-                        <li><a href="#exercise-make-do" class="exercise-select-link block p-3 rounded-lg bg-white hover:bg-soft-yellow-v2 text-text-main font-medium transition-all duration-200 hover:scale-[1.02] border border-accent-green-bright shadow-sm">👉 Exercise: Make vs. Do</a></li>
-                    </ul>
-                </div>
-
-                <!-- Individual Exercise View Wrapper -->
-                <div id="individual-exercise-view" class="hidden">
-                    <button id="back-to-exercise-list-btn" class="mb-6 bg-accent-green-bright text-white font-bold px-4 py-2 rounded-lg hover:bg-secondary-dark-purple transition-colors duration-200 shadow-md transform hover:scale-105">
-                        &larr; Back to exercise list
-                    </button>
-
-                    <!-- Example Exercise 1 - Say/Tell/Speak/Talk -->
-                    <div id="exercise-say-tell" class="individual-exercise-content bg-white p-6 rounded-lg shadow-md mb-8 border-2 border-secondary-dark-purple">
-                        <h3 class="text-2xl font-semibold text-secondary-dark-purple mb-4 font-display uppercase">Exercise: Say, Tell, Speak, Talk <span class="animated-emoji">🗣️</span></h3>
-                        <p class="text-subtle-gray-v2 mb-4">Choose the correct word for each sentence.</p>
-
-                        <div class="mb-4">
-                            <p class="block text-text-main font-medium mb-2">1. Can you please ______ me your name again?</p>
-                            <div class="space-x-4 text-subtle-gray-v2">
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q1" value="say" class="mr-2 accent-secondary-dark-purple"> say</label>
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q1" value="tell" class="mr-2 accent-secondary-dark-purple"> tell</label>
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q1" value="speak" class="mr-2 accent-secondary-dark-purple"> speak</label>
-                            </div>
-                        </div>
-
-                        <div class="mb-4">
-                            <p class="block text-text-main font-medium mb-2">2. She always ______ the truth.</p>
-                            <div class="space-x-4 text-subtle-gray-v2">
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q2" value="tells" class="mr-2 accent-secondary-dark-purple"> tells</label>
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q2" value="says" class="mr-2 accent-secondary-dark-purple"> says</label>
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q2" value="speaks" class="mr-2 accent-secondary-dark-purple"> speaks</label>
-                            </div>
-                        </div>
-
-                        <div class="mb-4">
-                            <p class="block text-text-main font-medium mb-2">3. I need to ______ with my manager about this project.</p>
-                            <div class="space-x-4 text-subtle-gray-v2">
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q3" value="tell" class="mr-2 accent-secondary-dark-purple"> tell</label>
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q3" value="speak" class="mr-2 accent-secondary-dark-purple"> speak</label>
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q3" value="talk" class="mr-2 accent-secondary-dark-purple"> talk</label>
-                            </div>
-                        </div>
-
-                        <div class="mb-4">
-                            <p class="block text-text-main font-medium mb-2">4. He ______ "hello" as he walked past.</p>
-                            <div class="space-x-4 text-subtle-gray-v2">
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q4" value="said" class="mr-2 accent-secondary-dark-purple"> said</label>
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q4" value="told" class="mr-2 accent-secondary-dark-purple"> told</label>
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="saytell-q4" value="spoke" class="mr-2 accent-secondary-dark-purple"> spoke</label>
-                            </div>
-                        </div>
-
-                        <button data-exercise-id="say-tell" class="check-exercise-button bg-secondary-dark-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-accent-pink-vibrant transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Check Answers</button>
-                        <button data-exercise-id="say-tell" class="copy-exercise-results-button bg-primary-dark-blue text-white font-bold px-6 py-3 rounded-lg hover:bg-secondary-dark-purple transition-all duration-200 shadow-md transform hover:scale-105 hidden">Copy Results</button>
-
-                        <div class="exercise-feedback mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-text-main hidden"></div>
-                        <div class="exercise-copy-message mt-4 text-sm text-accent-green-bright hidden"></div>
-                    </div>
-
-                    <!-- New Exercise Example 2 - Do vs. Does -->
-                    <div id="exercise-do-does" class="individual-exercise-content bg-white p-6 rounded-lg shadow-md mb-8 border-2 border-secondary-dark-purple">
-                        <h3 class="text-2xl font-semibold text-secondary-dark-purple mb-4 font-display uppercase">Exercise: Do vs. Does <span class="animated-emoji">🤔</span></h3>
-                        <p class="text-subtle-gray-v2 mb-4">Choose the correct form of <strong>do or does</strong>.</p>
-
-                        <div class="mb-4">
-                            <p class="block text-text-main font-medium mb-2">1. What ______ you usually do on weekends?</p>
-                            <div class="space-x-4 text-subtle-gray-v2">
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="dodoes-q1" value="do" class="mr-2 accent-secondary-dark-purple"> do</label>
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="dodoes-q1" value="does" class="mr-2 accent-secondary-dark-purple"> does</label>
-                            </div>
-                        </div>
-
-                        <div class="mb-4">
-                            <p class="block text-text-main font-medium mb-2">2. My sister ______ not like coffee.</p>
-                            <div class="space-x-4 text-subtle-gray-v2">
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="dodoes-q2" value="do" class="mr-2 accent-secondary-dark-purple"> do</label>
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="dodoes-q2" value="does" class="mr-2 accent-secondary-dark-purple"> does</label>
-                            </div>
-                        </div>
-
-                        <div class="mb-4">
-                            <p class="block text-text-main font-medium mb-2">3. ______ he speak French?</p>
-                            <div class="space-x-4 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="dodoes-q3" value="do" class="mr-2 accent-secondary-dark-purple"> do</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="dodoes-q3" value="does" class="mr-2 accent-secondary-dark-purple"> does</label>
-                            </div>
-                        </div>
-
-                        <button data-exercise-id="do-does" class="check-exercise-button bg-secondary-dark-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-accent-pink-vibrant transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Check Answers</button>
-                        <button data-exercise-id="do-does" class="copy-exercise-results-button bg-primary-dark-blue text-white font-bold px-6 py-3 rounded-lg hover:bg-secondary-dark-purple transition-all duration-200 shadow-md transform hover:scale-105 hidden">Copy Results</button>
-
-                        <div class="exercise-feedback mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-text-main hidden"></div>
-                        <div class="exercise-copy-message mt-4 text-sm text-accent-green-bright hidden"></div>
-                    </div>
-
-                    <!-- New Exercise Example 3 - Make vs. Do -->
-                    <div id="exercise-make-do" class="individual-exercise-content bg-white p-6 rounded-lg shadow-md mb-8 border-2 border-secondary-dark-purple">
-                        <h3 class="text-2xl font-semibold text-secondary-dark-purple mb-4 font-display uppercase">Exercise: Make vs. Do <span class="animated-emoji">🛠️</span></h3>
-                        <p class="text-subtle-gray-v2 mb-4">Choose the correct form of <strong>make or do</strong> for each sentence.</p>
-
-                        <div class="mb-4">
-                            <p class="block text-text-main font-medium mb-2">1. I need to ______ a decision soon.</p>
-                            <div class="space-x-4 text-subtle-gray-v2">
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="makedo-q1" value="make" class="mr-2 accent-secondary-dark-purple"> make</label>
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="makedo-q1" value="do" class="mr-2 accent-secondary-dark-purple"> do</label>
-                            </div>
-                        </div>
-
-                        <div class="mb-4">
-                            <p class="block text-text-main font-medium mb-2">2. She always ______ her best in everything.</p>
-                            <div class="space-x-4 text-subtle-gray-v2">
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="makedo-q2" value="makes" class="mr-2 accent-secondary-dark-purple"> makes</label>
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="makedo-q2" value="does" class="mr-2 accent-secondary-dark-purple"> does</label>
-                            </div>
-                        </div>
-
-                        <div class="mb-4">
-                            <p class="block text-text-main font-medium mb-2">3. Can you ______ me a favor?</p>
-                            <div class="space-x-4 text-subtle-gray-v2">
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="makedo-q3" value="make" class="mr-2 accent-secondary-dark-purple"> make</label>
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="makedo-q3" value="do" class="mr-2 accent-secondary-dark-purple"> do</label>
-                            </div>
-                        </div>
-
-                        <div class="mb-4">
-                            <p class="block text-text-main font-medium mb-2">4. They are ______ research on climate change.</p>
-                            <div class="space-x-4 text-subtle-gray-v2">
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="makedo-q4" value="making" class="mr-2 accent-secondary-dark-purple"> making</label>
-                                <label class="cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="makedo-q4" value="doing" class="mr-2 accent-secondary-dark-purple"> doing</label>
-                            </div>
-                        </div>
-
-                        <button data-exercise-id="make-do" class="check-exercise-button bg-secondary-dark-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-accent-pink-vibrant transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Check Answers</button>
-                        <button data-exercise-id="make-do" class="copy-exercise-results-button bg-primary-dark-blue text-white font-bold px-6 py-3 rounded-lg hover:bg-secondary-dark-purple transition-all duration-200 shadow-md transform hover:scale-105 hidden">Copy Results</button>
-
-                        <div class="exercise-feedback mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-text-main hidden"></div>
-                        <div class="exercise-copy-message mt-4 text-sm text-accent-green-bright hidden"></div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="who-am-i" class="content-section border-secondary-dark-purple">
+            <!-- Section 2: Who Am I -->
+            <section id="who-am-i" class="content-section active border-secondary-dark-purple">
                 <h2 class="text-4xl font-extrabold mb-6 font-display uppercase">Who Am I <span class="animated-emoji">🌟</span></h2>
                 <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
                     Hello! I'm <strong>Elisa Almada</strong>, your online private English teacher. My academic journey includes a Bachelor's degree in English Language and Literature from the Federal University of Minas Gerais (UFMG) and a postgraduate degree in Language and Technology, also from UFMG. This background allows me to combine theory and practice to create dynamic and effective materials.
@@ -312,6 +145,7 @@
                 </p>
             </section>
 
+            <!-- Section 3: How Classes Work -->
             <section id="how-classes-work" class="content-section border-secondary-dark-purple">
                 <h2 class="text-4xl font-extrabold mb-6 font-display uppercase">How Classes Work <span class="animated-emoji">💬</span></h2>
                 <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
@@ -349,6 +183,7 @@
                 </p>
             </section>
 
+            <!-- Section 4: Proficiency Test -->
             <section id="proficiency-test" class="content-section border-secondary-dark-purple">
                 <h2 class="text-4xl font-extrabold mb-6 font-display uppercase">Proficiency Level Test <span class="animated-emoji">📝</span></h2>
                 <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
@@ -556,6 +391,7 @@
                 </div>
             </section>
 
+            <!-- Section 5: Media Recommendations -->
             <section id="media-recommendations" class="content-section border-secondary-dark-purple">
                 <h2 class="text-4xl font-extrabold mb-6 font-display uppercase">Media Recommendations <span class="animated-emoji">🎬</span></h2>
                 <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
@@ -670,11 +506,6 @@
             console.log('[LOG] DOM Content Loaded! Initializing script...');
             const navLinks = document.querySelectorAll('.nav-link');
             const contentSections = document.querySelectorAll('.content-section');
-            const exerciseListView = document.getElementById('exercise-list-view');
-            const individualExerciseView = document.getElementById('individual-exercise-view');
-            const backToExerciseListBtn = document.getElementById('back-to-exercise-list-btn');
-            const exerciseSelectLinks = document.querySelectorAll('.exercise-select-link');
-            const individualExerciseContents = document.querySelectorAll('.individual-exercise-content');
 
             // Helper function to update URL hash safely
             const updateUrlHash = (hash) => {
@@ -715,50 +546,7 @@
                 } else {
                     console.error(`[ERROR] Target nav link not found for section: ${id}`);
                 }
-
-                // Special handling for exercises section
-                if (id === 'exercises') {
-                    console.log('[LOG] Navigating to exercises section logic.');
-                    const currentHash = window.location.hash.substring(1);
-                    if (currentHash && document.getElementById(currentHash) && document.getElementById(currentHash).classList.contains('individual-exercise-content')) {
-                        console.log(`[LOG] Hash points to individual exercise, showing it: ${currentHash}`);
-                        displayIndividualExercise(currentHash);
-                    } else {
-                        console.log('[LOG] No individual exercise hash, showing exercise list.');
-                        displayExerciseList();
-                    }
-                } else {
-                    console.log('[LOG] Navigating to non-exercise section, clearing hash.');
-                    updateUrlHash('');
-                }
-            };
-
-            const displayExerciseList = () => {
-                console.log('[LOG] Displaying exercise list.');
-                individualExerciseView.classList.add('hidden');
-                exerciseListView.classList.remove('hidden');
-                console.log('[LOG] exerciseListView visibility status (should be visible):', !exerciseListView.classList.contains('hidden'));
-                updateUrlHash('');
-            };
-
-            const displayIndividualExercise = (exerciseId) => {
-                console.log(`[LOG] Displaying individual exercise: ${exerciseId}`);
-                exerciseListView.classList.add('hidden');
-                individualExerciseView.classList.remove('hidden');
-
-                individualExerciseContents.forEach(exercise => {
-                    exercise.classList.add('hidden');
-                });
-
-                const targetExercise = document.getElementById(exerciseId);
-                if (targetExercise) {
-                    targetExercise.classList.remove('hidden');
-                    console.log(`[LOG] Individual exercise '${exerciseId}' activated.`);
-                } else {
-                    console.error(`[ERROR] Target individual exercise not found: ${exerciseId}`);
-                }
-                
-                updateUrlHash(exerciseId);
+                updateUrlHash(id);
             };
 
             // Event listeners for navigation links in sidebar
@@ -770,119 +558,8 @@
                     showSection(targetId);
                 });
             });
-
-            // Event listeners for exercise selection links (within exercises section)
-            exerciseSelectLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetExerciseId = e.target.getAttribute('href').substring(1);
-                    console.log(`[LOG] Exercise select link clicked: ${targetExerciseId}`);
-                    displayIndividualExercise(targetExerciseId);
-                });
-            });
-
-            // Event listener for "Back to Exercise List" button
-            if (backToExerciseListBtn) {
-                backToExerciseListBtn.addEventListener('click', () => {
-                    console.log('[LOG] Back to exercise list button clicked.');
-                    displayExerciseList();
-                });
-            }
             
-            // --- Centralized Exercise Data ---
-            const allExerciseData = {
-                'say-tell': {
-                    title: 'Say, Tell, Speak, Talk',
-                    emoji: '🗣️',
-                    inputs: [
-                        { id: 'saytell-q1', type: 'radio', answer: 'tell', explanation: 'Use "tell" when you specify the person being spoken to (tell me, tell him, tell a story, tell the truth).' },
-                        { id: 'saytell-q2', type: 'radio', answer: 'tells', explanation: 'Use "tell" when you specify the person being spoken to, or for common expressions like "tell the truth". Remember the "s" for third person singular (she).' },
-                        { id: 'saytell-q3', type: 'radio', answer: 'speak', explanation: 'Use "speak" when talking about formal communication or general ability to communicate. "Speak with" or "speak to" is common.' },
-                        { id: 'saytell-q4', type: 'radio', answer: 'said', explanation: 'Use "say" for direct speech or when the focus is on the words spoken, not who is being spoken to. The past tense of "say" is "said".' }
-                    ]
-                },
-                'do-does': {
-                    title: 'Do vs. Does',
-                    emoji: '🤔',
-                    inputs: [
-                        { id: 'dodoes-q1', type: 'radio', answer: 'do', explanation: 'Use "do" for most subjects in questions and negative statements in the Simple Present (I, you, we, they).' },
-                        { id: 'dodoes-q2', type: 'radio', answer: 'does', explanation: 'Use "does" for third person singular subjects (he, she, it) in questions and negative statements in the Simple Present.' },
-                        { id: 'dodoes-q3', type: 'radio', answer: 'does', explanation: 'Similar to the previous rule, "does" is used for the third person singular subject "he" in questions.' }
-                    ]
-                },
-                'make-do': {
-                    title: 'Make vs. Do',
-                    emoji: '🛠️',
-                    inputs: [
-                        { id: 'makedo-q1', type: 'radio', answer: 'make', explanation: 'We use "make a decision" to decide.' },
-                        { id: 'makedo-q2', type: 'radio', answer: 'does', explanation: 'We use "do one\'s best" to give your best. Remember the "s" for third person singular (she).' },
-                        { id: 'makedo-q3', type: 'radio', answer: 'do', explanation: 'We use "do a favor" to do a favor.' },
-                        { id: 'makedo-q4', type: 'radio', answer: 'doing', explanation: 'We use "do research" to conduct research. As it\'s an ongoing process ("are doing"), the form is "doing".' }
-                    ]
-                }
-            };
-            
-            // Get all check buttons and set up their event listeners
-            document.querySelectorAll('.check-exercise-button').forEach(checkButton => {
-                checkButton.addEventListener('click', () => {
-                    const exerciseId = checkButton.dataset.exerciseId;
-                    const exerciseContainer = document.getElementById(exerciseId);
-                    if (!exerciseContainer) return;
-
-                    const copyButton = exerciseContainer.querySelector('.copy-exercise-results-button');
-                    const feedbackDiv = exerciseContainer.querySelector('.exercise-feedback');
-                    const copyMessageDiv = exerciseContainer.querySelector('.exercise-copy-message');
-
-                    let feedbackHtml = '';
-                    let resultsToCopy = `Exercise Results "${allExerciseData[exerciseId].title}":\n\n`;
-                    let correctAnswersCount = 0;
-                    let gradableQuestionsCount = 0;
-
-                    const questionsData = allExerciseData[exerciseId].inputs;
-
-                    questionsData.forEach((qData, index) => {
-                        const questionName = qData.id;
-                        const selectedOption = exerciseContainer.querySelector(`input[name="${questionName}"]:checked`);
-                        const userAnswer = selectedOption ? selectedOption.value : 'Not answered';
-                        
-                        const isCorrect = userAnswer.toLowerCase() === qData.answer.toLowerCase();
-                        if (isCorrect) {
-                            correctAnswersCount++;
-                            gradableQuestionsCount++;
-                            // Corrected to use a general selector that works for this exercise structure
-                            const questionText = selectedOption.closest('.mb-4').querySelector('p').textContent.trim();
-                            feedbackHtml += `<p class="mb-2"><strong>${questionText}</strong> Your answer: "${userAnswer}" - <span class="text-accent-green-bright">Correct!</span></p>`;
-                            resultsToCopy += `Question ${index + 1}: ${questionText}\nYour Answer: "${userAnswer}" (Correct)\n\n`;
-                        } else {
-                            gradableQuestionsCount++;
-                            const questionText = selectedOption ? selectedOption.closest('.mb-4').querySelector('p').textContent.trim() : `Question ${index + 1}:`;
-                            feedbackHtml += `
-                                <p class="mb-2">
-                                    <strong>${questionText}</strong> <br>
-                                    Your answer: "${userAnswer}" - <span class="text-warning-red">Incorrect.</span> Correct answer: <strong>${qData.answer}</strong>.
-                                </p>
-                            `;
-                            resultsToCopy += `Question ${index + 1}: ${questionText}\nYour Answer: "${userAnswer}" (Incorrect). Correct Answer: "${qData.answer}"\nExplanation: ${qData.explanation}\n\n`;
-                        }
-                    });
-
-                    let finalMessage = '';
-                    if (gradableQuestionsCount > 0) {
-                        const percentage = (correctAnswersCount / gradableQuestionsCount) * 100;
-                        finalMessage = `You scored ${correctAnswersCount} out of ${gradableQuestionsCount} (${percentage.toFixed(0)}%).`;
-                    } else {
-                        finalMessage = 'No automatically gradable questions in this exercise.';
-                    }
-
-                    feedbackDiv.innerHTML = `<p class="text-xl font-bold text-primary-dark-blue mb-4">Your Results: ${finalMessage}</p>${feedbackHtml}`;
-                    feedbackDiv.classList.remove('hidden');
-                    copyButton.dataset.results = resultsToCopy;
-                    copyButton.classList.remove('hidden');
-                    copyMessageDiv.classList.add('hidden');
-                });
-            });
-
-            // Get the Proficiency Test form and set up its event listener
+            // --- Proficiency Test Logic (Unchanged) ---
             const proficiencyQuizForm = document.getElementById('proficiency-quiz');
             const testResultsDiv = document.getElementById('test-results');
             const copyTestResultsBtn = document.getElementById('copy-test-results');
@@ -1013,34 +690,13 @@
                 });
             } // End of proficiencyQuizForm check
 
-            // This is the original logic for nav links and section display
+            // Initial page load logic
             const initialHash = window.location.hash.substring(1);
+            // Check if hash corresponds to a valid section, otherwise default to 'who-am-i'
             if (initialHash && document.getElementById(initialHash) && document.getElementById(initialHash).classList.contains('content-section')) {
                 showSection(initialHash);
-            } else if (initialHash && document.getElementById(initialHash) && document.getElementById(initialHash).classList.contains('individual-exercise-content')) {
-                showSection('exercises');
-                displayIndividualExercise(initialHash);
             } else {
-                showSection('exercises');
-            }
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = e.target.getAttribute('href').substring(1);
-                    showSection(targetId);
-                });
-            });
-            exerciseSelectLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetExerciseId = e.target.getAttribute('href').substring(1);
-                    displayIndividualExercise(targetExerciseId);
-                });
-            });
-            if (backToExerciseListBtn) {
-                backToExerciseListBtn.addEventListener('click', () => {
-                    displayExerciseList();
-                });
+                showSection('who-am-i');
             }
         });
     </script>
