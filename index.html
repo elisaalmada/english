@@ -124,11 +124,15 @@
 <body class="flex flex-col min-h-screen">
     <div class="flex flex-1 flex-col md:flex-row bg-light-bg-v2 text-text-main rounded-3xl shadow-xl m-4 md:m-8 overflow-hidden border-4 border-primary-dark-blue">
         <!-- Sidebar Menu -->
-        <aside class="w-full md:w-1/4 bg-primary-dark-blue text-white p-6 md:p-8 flex flex-col rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none shadow-lg border-b-4 md:border-b-0 md:border-r-4 border-accent-green-bright">
+        <aside class="w-full md:w-1/4 bg-primary-dark-blue text-white p-6 md:p-8 flex flex-col items-center md:items-start rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none shadow-lg border-b-4 md:border-b-0 md:border-r-4 border-accent-green-bright">
+            <!-- Profile Picture Placeholder -->
+            <div class="w-32 h-32 md:w-40 md:h-40 mb-6 mx-auto md:mx-0">
+                <img src="https://placehold.co/200x200/E6E6FA/4A90E2?text=Elisa" alt="Elisa Almada" class="rounded-full w-full h-full object-cover border-4 border-accent-pink-vibrant shadow-md">
+            </div>
             <h1 class="text-4xl md:text-5xl font-extrabold mb-8 text-center md:text-left font-display uppercase text-white">
                 English with <span class="text-accent-pink-vibrant">Elisa Almada</span>
             </h1>
-            <nav>
+            <nav class="w-full">
                 <ul class="space-y-4">
                     <li><a href="#who-am-i" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">👋 Who Am I</a></li>
                     <li><a href="#how-classes-work" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">✨ How Classes Work</a></li>
@@ -144,20 +148,38 @@
             <!-- Section 2: Who Am I -->
             <section id="who-am-i" class="content-section active border-secondary-dark-purple">
                 <h2 class="text-4xl font-extrabold mb-6 font-display uppercase">Who Am I <span class="animated-emoji">🌟</span></h2>
+                
+                <!-- Professional Picture Placeholder -->
+                <div class="w-full sm:w-1/3 float-none sm:float-right ml-0 sm:ml-6 mb-4 sm:mb-2 clear-none sm:clear-right">
+                     <img src="https://placehold.co/400x600/ADD8E6/2C3E50?text=Full-Body+Photo" alt="Professional full-body photo of Elisa Almada" class="rounded-2xl w-full h-auto object-cover shadow-lg border-2 border-pastel-purple">
+                </div>
+
                 <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
                     Hello! I'm <strong>Elisa Almada</strong>, your online private English teacher. My academic journey includes a Bachelor's degree in English Language and Literature from the Federal University of Minas Gerais (UFMG) and a specialization in Language and Technology, also from UFMG. This background allows me to combine theory and practice to create dynamic and effective materials.
                 </p>
                 <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
                     I like to create a light learning environment where you feel comfortable exploring the language. My passion is helping students like you feel more confident and fluent. I know that learning a new language can be a challenge, especially when we need to use it in specific situations. That's why my classes are fully personalized to connect English with your reality and your goals. Whether for your professional needs in areas like medicine, physiotherapy, HR, finance, or for travel, tourism, and fitness, we'll focus on what truly matters to you.
                 </p>
-                <p class="text-subtle-gray-v2 leading-relaxed">
-                    My contact:
-                    <strong class="font-semibold text-primary-dark-blue">elisasalmada@gmail.com</strong>
-                    (WhatsApp: <strong class="font-semibold text-primary-dark-blue"><a href="https://wa.me/5537991254295" target="_blank" class="text-primary-dark-blue hover:underline">+55 37 99125-4295</a></strong>)
-                </p>
-                <p class="text-subtle-gray-v2 mt-4 leading-relaxed">
-                    You can also find me on <a href="https://www.instagram.com/elisaalmada/" target="_blank" class="text-accent-pink-vibrant hover:underline">Instagram</a> and <a href="https://www.linkedin.com/in/elisaalmada/" target="_blank" class="text-accent-pink-vibrant hover:underline">LinkedIn</a>.
-                </p>
+                
+                <!-- Contact Buttons -->
+                <div class="mt-6 flex flex-wrap gap-3">
+                    <a href="mailto:elisasalmada@gmail.com" target="_blank" class="flex items-center justify-center px-4 py-2 rounded-lg text-white font-semibold shadow-md transition-transform duration-200 hover:scale-105 bg-warning-red">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+                        Email
+                    </a>
+                    <a href="https://wa.me/5537991254295" target="_blank" class="flex items-center justify-center px-4 py-2 rounded-lg text-white font-semibold shadow-md transition-transform duration-200 hover:scale-105 bg-accent-green-bright">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96 0 1.77.46 3.45 1.28 4.92L2 22l5.09-1.34c1.42.78 3.03 1.21 4.71 1.21 5.5 0 9.96-4.46 9.96-9.96S17.5 2.04 12 2.04zM16.88 15.3c-.27-.13-1.61-.79-1.85-.88-.25-.09-.43-.13-.62.13-.19.27-.7.88-.86 1.06-.16.18-.32.2-.59.06-.27-.13-1.14-.42-2.17-1.34-.8-.73-1.34-1.64-1.5-1.92-.16-.28-.02-.43.12-.56.12-.12.27-.3.4-.4.13-.1.18-.21.27-.35.09-.14.04-.27-.02-.4-.06-.13-.62-1.49-.84-2.04-.23-.55-.46-.48-.62-.48-.16 0-.34-.02-.52-.02-.18 0-.48.06-.73.31-.25.25-.97.94-.97 2.3 0 1.35.99 2.67 1.13 2.85.14.18 1.96 3.01 4.75 4.19.68.29 1.22.46 1.64.59.57.18 1.09.15 1.5.09.46-.06 1.61-.66 1.83-1.28.23-.62.23-1.15.16-1.28-.07-.13-.25-.21-.52-.34z"/></svg>
+                        WhatsApp
+                    </a>
+                    <a href="https://www.instagram.com/elisaalmada/" target="_blank" class="flex items-center justify-center px-4 py-2 rounded-lg text-white font-semibold shadow-md transition-transform duration-200 hover:scale-105 bg-gradient-to-br from-purple-600 via-accent-pink-vibrant to-orange-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg>
+                        Instagram
+                    </a>
+                    <a href="https://www.linkedin.com/in/elisaalmada/" target="_blank" class="flex items-center justify-center px-4 py-2 rounded-lg text-white font-semibold shadow-md transition-transform duration-200 hover:scale-105 bg-primary-dark-blue">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        LinkedIn
+                    </a>
+                </div>
             </section>
 
             <!-- Section 3: How Classes Work -->
