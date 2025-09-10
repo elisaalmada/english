@@ -119,6 +119,25 @@
         .whatsapp-button-animation {
             animation: pulse-whatsapp 2s infinite ease-in-out;
         }
+
+        /* Vibration animation for expertise words */
+        .vibrate-word {
+            display: inline-block;
+            transition: transform 0.1s ease-in-out;
+            cursor: pointer;
+        }
+        .vibrate-word:hover {
+            animation: vibrate 0.3s linear infinite;
+        }
+
+        @keyframes vibrate {
+            0% { transform: translate(0); }
+            20% { transform: translate(-1.5px, 1.5px); }
+            40% { transform: translate(-1.5px, -1.5px); }
+            60% { transform: translate(1.5px, 1.5px); }
+            80% { transform: translate(1.5px, -1.5px); }
+            100% { transform: translate(0); }
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -227,44 +246,40 @@
                 <p class="text-subtle-gray-v2 mb-8 leading-relaxed">
                     My personalized classes are designed to meet your specific professional and personal needs. What are yours? Here are some of the fields I have already approached with my students:
                 </p>
-                <div id="myCanvasContainer" class="w-full h-96">
-                    <canvas width="800" height="600" id="myCanvas">
-                        <!-- Fallback content for browsers that don't support canvas -->
-                        <p>In case you cannot see the animation, here is a list of my areas of expertise:</p>
-                        <ul>
-                           <li><a href="#" style="color: #4A90E2;">Medicine</a></li>
-                           <li><a href="#" style="color: #8A2BE2;">Physical Therapy</a></li>
-                           <li><a href="#" style="color: #00CD66;">Human Resources</a></li>
-                           <li><a href="#" style="color: #FF69B4;">Business</a></li>
-                           <li><a href="#" style="color: #4A90E2;">Finance</a></li>
-                           <li><a href="#" style="color: #8A2BE2;">Job Interviews</a></li>
-                           <li><a href="#" style="color: #00CD66;">Travel & Tourism</a></li>
-                           <li><a href="#" style="color: #FF69B4;">Fitness</a></li>
-                           <li><a href="#" style="color: #4A90E2;">Architecture</a></li>
-                           <li><a href="#" style="color: #8A2BE2;">Design</a></li>
-                           <li><a href="#" style="color: #00CD66;">Project Management</a></li>
-                           <li><a href="#" style="color: #FF69B4;">Gastroenterology</a></li>
-                           <li><a href="#" style="color: #4A90E2;">Nutrition</a></li>
-                           <li><a href="#" style="color: #8A2BE2;">Nutrology</a></li>
-                           <li><a href="#" style="color: #00CD66;">Oncology</a></li>
-                           <li><a href="#" style="color: #FF69B4;">Radiology</a></li>
-                           <li><a href="#" style="color: #4A90E2;">Intensive Care</a></li>
-                           <li><a href="#" style="color: #8A2BE2;">Infectious Diseases</a></li>
-                           <li><a href="#" style="color: #00CD66;">Geriatrics</a></li>
-                           <li><a href="#" style="color: #FF69B4;">Teaching</a></li>
-                           <li><a href="#" style="color: #4A90E2;">Cardiology</a></li>
-                           <li><a href="#" style="color: #8A2BE2;">Cardiac Surgery</a></li>
-                           <li><a href="#" style="color: #00CD66;">Hematology</a></li>
-                           <li><a href="#" style="color: #FF69B4;">Biology</a></li>
-                           <li><a href="#" style="color: #4A90E2;">Programming</a></li>
-                           <li><a href="#" style="color: #8A2BE2;">Cinema</a></li>
-                           <li><a href="#" style="color: #00CD66;">Neurology</a></li>
-                           <li><a href="#" style="color: #FF69B4;">Neurosurgery</a></li>
-                           <li><a href="#" style="color: #4A90E2;">Plastic Surgery</a></li>
-                           <li><a href="#" style="color: #8A2BE2;">Sales</a></li>
-                           <li><a href="#" style="color: #00CD66;">Customer Service</a></li>
-                        </ul>
-                    </canvas>
+                <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 font-display">
+                    <span class="vibrate-word text-2xl text-primary-dark-blue">Medicine</span>
+                    <span class="vibrate-word text-lg text-secondary-dark-purple">Physiotherapy</span>
+                    <span class="vibrate-word text-xl text-accent-green-bright">Human Resources</span>
+                    <span class="vibrate-word text-3xl text-accent-pink-vibrant">Business</span>
+                    <span class="vibrate-word text-lg text-primary-dark-blue">Finance</span>
+                    <span class="vibrate-word text-2xl text-secondary-dark-purple">Job Interviews</span>
+                    <span class="vibrate-word text-xl text-accent-green-bright">Travel & Tourism</span>
+                    <span class="vibrate-word text-lg text-accent-pink-vibrant">Fitness</span>
+                    <span class="vibrate-word text-2xl text-primary-dark-blue">Architecture</span>
+                    <span class="vibrate-word text-xl text-secondary-dark-purple">Design</span>
+                    <span class="vibrate-word text-3xl text-accent-green-bright">Project Management</span>
+                    <span class="vibrate-word text-lg text-accent-pink-vibrant">Gastroenterology</span>
+                    <span class="vibrate-word text-xl text-primary-dark-blue">Nutrition</span>
+                    <span class="vibrate-word text-2xl text-secondary-dark-purple">Nutrology</span>
+                    <span class="vibrate-word text-lg text-accent-green-bright">Oncology</span>
+                    <span class="vibrate-word text-xl text-accent-pink-vibrant">Radiology</span>
+                    <span class="vibrate-word text-3xl text-primary-dark-blue">Intensive Care</span>
+                    <span class="vibrate-word text-lg text-secondary-dark-purple">Infectious Diseases</span>
+                    <span class="vibrate-word text-2xl text-accent-green-bright">Geriatrics</span>
+                    <span class="vibrate-word text-xl text-accent-pink-vibrant">Teaching</span>
+                    <span class="vibrate-word text-lg text-primary-dark-blue">Cardiology</span>
+                    <span class="vibrate-word text-3xl text-secondary-dark-purple">Cardiac Surgery</span>
+                    <span class="vibrate-word text-xl text-accent-green-bright">Hematology</span>
+                    <span class="vibrate-word text-lg text-accent-pink-vibrant">Biology</span>
+                    <span class="vibrate-word text-2xl text-primary-dark-blue">Programming</span>
+                    <span class="vibrate-word text-xl text-secondary-dark-purple">Cinema</span>
+                    <span class="vibrate-word text-lg text-accent-green-bright">Neurology</span>
+                    <span class="vibrate-word text-3xl text-accent-pink-vibrant">Neurosurgery</span>
+                    <span class="vibrate-word text-xl text-primary-dark-blue">Plastic Surgery</span>
+                    <span class="vibrate-word text-2xl text-secondary-dark-purple">Sales</span>
+                    <span class="vibrate-word text-lg text-accent-green-bright">Customer Service</span>
+                    <span class="vibrate-word text-xl text-accent-pink-vibrant">Pathology</span>
+                    <span class="vibrate-word text-2xl text-secondary-dark-purple">Gynecology</span>
                 </div>
             </section>
 
@@ -594,32 +609,6 @@
         <p>&copy; 2024 English with Elisa Almada. Light and Fun Learning! <span class="animated-emoji">✨</span></p>
     </footer>
 
-    <!-- Add the TagCanvas library -->
-    <script src="https://www.goat1000.com/tagcanvas.min.js"></script>
-    
-    <!-- Your custom script to start the animation -->
-    <script>
-      window.onload = function() {
-        try {
-          TagCanvas.Start('myCanvas', '', {
-            textColour: null,
-            outlineColour: '#8A2BE2',
-            reverse: true,
-            depth: 0.8,
-            maxSpeed: 0.05,
-            textFont: 'Nunito, sans-serif',
-            textHeight: 25,
-            initial: [0.05, -0.05],
-            shadow: '#ccc',
-            shadowBlur: 3
-          });
-        } catch(e) {
-          // Something went wrong, hide the canvas container
-          document.getElementById('myCanvasContainer').style.display = 'none';
-        }
-      };
-    </script>
-    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             console.log('[LOG] DOM Content Loaded! Initializing script...');
