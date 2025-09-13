@@ -145,7 +145,8 @@
                 padding: 1.5rem; /* Reduced padding for mobile */
             }
             .content-section h2 {
-                font-size: 2rem; /* Smaller headings on mobile */
+                font-size: 1.875rem; /* Smaller headings on mobile (text-3xl) */
+                line-height: 2.25rem;
             }
             #areas-of-expertise .vibrate-word {
                 /* Overriding tailwind classes with a more uniform, smaller size for mobile */
@@ -521,107 +522,117 @@
 
             <!-- Section 5: Media Recommendations -->
             <section id="media-recommendations" class="content-section border-secondary-dark-purple">
-                <h2 class="text-4xl font-extrabold mb-6 font-display uppercase">Media Recommendations <span class="animated-emoji">🎬</span></h2>
-                <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 font-display uppercase">Media Recommendations <span class="animated-emoji">🎬</span></h2>
+                <p class="text-subtle-gray-v2 mb-8 leading-relaxed">
                     Learning English goes beyond classes! I've curated some amazing content for you to enjoy and, at the same time, deepen your contact with the language.
                 </p>
 
-                <div class="media-card bg-soft-yellow-v2">
-                    <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">YouTube Channels - General Subjects:</h3>
-                    <ul class="list-disc list-inside space-y-2 text-text-main">
-                        <li><a href="https://www.youtube.com/OverSimplified" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>OverSimplified</strong></a>: Complex stories explained in a hilarious and super accessible way.</li>
-                        <li><a href="https://www.youtube.com/user/TheNewYorkTimes" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>The New York Times</strong></a>: Current news and in-depth analyses to keep your English updated with global events.</li>
-                        <li><a href="https://www.youtube.com/user/Kurzgesagt" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Kurzgesagt – In a Nutshell</strong></a>: Animated videos about science, space, and technology with clear language.</li>
-                        <li><a href="https://www.youtube.com/user/TEDEducation" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>TED-Ed</strong></a>: Animated lessons on a vast range of topics that instigate critical thinking.</li>
-                        <li><a href="https://www.youtube.com/user/MinuteEarth" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Minute Earth</strong></a>: Short, animated answers to big questions about Earth and nature.</li>
-                        <li><a href="https://www.youtube.com/user/bbclearningenglish" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>BBC Learning English</strong></a>: Educational content focused on grammar, pronunciation, and vocabulary, made specifically for English learners.</li>
-                        <li><a href="https://www.youtube.com/thisisinsider" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Insider Science</strong></a>: Videos about innovation and scientific discoveries, ideal for those seeking specific vocabulary in the field.</li>
-                        <li><a href="https://www.youtube.com/@WhatIfScienceShow" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>What If Science Show</strong></a>: Explores hypothetical and curious scenarios in an intriguing way.</li>
-                        <li><a href="https://www.youtube.com/@FreeHighQualityDocumentaries" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Free High-Quality Documentaries</strong></a>: A vast collection of documentaries to expand knowledge and comprehension in English.</li>
-                        <li><a href="https://www.youtube.com/@BorderSecurityOfficial" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Border Security</strong></a>: Series about life on the border, offering insights into real situations and practical vocabulary.</li>
-                        <li><a href="https://www.youtube.com/@Vox" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Vox</strong></a>: Clear and in-depth explanations of news, politics, and culture.</li>
-                        <li><a href="https://www.youtube.com/user/WIRED" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>WIRED</strong></a>: Focus on technology, science, and innovation, with interviews and trend analyses.</li>
-                        <li><a href="https://www.youtube.com/@OddAnimalSpecimens" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Odd Animal Specimens</strong></a>: Curious content about the animal kingdom, great for biology and nature vocabulary.</li>
-                        <li><a href="https://www.youtube.com/@TastingHistory" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Tasting History with Max Miller</strong></a>: Combines history and cooking in an engaging way, with historical recipes and cultural context.</li>
-                    </ul>
-                </div>
+                <div class="space-y-8">
+                    <!-- YouTube Section -->
+                    <div class="p-4 sm:p-6 rounded-2xl border-2 border-pastel-pink bg-soft-yellow-v2/50 shadow-sm">
+                        <h3 class="flex items-center text-2xl font-bold text-red-600 mb-4 font-display">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                            YouTube Channels
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                            <!-- Column 1 -->
+                            <div>
+                                <h4 class="font-semibold text-secondary-dark-purple mb-3">General Subjects</h4>
+                                <ul class="space-y-4 text-sm text-text-main">
+                                    <li><a href="https://www.youtube.com/OverSimplified" target="_blank" class="font-bold text-primary-dark-blue hover:underline">OverSimplified</a>: <span class="text-text-main/80">Complex stories explained in a hilarious and super accessible way.</span></li>
+                                    <li><a href="https://www.youtube.com/user/TheNewYorkTimes" target="_blank" class="font-bold text-primary-dark-blue hover:underline">The New York Times</a>: <span class="text-text-main/80">Current news and in-depth analyses to keep your English updated with global events.</span></li>
+                                    <li><a href="https://www.youtube.com/user/Kurzgesagt" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Kurzgesagt</a>: <span class="text-text-main/80">Animated videos about science, space, and technology with clear language.</span></li>
+                                    <li><a href="https://www.youtube.com/user/TEDEducation" target="_blank" class="font-bold text-primary-dark-blue hover:underline">TED-Ed</a>: <span class="text-text-main/80">Animated lessons on a vast range of topics that instigate critical thinking.</span></li>
+                                    <li><a href="https://www.youtube.com/user/MinuteEarth" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Minute Earth</a>: <span class="text-text-main/80">Short, animated answers to big questions about Earth and nature.</span></li>
+                                    <li><a href="https://www.youtube.com/user/bbclearningenglish" target="_blank" class="font-bold text-primary-dark-blue hover:underline">BBC Learning English</a>: <span class="text-text-main/80">Content focused on grammar, pronunciation, and vocabulary for English learners.</span></li>
+                                    <li><a href="https://www.youtube.com/thisisinsider" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Insider Science</a>: <span class="text-text-main/80">Videos about innovation and scientific discoveries.</span></li>
+                                    <li><a href="https://www.youtube.com/@WhatIfScienceShow" target="_blank" class="font-bold text-primary-dark-blue hover:underline">What If</a>: <span class="text-text-main/80">Explores hypothetical and curious scenarios in an intriguing way.</span></li>
+                                    <li><a href="https://www.youtube.com/@FreeHighQualityDocumentaries" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Free Documentaries</a>: <span class="text-text-main/80">A vast collection of documentaries to expand knowledge and comprehension.</span></li>
+                                    <li><a href="https://www.youtube.com/@BorderSecurityOfficial" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Border Security</a>: <span class="text-text-main/80">Series offering insights into real situations and practical vocabulary.</span></li>
+                                    <li><a href="https://www.youtube.com/@Vox" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Vox</a>: <span class="text-text-main/80">Clear and in-depth explanations of news, politics, and culture.</span></li>
+                                    <li><a href="https://www.youtube.com/user/WIRED" target="_blank" class="font-bold text-primary-dark-blue hover:underline">WIRED</a>: <span class="text-text-main/80">Focus on technology, science, and innovation, with interviews and trend analyses.</span></li>
+                                    <li><a href="https://www.youtube.com/@OddAnimalSpecimens" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Odd Animal Specimens</a>: <span class="text-text-main/80">Curious content about the animal kingdom for biology and nature vocabulary.</span></li>
+                                    <li><a href="https://www.youtube.com/@TastingHistory" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Tasting History</a>: <span class="text-text-main/80">Combines history and cooking in an engaging way, with historical recipes.</span></li>
+                                </ul>
+                            </div>
+                             <!-- Column 2 -->
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="font-semibold text-secondary-dark-purple mb-3">Healthcare</h4>
+                                    <ul class="space-y-4 text-sm text-text-main">
+                                        <li><a href="https://www.youtube.com/user/johnshopkinsmedicine" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Johns Hopkins</a>: <span class="text-text-main/80">Medical and health information from one of the most renowned institutions.</span></li>
+                                        <li><a href="https://www.youtube.com/@medzcool" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Medzcool</a>: <span class="text-text-main/80">Educational health content, with clear explanations of medical topics.</span></li>
+                                        <li><a href="https://www.youtube.com/user/MayoClinic" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Mayo Clinic</a>: <span class="text-text-main/80">Reliable source of information on diseases, treatments, and healthy lifestyle.</span></li>
+                                        <li><a href="https://www.youtube.com/user/WHO" target="_blank" class="font-bold text-primary-dark-blue hover:underline">WHO</a>: <span class="text-text-main/80">Updates and information on global health and health policies.</span></li>
+                                        <li><a href="https://www.youtube.com/user/medscape" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Medscape</a>: <span class="text-text-main/80">Content for healthcare professionals, including news, articles, and education.</span></li>
+                                        <li><a href="https://www.youtube.com/@osmosis" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Osmosis</a>: <span class="text-text-main/80">Animated and didactic videos on medical and health concepts.</span></li>
+                                        <li><a href="https://www.youtube.com/user/ClevelandClinic" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Cleveland Clinic</a>: <span class="text-text-main/80">Health and wellness information from a leading institution.</span></li>
+                                        <li><a href="https://www.youtube.com/@NEJMgroup" target="_blank" class="font-bold text-primary-dark-blue hover:underline">NEJM Group</a>: <span class="text-text-main/80">Videos from the New England Journal of Medicine, with clinical cases.</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-secondary-dark-purple mb-3">Business</h4>
+                                    <ul class="space-y-4 text-sm text-text-main">
+                                        <li><a href="https://www.youtube.com/@TEDx" target="_blank" class="font-bold text-primary-dark-blue hover:underline">TED Talks</a>: <span class="text-text-main/80">A wide range of talks on business, leadership, and the global economy.</span></li>
+                                        <li><a href="https://www.youtube.com/@harvardbusinessreview" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Harvard Business Review</a>: <span class="text-text-main/80">In-depth insights and analysis on management and strategy.</span></li>
+                                        <li><a href="https://www.youtube.com/@FinancialTimes" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Financial Times</a>: <span class="text-text-main/80">News, analysis, and commentary on global finance and business.</span></li>
+                                        <li><a href="https://www.youtube.com/user/SimonSinek" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Simon Sinek</a>: <span class="text-text-main/80">Talks on leadership, management, and organizational culture.</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="media-card bg-pastel-blue">
-                    <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">YouTube Channels - Healthcare:</h3>
-                    <ul class="list-disc list-inside space-y-2 text-text-main">
-                        <li><a href="https://www.youtube.com/user/johnshopkinsmedicine" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Johns Hopkins Medicine</strong></a>: Medical and health information from one of the most renowned institutions.</li>
-                        <li><a href="https://www.youtube.com/@medzcool" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Medzcool</strong></a>: Educational health content, with clear explanations of medical topics.</li>
-                        <li><a href="https://www.youtube.com/user/MayoClinic" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Mayo Clinic</strong></a>: Reliable source of information on diseases, treatments, and healthy lifestyle.</li>
-                        <li><a href="https://www.youtube.com/user/WHO" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>World Health Organization (WHO)</strong></a>: Updates and information on global health and health policies.</li>
-                        <li><a href="https://www.youtube.com/user/medscape" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Medscape</strong></a>: Content for healthcare professionals, including news, articles, and continuing medical education.</li>
-                        <li><a href="https://www.youtube.com/@osmosis" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Osmosis from Elsevier</strong></a>: Animated and didactic videos on medical and health concepts.</li>
-                        <li><a href="https://www.youtube.com/@MedFlixAndChill" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>MedFlix</strong></a>: Entertainment and educational content about the world of medicine.</li>
-                        <li><a href="https://www.youtube.com/user/ClevelandClinic" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Cleveland Clinic</strong></a>: Health and wellness information from a leading institution.</li>
-                        <li><a href="https://www.youtube.com/@nucleusmedicalmedia" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Nucleus Medical Media</strong></a>: Detailed medical animations to explain conditions and procedures.</li>
-                        <li><a href="https://www.youtube.com/@StanfordHospital" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Stanford Health Care</strong></a>: Lectures and information on medical advances and healthcare.</li>
-                        <li><a href="https://www.youtube.com/@NEJMgroup" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>NEJM Group</strong></a>: Videos from the New England Journal of Medicine, with clinical cases and research discussions.</li>
-                        <li><a href="https://www.youtube.com/@NHS" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>NHS (National Health Service - UK)</strong></a>: Information on public health and healthcare services in the UK.</li>
-                        <li><a href="https://www.youtube.com/user/uvahealth" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>UVA Health</strong></a>: Content of health and research of the University of Virginia Health.</li>
-                    </ul>
-                </div>
-
-                <div class="media-card bg-pastel-green">
-                    <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">YouTube Channels - Business:</h3>
-                    <ul class="list-disc list-inside space-y-2 text-text-main">
-                        <li><a href="https://www.youtube.com/@TEDx" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>TED Talks</strong></a>: A wide range of talks on business, leadership, and the global economy.</li>
-                        <li><a href="https://www.youtube.com/@harvardbusinessreview" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Harvard Business Review</strong></a>: In-depth insights and analysis on management, strategy, and various business topics.</li>
-                        <li><a href="https://www.youtube.com/@FinancialTimes" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Financial Times</strong></a>: News, analysis, and commentary on global finance and business.</li>
-                        <li><a href="https://www.youtube.com/@TheEconomist" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>The Economist</strong></a>: In-depth reporting and analysis on international news, politics, and business.</li>
-                        <li><a href="https://www.youtube.com/user/SimonSinek" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>Simon Sinek</strong></a>: Talks and interviews on leadership, management, and organizational culture, focusing on purpose and inspiration.</li>
-                    </ul>
-                </div>
-
-                <div class="media-card bg-pastel-purple">
-                    <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">Instagram Accounts - General Subjects:</h3>
-                    <ul class="list-disc list-inside space-y-2 text-text-main">
-                        <li><a href="https://www.instagram.com/bad_science_jokes/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@bad_science_jokes</strong></a>: Light and intelligent humor related to science.</li>
-                        <li><a href="https://www.instagram.com/9gag/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@9gag</strong></a>: Memes and viral humor content, great for understanding informal English.</li>
-                        <li><a href="https://www.instagram.com/dad_joking/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@dad_joking</strong></a>: Dad jokes and puns for more everyday and fun English.</li>
-                        <li><a href="https://www.instagram.com/reallybadhumor/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@reallybadhumor</strong></a>: More humor to relax and practice understanding different types of jokes.</li>
-                        <li><a href="https://www.instagram.com/darkhistorymemes/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@darkhistorymemes</strong></a>: Combination of history with humor, to learn facts in an unusual way.</li>
-                        <li><a href="https://www.instagram.com/history_with_amy/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@history_with_amy</strong></a>: Educational content about history, presented engagingly.</li>
-                        <li><a href="https://www.instagram.com/bbcnews/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@bbcnews</strong></a>: Reliable global news to stay updated and practice formal English.</li>
-                        <li><a href="https://www.instagram.com/bbcearth/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@bbcearth</strong></a>: Stunning images and videos of nature, with rich vocabulary captions.</li>
-                        <li><a href="https://www.instagram.com/businessinsider/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@businessinsider</strong></a>: News and insights from the world of business and finance.</li>
-                        <li><a href="https://www.instagram.com/unitednations/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@unitednations</strong></a>: Information on global causes and the work of the UN.</li>
-                    </ul>
-                </div>
-
-                <div class="media-card bg-pastel-pink">
-                    <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">Instagram Accounts - Science and Technology:</h3>
-                    <ul class="list-disc list-inside space-y-2 text-text-main">
-                        <li><a href="https://www.instagram.com/evolving.ai/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@evolving.ai</strong></a>: Content on artificial intelligence and the future of technology.</li>
-                        <li><a href="https://www.instagram.com/tedxgateway/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@tedxgateway</strong></a>: Inspiring and innovative ideas in short post format.</li>
-                        <li><a href="https://www.instagram.com/sciencemagazine/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@sciencemagazine</strong></a>: The latest scientific discoveries and research.</li>
-                        <li><a href="https://www.instagram.com/science__sphere/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@science__sphere</strong></a>: Explores scientific curiosities and facts visually.</li>
-                        <li><a href="https://www.instagram.com/newscientist/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@newscientist</strong></a>: News and articles on science and technology.</li>
-                        <li><a href="https://www.instagram.com/unesco/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@unesco</strong></a>: Content on education, science, and culture globally.</li>
-                        <li><a href="https://www.instagram.com/nasa/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nasa</strong></a>: Images and updates from space and space exploration.</li>
-                        <li><a href="https://www.instagram.com/unicef/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@unicef</strong></a>: Focus on children's rights and global development.</li>
-                        <li><a href="https://www.instagram.com/theaipage/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@theaipage</strong></a>: More content on artificial intelligence and its applications.</li>
-                        <li><a href="https://www.instagram.com/aigptinsights/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@aigptinsights</strong></a>: Insights and news on AI and language models.</li>
-                    </ul>
-                </div>
-
-                <div class="media-card bg-soft-yellow-v2">
-                    <h3 class="text-xl font-semibold text-primary-dark-blue mb-3 font-display">Instagram Accounts - Healthcare:</h3>
-                    <ul class="list-disc list-inside space-y-2 text-text-main">
-                        <li><a href="https://www.instagram.com/nejm/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nejm</strong></a>: The Instagram of the New England Journal of Medicine, with research highlights.</li>
-                        <li><a href="https://www.instagram.com/nature_the_journal/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@nature_the_journal</strong></a>: Content from the renowned scientific journal Nature.</li>
-                        <li><a href="https://www.instagram.com/funnydoctorss/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@funnydoctorss</strong></a>: Light humor and memes related to life in healthcare.</li>
-                        <li><a href="https://www.instagram.com/american_heart/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@american_heart</strong></a>: Information on cardiovascular health from the American Heart Association.</li>
-                        <li><a href="https://www.instagram.com/daily_medical_meme/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@daily_medical_meme</strong></a>: More memes and humor to unwind in the healthcare field.</li>
-                        <li><a href="https://www.instagram.com/cdcgov/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcgov</strong></a>: Public health information and updates from the CDC (Centers for Disease Control and Prevention).</li>
-                        <li><a href="https://www.instagram.com/cdcglobal/" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@cdcglobal</strong></a>: Focus on global health and CDC initiatives.</li>
-                        <li><a href="https://www.youtube.com/user/WHO" target="_blank" class="text-secondary-dark-purple hover:underline"><strong>@who</strong></a>: Information and campaigns from the World Health Organization.</li>
-                    </ul>
+                    <!-- Instagram Section -->
+                    <div class="p-4 sm:p-6 rounded-2xl border-2 border-pastel-blue bg-pastel-purple/50 shadow-sm">
+                        <h3 class="flex items-center text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-purple-600 via-accent-pink-vibrant to-orange-400 mb-4 font-display">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg>
+                            Instagram Accounts
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
+                            <!-- Column 1 -->
+                            <div>
+                                <h4 class="font-semibold text-secondary-dark-purple mb-3">General & Humor</h4>
+                                <ul class="space-y-4 text-sm text-text-main">
+                                    <li><a href="https://www.instagram.com/bad_science_jokes/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@bad_science_jokes</a>: <span class="text-text-main/80">Light and intelligent humor related to science.</span></li>
+                                    <li><a href="https://www.instagram.com/9gag/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@9gag</a>: <span class="text-text-main/80">Memes and viral humor content, great for understanding informal English.</span></li>
+                                    <li><a href="https://www.instagram.com/dad_joking/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@dad_joking</a>: <span class="text-text-main/80">Dad jokes and puns for more everyday and fun English.</span></li>
+                                    <li><a href="https://www.instagram.com/darkhistorymemes/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@darkhistorymemes</a>: <span class="text-text-main/80">Combination of history with humor, to learn facts in an unusual way.</span></li>
+                                    <li><a href="https://www.instagram.com/history_with_amy/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@history_with_amy</a>: <span class="text-text-main/80">Educational content about history, presented engagingly.</span></li>
+                                    <li><a href="https://www.instagram.com/bbcnews/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@bbcnews</a>: <span class="text-text-main/80">Reliable global news to stay updated and practice formal English.</span></li>
+                                    <li><a href="https://www.instagram.com/bbcearth/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@bbcearth</a>: <span class="text-text-main/80">Stunning images and videos of nature, with rich vocabulary captions.</span></li>
+                                </ul>
+                            </div>
+                             <!-- Column 2 -->
+                            <div>
+                                <h4 class="font-semibold text-secondary-dark-purple mb-3">Science & Tech</h4>
+                                <ul class="space-y-4 text-sm text-text-main">
+                                    <li><a href="https://www.instagram.com/evolving.ai/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@evolving.ai</a>: <span class="text-text-main/80">Content on artificial intelligence and the future of technology.</span></li>
+                                    <li><a href="https://www.instagram.com/sciencemagazine/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@sciencemagazine</a>: <span class="text-text-main/80">The latest scientific discoveries and research.</span></li>
+                                    <li><a href="https://www.instagram.com/newscientist/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@newscientist</a>: <span class="text-text-main/80">News and articles on science and technology.</span></li>
+                                    <li><a href="https://www.instagram.com/unesco/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@unesco</a>: <span class="text-text-main/80">Content on education, science, and culture globally.</span></li>
+                                    <li><a href="https://www.instagram.com/nasa/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@nasa</a>: <span class="text-text-main/80">Images and updates from space and space exploration.</span></li>
+                                    <li><a href="https://www.instagram.com/unicef/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@unicef</a>: <span class="text-text-main/80">Focus on children's rights and global development.</span></li>
+                                    <li><a href="https://www.instagram.com/theaipage/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@theaipage</a>: <span class="text-text-main/80">More content on artificial intelligence and its applications.</span></li>
+                                </ul>
+                            </div>
+                            <!-- Column 3 -->
+                            <div>
+                                <h4 class="font-semibold text-secondary-dark-purple mb-3">Healthcare</h4>
+                                <ul class="space-y-4 text-sm text-text-main">
+                                    <li><a href="https://www.instagram.com/nejm/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@nejm</a>: <span class="text-text-main/80">The Instagram of the New England Journal of Medicine, with research highlights.</span></li>
+                                    <li><a href="https://www.instagram.com/nature_the_journal/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@nature_the_journal</a>: <span class="text-text-main/80">Content from the renowned scientific journal Nature.</span></li>
+                                    <li><a href="https://www.instagram.com/funnydoctorss/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@funnydoctorss</a>: <span class="text-text-main/80">Light humor and memes related to life in healthcare.</span></li>
+                                    <li><a href="https://www.instagram.com/american_heart/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@american_heart</a>: <span class="text-text-main/80">Information on cardiovascular health from the American Heart Association.</span></li>
+                                    <li><a href="https://www.instagram.com/cdcgov/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@cdcgov</a>: <span class="text-text-main/80">Public health information and updates from the CDC.</span></li>
+                                    <li><a href="https://www.instagram.com/who/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@who</a>: <span class="text-text-main/80">Information and campaigns from the World Health Organization.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
+
         </main>
     </div>
 
@@ -838,3 +849,4 @@
     </script>
 </body>
 </html>
+
