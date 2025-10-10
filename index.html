@@ -4,123 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English with Elisa Almada - Personalized English Guide</title>
-    <!-- Including Tailwind CSS with custom configuration for vibrant and pastel colors -->
+    <!-- Incluindo Tailwind CSS com a nova configuração de design -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        // Main and Title Colors
-                        'primary-dark-blue': '#4A90E2',      // Strong blue for main titles
-                        'secondary-dark-purple': '#8A2BE2', // Rich purple for subtitles and accents
-                        'accent-green-bright': '#00CD66',    // Vibrant green for highlights and buttons
-                        'accent-pink-vibrant': '#FF69B4',    // Vibrant pink for accents and hover
-
-                        // Neutral and Background Colors
-                        'light-bg-v2': '#F7F7F7',            // Very light background
-                        'text-main': '#2C3E50',              // Main dark text (more contrast)
-                        'subtle-gray-v2': '#95A5A6',         // More distinct gray for details
-
-                        // Other Pastel/Soft Accents for media blocks
-                        'soft-yellow-v2': '#FFFACD',         // Soft pastel yellow
-                        'soft-orange-v2': '#FFDAB9',         // Soft pastel orange
-                        'pastel-blue': '#ADD8E6',            // Soft baby blue
-                        'pastel-green': '#98FB98',           // Soft mint green
-                        'pastel-purple': '#E6E6FA',          // Soft lavender
-                        'pastel-pink': '#FFD1DC',            // Soft light pink
-
-                        'warning-red': '#E74C3C',            // Red for warnings/errors
+                        // Nova Paleta de Cores
+                        'azul-principal': '#2A4B8D',
+                        'creme': '#F8F4EC',
+                        'texto-principal': '#1A1A1A',
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Nunito', 'sans-serif'], // Friendly and modern font for titles
+                        // Novas Fontes
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     }
                 }
             }
         }
     </script>
-    <!-- Importing Google Fonts: Inter for body, Nunito for titles -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- Importando Google Fonts: Montserrat para corpo, Playfair Display para títulos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F7F7F7; /* Very light background */
-            color: #2C3E50; /* Default dark text */
+            font-family: 'Montserrat', sans-serif; /* Fonte do corpo alterada */
+            background-color: #F8F4EC; /* Cor de fundo do corpo alterada */
+            color: #1A1A1A; /* Cor de texto padrão alterada */
         }
-        /* Styles to hide sections by default */
+        /* Esconde as seções por padrão */
         .content-section {
             display: none;
             padding: 2.5rem;
             border-radius: 1.5rem;
-            background-color: white; /* White background for sections */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-            border: 2px solid; /* Subtle border */
+            background-color: white; 
+            box-shadow: 0 4px_10px rgba(0, 0, 0, 0.05); /* Sombra suave */
         }
         .content-section.active {
             display: block;
         }
-        /* Style for active links in sidebar menu */
+        /* Estilo para links ativos no menu lateral */
         .nav-link.active {
-            background-color: #8A2BE2; /* secondary-dark-purple */
-            color: white; /* White text for contrast */
+            background-color: #F8F4EC; /* Fundo creme para link ativo */
+            color: #2A4B8D; /* Texto azul para link ativo */
             font-weight: 700;
-            transform: translateX(5px);
-            box-shadow: 3px 3px 0px rgba(0, 205, 102, 0.7); /* Shadow in accent-green-bright */
         }
         .nav-link:hover {
-            transform: translateY(-2px); /* Soft "jump" effect on hover */
-            box-shadow: 2px 2px 0px rgba(255, 105, 180, 0.7); /* Shadow in accent-pink-vibrant on hover */
+            background-color: rgba(248, 244, 236, 0.1); /* Efeito hover sutil */
         }
 
-        /* Main page titles */
-        h1, h2 {
-            color: #4A90E2; /* primary-dark-blue */
-            text-shadow: 1px 1px 1px rgba(0,0,0,0.1); /* Subtle shadow for emphasis */
+        /* Títulos principais da página */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', 'serif'; /* Fonte de títulos alterada */
         }
-        h3 {
-            color: #8A2BE2; /* secondary-dark-purple */
+        main h1, main h2, main h3, main h4 {
+             color: #1A1A1A; /* Cor de títulos no conteúdo principal */
         }
-
-        .border-accent {
-            border: 2px solid;
-            border-radius: 1rem;
-            box-shadow: 5px 5px 0px rgba(138, 43, 226, 0.5); /* Soft shadow in secondary-dark-purple */
+        aside h1 {
+            color: #F8F4EC; /* Cor do título no menu */
         }
+        
         .animated-emoji {
             display: inline-block;
-            animation: bounce 0.8s infinite alternate; /* Soft "bounce" animation */
+            animation: bounce 0.8s infinite alternate;
         }
 
         @keyframes bounce {
             from { transform: translateY(0); }
-            to { transform: translateY(-3px); } /* Smaller displacement */
-        }
-        /* Style for recommendation "tables" */
-        .media-card {
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(0, 0, 0, 0.05); /* Very subtle border */
+            to { transform: translateY(-3px); }
         }
         
-        /* Styles for the WhatsApp floating button */
+        /* Estilos para o botão flutuante do WhatsApp */
         @keyframes pulse-whatsapp {
             0%, 100% {
                 transform: scale(1);
-                box-shadow: 0 6px 15px rgba(0, 205, 102, 0.3);
+                box-shadow: 0 6px 15px rgba(34, 197, 94, 0.3);
             }
             50% {
                 transform: scale(1.1);
-                box-shadow: 0 10px 25px rgba(0, 205, 102, 0.5);
+                box-shadow: 0 10px 25px rgba(34, 197, 94, 0.5);
             }
         }
         .whatsapp-button-animation {
             animation: pulse-whatsapp 2s infinite ease-in-out;
         }
 
-        /* Vibration animation for expertise words */
+        /* Animação de vibração para as palavras de especialidade */
         .vibrate-word {
             display: inline-block;
             transition: transform 0.1s ease-in-out;
@@ -139,498 +111,496 @@
             100% { transform: translate(0); }
         }
 
-        /* --- Mobile Responsiveness --- */
-        @media (max-width: 640px) { /* Targeting smaller screens, e.g., sm breakpoint */
+        /* --- Responsividade para Celulares --- */
+        @media (max-width: 640px) { /* Mirando em telas pequenas */
             .content-section {
-                padding: 1.5rem; /* Reduced padding for mobile */
+                padding: 1.5rem; /* Padding reduzido para mobile */
             }
             #areas-of-expertise .vibrate-word {
-                /* Overriding tailwind classes with a more uniform, smaller size for mobile */
-                font-size: 1rem !important;
+                font-size: 1rem !important; /* Tamanho de fonte menor e uniforme para mobile */
             }
             aside h1 {
-                font-size: 2.25rem; /* Smaller main title on mobile */
+                font-size: 2.25rem; /* Título principal menor no mobile */
             }
             .nav-link {
                 padding: 0.75rem;
-                text-align: center; /* Center nav links when stacked */
+                text-align: center; /* Centraliza links quando empilhados */
             }
-            /* This targets the image container in the 'Who Am I' section */
             .w-full.sm\\:w-1\\/3 { 
               float: none;
               margin-left: auto;
               margin-right: auto;
-              width: 66.666667%; /* Equivalent to w-2/3 for better centering */
+              width: 66.666667%; /* Equivalente a w-2/3 para melhor centralização */
             }
         }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
-    <div class="flex flex-1 flex-col md:flex-row bg-light-bg-v2 text-text-main rounded-3xl shadow-xl m-4 md:m-8 overflow-hidden border-4 border-primary-dark-blue">
-        <!-- Sidebar Menu -->
-        <aside class="w-full md:w-1/4 bg-primary-dark-blue text-white p-6 md:p-8 flex flex-col items-center md:items-start rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none shadow-lg border-b-4 md:border-b-0 md:border-r-4 border-accent-green-bright">
-            <!-- Profile Picture -->
+<body class="flex flex-col min-h-screen bg-creme">
+    <div class="flex flex-1 flex-col md:flex-row bg-creme text-texto-principal rounded-3xl shadow-xl m-4 md:m-8 overflow-hidden">
+        <!-- Menu Lateral (Sidebar) -->
+        <aside class="w-full md:w-1/4 bg-azul-principal text-creme p-6 md:p-8 flex flex-col items-center md:items-start rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none shadow-lg">
+            <!-- Foto de Perfil -->
             <div class="w-32 h-32 md:w-40 md:h-40 mb-6 mx-auto md:mx-0">
-                <img src="images/Gemini_Generated_Image_l3211ol3211ol321(2).png" alt="Elisa Almada" class="rounded-full w-full h-full object-cover border-4 border-accent-pink-vibrant shadow-md">
+                <img src="images/Gemini_Generated_Image_l3211ol3211ol321(2).png" alt="Elisa Almada" class="rounded-full w-full h-full object-cover border-4 border-creme shadow-md">
             </div>
-            <h1 class="text-4xl md:text-5xl font-extrabold mb-8 text-center md:text-left font-display uppercase text-white">
-                English with <span class="text-accent-pink-vibrant">Elisa Almada</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-8 text-center md:text-left font-serif">
+                English with <strong>Elisa Almada</strong>
             </h1>
             <nav class="w-full">
                 <ul class="space-y-4">
-                    <li><a href="#who-am-i" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">👋 Who Am I</a></li>
-                    <li><a href="#how-classes-work" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">✨ How Classes Work</a></li>
-                    <li><a href="#areas-of-expertise" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">🎯 Areas of Expertise</a></li>
-                    <li><a href="#proficiency-test" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">📝 Proficiency Test</a></li>
-                    <li><a href="#media-recommendations" class="nav-link block p-3 rounded-lg transition-all duration-300 hover:scale-105">🎬 Media Recommendations</a></li>
+                    <li><a href="#who-am-i" class="nav-link block p-3 rounded-lg transition-colors duration-300">👋 Who Am I</a></li>
+                    <li><a href="#how-classes-work" class="nav-link block p-3 rounded-lg transition-colors duration-300">✨ How Classes Work</a></li>
+                    <li><a href="#areas-of-expertise" class="nav-link block p-3 rounded-lg transition-colors duration-300">🎯 Areas of Expertise</a></li>
+                    <li><a href="#proficiency-test" class="nav-link block p-3 rounded-lg transition-colors duration-300">📝 Proficiency Test</a></li>
+                    <li><a href="#media-recommendations" class="nav-link block p-3 rounded-lg transition-colors duration-300">🎬 Media Recommendations</a></li>
                 </ul>
             </nav>
         </aside>
 
-        <!-- Main Content Area -->
-        <main class="flex-1 p-6 md:p-10 bg-light-bg-v2 text-text-main rounded-b-3xl md:rounded-r-3xl md:rounded-bl-none overflow-y-auto">
+        <!-- Área de Conteúdo Principal -->
+        <main class="flex-1 p-6 md:p-10 bg-creme text-texto-principal rounded-b-3xl md:rounded-r-3xl md:rounded-bl-none overflow-y-auto">
 
-            <!-- Section 2: Who Am I -->
-            <section id="who-am-i" class="content-section active border-secondary-dark-purple">
-                <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 font-display uppercase">Who Am I<span class="animated-emoji">👋</span></h2>
+            <!-- Seção 2: Who Am I -->
+            <section id="who-am-i" class="content-section active">
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 font-serif">Who Am I<span class="animated-emoji">👋</span></h2>
                 
-                <!-- Professional Picture -->
+                <!-- Foto Profissional -->
                 <div class="w-full sm:w-1/3 float-none sm:float-right ml-0 sm:ml-6 mb-4 sm:mb-2 clear-none sm:clear-right">
-                     <img src="images/Gemini_Generated_Image_l3211ol3211ol321(2).png" alt="Professional photo of Elisa Almada" class="rounded-2xl w-full h-auto object-cover shadow-lg border-2 border-pastel-purple">
+                     <img src="images/Gemini_Generated_Image_l3211ol3211ol321(2).png" alt="Professional photo of Elisa Almada" class="rounded-2xl w-full h-auto object-cover shadow-lg border-2 border-gray-200">
                 </div>
 
-                <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
+                <p class="text-texto-principal mb-4 leading-relaxed">
                     Hello! I'm <strong>Elisa Almada</strong>, your online private English teacher. My passion has always been for language as a tool—a key that unlocks potential. My foundation is built on the academic excellence of the Universidade Federal de Minas Gerais (UFMG), where I completed both my Bachelor's Degree in English and my Post-Graduate Specialization in Language and Technology.
                 </p>
-                <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
+                <p class="text-texto-principal mb-4 leading-relaxed">
                     This rigorous background provided me with a deep understanding of linguistic structures and modern learning methodologies. However, it was in my direct work with clients that I discovered my true calling. I realized that the core challenge was often the same, whether I was guiding a CEO, a medical doctor, a traveler, or a family preparing to move abroad. The underlying need was for confidence to navigate a new reality.
                 </p>
-                <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
+                <p class="text-texto-principal mb-4 leading-relaxed">
                     This understanding is the foundation of my work today. My role is to act as your partner in building that specific bridge you need to cross, combining academic depth with a practical, personalized approach. For some, that bridge leads to a boardroom; for others, it leads to a new home or a path less traveled.
                 </p>
-                <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
+                <p class="text-texto-principal mb-4 leading-relaxed">
                     By focusing on your unique goals and real-world situations, we move beyond generic lessons. We craft a learning experience that equips you not just with English but with the certainty to use it effectively, wherever your journey takes you.
                 </p>
                 
-                <!-- Contact Buttons -->
+                <!-- Botões de Contato -->
                 <div class="mt-6 flex flex-wrap gap-3">
-                    <a href="mailto:elisasalmada@gmail.com" target="_blank" class="flex items-center justify-center px-4 py-2 rounded-lg text-white font-semibold shadow-md transition-transform duration-200 hover:scale-105 bg-warning-red">
+                    <a href="mailto:elisasalmada@gmail.com" target="_blank" class="flex items-center justify-center px-4 py-2 rounded-lg text-creme bg-azul-principal font-semibold shadow-md transition-transform duration-200 hover:scale-105">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
                         Email
                     </a>
-                    <a href="https://wa.me/5537991254295" target="_blank" class="flex items-center justify-center px-4 py-2 rounded-lg text-white font-semibold shadow-md transition-transform duration-200 hover:scale-105 bg-accent-green-bright">
+                    <a href="https://wa.me/5537991254295" target="_blank" class="flex items-center justify-center px-4 py-2 rounded-lg text-creme bg-azul-principal font-semibold shadow-md transition-transform duration-200 hover:scale-105">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96 0 1.77.46 3.45 1.28 4.92L2 22l5.09-1.34c1.42.78 3.03 1.21 4.71 1.21 5.5 0 9.96-4.46 9.96-9.96S17.5 2.04 12 2.04zM16.88 15.3c-.27-.13-1.61-.79-1.85-.88-.25-.09-.43-.13-.62.13-.19.27-.7.88-.86 1.06-.16.18-.32.2-.59.06-.27-.13-1.14-.42-2.17-1.34-.8-.73-1.34-1.64-1.5-1.92-.16-.28-.02-.43.12-.56.12-.12.27-.3.4-.4.13-.1.18-.21.27-.35.09-.14.04-.27-.02-.4-.06-.13-.62-1.49-.84-2.04-.23-.55-.46-.48-.62-.48-.16 0-.34-.02-.52-.02-.18 0-.48.06-.73.31-.25.25-.97.94-.97 2.3 0 1.35.99 2.67 1.13 2.85.14.18 1.96 3.01 4.75 4.19.68.29 1.22.46 1.64.59.57.18 1.09.15 1.5.09.46-.06 1.61-.66 1.83-1.28.23-.62.23-1.15.16-1.28-.07-.13-.25-.21-.52-.34z"/></svg>
                         WhatsApp
                     </a>
-                    <a href="https://www.instagram.com/elisaalmada/" target="_blank" class="flex items-center justify-center px-4 py-2 rounded-lg text-white font-semibold shadow-md transition-transform duration-200 hover:scale-105 bg-gradient-to-br from-purple-600 via-accent-pink-vibrant to-orange-400">
+                    <a href="https://www.instagram.com/elisaalmada/" target="_blank" class="flex items-center justify-center px-4 py-2 rounded-lg text-creme bg-azul-principal font-semibold shadow-md transition-transform duration-200 hover:scale-105">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg>
                         Instagram
                     </a>
-                    <a href="https://www.linkedin.com/in/elisaalmada/" target="_blank" class="flex items-center justify-center px-4 py-2 rounded-lg text-white font-semibold shadow-md transition-transform duration-200 hover:scale-105 bg-primary-dark-blue">
+                    <a href="https://www.linkedin.com/in/elisaalmada/" target="_blank" class="flex items-center justify-center px-4 py-2 rounded-lg text-creme bg-azul-principal font-semibold shadow-md transition-transform duration-200 hover:scale-105">
                          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         LinkedIn
                     </a>
                 </div>
             </section>
 
-            <!-- Section 3: How Classes Work -->
-            <section id="how-classes-work" class="content-section border-secondary-dark-purple">
-                <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 font-display uppercase">How Classes Work <span class="animated-emoji">💬</span></h2>
-                <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
+            <!-- Seção 3: How Classes Work -->
+            <section id="how-classes-work" class="content-section">
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 font-serif">How Classes Work <span class="animated-emoji">💬</span></h2>
+                <p class="text-texto-principal mb-4 leading-relaxed">
                     My classes are dynamic and designed especially for you. Here's how we usually conduct our sessions:
                 </p>
-                <ul class="list-disc list-inside space-y-3 text-subtle-gray-v2 mb-4">
+                <ul class="list-disc list-inside space-y-3 text-texto-principal mb-4">
                     <li>
-                        <strong class="font-semibold text-primary-dark-blue">What you will learn:</strong> Our classes are tailor-made! We focus on your fluency, grammar, vocabulary, and comprehension, always connecting English with your daily life and/or work reality. The teaching methodology aims to connect language, culture, knowledge, and society, promoting learning that empowers you to use English autonomously and meaningfully.
+                        <strong class="font-semibold text-texto-principal">What you will learn:</strong> Our classes are tailor-made! We focus on your fluency, grammar, vocabulary, and comprehension, always connecting English with your daily life and/or work reality. The teaching methodology aims to connect language, culture, knowledge, and society, promoting learning that empowers you to use English autonomously and meaningfully.
                     </li>
                     <li>
-                        <strong class="font-semibold text-primary-dark-blue">Duration and Frequency:</strong> Each class lasts 60 minutes. We'll agree on the best days and times for classes at the beginning of each month, and I recommend a minimum of 1 class per week for consistent progress.
+                        <strong class="font-semibold text-texto-principal">Duration and Frequency:</strong> Each class lasts 60 minutes. We'll agree on the best days and times for classes at the beginning of each month, and I recommend a minimum of 1 class per week for consistent progress.
                     </li>
                     <li>
-                        <strong class="font-semibold text-primary-dark-blue">Scheduling and Cancellation:</strong>
-                        <ul class="list-disc list-inside ml-5 mt-2 space-y-2 text-subtle-gray-v2">
+                        <strong class="font-semibold text-texto-principal">Scheduling and Cancellation:</strong>
+                        <ul class="list-disc list-inside ml-5 mt-2 space-y-2 text-texto-principal">
                             <li><strong>By the Student:</strong> Please notify at least 24 hours in advance for rescheduling. Rescheduling requests with less than 24 hours' notice are not feasible and will not be accepted. Rescheduled classes that cannot be accommodated within the same month, even with prior notice, will be considered as held and will not be refunded or transferred to the following month. Absences without notice will be counted as a held class and charged normally, with no right to make up the class.</li>
                             <li><strong>By the Teacher:</strong> If I cannot teach the class, I will notify you as soon as possible. We will reschedule at no cost to you, or I will refund you for the unheld class.</li>
                         </ul>
                     </li>
                     <li>
-                        <strong class="font-semibold text-primary-dark-blue">Class Materials:</strong> The materials (slides, texts, video links, etc.) are provided by me and are included in the class price, with no extra costs. We use Google Classroom, Docs, Slides, Meet, and YouTube to make classes dynamic and interesting.
+                        <strong class="font-semibold text-texto-principal">Class Materials:</strong> The materials (slides, texts, video links, etc.) are provided by me and are included in the class price, with no extra costs. We use Google Classroom, Docs, Slides, Meet, and YouTube to make classes dynamic and interesting.
                     </li>
                     <li>
-                        <strong class="font-semibold text-primary-dark-blue">Confidentiality:</strong> All discussions and information shared during classes will be kept strictly confidential.
+                        <strong class="font-semibold text-texto-principal">Confidentiality:</strong> All discussions and information shared during classes will be kept strictly confidential.
                     </li>
                     <li>
-                        <strong class="font-semibold text-primary-dark-blue">Start and End:</strong> This agreement begins with our first class and has no set end date. If either you or the teacher needs to stop classes for any reason, simply provide notice before the start of the next month. If classes are interrupted by the student, they will not receive a refund for classes scheduled within the current month.
+                        <strong class="font-semibold text-texto-principal">Start and End:</strong> This agreement begins with our first class and has no set end date. If either you or the teacher needs to stop classes for any reason, simply provide notice before the start of the next month. If classes are interrupted by the student, they will not receive a refund for classes scheduled within the current month.
                     </li>
                     <li>
-                        <strong class="font-semibold text-primary-dark-blue">Official Communication:</strong> We will use WhatsApp as the official form of communication. (<strong class="font-semibold text-primary-dark-blue"><a href="https://wa.me/5537991254295" target="_blank" class="text-primary-dark-blue hover:underline">+55 37 99125-4295</a></strong>)
+                        <strong class="font-semibold text-texto-principal">Official Communication:</strong> We will use WhatsApp as the official form of communication. (<strong class="font-semibold text-texto-principal"><a href="https://wa.me/5537991254295" target="_blank" class="text-azul-principal hover:underline">+55 37 99125-4295</a></strong>)
                     </li>
                 </ul>
-                <p class="text-subtle-gray-v2 leading-relaxed mt-4">
+                <p class="text-texto-principal leading-relaxed mt-4">
                     I'm here to accompany you on this journey, making every step in your learning an enriching and liberating experience!
                 </p>
             </section>
 
-            <!-- Section for Areas of Expertise -->
-            <section id="areas-of-expertise" class="content-section border-secondary-dark-purple">
-                <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 font-display uppercase">Areas of Expertise <span class="animated-emoji">🎯</span></h2>
-                <p class="text-subtle-gray-v2 mb-8 leading-relaxed">
+            <!-- Seção de Áreas de Especialidade -->
+            <section id="areas-of-expertise" class="content-section">
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 font-serif">Areas of Expertise <span class="animated-emoji">🎯</span></h2>
+                <p class="text-texto-principal mb-8 leading-relaxed">
                     My personalized classes are designed to meet your specific professional and personal needs. What are yours? Here are some of the fields I have already approached with my students:
                 </p>
-                <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 font-display">
-                    <span class="vibrate-word text-2xl text-primary-dark-blue">Medicine</span>
-                    <span class="vibrate-word text-lg text-secondary-dark-purple">Physical Therapy</span>
-                    <span class="vibrate-word text-xl text-accent-green-bright">Human Resources</span>
-                    <span class="vibrate-word text-3xl text-accent-pink-vibrant">Business</span>
-                    <span class="vibrate-word text-lg text-primary-dark-blue">Finance</span>
-                    <span class="vibrate-word text-2xl text-secondary-dark-purple">Job Interviews</span>
-                    <span class="vibrate-word text-xl text-accent-green-bright">Travel & Tourism</span>
-                    <span class="vibrate-word text-lg text-accent-pink-vibrant">Fitness</span>
-                    <span class="vibrate-word text-2xl text-primary-dark-blue">Architecture</span>
-                    <span class="vibrate-word text-xl text-secondary-dark-purple">Design</span>
-                    <span class="vibrate-word text-3xl text-accent-green-bright">Project Management</span>
-                    <span class="vibrate-word text-lg text-accent-pink-vibrant">Gastroenterology</span>
-                    <span class="vibrate-word text-xl text-primary-dark-blue">Nutrition</span>
-                    <span class="vibrate-word text-2xl text-secondary-dark-purple">Nutrology</span>
-                    <span class="vibrate-word text-lg text-accent-green-bright">Oncology</span>
-                    <span class="vibrate-word text-xl text-accent-pink-vibrant">Radiology</span>
-                    <span class="vibrate-word text-3xl text-primary-dark-blue">Intensive Care</span>
-                    <span class="vibrate-word text-lg text-secondary-dark-purple">Infectious Diseases</span>
-                    <span class="vibrate-word text-2xl text-accent-green-bright">Geriatrics</span>
-                    <span class="vibrate-word text-xl text-accent-pink-vibrant">Teaching</span>
-                    <span class="vibrate-word text-lg text-primary-dark-blue">Cardiology</span>
-                    <span class="vibrate-word text-3xl text-secondary-dark-purple">Cardiac Surgery</span>
-                    <span class="vibrate-word text-xl text-accent-green-bright">Hematology</span>
-                    <span class="vibrate-word text-lg text-accent-pink-vibrant">Biology</span>
-                    <span class="vibrate-word text-2xl text-primary-dark-blue">Programming</span>
-                    <span class="vibrate-word text-xl text-secondary-dark-purple">Cinema</span>
-                    <span class="vibrate-word text-lg text-accent-green-bright">Neurology</span>
-                    <span class="vibrate-word text-xl text-primary-dark-blue">Emergency Medicine</span>
-                    <span class="vibrate-word text-3xl text-accent-pink-vibrant">Neurosurgery</span>
-                    <span class="vibrate-word text-xl text-accent-green-bright">Arrhythmology</span>
-                    <span class="vibrate-word text-xl text-primary-dark-blue">Plastic Surgery</span>
-                    <span class="vibrate-word text-2xl text-secondary-dark-purple">Sales</span>
-                    <span class="vibrate-word text-lg text-accent-green-bright">Customer Service</span>
-                    <span class="vibrate-word text-xl text-accent-pink-vibrant">Pathology</span>
-                    <span class="vibrate-word text-2xl text-secondary-dark-purple">Gynecology and Obstetrics</span>
-                    <span class="vibrate-word text-xl text-primary-dark-blue">Interventional Cardiology</span>
+                <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 font-serif">
+                    <span class="vibrate-word text-2xl text-azul-principal">Medicine</span>
+                    <span class="vibrate-word text-lg text-azul-principal">Physical Therapy</span>
+                    <span class="vibrate-word text-xl text-azul-principal">Human Resources</span>
+                    <span class="vibrate-word text-3xl text-azul-principal">Business</span>
+                    <span class="vibrate-word text-lg text-azul-principal">Finance</span>
+                    <span class="vibrate-word text-2xl text-azul-principal">Job Interviews</span>
+                    <span class="vibrate-word text-xl text-azul-principal">Travel & Tourism</span>
+                    <span class="vibrate-word text-lg text-azul-principal">Fitness</span>
+                    <span class="vibrate-word text-2xl text-azul-principal">Architecture</span>
+                    <span class="vibrate-word text-xl text-azul-principal">Design</span>
+                    <span class="vibrate-word text-3xl text-azul-principal">Project Management</span>
+                    <span class="vibrate-word text-lg text-azul-principal">Gastroenterology</span>
+                    <span class="vibrate-word text-xl text-azul-principal">Nutrition</span>
+                    <span class="vibrate-word text-2xl text-azul-principal">Nutrology</span>
+                    <span class="vibrate-word text-lg text-azul-principal">Oncology</span>
+                    <span class="vibrate-word text-xl text-azul-principal">Radiology</span>
+                    <span class="vibrate-word text-3xl text-azul-principal">Intensive Care</span>
+                    <span class="vibrate-word text-lg text-azul-principal">Infectious Diseases</span>
+                    <span class="vibrate-word text-2xl text-azul-principal">Geriatrics</span>
+                    <span class="vibrate-word text-xl text-azul-principal">Teaching</span>
+                    <span class="vibrate-word text-lg text-azul-principal">Cardiology</span>
+                    <span class="vibrate-word text-3xl text-azul-principal">Cardiac Surgery</span>
+                    <span class="vibrate-word text-xl text-azul-principal">Hematology</span>
+                    <span class="vibrate-word text-lg text-azul-principal">Biology</span>
+                    <span class="vibrate-word text-2xl text-azul-principal">Programming</span>
+                    <span class="vibrate-word text-xl text-azul-principal">Cinema</span>
+                    <span class="vibrate-word text-lg text-azul-principal">Neurology</span>
+                    <span class="vibrate-word text-xl text-azul-principal">Emergency Medicine</span>
+                    <span class="vibrate-word text-3xl text-azul-principal">Neurosurgery</span>
+                    <span class="vibrate-word text-xl text-azul-principal">Arrhythmology</span>
+                    <span class="vibrate-word text-xl text-azul-principal">Plastic Surgery</span>
+                    <span class="vibrate-word text-2xl text-azul-principal">Sales</span>
+                    <span class="vibrate-word text-lg text-azul-principal">Customer Service</span>
+                    <span class="vibrate-word text-xl text-azul-principal">Pathology</span>
+                    <span class="vibrate-word text-2xl text-azul-principal">Gynecology and Obstetrics</span>
+                    <span class="vibrate-word text-xl text-azul-principal">Interventional Cardiology</span>
                 </div>
             </section>
 
-            <!-- Section 4: Proficiency Test -->
-            <section id="proficiency-test" class="content-section border-secondary-dark-purple">
-                <h2 class="text-2xl sm:text-4xl font-extrabold mb-6 font-display uppercase">Proficiency Level Test <span class="animated-emoji">📝</span></h2>
-                <p class="text-subtle-gray-v2 mb-4 leading-relaxed">
+            <!-- Seção 4: Teste de Proficiência -->
+            <section id="proficiency-test" class="content-section">
+                <h2 class="text-2xl sm:text-4xl font-extrabold mb-6 font-serif">Proficiency Level Test <span class="animated-emoji">📝</span></h2>
+                <p class="text-texto-principal mb-4 leading-relaxed">
                     Take this test to get an idea of your English proficiency level. It covers grammar and vocabulary. At the end, you'll be able to see your results and copy them to share with me!
                 </p>
-                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-secondary-dark-purple">
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
                     <form id="proficiency-quiz">
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">1. He usually ______ (go) to work by car, but today he ______ (walk).</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q1" value="goes / is walking" class="mr-2 accent-secondary-dark-purple"> goes / is walking</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q1" value="is going / walks" class="mr-2 accent-secondary-dark-purple"> is going / walks</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q1" value="went / walked" class="mr-2 accent-secondary-dark-purple"> went / walked</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">1. He usually ______ (go) to work by car, but today he ______ (walk).</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q1" value="goes / is walking" class="mr-2 accent-azul-principal"> goes / is walking</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q1" value="is going / walks" class="mr-2 accent-azul-principal"> is going / walks</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q1" value="went / walked" class="mr-2 accent-azul-principal"> went / walked</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">2. While I ______ (read) a book, my phone ______ (ring).</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q2" value="read / rang" class="mr-2 accent-secondary-dark-purple"> read / rang</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q2" value="was reading / rang" class="mr-2 accent-secondary-dark-purple"> was reading / rang</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q2" value="am reading / rings" class="mr-2 accent-secondary-dark-purple"> am reading / rings</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">2. While I ______ (read) a book, my phone ______ (ring).</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q2" value="read / rang" class="mr-2 accent-azul-principal"> read / rang</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q2" value="was reading / rang" class="mr-2 accent-azul-principal"> was reading / rang</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q2" value="am reading / rings" class="mr-2 accent-azul-principal"> am reading / rings</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">3. I ______ (not see) her since last year.</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q3" value="didn't see" class="mr-2 accent-secondary-dark-purple"> didn't see</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q3" value="haven't seen" class="mr-2 accent-secondary-dark-purple"> haven't seen</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q3" value="am not seeing" class="mr-2 accent-secondary-dark-purple"> am not seeing</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">3. I ______ (not see) her since last year.</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q3" value="didn't see" class="mr-2 accent-azul-principal"> didn't see</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q3" value="haven't seen" class="mr-2 accent-azul-principal"> haven't seen</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q3" value="am not seeing" class="mr-2 accent-azul-principal"> am not seeing</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">4. I think it ______ (rain) tomorrow. (Prediction)</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q4" value="is going to rain" class="mr-2 accent-secondary-dark-purple"> is going to rain</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q4" value="will rain" class="mr-2 accent-secondary-dark-purple"> will rain</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q4" value="rains" class="mr-2 accent-secondary-dark-purple"> rains</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">4. I think it ______ (rain) tomorrow. (Prediction)</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q4" value="is going to rain" class="mr-2 accent-azul-principal"> is going to rain</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q4" value="will rain" class="mr-2 accent-azul-principal"> will rain</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q4" value="rains" class="mr-2 accent-azul-principal"> rains</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">5. You ______ study harder if you want to pass the exam. (Strong advice/necessity)</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q5" value="can" class="mr-2 accent-secondary-dark-purple"> can</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q5" value="should" class="mr-2 accent-secondary-dark-purple"> should</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q5" value="must" class="mr-2 accent-secondary-dark-purple"> must</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">5. You ______ study harder if you want to pass the exam. (Strong advice/necessity)</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q5" value="can" class="mr-2 accent-azul-principal"> can</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q5" value="should" class="mr-2 accent-azul-principal"> should</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q5" value="must" class="mr-2 accent-azul-principal"> must</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">6. If it ______ (rain) tomorrow, we ______ (stay) home.</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q6" value="rains / will stay" class="mr-2 accent-secondary-dark-purple"> rains / will stay</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q6" value="will rain / stay" class="mr-2 accent-secondary-dark-purple"> will rain / stay</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q6" value="rained / would stay" class="mr-2 accent-secondary-dark-purple"> rained / would stay</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">6. If it ______ (rain) tomorrow, we ______ (stay) home.</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q6" value="rains / will stay" class="mr-2 accent-azul-principal"> rains / will stay</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q6" value="will rain / stay" class="mr-2 accent-azul-principal"> will rain / stay</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q6" value="rained / would stay" class="mr-2 accent-azul-principal"> rained / would stay</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">7. If I ______ (have) a million dollars, I ______ (buy) a big house.</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q7" value="had / would buy" class="mr-2 accent-secondary-dark-purple"> had / would buy</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q7" value="have / will buy" class="mr-2 accent-secondary-dark-purple"> have / will buy</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q7" value="would have / buy" class="mr-2 accent-secondary-dark-purple"> would have / buy</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">7. If I ______ (have) a million dollars, I ______ (buy) a big house.</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q7" value="had / would buy" class="mr-2 accent-azul-principal"> had / would buy</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q7" value="have / will buy" class="mr-2 accent-azul-principal"> have / will buy</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q7" value="would have / buy" class="mr-2 accent-azul-principal"> would have / buy</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">8. The book ______ (write) by a famous author last year.</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q8" value="wrote" class="mr-2 accent-secondary-dark-purple"> wrote</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q8" value="was written" class="mr-2 accent-secondary-dark-purple"> was written</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q8" value="is written" class="mr-2 accent-secondary-dark-purple"> is written</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">8. The book ______ (write) by a famous author last year.</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q8" value="wrote" class="mr-2 accent-azul-principal"> wrote</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q8" value="was written" class="mr-2 accent-azul-principal"> was written</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q8" value="is written" class="mr-2 accent-azul-principal"> is written</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">9. She has ______ cat and ______ dog. ______ cat is black.</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q9" value="a / a / The" class="mr-2 accent-secondary-dark-purple"> a / a / The</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q9" value="an / a / A" class="mr-2 accent-secondary-dark-purple"> an / a / A</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q9" value="the / a / The" class="mr-2 accent-secondary-dark-purple"> the / a / The</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">9. She has ______ cat and ______ dog. ______ cat is black.</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q9" value="a / a / The" class="mr-2 accent-azul-principal"> a / a / The</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q9" value="an / a / A" class="mr-2 accent-azul-principal"> an / a / A</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q9" value="the / a / The" class="mr-2 accent-azul-principal"> the / a / The</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">10. The meeting is ______ 3 PM ______ Friday.</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q10" value="at / on" class="mr-2 accent-secondary-dark-purple"> at / on</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q10" value="on / at" class="mr-2 accent-secondary-dark-purple"> on / at</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q10" value="in / in" class="mr-2 accent-secondary-dark-purple"> in / in</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">10. The meeting is ______ 3 PM ______ Friday.</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q10" value="at / on" class="mr-2 accent-azul-principal"> at / on</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q10" value="on / at" class="mr-2 accent-azul-principal"> on / at</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q10" value="in / in" class="mr-2 accent-azul-principal"> in / in</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">11. The book is ______ the table, ______ the lamp.</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q11" value="on / next to" class="mr-2 accent-secondary-dark-purple"> on / next to</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q11" value="at / in" class="mr-2 accent-secondary-dark-purple"> at / in</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q11" value="in / on" class="mr-2 accent-secondary-dark-purple"> in / on</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">11. The book is ______ the table, ______ the lamp.</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q11" value="on / next to" class="mr-2 accent-azul-principal"> on / next to</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q11" value="at / in" class="mr-2 accent-azul-principal"> at / in</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q11" value="in / on" class="mr-2 accent-azul-principal"> in / on</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">12. The plane will ______ in ten minutes. (Meaning: take off from the ground)</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q12" value="take off" class="mr-2 accent-secondary-dark-purple"> take off</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q12" value="take up" class="mr-2 accent-secondary-dark-purple"> take up</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q12" value="take on" class="mr-2 accent-secondary-dark-purple"> take on</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">12. The plane will ______ in ten minutes. (Meaning: take off from the ground)</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q12" value="take off" class="mr-2 accent-azul-principal"> take off</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q12" value="take up" class="mr-2 accent-azul-principal"> take up</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q12" value="take on" class="mr-2 accent-azul-principal"> take on</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">13. If you don't know the word, you can ______ it ______ in a dictionary. (Meaning: find its meaning)</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q13" value="look / over" class="mr-2 accent-secondary-dark-purple"> look / over</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q13" value="look / up" class="mr-2 accent-secondary-dark-purple"> look / up</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q13" value="look / into" class="mr-2 accent-secondary-dark-purple"> look / into</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">13. If you don't know the word, you can ______ it ______ in a dictionary. (Meaning: find its meaning)</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q13" value="look / over" class="mr-2 accent-azul-principal"> look / over</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q13" value="look / up" class="mr-2 accent-azul-principal"> look / up</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q13" value="look / into" class="mr-2 accent-azul-principal"> look / into</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">14. She is ______ (tall) than her brother. He runs ______ (quickly) than me. (Comparison)</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q14" value="taller / more quickly" class="mr-2 accent-secondary-dark-purple"> taller / more quickly</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q14" value="tallest / quicker" class="mr-2 accent-secondary-dark-purple"> tallest / quicker</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q14" value="more tall / more quick" class="mr-2 accent-secondary-dark-purple"> more tall / more quick</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">14. She is ______ (tall) than her brother. He runs ______ (quickly) than me. (Comparison)</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q14" value="taller / more quickly" class="mr-2 accent-azul-principal"> taller / more quickly</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q14" value="tallest / quicker" class="mr-2 accent-azul-principal"> tallest / quicker</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q14" value="more tall / more quick" class="mr-2 accent-azul-principal"> more tall / more quick</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">15. There isn't ______ water. There are ______ books.</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q15" value="many / much" class="mr-2 accent-secondary-dark-purple"> many / much</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q15" value="much / many" class="mr-2 accent-secondary-dark-purple"> much / many</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q15" value="a lot of / a lot of" class="mr-2 accent-secondary-dark-purple"> a lot of / a lot of</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">15. There isn't ______ water. There are ______ books.</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q15" value="many / much" class="mr-2 accent-azul-principal"> many / much</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q15" value="much / many" class="mr-2 accent-azul-principal"> much / many</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q15" value="a lot of / a lot of" class="mr-2 accent-azul-principal"> a lot of / a lot of</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">16. By the time I arrived, he ______ (already leave).</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q16" value="already left" class="mr-2 accent-secondary-dark-purple"> already left</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q16" value="had already left" class="mr-2 accent-secondary-dark-purple"> had already left</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q16" value="was already leaving" class="mr-2 accent-secondary-dark-purple"> was already leaving</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">16. By the time I arrived, he ______ (already leave).</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q16" value="already left" class="mr-2 accent-azul-principal"> already left</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q16" value="had already left" class="mr-2 accent-azul-principal"> had already left</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q16" value="was already leaving" class="mr-2 accent-azul-principal"> was already leaving</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">17. She said, "I am happy." (Reported Speech)</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q17" value="She said she is happy." class="mr-2 accent-secondary-dark-purple"> She said she is happy.</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q17" value="She said she was happy." class="mr-2 accent-secondary-dark-purple"> She said she was happy.</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q17" value="She says she is happy." class="mr-2 accent-secondary-dark-purple"> She says she is happy.</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">17. She said, "I am happy." (Reported Speech)</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q17" value="She said she is happy." class="mr-2 accent-azul-principal"> She said she is happy.</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q17" value="She said she was happy." class="mr-2 accent-azul-principal"> She said she was happy.</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q17" value="She says she is happy." class="mr-2 accent-azul-principal"> She says she is happy.</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">18. If you heat water to 100 degrees Celsius, it ______ (boil).</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q18" value="boils" class="mr-2 accent-secondary-dark-purple"> boils</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q18" value="will boil" class="mr-2 accent-secondary-dark-purple"> will boil</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q18" value="would boil" class="mr-2 accent-secondary-dark-purple"> would boil</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">18. If you heat water to 100 degrees Celsius, it ______ (boil).</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q18" value="boils" class="mr-2 accent-azul-principal"> boils</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q18" value="will boil" class="mr-2 accent-azul-principal"> will boil</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q18" value="would boil" class="mr-2 accent-azul-principal"> would boil</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">19. This is the student ______ helped me with my homework.</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q19" value="which" class="mr-2 accent-secondary-dark-purple"> which</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q19" value="who" class="mr-2 accent-secondary-dark-purple"> who</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q19" value="whose" class="mr-2 accent-secondary-dark-purple"> whose</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">19. This is the student ______ helped me with my homework.</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q19" value="which" class="mr-2 accent-azul-principal"> which</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q19" value="who" class="mr-2 accent-azul-principal"> who</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q19" value="whose" class="mr-2 accent-azul-principal"> whose</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-green-bright">
-                            <p class="font-semibold text-text-main mb-3">20. By next year, I ______ (learn) English for five years.</p>
-                            <div class="space-y-2 text-subtle-gray-v2">
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q20" value="will learn" class="mr-2 accent-secondary-dark-purple"> will learn</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q20" value="will have learned" class="mr-2 accent-secondary-dark-purple"> will have learned</label>
-                                <label class="block cursor-pointer hover:text-secondary-dark-purple transition-colors"><input type="radio" name="q20" value="am learning" class="mr-2 accent-secondary-dark-purple"> am learning</label>
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">20. By next year, I ______ (learn) English for five years.</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q20" value="will learn" class="mr-2 accent-azul-principal"> will learn</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q20" value="will have learned" class="mr-2 accent-azul-principal"> will have learned</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q20" value="am learning" class="mr-2 accent-azul-principal"> am learning</label>
                             </div>
                         </div>
 
-                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-accent-pink-vibrant">
-                            <p class="font-semibold text-text-main mb-3">Writing Part: Write a short paragraph (3-5 sentences) about your favorite hobby or a recent travel experience.</p>
-                            <textarea id="writing-q1" class="w-full p-3 bg-white text-text-main border border-accent-pink-vibrant rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-green-bright transition-all" rows="5" placeholder="Start writing here..."></textarea>
-                            <p class="text-sm text-subtle-gray-v2 mt-2">
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">Writing Part: Write a short paragraph (3-5 sentences) about your favorite hobby or a recent travel experience.</p>
+                            <textarea id="writing-q1" class="w-full p-3 bg-white text-texto-principal border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-azul-principal transition-all" rows="5" placeholder="Start writing here..."></textarea>
+                            <p class="text-sm text-texto-principal/70 mt-2">
                                 <em>Feedback for this section is manual. Please copy your results and send them to Teacher Elisa!</em>
                             </p>
                         </div>
 
-                        <button type="submit" class="bg-secondary-dark-purple text-white font-bold px-6 py-3 rounded-lg hover:bg-accent-pink-vibrant transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Check Test</button>
-                        <button type="button" id="copy-test-results" class="bg-primary-dark-blue text-white font-bold px-6 py-3 rounded-lg hover:bg-secondary-dark-purple transition-all duration-200 shadow-md transform hover:scale-105 hidden">Copy Results</button>
+                        <button type="submit" class="bg-azul-principal text-creme font-bold px-6 py-3 rounded-lg hover:bg-opacity-80 transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Check Test</button>
+                        <button type="button" id="copy-test-results" class="bg-azul-principal text-creme font-bold px-6 py-3 rounded-lg hover:bg-opacity-80 transition-all duration-200 shadow-md transform hover:scale-105 hidden">Copy Results</button>
                     </form>
 
-                    <div id="test-results" class="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-text-main hidden">
+                    <div id="test-results" class="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-texto-principal hidden">
                         </div>
-                    <div id="test-copy-message" class="mt-4 text-sm text-accent-green-bright hidden">
+                    <div id="test-copy-message" class="mt-4 text-sm text-green-600 hidden">
                         Results copied to clipboard!
                     </div>
                 </div>
             </section>
 
-            <!-- Section 5: Media Recommendations -->
-            <section id="media-recommendations" class="content-section border-secondary-dark-purple">
-                <h2 class="text-2xl sm:text-4xl font-extrabold mb-6 font-display uppercase">Media Recommendations <span class="animated-emoji">🎬</span></h2>
-                <p class="text-subtle-gray-v2 mb-8 leading-relaxed">
+            <!-- Seção 5: Recomendações de Mídia -->
+            <section id="media-recommendations" class="content-section">
+                <h2 class="text-2xl sm:text-4xl font-extrabold mb-6 font-serif">Media Recommendations <span class="animated-emoji">🎬</span></h2>
+                <p class="text-texto-principal mb-8 leading-relaxed">
                     Learning English goes beyond classes! I've curated some amazing content for you to enjoy and, at the same time, deepen your contact with the language.
                 </p>
 
                 <div class="space-y-8">
-                    <!-- YouTube Section -->
-                    <div class="p-4 sm:p-6 rounded-2xl border-2 border-pastel-pink bg-soft-yellow-v2/50 shadow-sm">
-                        <h3 class="flex items-center text-2xl font-bold text-red-600 mb-4 font-display">
+                    <!-- Seção YouTube -->
+                    <div class="p-4 sm:p-6 rounded-2xl border border-gray-200 bg-white/50 shadow-sm">
+                        <h3 class="flex items-center text-2xl font-bold text-azul-principal mb-4 font-serif">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                             YouTube Channels
                         </h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                            <!-- Column 1 -->
+                            <!-- Coluna 1 -->
                             <div>
-                                <h4 class="font-semibold text-secondary-dark-purple mb-3">General Subjects</h4>
-                                <ul class="space-y-4 text-sm text-text-main">
-                                    <li><a href="https://www.youtube.com/OverSimplified" target="_blank" class="font-bold text-primary-dark-blue hover:underline">OverSimplified</a>: <span class="text-text-main/80">Complex stories explained in a hilarious and super accessible way.</span></li>
-                                    <li><a href="https://www.youtube.com/user/TheNewYorkTimes" target="_blank" class="font-bold text-primary-dark-blue hover:underline">The New York Times</a>: <span class="text-text-main/80">Current news and in-depth analyses to keep your English updated with global events.</span></li>
-                                    <li><a href="https://www.youtube.com/user/Kurzgesagt" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Kurzgesagt</a>: <span class="text-text-main/80">Animated videos about science, space, and technology with clear language.</span></li>
-                                    <li><a href="https://www.youtube.com/user/TEDEducation" target="_blank" class="font-bold text-primary-dark-blue hover:underline">TED-Ed</a>: <span class="text-text-main/80">Animated lessons on a vast range of topics that instigate critical thinking.</span></li>
-                                    <li><a href="https://www.youtube.com/user/MinuteEarth" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Minute Earth</a>: <span class="text-text-main/80">Short, animated answers to big questions about Earth and nature.</span></li>
-                                    <li><a href="https://www.youtube.com/user/bbclearningenglish" target="_blank" class="font-bold text-primary-dark-blue hover:underline">BBC Learning English</a>: <span class="text-text-main/80">Content focused on grammar, pronunciation, and vocabulary for English learners.</span></li>
-                                    <li><a href="https://www.youtube.com/thisisinsider" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Insider Science</a>: <span class="text-text-main/80">Videos about innovation and scientific discoveries.</span></li>
-                                    <li><a href="https://www.youtube.com/@WhatIfScienceShow" target="_blank" class="font-bold text-primary-dark-blue hover:underline">What If</a>: <span class="text-text-main/80">Explores hypothetical and curious scenarios in an intriguing way.</span></li>
-                                    <li><a href="https://www.youtube.com/@FreeHighQualityDocumentaries" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Free Documentaries</a>: <span class="text-text-main/80">A vast collection of documentaries to expand knowledge and comprehension.</span></li>
-                                    <li><a href="https://www.youtube.com/@BorderSecurityOfficial" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Border Security</a>: <span class="text-text-main/80">Series offering insights into real situations and practical vocabulary.</span></li>
-                                    <li><a href="https://www.youtube.com/@Vox" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Vox</a>: <span class="text-text-main/80">Clear and in-depth explanations of news, politics, and culture.</span></li>
-                                    <li><a href="https://www.youtube.com/user/WIRED" target="_blank" class="font-bold text-primary-dark-blue hover:underline">WIRED</a>: <span class="text-text-main/80">Focus on technology, science, and innovation, with interviews and trend analyses.</span></li>
-                                    <li><a href="https://www.youtube.com/@OddAnimalSpecimens" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Odd Animal Specimens</a>: <span class="text-text-main/80">Curious content about the animal kingdom for biology and nature vocabulary.</span></li>
-                                    <li><a href="https://www.youtube.com/@TastingHistory" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Tasting History</a>: <span class="text-text-main/80">Combines history and cooking in an engaging way, with historical recipes.</span></li>
+                                <h4 class="font-semibold text-azul-principal mb-3">General Subjects</h4>
+                                <ul class="space-y-4 text-sm text-texto-principal">
+                                    <li><a href="https://www.youtube.com/OverSimplified" target="_blank" class="font-bold text-azul-principal hover:underline">OverSimplified</a>: <span class="text-texto-principal/80">Complex stories explained in a hilarious and super accessible way.</span></li>
+                                    <li><a href="https://www.youtube.com/user/TheNewYorkTimes" target="_blank" class="font-bold text-azul-principal hover:underline">The New York Times</a>: <span class="text-texto-principal/80">Current news and in-depth analyses to keep your English updated with global events.</span></li>
+                                    <li><a href="https://www.youtube.com/user/Kurzgesagt" target="_blank" class="font-bold text-azul-principal hover:underline">Kurzgesagt</a>: <span class="text-texto-principal/80">Animated videos about science, space, and technology with clear language.</span></li>
+                                    <li><a href="https://www.youtube.com/user/TEDEducation" target="_blank" class="font-bold text-azul-principal hover:underline">TED-Ed</a>: <span class="text-texto-principal/80">Animated lessons on a vast range of topics that instigate critical thinking.</span></li>
+                                    <li><a href="https://www.youtube.com/user/MinuteEarth" target="_blank" class="font-bold text-azul-principal hover:underline">Minute Earth</a>: <span class="text-texto-principal/80">Short, animated answers to big questions about Earth and nature.</span></li>
+                                    <li><a href="https://www.youtube.com/user/bbclearningenglish" target="_blank" class="font-bold text-azul-principal hover:underline">BBC Learning English</a>: <span class="text-texto-principal/80">Content focused on grammar, pronunciation, and vocabulary for English learners.</span></li>
+                                    <li><a href="https://www.youtube.com/thisisinsider" target="_blank" class="font-bold text-azul-principal hover:underline">Insider Science</a>: <span class="text-texto-principal/80">Videos about innovation and scientific discoveries.</span></li>
+                                    <li><a href="https://www.youtube.com/@WhatIfScienceShow" target="_blank" class="font-bold text-azul-principal hover:underline">What If</a>: <span class="text-texto-principal/80">Explores hypothetical and curious scenarios in an intriguing way.</span></li>
+                                    <li><a href="https://www.youtube.com/@FreeHighQualityDocumentaries" target="_blank" class="font-bold text-azul-principal hover:underline">Free Documentaries</a>: <span class="text-texto-principal/80">A vast collection of documentaries to expand knowledge and comprehension.</span></li>
+                                    <li><a href="https://www.youtube.com/@BorderSecurityOfficial" target="_blank" class="font-bold text-azul-principal hover:underline">Border Security</a>: <span class="text-texto-principal/80">Series offering insights into real situations and practical vocabulary.</span></li>
+                                    <li><a href="https://www.youtube.com/@Vox" target="_blank" class="font-bold text-azul-principal hover:underline">Vox</a>: <span class="text-texto-principal/80">Clear and in-depth explanations of news, politics, and culture.</span></li>
+                                    <li><a href="https://www.youtube.com/user/WIRED" target="_blank" class="font-bold text-azul-principal hover:underline">WIRED</a>: <span class="text-texto-principal/80">Focus on technology, science, and innovation, with interviews and trend analyses.</span></li>
+                                    <li><a href="https://www.youtube.com/@OddAnimalSpecimens" target="_blank" class="font-bold text-azul-principal hover:underline">Odd Animal Specimens</a>: <span class="text-texto-principal/80">Curious content about the animal kingdom for biology and nature vocabulary.</span></li>
+                                    <li><a href="https://www.youtube.com/@TastingHistory" target="_blank" class="font-bold text-azul-principal hover:underline">Tasting History</a>: <span class="text-texto-principal/80">Combines history and cooking in an engaging way, with historical recipes.</span></li>
                                 </ul>
                             </div>
-                             <!-- Column 2 -->
+                             <!-- Coluna 2 -->
                             <div class="space-y-6">
                                 <div>
-                                    <h4 class="font-semibold text-secondary-dark-purple mb-3">Healthcare</h4>
-                                    <ul class="space-y-4 text-sm text-text-main">
-                                        <li><a href="https://www.youtube.com/user/johnshopkinsmedicine" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Johns Hopkins</a>: <span class="text-text-main/80">Medical and health information from one of the most renowned institutions.</span></li>
-                                        <li><a href="https://www.youtube.com/@medzcool" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Medzcool</a>: <span class="text-text-main/80">Educational health content, with clear explanations of medical topics.</span></li>
-                                        <li><a href="https://www.youtube.com/user/MayoClinic" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Mayo Clinic</a>: <span class="text-text-main/80">Reliable source of information on diseases, treatments, and healthy lifestyle.</span></li>
-                                        <li><a href="https://www.youtube.com/user/WHO" target="_blank" class="font-bold text-primary-dark-blue hover:underline">WHO</a>: <span class="text-text-main/80">Updates and information on global health and health policies.</span></li>
-                                        <li><a href="https://www.youtube.com/user/medscape" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Medscape</a>: <span class="text-text-main/80">Content for healthcare professionals, including news, articles, and education.</span></li>
-                                        <li><a href="https://www.youtube.com/@osmosis" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Osmosis</a>: <span class="text-text-main/80">Animated and didactic videos on medical and health concepts.</span></li>
-                                        <li><a href="https://www.youtube.com/user/ClevelandClinic" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Cleveland Clinic</a>: <span class="text-text-main/80">Health and wellness information from a leading institution.</span></li>
-                                        <li><a href="https://www.youtube.com/@NEJMgroup" target="_blank" class="font-bold text-primary-dark-blue hover:underline">NEJM Group</a>: <span class="text-text-main/80">Videos from the New England Journal of Medicine, with clinical cases.</span></li>
+                                    <h4 class="font-semibold text-azul-principal mb-3">Healthcare</h4>
+                                    <ul class="space-y-4 text-sm text-texto-principal">
+                                        <li><a href="https://www.youtube.com/user/johnshopkinsmedicine" target="_blank" class="font-bold text-azul-principal hover:underline">Johns Hopkins</a>: <span class="text-texto-principal/80">Medical and health information from one of the most renowned institutions.</span></li>
+                                        <li><a href="https://www.youtube.com/@medzcool" target="_blank" class="font-bold text-azul-principal hover:underline">Medzcool</a>: <span class="text-texto-principal/80">Educational health content, with clear explanations of medical topics.</span></li>
+                                        <li><a href="https://www.youtube.com/user/MayoClinic" target="_blank" class="font-bold text-azul-principal hover:underline">Mayo Clinic</a>: <span class="text-texto-principal/80">Reliable source of information on diseases, treatments, and healthy lifestyle.</span></li>
+                                        <li><a href="https://www.youtube.com/user/WHO" target="_blank" class="font-bold text-azul-principal hover:underline">WHO</a>: <span class="text-texto-principal/80">Updates and information on global health and health policies.</span></li>
+                                        <li><a href="https://www.youtube.com/user/medscape" target="_blank" class="font-bold text-azul-principal hover:underline">Medscape</a>: <span class="text-texto-principal/80">Content for healthcare professionals, including news, articles, and education.</span></li>
+                                        <li><a href="https://www.youtube.com/@osmosis" target="_blank" class="font-bold text-azul-principal hover:underline">Osmosis</a>: <span class="text-texto-principal/80">Animated and didactic videos on medical and health concepts.</span></li>
+                                        <li><a href="https://www.youtube.com/user/ClevelandClinic" target="_blank" class="font-bold text-azul-principal hover:underline">Cleveland Clinic</a>: <span class="text-texto-principal/80">Health and wellness information from a leading institution.</span></li>
+                                        <li><a href="https://www.youtube.com/@NEJMgroup" target="_blank" class="font-bold text-azul-principal hover:underline">NEJM Group</a>: <span class="text-texto-principal/80">Videos from the New England Journal of Medicine, with clinical cases.</span></li>
                                     </ul>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-secondary-dark-purple mb-3">Business</h4>
-                                    <ul class="space-y-4 text-sm text-text-main">
-                                        <li><a href="https://www.youtube.com/@TEDx" target="_blank" class="font-bold text-primary-dark-blue hover:underline">TED Talks</a>: <span class="text-text-main/80">A wide range of talks on business, leadership, and the global economy.</span></li>
-                                        <li><a href="https://www.youtube.com/@harvardbusinessreview" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Harvard Business Review</a>: <span class="text-text-main/80">In-depth insights and analysis on management and strategy.</span></li>
-                                        <li><a href="https://www.youtube.com/@FinancialTimes" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Financial Times</a>: <span class="text-text-main/80">News, analysis, and commentary on global finance and business.</span></li>
-                                        <li><a href="https://www.youtube.com/user/SimonSinek" target="_blank" class="font-bold text-primary-dark-blue hover:underline">Simon Sinek</a>: <span class="text-text-main/80">Talks on leadership, management, and organizational culture.</span></li>
+                                    <h4 class="font-semibold text-azul-principal mb-3">Business</h4>
+                                    <ul class="space-y-4 text-sm text-texto-principal">
+                                        <li><a href="https://www.youtube.com/@TEDx" target="_blank" class="font-bold text-azul-principal hover:underline">TED Talks</a>: <span class="text-texto-principal/80">A wide range of talks on business, leadership, and the global economy.</span></li>
+                                        <li><a href="https://www.youtube.com/@harvardbusinessreview" target="_blank" class="font-bold text-azul-principal hover:underline">Harvard Business Review</a>: <span class="text-texto-principal/80">In-depth insights and analysis on management and strategy.</span></li>
+                                        <li><a href="https://www.youtube.com/@FinancialTimes" target="_blank" class="font-bold text-azul-principal hover:underline">Financial Times</a>: <span class="text-texto-principal/80">News, analysis, and commentary on global finance and business.</span></li>
+                                        <li><a href="https://www.youtube.com/user/SimonSinek" target="_blank" class="font-bold text-azul-principal hover:underline">Simon Sinek</a>: <span class="text-texto-principal/80">Talks on leadership, management, and organizational culture.</span></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Instagram Section -->
-                    <div class="p-4 sm:p-6 rounded-2xl border-2 border-pastel-blue bg-pastel-purple/50 shadow-sm">
-                        <h3 class="flex items-center text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-purple-600 via-accent-pink-vibrant to-orange-400 mb-4 font-display">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-3 text-purple-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg>
+                    <!-- Seção Instagram -->
+                    <div class="p-4 sm:p-6 rounded-2xl border border-gray-200 bg-white/50 shadow-sm">
+                        <h3 class="flex items-center text-2xl font-bold text-azul-principal mb-4 font-serif">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg>
                             Instagram Accounts
                         </h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
-                            <!-- Column 1 -->
+                            <!-- Coluna 1 -->
                             <div>
-                                <h4 class="font-semibold text-secondary-dark-purple mb-3">General & Humor</h4>
-                                <ul class="space-y-4 text-sm text-text-main">
-                                    <li><a href="https://www.instagram.com/bad_science_jokes/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@bad_science_jokes</a>: <span class="text-text-main/80">Light and intelligent humor related to science.</span></li>
-                                    <li><a href="https://www.instagram.com/9gag/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@9gag</a>: <span class="text-text-main/80">Memes and viral humor content, great for understanding informal English.</span></li>
-                                    <li><a href="https://www.instagram.com/dad_joking/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@dad_joking</a>: <span class="text-text-main/80">Dad jokes and puns for more everyday and fun English.</span></li>
-                                    <li><a href="https://www.instagram.com/darkhistorymemes/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@darkhistorymemes</a>: <span class="text-text-main/80">Combination of history with humor, to learn facts in an unusual way.</span></li>
-                                    <li><a href="https://www.instagram.com/history_with_amy/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@history_with_amy</a>: <span class="text-text-main/80">Educational content about history, presented engagingly.</span></li>
-                                    <li><a href="https://www.instagram.com/bbcnews/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@bbcnews</a>: <span class="text-text-main/80">Reliable global news to stay updated and practice formal English.</span></li>
-                                    <li><a href="https://www.instagram.com/bbcearth/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@bbcearth</a>: <span class="text-text-main/80">Stunning images and videos of nature, with rich vocabulary captions.</span></li>
+                                <h4 class="font-semibold text-azul-principal mb-3">General & Humor</h4>
+                                <ul class="space-y-4 text-sm text-texto-principal">
+                                    <li><a href="https://www.instagram.com/bad_science_jokes/" target="_blank" class="font-bold text-azul-principal hover:underline">@bad_science_jokes</a>: <span class="text-texto-principal/80">Light and intelligent humor related to science.</span></li>
+                                    <li><a href="https://www.instagram.com/9gag/" target="_blank" class="font-bold text-azul-principal hover:underline">@9gag</a>: <span class="text-texto-principal/80">Memes and viral humor content, great for understanding informal English.</span></li>
+                                    <li><a href="https://www.instagram.com/dad_joking/" target="_blank" class="font-bold text-azul-principal hover:underline">@dad_joking</a>: <span class="text-texto-principal/80">Dad jokes and puns for more everyday and fun English.</span></li>
+                                    <li><a href="https://www.instagram.com/darkhistorymemes/" target="_blank" class="font-bold text-azul-principal hover:underline">@darkhistorymemes</a>: <span class="text-texto-principal/80">Combination of history with humor, to learn facts in an unusual way.</span></li>
+                                    <li><a href="https://www.instagram.com/history_with_amy/" target="_blank" class="font-bold text-azul-principal hover:underline">@history_with_amy</a>: <span class="text-texto-principal/80">Educational content about history, presented engagingly.</span></li>
+                                    <li><a href="https://www.instagram.com/bbcnews/" target="_blank" class="font-bold text-azul-principal hover:underline">@bbcnews</a>: <span class="text-texto-principal/80">Reliable global news to stay updated and practice formal English.</span></li>
+                                    <li><a href="https://www.instagram.com/bbcearth/" target="_blank" class="font-bold text-azul-principal hover:underline">@bbcearth</a>: <span class="text-texto-principal/80">Stunning images and videos of nature, with rich vocabulary captions.</span></li>
                                 </ul>
                             </div>
-                             <!-- Column 2 -->
+                             <!-- Coluna 2 -->
                             <div>
-                                <h4 class="font-semibold text-secondary-dark-purple mb-3">Science & Tech</h4>
-                                <ul class="space-y-4 text-sm text-text-main">
-                                    <li><a href="https://www.instagram.com/evolving.ai/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@evolving.ai</a>: <span class="text-text-main/80">Content on artificial intelligence and the future of technology.</span></li>
-                                    <li><a href="https://www.instagram.com/sciencemagazine/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@sciencemagazine</a>: <span class="text-text-main/80">The latest scientific discoveries and research.</span></li>
-                                    <li><a href="https://www.instagram.com/newscientist/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@newscientist</a>: <span class="text-text-main/80">News and articles on science and technology.</span></li>
-                                    <li><a href="https://www.instagram.com/unesco/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@unesco</a>: <span class="text-text-main/80">Content on education, science, and culture globally.</span></li>
-                                    <li><a href="https://www.instagram.com/nasa/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@nasa</a>: <span class="text-text-main/80">Images and updates from space and space exploration.</span></li>
-                                    <li><a href="https://www.instagram.com/unicef/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@unicef</a>: <span class="text-text-main/80">Focus on children's rights and global development.</span></li>
-                                    <li><a href="https://www.instagram.com/theaipage/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@theaipage</a>: <span class="text-text-main/80">More content on artificial intelligence and its applications.</span></li>
+                                <h4 class="font-semibold text-azul-principal mb-3">Science & Tech</h4>
+                                <ul class="space-y-4 text-sm text-texto-principal">
+                                    <li><a href="https://www.instagram.com/evolving.ai/" target="_blank" class="font-bold text-azul-principal hover:underline">@evolving.ai</a>: <span class="text-texto-principal/80">Content on artificial intelligence and the future of technology.</span></li>
+                                    <li><a href="https://www.instagram.com/sciencemagazine/" target="_blank" class="font-bold text-azul-principal hover:underline">@sciencemagazine</a>: <span class="text-texto-principal/80">The latest scientific discoveries and research.</span></li>
+                                    <li><a href="https://www.instagram.com/newscientist/" target="_blank" class="font-bold text-azul-principal hover:underline">@newscientist</a>: <span class="text-texto-principal/80">News and articles on science and technology.</span></li>
+                                    <li><a href="https://www.instagram.com/unesco/" target="_blank" class="font-bold text-azul-principal hover:underline">@unesco</a>: <span class="text-texto-principal/80">Content on education, science, and culture globally.</span></li>
+                                    <li><a href="https://www.instagram.com/nasa/" target="_blank" class="font-bold text-azul-principal hover:underline">@nasa</a>: <span class="text-texto-principal/80">Images and updates from space and space exploration.</span></li>
+                                    <li><a href="https://www.instagram.com/unicef/" target="_blank" class="font-bold text-azul-principal hover:underline">@unicef</a>: <span class="text-texto-principal/80">Focus on children's rights and global development.</span></li>
+                                    <li><a href="https://www.instagram.com/theaipage/" target="_blank" class="font-bold text-azul-principal hover:underline">@theaipage</a>: <span class="text-texto-principal/80">More content on artificial intelligence and its applications.</span></li>
                                 </ul>
                             </div>
-                            <!-- Column 3 -->
+                            <!-- Coluna 3 -->
                             <div>
-                                <h4 class="font-semibold text-secondary-dark-purple mb-3">Healthcare</h4>
-                                <ul class="space-y-4 text-sm text-text-main">
-                                    <li><a href="https://www.instagram.com/nejm/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@nejm</a>: <span class="text-text-main/80">The Instagram of the New England Journal of Medicine, with research highlights.</span></li>
-                                    <li><a href="https://www.instagram.com/nature_the_journal/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@nature_the_journal</a>: <span class="text-text-main/80">Content from the renowned scientific journal Nature.</span></li>
-                                    <li><a href="https://www.instagram.com/funnydoctorss/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@funnydoctorss</a>: <span class="text-text-main/80">Light humor and memes related to life in healthcare.</span></li>
-                                    <li><a href="https://www.instagram.com/american_heart/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@american_heart</a>: <span class="text-text-main/80">Information on cardiovascular health from the American Heart Association.</span></li>
-                                    <li><a href="https://www.instagram.com/cdcgov/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@cdcgov</a>: <span class="text-text-main/80">Public health information and updates from the CDC.</span></li>
-                                    <li><a href="https://www.instagram.com/who/" target="_blank" class="font-bold text-primary-dark-blue hover:underline">@who</a>: <span class="text-text-main/80">Information and campaigns from the World Health Organization.</span></li>
+                                <h4 class="font-semibold text-azul-principal mb-3">Healthcare</h4>
+                                <ul class="space-y-4 text-sm text-texto-principal">
+                                    <li><a href="https://www.instagram.com/nejm/" target="_blank" class="font-bold text-azul-principal hover:underline">@nejm</a>: <span class="text-texto-principal/80">The Instagram of the New England Journal of Medicine, with research highlights.</span></li>
+                                    <li><a href="https://www.instagram.com/nature_the_journal/" target="_blank" class="font-bold text-azul-principal hover:underline">@nature_the_journal</a>: <span class="text-texto-principal/80">Content from the renowned scientific journal Nature.</span></li>
+                                    <li><a href="https://www.instagram.com/funnydoctorss/" target="_blank" class="font-bold text-azul-principal hover:underline">@funnydoctorss</a>: <span class="text-texto-principal/80">Light humor and memes related to life in healthcare.</span></li>
+                                    <li><a href="https://www.instagram.com/american_heart/" target="_blank" class="font-bold text-azul-principal hover:underline">@american_heart</a>: <span class="text-texto-principal/80">Information on cardiovascular health from the American Heart Association.</span></li>
+                                    <li><a href="https://www.instagram.com/cdcgov/" target="_blank" class="font-bold text-azul-principal hover:underline">@cdcgov</a>: <span class="text-texto-principal/80">Public health information and updates from the CDC.</span></li>
+                                    <li><a href="https://www.instagram.com/who/" target="_blank" class="font-bold text-azul-principal hover:underline">@who</a>: <span class="text-texto-principal/80">Information and campaigns from the World Health Organization.</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -641,77 +611,60 @@
         </main>
     </div>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/5537991254295" target="_blank" title="Chat on WhatsApp" class="whatsapp-button-animation fixed bottom-6 right-6 bg-accent-green-bright text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg z-50 transition-transform duration-300">
-        <!-- WhatsApp Icon SVG -->
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5537991254295" target="_blank" title="Chat on WhatsApp" class="whatsapp-button-animation fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg z-50 transition-transform duration-300">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" viewBox="0 0 24 24" fill="currentColor">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.654 4.388 1.873 6.096l-1.245 4.564 4.65-1.225zM9.356 8.014c-.13-.33-.26-.337-.404-.342-.143-.005-.306-.005-.47-.005-.164 0-.43.06-.66.33-.23.27-.87.85-.87 2.07 0 1.22.89 2.39.99 2.56.11.16.18.25.25.33.52.6 1.25 1.18 2.13 1.65.99.52 1.34.62 1.8.81.46.19.85.16 1.18.1.38-.06 1.17-.48 1.34-.94.17-.46.17-.85.12-.94-.05-.09-.16-.14-.33-.25-.17-.11-.98-.48-1.14-.54-.16-.06-.28-.09-.4.09-.12.18-.43.54-.52.65-.1.11-.18.12-.33.06-.15-.06-.65-.24-1.23-.76-.46-.41-.76-.9-.85-1.05-.09-.15-.01-.23.06-.3.06-.06.14-.16.21-.25.07-.09.09-.15.14-.25.05-.1.02-.18-.01-.25-.03-.07-.28-.68-.38-.92z"/>
         </svg>
     </a>
 
-    <footer class="text-center text-subtle-gray-v2 py-4 mt-auto">
+    <footer class="text-center text-texto-principal/70 py-4 mt-auto">
         <p>&copy; 2024 English with Elisa Almada. Light and Fun Learning! <span class="animated-emoji">✨</span></p>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            console.log('[LOG] DOM Content Loaded! Initializing script...');
             const navLinks = document.querySelectorAll('.nav-link');
             const contentSections = document.querySelectorAll('.content-section');
 
-            // Helper function to update URL hash safely
             const updateUrlHash = (hash) => {
                 try {
                     if (window.location.protocol === 'blob:' || typeof history.replaceState === 'undefined') {
                         window.location.hash = hash;
-                        console.log(`[LOG] Fallback: window.location.hash set to: #${hash}`);
                     } else {
                         history.replaceState(null, '', hash ? `#${hash}` : window.location.pathname + window.location.search);
-                        console.log(`[LOG] history.replaceState set to: #${hash}`);
                     }
                 } catch (e) {
-                    console.error("[ERROR] Error calling history.replaceState, falling back to window.location.hash:", e);
+                    console.error("Error updating URL hash:", e);
                     window.location.hash = hash;
                 }
             };
             
-            // Function to show a specific content section (from sidebar)
             const showSection = (id) => {
-                console.log(`[LOG] Attempting to show section: ${id}`);
-                contentSections.forEach(section => {
-                    section.classList.remove('active');
-                });
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                });
+                contentSections.forEach(section => section.classList.remove('active'));
+                navLinks.forEach(link => link.classList.remove('active'));
+                
                 const targetSection = document.getElementById(id);
                 if (targetSection) {
                     targetSection.classList.add('active');
-                    console.log(`[LOG] Section '${id}' activated.`);
-                } else {
-                    console.error(`[ERROR] Target section not found: ${id}`);
                 }
+                
                 const targetNavLink = document.querySelector(`.nav-link[href="#${id}"]`);
                 if (targetNavLink) {
                     targetNavLink.classList.add('active');
-                    console.log(`[LOG] Nav link for '${id}' activated.`);
-                } else {
-                    console.error(`[ERROR] Target nav link not found for section: ${id}`);
                 }
                 updateUrlHash(id);
             };
 
-            // Event listeners for navigation links in sidebar
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const targetId = e.target.getAttribute('href').substring(1);
-                    console.log(`[LOG] Sidebar link clicked: ${targetId}`);
                     showSection(targetId);
                 });
             });
             
-            // --- Proficiency Test Logic (Unchanged) ---
+            // --- Lógica do Teste de Proficiência (sem alterações) ---
             const proficiencyQuizForm = document.getElementById('proficiency-quiz');
             const testResultsDiv = document.getElementById('test-results');
             const copyTestResultsBtn = document.getElementById('copy-test-results');
@@ -740,7 +693,7 @@
                 { question: "20. By next year, I ______ (learn) English for five years.", correctAnswer: "will have learned" },
                 {
                     question: "Writing Part: Write a short paragraph (3-5 sentences) about your favorite hobby or a recent travel experience.",
-                    correctAnswer: null // This question is not graded automatically
+                    correctAnswer: null 
                 }
             ];
 
@@ -763,13 +716,13 @@
 
                         if (isCorrect) {
                             score++;
-                            resultsHtml += `<p class="mb-2"><strong>${questionText}</strong> Your answer: "${userAnswer}" - <span class="text-accent-green-bright">Correct!</span></p>`;
+                            resultsHtml += `<p class="mb-2"><strong>${questionText}</strong> Your answer: "${userAnswer}" - <span class="text-green-600">Correct!</span></p>`;
                             resultsToCopy += `Question ${index + 1}: ${questionText}\nYour Answer: "${userAnswer}" (Correct)\n\n`;
                         } else {
                             resultsHtml += `
                                 <p class="mb-2">
                                     <strong>${questionText}</strong> <br>
-                                    Your answer: "${userAnswer}" - <span class="text-warning-red">Incorrect.</span> Correct answer: <strong>${q.correctAnswer}</strong>.
+                                    Your answer: "${userAnswer}" - <span class="text-red-600">Incorrect.</span> Correct answer: <strong>${q.correctAnswer}</strong>.
                                 </p>
                             `;
                             resultsToCopy += `Question ${index + 1}: ${questionText}\nYour Answer: "${userAnswer}" (Incorrect). Correct Answer: "${q.correctAnswer}"\n\n`;
@@ -782,7 +735,7 @@
                         const writingAnswer = writingTextarea ? writingTextarea.value.trim() : 'No answer provided.';
                         resultsHtml += `<h4 class="font-bold text-lg mt-6 mb-2">Writing Section:</h4>`;
                         resultsHtml += `<p class="mb-2"><strong>${writingQuestion.question}</strong></p>`;
-                        resultsHtml += `<p class="italic text-subtle-gray-v2">${writingAnswer}</p>`;
+                        resultsHtml += `<p class="italic text-texto-principal/80">${writingAnswer}</p>`;
                         
                         resultsToCopy += `\nWriting Section:\n\n`;
                         resultsToCopy += `${writingQuestion.question}\nYour Text:\n"${writingAnswer}"\n\n`;
@@ -806,7 +759,7 @@
                     }
 
                     const finalResultText = `You answered ${score} out of ${totalGradableQuestions} questions (${percentage.toFixed(0)}%).\nSuggested Level: ${levelSuggestion}.\n\n`;
-                    resultsHtml = `<p class="text-xl font-bold text-primary-dark-blue mb-4">${finalResultText}</p>` + resultsHtml;
+                    resultsHtml = `<p class="text-xl font-bold text-azul-principal mb-4">${finalResultText}</p>` + resultsHtml;
                     resultsToCopy = finalResultText + resultsToCopy;
 
                     testResultsDiv.innerHTML = resultsHtml;
@@ -828,23 +781,19 @@
                             document.body.removeChild(tempTextArea);
                             testCopyMessage.textContent = 'Results copied to clipboard!';
                             testCopyMessage.classList.remove('hidden');
-                            testCopyMessage.classList.remove('text-warning-red');
-                            testCopyMessage.classList.add('text-accent-green-bright');
+                            testCopyMessage.classList.remove('text-red-600');
+                            testCopyMessage.classList.add('text-green-600');
                         } catch (err) {
                             testCopyMessage.textContent = 'Error copying results. Please try again.';
                             testCopyMessage.classList.remove('hidden');
-                            testCopyMessage.classList.remove('text-accent-green-bright');
-                            testCopyMessage.classList.add('text-warning-red');
+                            testCopyMessage.classList.remove('text-green-600');
+                            testCopyMessage.classList.add('text-red-600');
                         }
-                    } else {
-                        console.warn('No test results to copy found.');
                     }
                 });
-            } // End of proficiencyQuizForm check
+            }
 
-            // Initial page load logic
             const initialHash = window.location.hash.substring(1);
-            // Check if hash corresponds to a valid section, otherwise default to 'who-am-i'
             if (initialHash && document.getElementById(initialHash) && document.getElementById(initialHash).classList.contains('content-section')) {
                 showSection(initialHash);
             } else {
@@ -854,4 +803,3 @@
     </script>
 </body>
 </html>
-
