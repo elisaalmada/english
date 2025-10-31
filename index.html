@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -151,6 +151,8 @@
                     <li><a href="#who-am-i" class="nav-link block p-3 rounded-lg transition-colors duration-300">👋 Who Am I</a></li>
                     <li><a href="#areas-of-expertise" class="nav-link block p-3 rounded-lg transition-colors duration-300">🎯 Areas of Expertise</a></li>
                     <li><a href="#how-classes-work" class="nav-link block p-3 rounded-lg transition-colors duration-300">✨ How Classes Work</a></li>
+                    <!-- NOVO LINK ADICIONADO AQUI -->
+                    <li><a href="#learning-profile" class="nav-link block p-3 rounded-lg transition-colors duration-300">🔎 Meu Perfil de Aluno</a></li>
                     <li><a href="#proficiency-test" class="nav-link block p-3 rounded-lg transition-colors duration-300">📝 Proficiency Test</a></li>
                     <li><a href="#media-recommendations" class="nav-link block p-3 rounded-lg transition-colors duration-300">🎬 Media Recommendations</a></li>
                 </ul>
@@ -286,6 +288,141 @@
                     I'm here to accompany you on this journey, making every step in your learning an enriching and liberating experience!
                 </p>
             </section>
+
+            <!-- 
+            ================================================================
+            NOVA SEÇÃO: PERFIL DE APRENDIZADO (COM CORREÇÕES)
+            ================================================================
+            -->
+            <section id="learning-profile" class="content-section">
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 font-serif">Meu Perfil de Aprendizado <span class="animated-emoji">🔎</span></h2>
+                <!-- TEXTO ABAIXO ATUALIZADO -->
+                <p class="text-texto-principal mb-4 leading-relaxed">
+                    Olá! 😊 Para garantir acessibilidade a todos os alunos, esta seção está em português. Responda estas 8 perguntas rápidas para me ajudar a criar um plano de aula inicial 100% focado em você. Isso não é um teste, apenas um guia para entendermos seus objetivos e preferências.
+                </p>
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                    <form id="profile-builder-form">
+                        
+                        <!-- Pergunta 1: Objetivos (Checkbox) -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">1. Quais são os seus objetivos com o inglês? (Marque quantos quiser)</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q1_objectives" value="Profissional (trabalho atual)" class="mr-2 accent-azul-principal"> <strong>Profissional:</strong> Preciso para o meu trabalho atual (reuniões, e-mails, apresentações).</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q1_objectives" value="Crescimento na Carreira (entrevistas, promoções)" class="mr-2 accent-azul-principal"> <strong>Crescimento na Carreira:</strong> Quero me preparar para entrevistas, promoções ou exames.</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q1_objectives" value="Viagem" class="mr-2 accent-azul-principal"> <strong>Viagem:</strong> Tenho uma viagem marcada (turismo ou trabalho) e preciso me comunicar.</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q1_objectives" value="Mudança de País" class="mr-2 accent-azul-principal"> <strong>Mudança:</strong> Estou planejando me mudar para outro país.</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q1_objectives" value="Pessoal (hobby, mídias)" class="mr-2 accent-azul-principal"> <strong>Pessoal:</strong> Quero estudar por hobby, para consumir mídias (filmes, livros) ou desenvolvimento pessoal.</label>
+                            </div>
+                        </div>
+
+                        <!-- Pergunta 2: Situações Práticas (Checkbox) -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">2. Para quais situações práticas você mais precisa do inglês? (Marque quantas quiser)</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q2_situations" value="Conversação social (small talk)" class="mr-2 accent-azul-principal"> Conversação social (small talk)</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q2_situations" value="Reuniões e apresentações" class="mr-2 accent-azul-principal"> Reuniões e apresentações de trabalho</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q2_situations" value="Escrita de e-mails e relatórios" class="mr-2 accent-azul-principal"> Escrita de e-mails e relatórios</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q2_situations" value="Atendimento a clientes/pacientes" class="mr-2 accent-azul-principal"> Atendimento a clientes/pacientes</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q2_situations" value="Entrevistas de emprego" class="mr-2 accent-azul-principal"> Entrevistas de emprego</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q2_situations" value="Situações de viagem" class="mr-2 accent-azul-principal"> Situações de viagem (aeroporto, hotel, restaurante)</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q2_situations" value="Consumir conteúdo (filmes, artigos)" class="mr-2 accent-azul-principal"> Consumir conteúdo (filmes, artigos, palestras)</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q2_situations" value="Destravar a fala" class="mr-2 accent-azul-principal"> Apenas "destravar" a fala e ganhar fluência</label>
+                            </div>
+                        </div>
+
+                        <!-- Pergunta 3: Autoavaliação (Radio) -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">3. Como você descreve seu nível de conforto ao falar inglês hoje? (Escolha apenas uma)</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q3_level" value="Iniciante (Começando do zero ou sei o básico)" class="mr-2 accent-azul-principal"> <strong>Iniciante:</strong> Estou começando agora ou sei apenas o básico (cores, números, verb to be).</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q3_level" value="Consigo Ler/Ouvir (mas travo ao falar)" class="mr-2 accent-azul-principal"> <strong>Consigo Ler/Ouvir:</strong> Entendo bem lendo ou ouvindo, mas travo completamente na hora de falar.</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q3_level" value="Sei o Básico (Falo frases simples, mas sofro com tempos verbais)" class="mr-2 accent-azul-principal"> <strong>Sei o Básico:</strong> Consigo formar frases simples sobre o presente, mas sofro com o passado ou futuro.</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q3_level" value="Intermediário (Falo, mas com muitos erros e pausas)" class="mr-2 accent-azul-principal"> <strong>Intermediário:</strong> Falo, mas com muitos erros, pausas e falta de vocabulário.</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q3_level" value="Avançado (Quero polir a fala)" class="mr-2 accent-azul-principal"> <strong>Avançado:</strong> Falo bem, mas quero polir a pronúncia, soar mais natural e corrigir erros específicos.</label>
+                            </div>
+                        </div>
+
+                        <!-- Pergunta 4: Desafios (Checkbox) -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">4. Quais são seus maiores desafios ou "bloqueios"? (Marque quantos quiser)</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q4_challenges" value="Gramática (regras, preposições, do/does)" class="mr-2 accent-azul-principal"> <strong>Gramática:</strong> "Travo" pensando nas regras (Ex: preposições, 's' da 3ª pessoa, do/does).</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q4_challenges" value="Vocabulário (faltam palavras)" class="mr-2 accent-azul-principal"> <strong>Vocabulário:</strong> Faltam palavras na hora de falar.</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q4_challenges" value="Pronúncia (sotaque, vergonha)" class="mr-2 accent-azul-principal"> <strong>Pronúncia:</strong> As pessoas não entendem o que eu digo ou tenho vergonha do meu sotaque.</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q4_challenges" value="Compreensão (Listening)" class="mr-2 accent-azul-principal"> <strong>Compreensão (Listening):</strong> Não consigo entender falantes nativos ou filmes sem legenda.</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q4_challenges" value="Vergonha/Medo de errar" class="mr-2 accent-azul-principal"> <strong>Vergonha/Medo:</strong> Tenho medo de errar e ser julgado(a).</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q4_challenges" value="Verbos (confundo say/tell, make/do)" class="mr-2 accent-azul-principal"> <strong>Verbos:</strong> Confundo verbos comuns (Ex: say/tell/speak/talk, make/do).</label>
+                            </div>
+                        </div>
+
+                        <!-- Pergunta 5: Interesses (Checkbox) -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">5. Que tipo de tópicos você gostaria de usar como tema para as aulas? (Marque quantos quiser)</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q5_topics" value="Minha Área Profissional" class="mr-2 accent-azul-principal"> Minha Área Profissional: (Ex: Medicina, Finanças, TI, Fisioterapia, etc.)</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q5_topics" value="Notícias e atualidades" class="mr-2 accent-azul-principal"> Notícias e atualidades</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q5_topics" value="Tecnologia e Inovação" class="mr-2 accent-azul-principal"> Tecnologia e Inovação</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q5_topics" value="Viagens e Culturas" class="mr-2 accent-azul-principal"> Viagens e Culturas</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q5_topics" value="Fitness, Saúde e Bem-estar" class="mr-2 accent-azul-principal"> Fitness, Saúde e Bem-estar</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q5_topics" value="Filmes, Séries e Música" class="mr-2 accent-azul-principal"> Filmes, Séries e Música</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q5_topics" value="Negócios e Empreendedorismo" class="mr-2 accent-azul-principal"> Negócios e Empreendedorismo</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q5_topics" value="Tópicos mais profundos (filosofia, sociedade)" class="mr-2 accent-azul-principal"> Tópicos mais profundos (filosofia, sociedade)</label>
+                            </div>
+                        </div>
+
+                        <!-- Pergunta 6: Estilo de Aula (Radio) -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">6. Qual estilo de aula funciona melhor para você? (Escolha apenas uma)</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q6_style" value="Foco na Conversa (prática e correção)" class="mr-2 accent-azul-principal"> <strong>Foco na Conversa:</strong> Prefiro usar a maior parte do tempo falando e sendo corrigido(a) na prática.</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q6_style" value="Equilibrado (explicação e prática)" class="mr-2 accent-azul-principal"> <strong>Equilibrado:</strong> Gosto de ter um momento para slides explicativos (gramática/vocabulário) e depois praticar.</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q6_style" value="Foco na Estrutura (exercícios de gramática)" class="mr-2 accent-azul-principal"> <strong>Foco na Estrutura:</strong> Gosto de focar em exercícios de gramática e estrutura antes de tentar falar.</label>
+                            </div>
+                        </div>
+
+                        <!-- Pergunta 7: Mídia (Checkbox) - DIV ABAIXO CORRIGIDO -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">7. Sobre o uso de mídias (vídeos, áudios) NA AULA: (Marque quantas quiser)</p>
+                            <div class="space-y-2 text-texto-principal/80">
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q7_media" value="Gosto de vídeos/áudios curtos (até 3 min)" class="mr-2 accent-azul-principal"> Gosto de vídeos/áudios curtos (até 2-3 minutos) para praticar o </strong>listening</strong> e discutir.</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q7_media" value="Gosto de materiais mais longos (TED Talks, cenas)" class="mr-2 accent-azul-principal"> Gosto de materiais mais longos (Ex: TED Talks curtos, cenas de filmes) para análise.</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q7_media" value="Gosto de usar músicas" class="mr-2 accent-azul-principal"> Gosto de usar músicas para analisar a letra e pronúncia.</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q7_media" value="Prefiro NÃO usar mídias na aula (focar em conversa)" class="mr-2 accent-azul-principal"> Prefiro </strong>não</strong> usar vídeos/áudios </strong>durante</strong> o tempo da aula (prefiro focar na conversa 1-a-1).</label>
+                                <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="checkbox" name="q7_media" value="Prefiro mídias como 'dever de casa'" class="mr-2 accent-azul-principal"> Prefiro receber vídeos/áudios como "dever de casa" e trazer o tema para a aula seguinte.</label>
+                            </div>
+                        </div>
+
+                        <!-- Pergunta 8: Aberta (Textarea) -->
+                        <div class="mb-6 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <p class="font-semibold text-texto-principal mb-3">8. Há algo mais que eu precise saber?</p>
+                            <textarea id="q8_open_text" class="w-full p-3 bg-white text-texto-principal border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-azul-principal transition-all" rows="4" placeholder="(Ex: Tenho TDAH e prefiro aulas mais dinâmicas, Estou me preparando para a prova X, Meu prazo é de 3 meses, Já morei fora, etc.)"></textarea>
+                        </div>
+
+                        <button type="submit" class="bg-azul-principal text-creme font-bold px-6 py-3 rounded-lg hover:bg-opacity-80 transition-all duration-200 mr-2 shadow-md transform hover:scale-105">Gerar Meu Perfil</button>
+                    </form>
+
+                    <!-- Área de Resultados (Editável) -->
+                    <div id="profile-results-area" class="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-texto-principal hidden">
+                        <h4 class="font-bold text-lg mb-2 text-azul-principal">Seu Perfil de Aprendizado:</h4>
+                        <p class="mb-3 text-sm">
+                            Obrigada! Aqui está o resumo. Se não concordar com algo ou quiser adicionar um detalhe,
+                            <strong>você pode editar o texto abaixo</strong> antes de copiar.
+                        </p>
+                        
+                        <!-- O <textarea> permite que o aluno edite o resultado -->
+                        <textarea id="profile-summary-text" class="w-full p-3 bg-white text-texto-principal border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-azul-principal transition-all" rows="20"></textarea>
+                        
+                        <button type="button" id="copy-profile-results" class="mt-4 bg-azul-principal text-creme font-bold px-6 py-3 rounded-lg hover:bg-opacity-80 transition-all duration-200 shadow-md transform hover:scale-105">
+                            Copiar Perfil para o WhatsApp
+                        </button>
+                        <div id="profile-copy-message" class="mt-4 text-sm text-green-600 hidden">
+                            Perfil copiado! Cole no WhatsApp para me enviar.
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <!-- FIM DA NOVA SEÇÃO -->
 
             <!-- Seção 4: Teste de Proficiência -->
             <section id="proficiency-test" class="content-section">
@@ -472,6 +609,7 @@
                                 <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q20" value="will learn" class="mr-2 accent-azul-principal"> will learn</label>
                                 <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q20" value="will have learned" class="mr-2 accent-azul-principal"> will have learned</label>
                                 <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q20" value="am learning" class="mr-2 accent-azul-principal"> am learning</label>
+
                             </div>
                         </div>
 
@@ -793,6 +931,97 @@
                 });
             }
 
+            // ================================================================
+            // NOVO JAVASCRIPT: LÓGICA DO PERFIL DE APRENDIZADO
+            // ================================================================
+            const profileForm = document.getElementById('profile-builder-form');
+            const profileResultsArea = document.getElementById('profile-results-area');
+            const profileSummaryText = document.getElementById('profile-summary-text');
+            const copyProfileBtn = document.getElementById('copy-profile-results');
+            const profileCopyMessage = document.getElementById('profile-copy-message');
+
+            if (profileForm) {
+                // Função auxiliar para coletar valores de checkboxes
+                const getCheckboxValues = (name) => {
+                    const checkedItems = document.querySelectorAll(`input[name="${name}"]:checked`);
+                    if (checkedItems.length === 0) return "Nenhuma opção selecionada";
+                    let values = [];
+                    checkedItems.forEach(item => values.push(item.value));
+                    return values.join(', ');
+                };
+
+                // Função auxiliar para coletar valor de radio buttons
+                const getRadioValue = (name) => {
+                    const checkedItem = document.querySelector(`input[name="${name}"]:checked`);
+                    return checkedItem ? checkedItem.value : "Nenhuma opção selecionada";
+                };
+
+                // Listener para o "submit" do formulário de perfil
+                profileForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    let profileText = "Meu Perfil de Aprendizado:\n\n";
+
+                    // Coletar respostas
+                    profileText += "P1. Objetivos: " + getCheckboxValues('q1_objectives') + "\n\n";
+                    profileText += "P2. Situações Práticas: " + getCheckboxValues('q2_situations') + "\n\n";
+                    profileText += "P3. Nível (Autoavaliação): " + getRadioValue('q3_level') + "\n\n";
+                    profileText += "P4. Desafios/Bloqueios: " + getCheckboxValues('q4_challenges') + "\n\n";
+                    profileText += "P5. Tópicos de Interesse: " + getCheckboxValues('q5_topics') + "\n\n";
+                    profileText += "P6. Estilo de Aula: " + getRadioValue('q6_style') + "\n\n";
+                    profileText += "P7. Preferências de Mídia: " + getCheckboxValues('q7_media') + "\n\n";
+                    
+                    const openText = document.getElementById('q8_open_text').value;
+                    profileText += "P8. Observações Adicionais: " + (openText.trim() ? openText.trim() : "Nenhuma") + "\n";
+
+                    // Preencher o textarea editável
+                    profileSummaryText.value = profileText;
+
+                    // Mostrar a área de resultados
+                    profileResultsArea.classList.remove('hidden');
+                    profileCopyMessage.classList.add('hidden'); // Esconder msg de cópia antiga
+                    
+                    // Rolar até os resultados
+                    profileResultsArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+
+                // Listener para o botão de copiar
+                copyProfileBtn.addEventListener('click', () => {
+                    // Pega o texto do textarea (incluindo edições do aluno)
+                    const textToCopy = profileSummaryText.value; 
+
+                    if (!textToCopy) {
+                         profileCopyMessage.textContent = 'Nada para copiar.';
+                         profileCopyMessage.classList.remove('hidden', 'text-green-600');
+                         profileCopyMessage.classList.add('text-red-600');
+                        return;
+                    }
+
+                    try {
+                        // Usando o mesmo método de cópia do seu teste de proficiência
+                        const tempTextArea = document.createElement('textarea');
+                        tempTextArea.value = textToCopy;
+                        document.body.appendChild(tempTextArea);
+                        tempTextArea.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(tempTextArea);
+                        
+                        profileCopyMessage.textContent = 'Perfil copiado! Cole no WhatsApp para me enviar.';
+                        profileCopyMessage.classList.remove('hidden', 'text-red-600');
+                        profileCopyMessage.classList.add('text-green-600');
+                    } catch (err) {
+                        profileCopyMessage.textContent = 'Erro ao copiar. Tente selecionar o texto manualmente.';
+                        profileCopyMessage.classList.remove('hidden', 'text-green-600');
+                        profileCopyMessage.classList.add('text-red-600');
+                    }
+                });
+            }
+            // ================================================================
+            // FIM DO NOVO JAVASCRIPT
+            // ================================================================
+
+
+            // Lógica de navegação inicial (existente)
             const initialHash = window.location.hash.substring(1);
             if (initialHash && document.getElementById(initialHash) && document.getElementById(initialHash).classList.contains('content-section')) {
                 showSection(initialHash);
@@ -803,4 +1032,3 @@
     </script>
 </body>
 </html>
-
