@@ -413,11 +413,11 @@
                         <!-- O <textarea> permite que o aluno edite o resultado -->
                         <textarea id="profile-summary-text" class="w-full p-3 bg-white text-texto-principal border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-azul-principal transition-all" rows="20"></textarea>
                         
-                        <button type="button" id="copy-profile-results" class="mt-4 bg-azul-principal text-creme font-bold px-6 py-3 rounded-lg hover:bg-opacity-80 transition-all duration-200 shadow-md transform hover:scale-105">
-                            Copiar Perfil para o WhatsApp
+                        <button type="button" id="send-profile-email" class="mt-4 bg-azul-principal text-creme font-bold px-6 py-3 rounded-lg hover:bg-opacity-80 transition-all duration-200 shadow-md transform hover:scale-105">
+                            Enviar Perfil por E-mail
                         </button>
                         <div id="profile-copy-message" class="mt-4 text-sm text-green-600 hidden">
-                            Perfil copiado! Cole no WhatsApp para me enviar.
+                            Abrindo seu provedor de e-mail...
                         </div>
                     </div>
 
@@ -610,7 +610,6 @@
                                 <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q20" value="will learn" class="mr-2 accent-azul-principal"> will learn</label>
                                 <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q20" value="will have learned" class="mr-2 accent-azul-principal"> will have learned</label>
                                 <label class="block cursor-pointer hover:text-azul-principal transition-colors"><input type="radio" name="q20" value="am learning" class="mr-2 accent-azul-principal"> am learning</label>
-
                             </div>
                         </div>
 
@@ -700,50 +699,13 @@
                     <!-- Seção Instagram -->
                     <div class="p-4 sm:p-6 rounded-2xl border border-gray-200 bg-white/50 shadow-sm">
                         <h3 class="flex items-center text-2xl font-bold text-azul-principal mb-4 font-serif">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg>
-                            Instagram Accounts
-                        </h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
-                            <!-- Coluna 1 -->
-                            <div>
-                                <h4 class="font-semibold text-azul-principal mb-3">General & Humor</h4>
-                                <ul class="space-y-4 text-sm text-texto-principal">
-                                    <li><a href="https://www.instagram.com/bad_science_jokes/" target="_blank" class="font-bold text-azul-principal hover:underline">@bad_science_jokes</a>: <span class="text-texto-principal/80">Light and intelligent humor related to science.</span></li>
-                                    <li><a href="https://www.instagram.com/9gag/" target="_blank" class="font-bold text-azul-principal hover:underline">@9gag</a>: <span class="text-texto-principal/80">Memes and viral humor content, great for understanding informal English.</span></li>
-                                    <li><a href="https://www.instagram.com/dad_joking/" target="_blank" class="font-bold text-azul-principal hover:underline">@dad_joking</a>: <span class="text-texto-principal/80">Dad jokes and puns for more everyday and fun English.</span></li>
-                                    <li><a href="https://www.instagram.com/darkhistorymemes/" target="_blank" class="font-bold text-azul-principal hover:underline">@darkhistorymemes</a>: <span class="text-texto-principal/80">Combination of history with humor, to learn facts in an unusual way.</span></li>
-                                    <li><a href="https://www.instagram.com/history_with_amy/" target="_blank" class="font-bold text-azul-principal hover:underline">@history_with_amy</a>: <span class="text-texto-principal/80">Educational content about history, presented engagingly.</span></li>
-                                    <li><a href="https://www.instagram.com/bbcnews/" target="_blank" class="font-bold text-azul-principal hover:underline">@bbcnews</a>: <span class="text-texto-principal/80">Reliable global news to stay updated and practice formal English.</span></li>
-                                    <li><a href="https://www.instagram.com/bbcearth/" target="_blank" class="font-bold text-azul-principal hover:underline">@bbcearth</a>: <span class="text-texto-principal/80">Stunning images and videos of nature, with rich vocabulary captions.</span></li>
-                                </ul>
-                            </div>
-                             <!-- Coluna 2 -->
-                            <div>
-                                <h4 class="font-semibold text-azul-principal mb-3">Science & Tech</h4>
-                                <ul class="space-y-4 text-sm text-texto-principal">
-                                    <li><a href="https://www.instagram.com/evolving.ai/" target="_blank" class="font-bold text-azul-principal hover:underline">@evolving.ai</a>: <span class="text-texto-principal/80">Content on artificial intelligence and the future of technology.</span></li>
-                                    <li><a href="https://www.instagram.com/sciencemagazine/" target="_blank" class="font-bold text-azul-principal hover:underline">@sciencemagazine</a>: <span class="text-texto-principal/80">The latest scientific discoveries and research.</span></li>
-                                    <li><a href="https://www.instagram.com/newscientist/" target="_blank" class="font-bold text-azul-principal hover:underline">@newscientist</a>: <span class="text-texto-principal/80">News and articles on science and technology.</span></li>
-                                    <li><a href="https://www.instagram.com/unesco/" target="_blank" class="font-bold text-azul-principal hover:underline">@unesco</a>: <span class="text-texto-principal/80">Content on education, science, and culture globally.</span></li>
-                                    <li><a href="https://www.instagram.com/nasa/" target="_blank" class="font-bold text-azul-principal hover:underline">@nasa</a>: <span class="text-texto-principal/80">Images and updates from space and space exploration.</span></li>
-                                    <li><a href="https://www.instagram.com/unicef/" target="_blank" class="font-bold text-azul-principal hover:underline">@unicef</a>: <span class="text-texto-principal/80">Focus on children's rights and global development.</span></li>
-                                    <li><a href="https://www.instagram.com/theaipage/" target="_blank" class="font-bold text-azul-principal hover:underline">@theaipage</a>: <span class="text-texto-principal/80">More content on artificial intelligence and its applications.</span></li>
-                                </ul>
-                            </div>
-                            <!-- Coluna 3 -->
-                            <div>
-                                <h4 class="font-semibold text-azul-principal mb-3">Healthcare</h4>
-                                <ul class="space-y-4 text-sm text-texto-principal">
-                                    <li><a href="https://www.instagram.com/nejm/" target="_blank" class="font-bold text-azul-principal hover:underline">@nejm</a>: <span class="text-texto-principal/80">The Instagram of the New England Journal of Medicine, with research highlights.</span></li>
-                                    <li><a href="https://www.instagram.com/nature_the_journal/" target="_blank" class="font-bold text-azul-principal hover:underline">@nature_the_journal</a>: <span class="text-texto-principal/80">Content from the renowned scientific journal Nature.</span></li>
-                                    <li><a href="https://www.instagram.com/funnydoctorss/" target="_blank" class="font-bold text-azul-principal hover:underline">@funnydoctorss</a>: <span class="text-texto-principal/80">Light humor and memes related to life in healthcare.</span></li>
-                                    <li><a href="https://www.instagram.com/american_heart/" target="_blank" class="font-bold text-azul-principal hover:underline">@american_heart</a>: <span class="text-texto-principal/80">Information on cardiovascular health from the American Heart Association.</span></li>
-                                    <li><a href="https://www.instagram.com/cdcgov/" target="_blank" class="font-bold text-azul-principal hover:underline">@cdcgov</a>: <span class="text-texto-principal/80">Public health information and updates from the CDC.</span></li>
-                                    <li><a href="https://www.instagram.com/who/" target="_blank" class="font-bold text-azul-principal hover:underline">@who</a>: <span class="text-texto-principal/80">Information and campaigns from the World Health Organization.</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-2.759-6.162-6.162-2.759-6.162-6.162-2.759-6.162-6.162-2.759-6.162-6.162-2.759-6.162-6.162-2.759-6.162-6.162-2.759-6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg>
+                        Instagram
+                    </a>
+                    <a href="https://www.linkedin.com/in/elisaalmada/" target="_blank" class="flex items-center justify-center px-4 py-2 rounded-lg text-creme bg-azul-principal font-semibold shadow-md transition-transform duration-200 hover:scale-105">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        LinkedIn
+                    </a>
                 </div>
             </section>
 
@@ -938,7 +900,8 @@
             const profileForm = document.getElementById('profile-builder-form');
             const profileResultsArea = document.getElementById('profile-results-area');
             const profileSummaryText = document.getElementById('profile-summary-text');
-            const copyProfileBtn = document.getElementById('copy-profile-results');
+            // Alterado para o novo ID do botão de e-mail
+            const sendEmailBtn = document.getElementById('send-profile-email');
             const profileCopyMessage = document.getElementById('profile-copy-message');
 
             if (profileForm) {
@@ -980,38 +943,37 @@
 
                     // Mostrar a área de resultados
                     profileResultsArea.classList.remove('hidden');
-                    profileCopyMessage.classList.add('hidden'); // Esconder msg de cópia antiga
+                    profileCopyMessage.classList.add('hidden'); // Esconder msg antiga
                     
                     // Rolar até os resultados
                     profileResultsArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 });
 
-                // Listener para o botão de copiar
-                copyProfileBtn.addEventListener('click', () => {
+                // Listener para o botão de enviar email
+                sendEmailBtn.addEventListener('click', () => {
                     // Pega o texto do textarea (incluindo edições do aluno)
                     const textToCopy = profileSummaryText.value; 
 
                     if (!textToCopy) {
-                         profileCopyMessage.textContent = 'Nada para copiar.';
+                         profileCopyMessage.textContent = 'Nada para enviar.';
                          profileCopyMessage.classList.remove('hidden', 'text-green-600');
                          profileCopyMessage.classList.add('text-red-600');
                         return;
                     }
 
                     try {
-                        // Usando o mesmo método de cópia do seu teste de proficiência
-                        const tempTextArea = document.createElement('textarea');
-                        tempTextArea.value = textToCopy;
-                        document.body.appendChild(tempTextArea);
-                        tempTextArea.select();
-                        document.execCommand('copy');
-                        document.body.removeChild(tempTextArea);
+                        const email = "elisasalmada@gmail.com";
+                        const subject = encodeURIComponent("Meu Perfil de Aprendizado");
+                        const body = encodeURIComponent(textToCopy);
                         
-                        profileCopyMessage.textContent = 'Perfil copiado! Cole no WhatsApp para me enviar.';
+                        // Cria e abre o link mailto
+                        window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+                        
+                        profileCopyMessage.textContent = 'Abrindo seu provedor de e-mail...';
                         profileCopyMessage.classList.remove('hidden', 'text-red-600');
                         profileCopyMessage.classList.add('text-green-600');
                     } catch (err) {
-                        profileCopyMessage.textContent = 'Erro ao copiar. Tente selecionar o texto manualmente.';
+                        profileCopyMessage.textContent = 'Erro ao abrir e-mail. Tente copiar o texto manualmente.';
                         profileCopyMessage.classList.remove('hidden', 'text-green-600');
                         profileCopyMessage.classList.add('text-red-600');
                     }
